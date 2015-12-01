@@ -1,0 +1,16 @@
+{
+  "name": "confs4devs",
+  "version": "0.0.1",
+  "description": "A site listing conferences for developers and designers.",
+  "author": "Robert Looby <robertjlooby@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/robertjlooby/confs4devs"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "elm-test": "^0.16.0"
+  },
+  "license": "MIT"
+}
