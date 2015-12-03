@@ -5,6 +5,7 @@ import DateFormatter exposing (parseDate)
 
 type alias Model =
   { conferences : List Conference
+  , tags : List FilteredTag
   }
 
 type alias Conference =
@@ -18,6 +19,10 @@ type alias Conference =
 
 type Tag =
   Ruby
+
+type FilteredTag =
+  Included Tag
+  | Excluded Tag
 
 type Action = Include Tag
 
@@ -44,4 +49,7 @@ list =
         , tags = []
         }
       ]
+  , tags =
+    [ Included Ruby
+    ]
   }

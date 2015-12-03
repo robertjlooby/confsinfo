@@ -1,22 +1,41 @@
-import Conferences exposing (Conference, Model, Tag)
+import Conferences exposing (..)
 import DateFormatter
 import Html exposing (text)
 import Html.Attributes exposing (href)
 import StartApp.Simple exposing (start)
 
-view : Signal.Address Conferences.Action -> Model -> Html.Html
+view : Signal.Address Action -> Model -> Html.Html
 view address model =
   Html.div []
   [ Html.header [] [text "Confs.io"]
-  , Html.table [] <| conferencesView address model
+  , Html.ul [] <| tagsView address model.tags
+  , Html.table [] <| conferencesView address model.conferences
   ]
 
-conferencesView : Signal.Address Conferences.Action -> Model -> List Html.Html
-conferencesView address model =
-  List.map (conferenceView address) model.conferences
+tagsView : Signal.Address Action -> List FilteredTag -> List Html.Html
+tagsView address tags =
+  List.map (tagView address) tags
+
+tagView : Signal.Address Action -> FilteredTag -> Html.Html
+tagView address tag =
+  let
+    tagString = case tag of
+                  Included t -> toString t
+                  Excluded t -> toString t
+    tagClass = case tag of
+                  Included _ -> "included"
+                  Excluded _ -> "excluded"
+  in
+    Html.li
+      [Html.Attributes.class tagClass]
+      [text tagString]
+
+conferencesView : Signal.Address Action -> List Conference -> List Html.Html
+conferencesView address conferences =
+  List.map (conferenceView address) conferences
 
 
-conferenceView : Signal.Address Conferences.Action -> Conference -> Html.Html
+conferenceView : Signal.Address Action -> Conference -> Html.Html
 conferenceView address conference =
   Html.tr
     []
