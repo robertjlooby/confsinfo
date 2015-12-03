@@ -5,9 +5,6 @@ import ElmTest exposing (assertEqual, suite, test)
 
 import DateFormatter exposing (..)
 
-parseDate : String -> Date.Date
-parseDate date =
-  Date.fromString date |> Result.withDefault (Date.fromTime 0)
 
 tests =
   suite

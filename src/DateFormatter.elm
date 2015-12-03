@@ -19,3 +19,8 @@ formatRange startDate endDate =
        startMonth ++ " " ++ startDayOfMonth ++ "-" ++ endDayOfMonth ++ ", " ++ startYear
      else
        startMonth ++ " " ++ startDayOfMonth ++ "-" ++ endMonth ++ " " ++ endDayOfMonth ++ ", " ++ startYear
+
+
+parseDate : String -> Date.Date
+parseDate date =
+  Date.fromString date |> Result.withDefault (Date.fromTime 0)
