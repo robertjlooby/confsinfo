@@ -19,6 +19,12 @@ type alias Conference =
 type Tag =
   Ruby
 
+type Action = Include Tag
+
+update : Action -> Model -> Model
+update action model =
+  model
+
 list : Model
 list =
   { conferences =

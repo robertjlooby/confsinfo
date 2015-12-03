@@ -2,21 +2,22 @@ import Conferences exposing (Conference, Model, Tag)
 import DateFormatter
 import Html exposing (text)
 import Html.Attributes exposing (href)
+import StartApp.Simple exposing (start)
 
-view : Model -> Html.Html
-view model =
+view : Signal.Address Conferences.Action -> Model -> Html.Html
+view address model =
   Html.div []
   [ Html.header [] [text "Confs.io"]
-  , Html.table [] <| conferencesView model
+  , Html.table [] <| conferencesView address model
   ]
 
-conferencesView : Model -> List Html.Html
-conferencesView model =
-  List.map conferenceView model.conferences
+conferencesView : Signal.Address Conferences.Action -> Model -> List Html.Html
+conferencesView address model =
+  List.map (conferenceView address) model.conferences
 
 
-conferenceView : Conference -> Html.Html
-conferenceView conference =
+conferenceView : Signal.Address Conferences.Action -> Conference -> Html.Html
+conferenceView address conference =
   Html.tr
     []
     [ Html.td
@@ -30,6 +31,10 @@ conferenceView conference =
         [text conference.location]
     ]
 
-main : Html.Html
+main : Signal Html.Html
 main =
-  view Conferences.list
+  start
+    { model = Conferences.list
+    , update = Conferences.update
+    , view = view
+    }
