@@ -2,6 +2,7 @@ import Conferences exposing (..)
 import DateFormatter
 import Html exposing (text)
 import Html.Attributes exposing (href)
+import Html.Events
 import StartApp.Simple exposing (start)
 
 view : Signal.Address Action -> Model -> Html.Html
@@ -9,7 +10,8 @@ view address model =
   Html.div []
   [ Html.header [] [text "Confs.io"]
   , Html.ul [] <| tagsView address model.tags
-  , Html.table [] <| conferencesView address model.conferences
+  , Html.button [ Html.Events.onClick address Reset ] [ text "Reset" ]
+  , Html.table [] <| conferencesView address model.conferences model.tags
   ]
 
 tagsView : Signal.Address Action -> List FilteredTag -> List Html.Html
@@ -19,20 +21,19 @@ tagsView address tags =
 tagView : Signal.Address Action -> FilteredTag -> Html.Html
 tagView address tag =
   let
-    tagString = case tag of
-                  Included t -> toString t
-                  Excluded t -> toString t
-    tagClass = case tag of
-                  Included _ -> "included"
-                  Excluded _ -> "excluded"
+    (tagString, tagClass, clickAction) = case tag of
+                  Included t -> ("- " ++ toString t, "included", Exclude t)
+                  Excluded t -> ("+ " ++ toString t, "excluded", Include t)
   in
     Html.li
-      [Html.Attributes.class tagClass]
-      [text tagString]
+      [ Html.Attributes.class tagClass
+      , Html.Events.onClick address clickAction
+      ]
+      [ Html.button [] [ text tagString ]]
 
-conferencesView : Signal.Address Action -> List Conference -> List Html.Html
-conferencesView address conferences =
-  List.map (conferenceView address) conferences
+conferencesView : Signal.Address Action -> List Conference -> List FilteredTag -> List Html.Html
+conferencesView address conferences tags =
+  List.map (conferenceView address) (Conferences.shouldShow tags conferences)
 
 
 conferenceView : Signal.Address Action -> Conference -> Html.Html
@@ -57,3 +58,6 @@ main =
     , update = Conferences.update
     , view = view
     }
+
+port title : String
+port title = "Confs.io"

@@ -4,6 +4,7 @@ import Console
 import ElmTest exposing (consoleRunner, Test, suite)
 import Task
 
+import ConferencesTest
 import DateFormatterTest
 
 tests : Test
@@ -11,7 +12,8 @@ tests =
     suite
         "All tests"
             [
-              DateFormatterTest.tests
+              ConferencesTest.tests
+            , DateFormatterTest.tests
             ]
 
 port runner : Signal (Task.Task x ())
