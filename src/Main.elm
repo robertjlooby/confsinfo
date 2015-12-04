@@ -9,14 +9,22 @@ view : Signal.Address Action -> Model -> Html.Html
 view address model =
   Html.div []
   [ Html.header [] [text "Confs.io"]
-  , Html.ul [] <| tagsView address model.tags
+  , allTagsView address model.tags
   , Html.button [ Html.Events.onClick address Reset ] [ text "Reset" ]
   , Html.table [] <| conferencesView address model.conferences model.tags
   ]
 
-tagsView : Signal.Address Action -> List FilteredTag -> List Html.Html
-tagsView address tags =
-  List.map (tagView address) tags
+allTagsView : Signal.Address Action -> List (String, List FilteredTag) -> Html.Html
+allTagsView address tagsWithDescriptions =
+  Html.div [] <| List.map (tagsView address) tagsWithDescriptions
+
+tagsView : Signal.Address Action -> (String, List FilteredTag) -> Html.Html
+tagsView address (description, tags) =
+  Html.div
+    []
+    [ Html.h4 [] [ text description ]
+    , Html.ul [] <| List.map (tagView address) tags
+    ]
 
 tagView : Signal.Address Action -> FilteredTag -> Html.Html
 tagView address tag =
@@ -31,9 +39,12 @@ tagView address tag =
       ]
       [ Html.button [] [ text tagString ]]
 
-conferencesView : Signal.Address Action -> List Conference -> List FilteredTag -> List Html.Html
-conferencesView address conferences tags =
-  List.map (conferenceView address) (Conferences.shouldShow tags conferences)
+conferencesView : Signal.Address Action -> List Conference -> List (String, List FilteredTag) -> List Html.Html
+conferencesView address conferences tagsWithDescriptions =
+  let
+    tagsToShow = List.map (\(_, tags) -> tags) tagsWithDescriptions |> List.concat
+  in
+    List.map (conferenceView address) (Conferences.shouldShow tagsToShow conferences)
 
 
 conferenceView : Signal.Address Action -> Conference -> Html.Html

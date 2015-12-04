@@ -5,7 +5,7 @@ import DateFormatter exposing (parseDate)
 
 type alias Model =
   { conferences : List Conference
-  , tags : List FilteredTag
+  , tags : List (String, List FilteredTag)
   }
 
 type alias Conference =
@@ -36,19 +36,23 @@ update action model =
   case action of
     Exclude tag ->
       let
-        newTags = List.map (excludeTag tag) model.tags
+        newTags = applyToAllTagsInList (excludeTag tag) model.tags
       in
         { model | tags = newTags }
     Include tag ->
       let
-        newTags = List.map (includeTag tag) model.tags
+        newTags = applyToAllTagsInList (includeTag tag) model.tags
       in
         { model | tags = newTags }
     Reset ->
       let
-        newTags = List.map excludeAllTags model.tags
+        newTags = applyToAllTagsInList excludeAllTags model.tags
       in
         { model | tags = newTags }
+
+applyToAllTagsInList : (FilteredTag -> FilteredTag) -> List (String, List FilteredTag) -> List (String, List FilteredTag)
+applyToAllTagsInList transform tagsWithDescription =
+  List.map (\(description, tags) -> (description, List.map transform tags)) tagsWithDescription
 
 excludeTag : Tag -> FilteredTag -> FilteredTag
 excludeTag tag filteredTag =
@@ -120,8 +124,10 @@ list =
         }
       ]
   , tags =
-    [ Excluded Agile
-    , Excluded DotNet
-    , Excluded Ruby
-    ]
+    [("Languages/Technologies",
+      [ Excluded Agile
+      , Excluded DotNet
+      , Excluded Ruby
+      ]
+    )]
   }

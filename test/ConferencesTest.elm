@@ -13,21 +13,21 @@ tests =
       test "update exclude excludes a tag" <|
         let
           tags = [Included DotNet, Included Ruby]
-          model = { conferences = [], tags = tags }
+          model = { conferences = [], tags = [("", tags)] }
         in
-          assertEqual { conferences = [], tags = [Included DotNet, Excluded Ruby] } <| update (Exclude Ruby) model
+          assertEqual { conferences = [], tags = [("", [Included DotNet, Excluded Ruby])] } <| update (Exclude Ruby) model
     , test "update include includes a tag" <|
         let
           tags = [Excluded DotNet, Included Ruby]
-          model = { conferences = [], tags = tags }
+          model = { conferences = [], tags = [("", tags)] }
         in
-          assertEqual { conferences = [], tags = [Included DotNet, Included Ruby] } <| update (Include DotNet) model
+          assertEqual { conferences = [], tags = [("", [Included DotNet, Included Ruby])] } <| update (Include DotNet) model
     , test "update reset excludes all tags" <|
         let
           tags = [Included Agile, Excluded DotNet, Included Ruby]
-          model = { conferences = [], tags = tags }
+          model = { conferences = [], tags = [("", tags)] }
         in
-          assertEqual { model | tags = [Excluded Agile, Excluded DotNet, Excluded Ruby] } <| update Reset model
+          assertEqual { model | tags = [("", [Excluded Agile, Excluded DotNet, Excluded Ruby])] } <| update Reset model
     , test "should show conference if it has all included tags" <|
         let
           tags = [Included Agile, Excluded DotNet, Included Ruby]
