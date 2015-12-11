@@ -23,7 +23,7 @@ tagsView address (description, tags) =
   Html.div
     []
     [ Html.h4 [] [ text description ]
-    , Html.ul [] <| List.map (tagView address) tags
+    , Html.ul [Html.Attributes.class "tags-list"] <| List.map (tagView address) tags
     ]
 
 tagView : Signal.Address Action -> FilteredTag -> Html.Html
