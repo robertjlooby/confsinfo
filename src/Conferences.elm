@@ -18,16 +18,19 @@ type alias Conference =
   }
 
 type Tag =
-  Agile
-  | AWS
+    AWS
+  | Agile
+  | Android
   | AngularJS
   | Australia
   | Belgium
   | BigData
+  | Bulgaria
   | CPlusPlus
   | CSS
   | Canada
   | Chef
+  | China
   | Clojure
   | Cloud
   | Cocoa
@@ -180,7 +183,14 @@ list : Model
 list =
   { conferences =
       [
-        { name = "NDC London Workshops"
+        { name = "@Swift"
+        , link = "http://atswift.io/index-en.html"
+        , startDate = parseDate "2016-1-10"
+        , endDate = parseDate "2016-1-10"
+        , location = "Beijing, China"
+        , tags = [English, Developers, China, Swift, IOS]
+        }
+      , { name = "NDC London Workshops"
         , link = "http://ndc-london.com/"
         , startDate = parseDate "2016-1-11"
         , endDate = parseDate "2016-1-12"
@@ -327,6 +337,13 @@ list =
         , location = "Montreal, QC, Canada"
         , tags = [English, French, Developers, Canada, General]
         }
+      , { name = "try! Swift"
+        , link = "http://www.tryswiftconf.com/en"
+        , startDate = parseDate "2016-3-2"
+        , endDate = parseDate "2016-3-4"
+        , location = "Tokyo, Japan"
+        , tags = [English, Developers, Japan, Swift, IOS]
+        }
       , { name = "Big Data Paris"
         , link = "http://www.bigdataparis.com/"
         , startDate = parseDate "2016-3-7"
@@ -383,6 +400,13 @@ list =
         , location = "Cape Town, South Africa"
         , tags = [English, Developers, SouthAfrica, Scalability]
         }
+      , { name = "RWDevCon 2016"
+        , link = "http://rwdevcon.com/"
+        , startDate = parseDate "2016-3-11"
+        , endDate = parseDate "2016-3-12"
+        , location = "Alexandria, VA"
+        , tags = [English, Developers, USA, IOS, Swift]
+        }
       , { name = "Bath Ruby"
         , link = "http://bathruby.us1.list-manage1.com/subscribe?u=f18bb7508370614edaffb50dd&id=73743da027"
         , startDate = parseDate "2016-3-11"
@@ -410,6 +434,13 @@ list =
         , endDate = parseDate "2016-3-16"
         , location = "Oxford, UK"
         , tags = [English, Designers, UK, UX]
+        }
+      , { name = "mdevcon"
+        , link = "http://mdevcon.com/"
+        , startDate = parseDate "2016-3-17"
+        , endDate = parseDate "2016-3-18"
+        , location = "Amsterdam, Netherlands"
+        , tags = [English, Developers, Netherlands, Mobile, IOS, Android]
         }
       , { name = "Scale Summit"
         , link = "http://www.scalesummit.org/"
@@ -460,6 +491,13 @@ list =
         , location = "Taguig, Philippines"
         , tags = [English, Developers, Philippines, Ruby]
         }
+      , { name = "MobCon"
+        , link = "http://mobcon.com/mobcon-europe/"
+        , startDate = parseDate "2016-4-10"
+        , endDate = parseDate "2016-4-10"
+        , location = "Sofia, Bulgaria"
+        , tags = [English, Developers, Bulgaria, Mobile, IOS, Android]
+        }
       , { name = "Converge SE"
         , link = "http://convergese.com/"
         , startDate = parseDate "2016-4-13"
@@ -508,6 +546,13 @@ list =
         , endDate = parseDate "2016-4-24"
         , location = "Copenhagen, Denmark"
         , tags = [English, Developers, Denmark, CycleJS, JavaScript]
+        }
+      , { name = "MCE"
+        , link = "http://mceconf.com/"
+        , startDate = parseDate "2016-4-21"
+        , endDate = parseDate "2016-4-22"
+        , location = "Warsaw, Poland"
+        , tags = [English, Designers, Developers, Poland, Mobile]
         }
       , { name = "Render Conf"
         , link = "http://2016.render-conf.com/"
@@ -579,6 +624,13 @@ list =
         , location = "Kansas City, MO"
         , tags = [English, Developers, USA, Ruby, Rails]
         }
+      , { name = "CocoaConf Seattle"
+        , link = "http://cocoaconf.com/seattle-2016/home"
+        , startDate = parseDate "2016-5-6"
+        , endDate = parseDate "2016-5-7"
+        , location = "Seattle, WA"
+        , tags = [English, Developers, USA, IOS, Cocoa]
+        }
       , { name = "C++Now"
         , link = "http://cppnow.org/"
         , startDate = parseDate "2016-5-9"
@@ -621,6 +673,20 @@ list =
         , location = "Budapest, Hungary"
         , tags = [English, Designers, Hungary, CSS]
         }
+      , { name = "ApacheCon Core North America"
+        , link = "http://www.apachecon.com/"
+        , startDate = parseDate "2016-5-12"
+        , endDate = parseDate "2016-5-13"
+        , location = "Vancouver, Canada"
+        , tags = [English, Developers, Canada, OpenSource]
+        }
+      , { name = "JSConf Budapest"
+        , link = "http://jsconfbp.com/"
+        , startDate = parseDate "2016-5-12"
+        , endDate = parseDate "2016-5-13"
+        , location = "Budapest, Hungary"
+        , tags = [English, Developers, Hungary, JavaScript]
+        }
       , { name = "An Event Apart Boston"
         , link = "http://aneventapart.com/event/boston-2016"
         , startDate = parseDate "2016-5-16"
@@ -655,6 +721,13 @@ list =
         , endDate = parseDate "2016-5-21"
         , location = "Detroit, MI"
         , tags = [English, Designers, Developers, USA, General]
+        }
+      , { name = "UIKonf"
+        , link = "http://www.uikonf.com/"
+        , startDate = parseDate "2016-5-22"
+        , endDate = parseDate "2016-5-25"
+        , location = "Berlin, Germany"
+        , tags = [English, Developers, Germany, IOS]
         }
       , { name = "GOTO Chicago Workshops"
         , link = "http://gotocon.com/chicago-2016"
@@ -880,6 +953,13 @@ list =
         , location = "Moscow, Russia"
         , tags = [English, Russian, Developers, Russia, FunctionalProgramming, Erlang, Scala, Clojure, Haskell]
         }
+      , { name = "360|iDev"
+        , link = "http://360idev.com/"
+        , startDate = parseDate "2016-8-21"
+        , endDate = parseDate "2016-8-24"
+        , location = "Denver, CO"
+        , tags = [English, Developers, USA, IOS]
+        }
       , { name = "React Rally"
         , link = "http://www.reactrally.com/"
         , startDate = parseDate "2016-8-25"
@@ -900,6 +980,13 @@ list =
         , endDate = parseDate "2016-9-2"
         , location = "Zürich, Switzerland"
         , tags = [English, Designers, Switzerland, UX]
+        }
+      , { name = "CocoaConf DC"
+        , link = "http://cocoaconf.com/dc-2016/home"
+        , startDate = parseDate "2016-9-9"
+        , endDate = parseDate "2016-9-10"
+        , location = "Washington, DC"
+        , tags = [English, Developers, USA, Cocoa, IOS]
         }
       , { name = "SwanseaCon"
         , link = "http://swanseacon.co.uk/"
@@ -1015,7 +1102,8 @@ list =
       ])
     , ("Programming Languages/Technologies",
       [
-        Excluded AngularJS
+        Excluded Android
+      , Excluded AngularJS
       , Excluded AWS
       , Excluded CPlusPlus
       , Excluded CSS
@@ -1070,7 +1158,9 @@ list =
       [
         Excluded Australia
       , Excluded Belgium
+      , Excluded Bulgaria
       , Excluded Canada
+      , Excluded China
       , Excluded Denmark
       , Excluded France
       , Excluded Germany
