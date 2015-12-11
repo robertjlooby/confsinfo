@@ -1,11 +1,11 @@
 {
-  "name": "confs4devs",
+  "name": "confsinfo",
   "version": "0.0.1",
   "description": "A site listing conferences for developers and designers.",
   "author": "Robert Looby <robertjlooby@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/robertjlooby/confs4devs"
+    "url": "https://github.com/robertjlooby/confsinfo"
   },
   "dependencies": {
   },

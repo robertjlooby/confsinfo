@@ -8,7 +8,7 @@ import StartApp.Simple exposing (start)
 view : Signal.Address Action -> Model -> Html.Html
 view address model =
   Html.div []
-  [ Html.header [] [text "Confs.io"]
+  [ Html.header [] [text "confs.info"]
   , allTagsView address model.tags
   , Html.button [ Html.Events.onClick address Reset ] [ text "Reset" ]
   , Html.table [] <| conferencesView address model.conferences model.tags
@@ -71,4 +71,4 @@ main =
     }
 
 port title : String
-port title = "Confs.io"
+port title = "confs.info"

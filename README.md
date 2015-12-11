@@ -1,4 +1,4 @@
-# confs4devs
+# confs.info
 
 ## Running
 
