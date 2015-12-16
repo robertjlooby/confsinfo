@@ -58,6 +58,7 @@ type Tag =
   | Haskell
   | Hungary
   | IOS
+  | India
   | InternetOfThings
   | Ireland
   | Italy
@@ -77,9 +78,11 @@ type Tag =
   | OpenSource
   | Philippines
   | Poland
+  | PureScript
   | Python
   | Rails
   | React
+  | Romania
   | Ruby
   | Russia
   | Russian
@@ -93,6 +96,7 @@ type Tag =
   | Sweden
   | Swift
   | Switzerland
+  | UAE
   | UK
   | USA
   | UX
@@ -316,6 +320,13 @@ list =
         , location = "Berlin, Germany"
         , tags = [English, German, Developers, Germany, FunctionalProgramming, Clojure, Haskell, Scala, Erlang]
         }
+      , { name = "GopherCon India"
+        , link = "http://www.gophercon.in/"
+        , startDate = parseDate "2016-2-19"
+        , endDate = parseDate "2016-2-10"
+        , location = "Bengaluru, India"
+        , tags = [English, Developers, India, Go]
+        }
       , { name = ":clojureD"
         , link = "http://www.clojured.de/"
         , startDate = parseDate "2016-2-20"
@@ -329,6 +340,13 @@ list =
         , endDate = parseDate "2016-2-23"
         , location = "San Francisco, CA"
         , tags = [English, Developers, USA, React, JavaScript]
+        }
+      , { name = "GopherCon Dubai"
+        , link = "http://www.gophercon.ae/"
+        , startDate = parseDate "2016-2-23"
+        , endDate = parseDate "2016-2-23"
+        , location = "Dubai, UAE"
+        , tags = [English, Developers, UAE, Go]
         }
       , { name = "ConFoo"
         , link = "http://confoo.ca/en"
@@ -358,12 +376,26 @@ list =
         , location = "San Francisco, CA"
         , tags = [English, Developers, USA, Erlang]
         }
+      , { name = "Fluent Conf Trainings"
+        , link = "http://conferences.oreilly.com/fluent/javascript-html-us"
+        , startDate = parseDate "2016-3-7"
+        , endDate = parseDate "2016-3-8"
+        , location = "San Francisco, CA"
+        , tags = [English, Designers, Developers, USA, CSS, JavaScript, UX, React, AngularJS, Docker]
+        }
       , { name = "QCon London"
         , link = "http://qconlondon.com/"
         , startDate = parseDate "2016-3-7"
         , endDate = parseDate "2016-3-9"
         , location = "London, UK"
         , tags = [English, Developers, UK, General]
+        }
+      , { name = "Fluent Conf"
+        , link = "http://conferences.oreilly.com/fluent/javascript-html-us"
+        , startDate = parseDate "2016-3-8"
+        , endDate = parseDate "2016-3-10"
+        , location = "San Francisco, CA"
+        , tags = [English, Designers, Developers, USA, CSS, JavaScript, UX, React, AngularJS, Docker]
         }
       , { name = "jDays"
         , link = "http://www.jdays.se/"
@@ -414,6 +446,13 @@ list =
         , location = "Bath, UK"
         , tags = [English, Developers, UK, Ruby]
         }
+      , { name = "wroc_love.rb"
+        , link = "http://www.wrocloverb.com/"
+        , startDate = parseDate "2016-3-11"
+        , endDate = parseDate "2016-3-13"
+        , location = "Wroclaw, Poland"
+        , tags = [English, Developers, Poland, Ruby]
+        }
       , { name = "An Event Apart Nashville"
         , link = "http://aneventapart.com/event/nashville-2016"
         , startDate = parseDate "2016-3-14"
@@ -435,6 +474,13 @@ list =
         , location = "Oxford, UK"
         , tags = [English, Designers, UK, UX]
         }
+      , { name = "droidcon San Francisco"
+        , link = "http://sf.droidcon.com/"
+        , startDate = parseDate "2016-3-17"
+        , endDate = parseDate "2016-3-18"
+        , location = "San Francisco, CA"
+        , tags = [English, Developers, USA, Android, Mobile]
+        }
       , { name = "mdevcon"
         , link = "http://mdevcon.com/"
         , startDate = parseDate "2016-3-17"
@@ -448,6 +494,20 @@ list =
         , endDate = parseDate "2016-3-18"
         , location = "London, UK"
         , tags = [English, Developers, UK, Scalability]
+        }
+      , { name = "RubyConf India"
+        , link = "http://rubyconfindia.org/"
+        , startDate = parseDate "2016-3-19"
+        , endDate = parseDate "2016-3-20"
+        , location = "Kochi, India"
+        , tags = [English, Developers, India, Ruby]
+        }
+      , { name = "DevExperience"
+        , link = "http://devexperience.ro/"
+        , startDate = parseDate "2016-3-25"
+        , endDate = parseDate "2016-3-25"
+        , location = "Lasi, Romania"
+        , tags = [English, Developers, Romania, General]
         }
       , { name = "CocoaConf Chicago"
         , link = "http://cocoaconf.com/chicago-2016/home"
@@ -483,6 +543,13 @@ list =
         , endDate = parseDate "2016-4-6"
         , location = "San Francisco, CA"
         , tags = [English, Designers, USA, UX]
+        }
+      , { name = "Ancient City Ruby"
+        , link = "http://www.ancientcityruby.com/"
+        , startDate = parseDate "2016-4-6"
+        , endDate = parseDate "2016-4-8"
+        , location = "St. Augustine, FL"
+        , tags = [English, Developers, USA, Ruby]
         }
       , { name = "RubyConf Philippines"
         , link = "http://rubyconf.ph/"
@@ -757,12 +824,26 @@ list =
         , location = "Broomfield, CO"
         , tags = [English, Developers, USA, General, DevOps, BigData]
         }
+      , { name = "PureScript Conf"
+        , link = "https://twitter.com/lambda_conf/status/667099897984712704"
+        , startDate = parseDate "2016-5-25"
+        , endDate = parseDate "2016-5-25"
+        , location = "Boulder, CO"
+        , tags = [English, Developers, USA, FunctionalProgramming, PureScript]
+        }
       , { name = "GOTO Chicago Workshops"
         , link = "http://gotocon.com/chicago-2016"
         , startDate = parseDate "2016-5-26"
         , endDate = parseDate "2016-5-26"
         , location = "Chicago, IL"
         , tags = [English, Developers, USA, General]
+        }
+      , { name = "LambdaConf"
+        , link = "https://twitter.com/lambda_conf"
+        , startDate = parseDate "2016-5-26"
+        , endDate = parseDate "2016-5-26"
+        , location = "Boulder, CO"
+        , tags = [English, Developers, USA, FunctionalProgramming, Haskell, Scala, PureScript]
         }
       , { name = "PyCon Tutorials"
         , link = "https://us.pycon.org/2016/"
@@ -855,6 +936,13 @@ list =
         , location = "Amsterdam, Netherlands"
         , tags = [English, Developers, Netherlands, General]
         }
+      , { name = "Front End Design Conference"
+        , link = "http://frontenddesignconference.com/"
+        , startDate = parseDate "2016-6-15"
+        , endDate = parseDate "2016-6-17"
+        , location = "St. Petersburg, FL"
+        , tags = [English, Designers, USA, UX]
+        }
       , { name = "QCon New York Tutorials"
         , link = "https://qconnewyork.com/"
         , startDate = parseDate "2016-6-16"
@@ -910,6 +998,13 @@ list =
         , endDate = parseDate "2016-7-13"
         , location = "Austin, TX"
         , tags = [English, Developers, USA, Chef, DevOps]
+        }
+      , { name = "GopherCon"
+        , link = "https://www.gophercon.com/"
+        , startDate = parseDate "2016-7-11"
+        , endDate = parseDate "2016-7-13"
+        , location = "Denver, CO"
+        , tags = [English, Developers, USA, Go]
         }
       , { name = "EuroPython"
         , link = "http://ep2016.europython.eu/"
@@ -980,6 +1075,13 @@ list =
         , endDate = parseDate "2016-9-2"
         , location = "Zürich, Switzerland"
         , tags = [English, Designers, Switzerland, UX]
+        }
+      , { name = "Full Stack Fest"
+        , link = "http://2016.fullstackfest.com/"
+        , startDate = parseDate "2016-9-5"
+        , endDate = parseDate "2016-9-9"
+        , location = "Barcelona, Spain"
+        , tags = [English, Developers, Spain, General]
         }
       , { name = "CocoaConf DC"
         , link = "http://cocoaconf.com/dc-2016/home"
@@ -1079,6 +1181,13 @@ list =
         , location = "Berlin, Germany"
         , tags = [English, Designers, Developers, Germany, UX, General]
         }
+      , { name = "RubyConf"
+        , link = "http://rubyconf.org/"
+        , startDate = parseDate "2016-11-10"
+        , endDate = parseDate "2016-11-12"
+        , location = "Cincinnati, OH"
+        , tags = [English, Developers, USA, Ruby]
+        }
       , { name = "AWS re:Invent"
         , link = "https://reinvent.awsevents.com/"
         , startDate = parseDate "2016-11-28"
@@ -1127,6 +1236,7 @@ list =
       , Excluded MongoDB
       , Excluded NodeJS
       , Excluded OCaml
+      , Excluded PureScript
       , Excluded Python
       , Excluded Rails
       , Excluded React
@@ -1165,6 +1275,7 @@ list =
       , Excluded France
       , Excluded Germany
       , Excluded Hungary
+      , Excluded India
       , Excluded Ireland
       , Excluded Italy
       , Excluded Japan
@@ -1173,11 +1284,13 @@ list =
       , Excluded Norway
       , Excluded Philippines
       , Excluded Poland
+      , Excluded Romania
       , Excluded Russia
       , Excluded SouthAfrica
       , Excluded Spain
       , Excluded Sweden
       , Excluded Switzerland
+      , Excluded UAE
       , Excluded UK
       , Excluded USA
       ]
