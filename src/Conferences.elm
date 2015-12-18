@@ -54,6 +54,9 @@ type Tag =
   | German
   | Germany
   | Go
+  | Gradle
+  | Grails
+  | Groovy
   | Hadoop
   | Haskell
   | Hungary
@@ -220,6 +223,13 @@ list =
         , endDate = parseDate "2016-1-14"
         , location = "Milan, Italy"
         , tags = [English, Developers, Italy, MongoDB, BigData, InternetOfThings]
+        }
+      , { name = "GR8Conf IN"
+        , link = "http://gr8conf.in/"
+        , startDate = parseDate "2016-1-16"
+        , endDate = parseDate "2016-1-16"
+        , location = "New Delhi, India"
+        , tags = [English, Developers, India, Java, Groovy, Grails, Gradle]
         }
       , { name = "/dev/winter"
         , link = "http://devcycles.net/2016/winter/"
@@ -564,6 +574,13 @@ list =
         , location = "Taguig, Philippines"
         , tags = [English, Developers, Philippines, Ruby]
         }
+      , { name = "Greach"
+        , link = "http://greachconf.com/"
+        , startDate = parseDate "2016-4-8"
+        , endDate = parseDate "2016-4-9"
+        , location = "Madrid, Spain"
+        , tags = [English, Developers, Spain, Java, Groovy, Grails, Gradle]
+        }
       , { name = "MobCon"
         , link = "http://mobcon.com/mobcon-europe/"
         , startDate = parseDate "2016-4-10"
@@ -879,6 +896,13 @@ list =
         , location = "Oslo, Norway"
         , tags = [English, Designers, Norway, UX, CSS]
         }
+      , { name = "GR8Conf EU"
+        , link = "http://gr8conf.eu/"
+        , startDate = parseDate "2016-6-2"
+        , endDate = parseDate "2016-6-4"
+        , location = "Copenhagen, Denmark"
+        , tags = [English, Developers, Denmark, Java, Groovy, Grails, Gradle]
+        }
       , { name = "PyCon Sprints"
         , link = "https://us.pycon.org/2016/"
         , startDate = parseDate "2016-6-2"
@@ -1131,6 +1155,13 @@ list =
         , location = "Bellevue, WA"
         , tags = [English, Developers, USA, CPlusPlus]
         }
+      , { name = "Functional Conf"
+        , link = "http://functionalconf.com/"
+        , startDate = parseDate "2016-9-22"
+        , endDate = parseDate "2016-9-25"
+        , location = "Bangalore, India"
+        , tags = [English, Developers, India, FunctionalProgramming]
+        }
       , { name = "GOTO Copenhagen"
         , link = "http://gotocon.com/cph-2015/"
         , startDate = parseDate "2016-10-3"
@@ -1233,6 +1264,9 @@ list =
       , (Excluded Erlang, "Erlang")
       , (Excluded FSharp, "F#")
       , (Excluded Go, "Go")
+      , (Excluded Gradle, "Gradle")
+      , (Excluded Grails, "Grails")
+      , (Excluded Groovy, "Groovy")
       , (Excluded Hadoop, "Hadoop")
       , (Excluded Haskell, "Haskell")
       , (Excluded IOS, "iOS")
