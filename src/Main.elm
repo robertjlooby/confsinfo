@@ -14,11 +14,11 @@ view address model =
   , Html.table [] <| conferencesView address model.conferences model.tags
   ]
 
-allTagsView : Signal.Address Action -> List (String, List FilteredTag) -> Html.Html
+allTagsView : Signal.Address Action -> List (String, List (FilteredTag, String)) -> Html.Html
 allTagsView address tagsWithDescriptions =
   Html.div [] <| List.map (tagsView address) tagsWithDescriptions
 
-tagsView : Signal.Address Action -> (String, List FilteredTag) -> Html.Html
+tagsView : Signal.Address Action -> (String, List (FilteredTag, String)) -> Html.Html
 tagsView address (description, tags) =
   Html.div
     []
@@ -26,12 +26,12 @@ tagsView address (description, tags) =
     , Html.ul [Html.Attributes.class "tags-list"] <| List.map (tagView address) tags
     ]
 
-tagView : Signal.Address Action -> FilteredTag -> Html.Html
-tagView address tag =
+tagView : Signal.Address Action -> (FilteredTag, String) -> Html.Html
+tagView address tagWithDisplay =
   let
-    (tagString, tagClass, clickAction) = case tag of
-                  Included t -> ("- " ++ toString t, "included", Exclude t)
-                  Excluded t -> ("+ " ++ toString t, "excluded", Include t)
+    (tagString, tagClass, clickAction) = case tagWithDisplay of
+                  (Included t, d) -> ("- " ++ d, "included", Exclude t)
+                  (Excluded t, d) -> ("+ " ++ d, "excluded", Include t)
   in
     Html.li
       [ Html.Attributes.class tagClass
@@ -39,10 +39,10 @@ tagView address tag =
       ]
       [ Html.button [] [ text tagString ]]
 
-conferencesView : Signal.Address Action -> List Conference -> List (String, List FilteredTag) -> List Html.Html
+conferencesView : Signal.Address Action -> List Conference -> List (String, List (FilteredTag, String)) -> List Html.Html
 conferencesView address conferences tagsWithDescriptions =
   let
-    tagsToShow = List.map (\(_, tags) -> tags) tagsWithDescriptions |> List.concat
+    tagsToShow = List.map (\(_, tagsWithDisplay) -> List.map fst tagsWithDisplay) tagsWithDescriptions |> List.concat
   in
     List.map (conferenceView address) (Conferences.shouldShow tagsToShow conferences)
 

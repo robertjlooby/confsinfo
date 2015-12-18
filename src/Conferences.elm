@@ -5,7 +5,7 @@ import DateFormatter exposing (parseDate)
 
 type alias Model =
   { conferences : List Conference
-  , tags : List (String, List FilteredTag)
+  , tags : List (String, List (FilteredTag, String))
   }
 
 type alias Conference =
@@ -129,35 +129,41 @@ update action model =
       in
         { model | tags = newTags }
 
-applyToAllTagsInList : (FilteredTag -> FilteredTag) -> List (String, List FilteredTag) -> List (String, List FilteredTag)
+applyToAllTagsInList : ((FilteredTag, String) -> (FilteredTag, String)) -> List (String, List (FilteredTag, String)) -> List (String, List (FilteredTag, String))
 applyToAllTagsInList transform tagsWithDescription =
   List.map (\(description, tags) -> (description, List.map transform tags)) tagsWithDescription
 
-excludeTag : Tag -> FilteredTag -> FilteredTag
-excludeTag tag filteredTag =
-  case filteredTag of
-    Included t ->
-      if t == tag then
-        Excluded tag
-      else
-        filteredTag
-    _ -> filteredTag
+excludeTag : Tag -> (FilteredTag, String) -> (FilteredTag, String)
+excludeTag tag filteredTagWithDisplay =
+  let (filteredTag, display) = filteredTagWithDisplay
+  in
+    case filteredTag of
+      Included t ->
+        if t == tag then
+          (Excluded tag, display)
+        else
+          filteredTagWithDisplay
+      _ -> filteredTagWithDisplay
 
-includeTag : Tag -> FilteredTag -> FilteredTag
-includeTag tag filteredTag =
-  case filteredTag of
-    Excluded t ->
-      if t == tag then
-        Included tag
-      else
-        filteredTag
-    _ -> filteredTag
+includeTag : Tag -> (FilteredTag, String) -> (FilteredTag, String)
+includeTag tag filteredTagWithDisplay =
+  let (filteredTag, display) = filteredTagWithDisplay
+  in
+    case filteredTag of
+      Excluded t ->
+        if t == tag then
+          (Included tag, display)
+        else
+          filteredTagWithDisplay
+      _ -> filteredTagWithDisplay
 
-excludeAllTags : FilteredTag -> FilteredTag
-excludeAllTags tag =
-  case tag of
-    Excluded t -> Excluded t
-    Included t -> Excluded t
+excludeAllTags : (FilteredTag, String) -> (FilteredTag, String)
+excludeAllTags filteredTagWithDisplay =
+  let (filteredTag, display) = filteredTagWithDisplay
+  in
+    case filteredTag of
+      Excluded t -> (Excluded t, display)
+      Included t -> (Excluded t, display)
 
 shouldShow : List FilteredTag -> List Conference -> List Conference
 shouldShow tags conferences =
@@ -1199,100 +1205,100 @@ list =
   , tags =
     [ ("Conference Language",
       [
-        Excluded English
-      , Excluded French
-      , Excluded German
-      , Excluded Russian
+        (Excluded English, "English")
+      , (Excluded French, "French")
+      , (Excluded German, "German")
+      , (Excluded Russian, "Russian")
       ])
     , ("Audience",
       [
-        Excluded Designers,
-        Excluded Developers
+        (Excluded Designers, "Designers")
+      , (Excluded Developers, "Developers")
       ])
     , ("Programming Languages/Technologies",
       [
-        Excluded Android
-      , Excluded AngularJS
-      , Excluded AWS
-      , Excluded CPlusPlus
-      , Excluded CSS
-      , Excluded Chef
-      , Excluded Clojure
-      , Excluded Cocoa
-      , Excluded CycleJS
-      , Excluded Docker
-      , Excluded DotNet
-      , Excluded Elasticserch
-      , Excluded Ember
-      , Excluded Erlang
-      , Excluded FSharp
-      , Excluded Go
-      , Excluded Hadoop
-      , Excluded Haskell
-      , Excluded IOS
-      , Excluded Java
-      , Excluded JavaScript
-      , Excluded Logstash
-      , Excluded MongoDB
-      , Excluded NodeJS
-      , Excluded OCaml
-      , Excluded PureScript
-      , Excluded Python
-      , Excluded Rails
-      , Excluded React
-      , Excluded Ruby
-      , Excluded SML
-      , Excluded Scala
-      , Excluded Swift
+        (Excluded Android, "Android")
+      , (Excluded AngularJS, "AngularJS")
+      , (Excluded AWS, "AWS")
+      , (Excluded CPlusPlus, "C++")
+      , (Excluded CSS, "CSS")
+      , (Excluded Chef, "Chef")
+      , (Excluded Clojure, "Clojure")
+      , (Excluded Cocoa, "Cocoa")
+      , (Excluded CycleJS, "CycleJS")
+      , (Excluded Docker, "Docker")
+      , (Excluded DotNet, ".NET")
+      , (Excluded Elasticserch, "Elasticserch")
+      , (Excluded Ember, "Ember")
+      , (Excluded Erlang, "Erlang")
+      , (Excluded FSharp, "F#")
+      , (Excluded Go, "Go")
+      , (Excluded Hadoop, "Hadoop")
+      , (Excluded Haskell, "Haskell")
+      , (Excluded IOS, "iOS")
+      , (Excluded Java, "Java")
+      , (Excluded JavaScript, "JavaScript")
+      , (Excluded Logstash, "Logstash")
+      , (Excluded MongoDB, "MongoDB")
+      , (Excluded NodeJS, "NodeJS")
+      , (Excluded OCaml, "OCaml")
+      , (Excluded PureScript, "PureScript")
+      , (Excluded Python, "Python")
+      , (Excluded Rails, "Rails")
+      , (Excluded React, "React")
+      , (Excluded Ruby, "Ruby")
+      , (Excluded SML, "SML")
+      , (Excluded Scala, "Scala")
+      , (Excluded Swift, "Swift")
       ])
     , ("Topics",
       [
-        Excluded Agile
-      , Excluded BigData
-      , Excluded Cloud
-      , Excluded Communications
-      , Excluded DevOps
-      , Excluded FunctionalProgramming
-      , Excluded General
-      , Excluded InternetOfThings
-      , Excluded Microservices
-      , Excluded Mobile
-      , Excluded NoSQL
-      , Excluded OpenSource
-      , Excluded Scalability
-      , Excluded Security
-      , Excluded SoftwareCraftsmanship
-      , Excluded UX
+        (Excluded Agile, "Agile")
+      , (Excluded BigData, "Big Data")
+      , (Excluded Cloud, "Cloud")
+      , (Excluded Communications, "Communications")
+      , (Excluded DevOps, "DevOps")
+      , (Excluded FunctionalProgramming, "Functional Programming")
+      , (Excluded General, "General")
+      , (Excluded InternetOfThings, "Internet of Things")
+      , (Excluded Microservices, "Microservices")
+      , (Excluded Mobile, "Mobile")
+      , (Excluded NoSQL, "NoSQL")
+      , (Excluded OpenSource, "Open Source")
+      , (Excluded Scalability, "Scalability")
+      , (Excluded Security, "Security")
+      , (Excluded SoftwareCraftsmanship, "Software Craftsmanship")
+      , (Excluded UX, "UX")
       ])
     , ("Locations",
       [
-        Excluded Australia
-      , Excluded Belgium
-      , Excluded Bulgaria
-      , Excluded Canada
-      , Excluded China
-      , Excluded Denmark
-      , Excluded France
-      , Excluded Germany
-      , Excluded Hungary
-      , Excluded India
-      , Excluded Ireland
-      , Excluded Italy
-      , Excluded Japan
-      , Excluded Mexico
-      , Excluded Netherlands
-      , Excluded Norway
-      , Excluded Philippines
-      , Excluded Poland
-      , Excluded Romania
-      , Excluded Russia
-      , Excluded SouthAfrica
-      , Excluded Spain
-      , Excluded Sweden
-      , Excluded Switzerland
-      , Excluded UAE
-      , Excluded UK
-      , Excluded USA
+        (Excluded Australia, "Australia")
+      , (Excluded Belgium, "Belgium")
+      , (Excluded Bulgaria, "Bulgaria")
+      , (Excluded Canada, "Canada")
+      , (Excluded China, "China")
+      , (Excluded Denmark, "Denmark")
+      , (Excluded France, "France")
+      , (Excluded Germany, "Germany")
+      , (Excluded Hungary, "Hungary")
+      , (Excluded India, "India")
+      , (Excluded Ireland, "Ireland")
+      , (Excluded Italy, "Italy")
+      , (Excluded Japan, "Japan")
+      , (Excluded Mexico, "Mexico")
+      , (Excluded Netherlands, "Netherlands")
+      , (Excluded Norway, "Norway")
+      , (Excluded Philippines, "Philippines")
+      , (Excluded Poland, "Poland")
+      , (Excluded Romania, "Romania")
+      , (Excluded Russia, "Russia")
+      , (Excluded SouthAfrica, "SouthAfrica")
+      , (Excluded Spain, "Spain")
+      , (Excluded Sweden, "Sweden")
+      , (Excluded Switzerland, "Switzerland")
+      , (Excluded UAE, "UAE")
+      , (Excluded UK, "UK")
+      , (Excluded USA, "USA")
       ]
     )]
   }
