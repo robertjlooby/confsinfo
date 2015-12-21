@@ -68,6 +68,7 @@ type Tag =
   | Japan
   | Java
   | JavaScript
+  | Lithuania
   | Logstash
   | Mexico
   | Microservices
@@ -693,12 +694,26 @@ list =
         , location = "Champaign, IL"
         , tags = [English, Developers, USA, General]
         }
+      , { name = "YOW! Lambda Jam"
+        , link = "http://lambdajam.yowconference.com.au/"
+        , startDate = parseDate "2016-4-28"
+        , endDate = parseDate "2016-4-29"
+        , location = "Brisbane, Australia"
+        , tags = [English, Developers, Australia, FunctionalProgramming]
+        }
       , { name = "Future Insights Live"
         , link = "https://futureinsightslive.com/chicago-2016/"
         , startDate = parseDate "2016-5-2"
         , endDate = parseDate "2016-5-5"
         , location = "Chicago, IL"
         , tags = [English, Designers, Developers, USA, UX, JavaScript, InternetOfThings]
+        }
+      , { name = "YOW! West"
+        , link = "http://west.yowconference.com.au/"
+        , startDate = parseDate "2016-5-3"
+        , endDate = parseDate "2016-5-4"
+        , location = "Perth, Australia"
+        , tags = [English, Developers, Australia, General]
         }
       , { name = "ng-conf"
         , link = "http://www.ng-conf.org/"
@@ -1225,6 +1240,13 @@ list =
         , location = "Cincinnati, OH"
         , tags = [English, Developers, USA, Ruby]
         }
+      , { name = "BuildStuff"
+        , link = "http://buildstuff.lt/"
+        , startDate = parseDate "2016-11-16"
+        , endDate = parseDate "2016-11-20"
+        , location = "Vilnius, Lithuania"
+        , tags = [English, Developers, Lithuania, General]
+        }
       , { name = "AWS re:Invent"
         , link = "https://reinvent.awsevents.com/"
         , startDate = parseDate "2016-11-28"
@@ -1319,6 +1341,7 @@ list =
       , (Excluded Ireland, "Ireland")
       , (Excluded Italy, "Italy")
       , (Excluded Japan, "Japan")
+      , (Excluded Lithuania, "Lithuania")
       , (Excluded Mexico, "Mexico")
       , (Excluded Netherlands, "Netherlands")
       , (Excluded Norway, "Norway")
