@@ -1,9 +1,9 @@
 import Conferences exposing (..)
 import DateFormatter
+import Debug
 import Html exposing (text)
 import Html.Attributes exposing (href)
 import Html.Events
-import StartApp.Simple exposing (start)
 
 view : Signal.Address Action -> Model -> Html.Html
 view address model =
@@ -62,13 +62,27 @@ conferenceView address conference =
         [text conference.location]
     ]
 
+actions : Signal.Mailbox (Maybe Conferences.Action)
+actions = Signal.mailbox Nothing
+
+address : Signal.Address Conferences.Action
+address = Signal.forwardTo actions.address Just
+
+update : (Maybe Conferences.Action) -> Conferences.Model -> Conferences.Model
+update maybeAction model =
+  case maybeAction of
+    Just action ->
+        Conferences.update action model
+
+    Nothing ->
+        Debug.crash "This should never happen."
+
+model =
+  Signal.foldp update Conferences.list actions.signal
+
 main : Signal Html.Html
 main =
-  start
-    { model = Conferences.list
-    , update = Conferences.update
-    , view = view
-    }
+  Signal.map (view address) model
 
 port title : String
 port title = "confs.info"
