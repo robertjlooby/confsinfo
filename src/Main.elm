@@ -84,5 +84,9 @@ main : Signal Html.Html
 main =
   Signal.map (view address) model
 
+port setStorage : Signal (List String)
+port setStorage =
+  Signal.map Conferences.includedTags model
+
 port title : String
 port title = "confs.info"
