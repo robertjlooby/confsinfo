@@ -39,4 +39,17 @@ tests =
           conferences = [ conference1, conference2, conference3, conference4 ]
         in
            assertEqual [ conference1, conference4 ] <| shouldShow tags conferences
+    , test "initialize includes all tags from their string versions" <|
+        let
+          tags = [("", [(Excluded Agile, "1"), (Excluded DotNet, "2")]), ("", [(Excluded Ruby, "3")])]
+          newTags = [("", [(Included Agile, "1"), (Excluded DotNet, "2")]), ("", [(Included Ruby, "3")])]
+          model = { conferences = [], tags = tags }
+        in
+          assertEqual { model | tags = newTags } <| initialize [toString Agile, toString Ruby, "Other"] model
+    , test "included tags gets just string versions of all included tags" <|
+        let
+          tags = [("", [(Included Agile, "1"), (Excluded DotNet, "2")]), ("", [(Included Ruby, "3")])]
+          model = { conferences = [], tags = tags }
+        in
+          assertEqual [toString Agile, toString Ruby] <| includedTags model
     ]

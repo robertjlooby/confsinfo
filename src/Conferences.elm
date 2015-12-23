@@ -169,10 +169,38 @@ excludeAllTags filteredTagWithDisplay =
       Excluded t -> (Excluded t, display)
       Included t -> (Excluded t, display)
 
+initialize : List String -> Model -> Model
+initialize includedTags model =
+  let
+    filteredTagInitializer = initializeFilteredTag includedTags
+    sectionInitializer = (\(section, filteredTagsWithDescription) -> (section, List.map filteredTagInitializer filteredTagsWithDescription))
+    newTags = List.map sectionInitializer model.tags
+  in
+    { model | tags = newTags }
+
+initializeFilteredTag : List String -> (FilteredTag, String) -> (FilteredTag, String)
+initializeFilteredTag includedTags (filteredTag, description) =
+  let
+    tag = getTag filteredTag
+  in
+    if List.member (toString tag) includedTags then
+      (Included tag, description)
+    else
+      (filteredTag, description)
+
+includedTags : Model -> List String
+includedTags model =
+  List.map (\(_, filteredTagsWithDescriptions) -> filteredTagsWithDescriptions) model.tags
+    |> List.concat
+    |> List.map (\(filteredTag, _) -> filteredTag)
+    |> List.filter tagIsIncluded
+    |> List.map getTag
+    |> List.map toString
+
 shouldShow : List FilteredTag -> List Conference -> List Conference
 shouldShow tags conferences =
   let
-    filteredTagsToShow = List.filter shouldShowTag tags
+    filteredTagsToShow = List.filter tagIsIncluded tags
     tagsToShow = List.map getTag filteredTagsToShow
   in
     List.filter (shouldShowConference tagsToShow) conferences
@@ -181,8 +209,8 @@ shouldShowConference : List Tag -> Conference -> Bool
 shouldShowConference tags conference =
   List.all (\tag -> List.member tag conference.tags) tags
 
-shouldShowTag : FilteredTag -> Bool
-shouldShowTag tag =
+tagIsIncluded : FilteredTag -> Bool
+tagIsIncluded tag =
   case tag of
     Included _ -> True
     Excluded _ -> False
