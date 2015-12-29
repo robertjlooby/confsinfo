@@ -77,12 +77,27 @@ update maybeAction model =
     Nothing ->
         Debug.crash "This should never happen."
 
+initialModel : Conferences.Model
+initialModel =
+  let
+    model = Conferences.list
+  in
+    case getStorage of
+      Just tags ->
+        Conferences.initialize tags model
+      Nothing ->
+        model
+
+
+model : Signal Conferences.Model
 model =
-  Signal.foldp update Conferences.list actions.signal
+  Signal.foldp update initialModel actions.signal
 
 main : Signal Html.Html
 main =
   Signal.map (view address) model
+
+port getStorage : Maybe (List String)
 
 port setStorage : Signal (List String)
 port setStorage =
