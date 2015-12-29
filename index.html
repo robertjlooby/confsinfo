@@ -10,7 +10,12 @@
   <body>
   </body>
   <script type="text/javascript">
-    Elm.fullscreen(Elm.Main);
+    var storedState = localStorage.getItem('confs-info-state');
+    var startingState = storedState ? JSON.parse(storedState) : null;
+    var confsinfo = Elm.fullscreen(Elm.Main, { getStorage: startingState });
+    confsinfo.ports.setStorage.subscribe(function(state) {
+      localStorage.setItem('confs-info-state', JSON.stringify(state));
+    });
   </script>
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
