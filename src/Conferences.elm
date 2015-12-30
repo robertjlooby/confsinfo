@@ -82,6 +82,7 @@ type Tag =
   | OpenSource
   | Philippines
   | Poland
+  | ProgressiveEnhancement
   | PureScript
   | Python
   | Rails
@@ -406,6 +407,13 @@ list =
         , endDate = parseDate "2016-3-4"
         , location = "Tokyo, Japan"
         , tags = [English, Developers, Japan, Swift, IOS]
+        }
+      , { name = "EnhanceConf"
+        , link = "http://enhanceconf.com/"
+        , startDate = parseDate "2016-3-3"
+        , endDate = parseDate "2016-3-4"
+        , location = "London, UK"
+        , tags = [English, Developers, UK, CSS, JavaScript, ProgressiveEnhancement]
         }
       , { name = "Big Data Paris"
         , link = "http://www.bigdataparis.com/"
@@ -1356,6 +1364,7 @@ list =
       , (Excluded Mobile, "Mobile")
       , (Excluded NoSQL, "NoSQL")
       , (Excluded OpenSource, "Open Source")
+      , (Excluded ProgressiveEnhancement, "Progressive Enhancement")
       , (Excluded Scalability, "Scalability")
       , (Excluded Security, "Security")
       , (Excluded SoftwareCraftsmanship, "Software Craftsmanship")
