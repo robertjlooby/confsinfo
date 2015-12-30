@@ -905,9 +905,9 @@ list =
         , tags = [English, Developers, USA, General]
         }
       , { name = "LambdaConf"
-        , link = "https://twitter.com/lambda_conf"
+        , link = "http://lambdaconf.us/"
         , startDate = parseDate "2016-5-26"
-        , endDate = parseDate "2016-5-26"
+        , endDate = parseDate "2016-5-29"
         , location = "Boulder, CO"
         , tags = [English, Developers, USA, FunctionalProgramming, Haskell, Scala, PureScript]
         }
