@@ -1037,6 +1037,13 @@ list =
         , location = "Santa Clara, CA"
         , tags = [English, Developers, USA, Scalability, DevOps]
         }
+      , { name = "Dinosaur.js"
+        , link = "http://dinosaurjs.org/"
+        , startDate = parseDate "2016-6-24"
+        , endDate = parseDate "2016-6-24"
+        , location = "Denver, CO"
+        , tags = [English, Developers, USA, JavaScript]
+        }
       , { name = "GIANT Conf"
         , link = "http://www.giantux.com/conf2016/"
         , startDate = parseDate "2016-6-27"
