@@ -646,6 +646,13 @@ list =
         , location = "Krakow, Poland"
         , tags = [English, Developers, Poland, Agile, SoftwareCraftsmanship]
         }
+      , { name = "Clojure/west"
+        , link = "http://clojurewest.org/"
+        , startDate = parseDate "2016-4-15"
+        , endDate = parseDate "2016-4-16"
+        , location = "Seattle, WA"
+        , tags = [English, Developers, USA, Clojure, FunctionalProgramming]
+        }
       , { name = "CocoaConf Austin"
         , link = "http://cocoaconf.com/austin-2016/home"
         , startDate = parseDate "2016-4-15"
