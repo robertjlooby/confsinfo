@@ -8,8 +8,7 @@ import Html.Events
 view : Signal.Address Action -> Model -> Html.Html
 view address model =
   Html.div []
-  [ Html.header [] [text "confs.info"]
-  , allTagsView address model.tags
+  [ allTagsView address model.tags
   , Html.button [ Html.Events.onClick address Reset ] [ text "Reset" ]
   , Html.table [] <| conferencesView address model.conferences model.tags
   ]
