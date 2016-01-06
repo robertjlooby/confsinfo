@@ -1400,7 +1400,7 @@ list =
       , (Excluded Poland, "Poland")
       , (Excluded Romania, "Romania")
       , (Excluded Russia, "Russia")
-      , (Excluded SouthAfrica, "SouthAfrica")
+      , (Excluded SouthAfrica, "South Africa")
       , (Excluded Spain, "Spain")
       , (Excluded Sweden, "Sweden")
       , (Excluded Switzerland, "Switzerland")
