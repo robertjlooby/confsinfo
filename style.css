@@ -1,4 +1,9 @@
-.tags-list li {
-  display: inline-block;
-  padding-left: 3px;
+button {
+  text-transform: none;
+  margin-right: 3px;
+  padding: 0 10px;
+}
+
+.included {
+  background-color: #7AF4AD;
 }

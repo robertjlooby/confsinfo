@@ -2,28 +2,56 @@ import Conferences exposing (..)
 import DateFormatter
 import Debug
 import Html exposing (text)
-import Html.Attributes exposing (href)
+import Html.Attributes exposing (class, href)
 import Html.Events
 
 view : Signal.Address Action -> Model -> Html.Html
 view address model =
-  Html.div []
-  [ allTagsView address model.tags
-  , Html.button [ Html.Events.onClick address Reset ] [ text "Reset" ]
-  , Html.table [] <| conferencesView address model.conferences model.tags
-  ]
-
-allTagsView : Signal.Address Action -> List (String, List (FilteredTag, String)) -> Html.Html
-allTagsView address tagsWithDescriptions =
-  Html.div [] <| List.map (tagsView address) tagsWithDescriptions
-
-tagsView : Signal.Address Action -> (String, List (FilteredTag, String)) -> Html.Html
-tagsView address (description, tags) =
   Html.div
-    []
-    [ Html.h4 [] [ text description ]
-    , Html.ul [Html.Attributes.class "tags-list"] <| List.map (tagView address) tags
+    [ class "container" ]
+    <| List.concat
+         [ allTagsView address model.tags
+         , [ resetButtonView address ]
+         , conferencesView address model.conferences model.tags
+         , [ sourceCodeLink ]
+         ]
+
+resetButtonView : Signal.Address Action -> Html.Html
+resetButtonView address =
+  Html.div
+    [ class "row" ]
+    [ Html.button
+        [ class "two columns offset-by-five"
+        , Html.Events.onClick address Reset
+        ]
+        [ text "Reset" ]
     ]
+
+sourceCodeLink : Html.Html
+sourceCodeLink =
+  Html.div
+    [ class "row" ]
+    [ Html.a
+        [ href "https://github.com/robertjlooby/confsinfo"
+        , class "two columns offset-by-five"
+        ]
+        [ text "source" ]
+    ]
+
+allTagsView : Signal.Address Action -> List (String, List (FilteredTag, String)) -> List Html.Html
+allTagsView address tagsWithDescriptions =
+  List.map (tagsView address) tagsWithDescriptions
+    |> List.concat
+
+tagsView : Signal.Address Action -> (String, List (FilteredTag, String)) -> List Html.Html
+tagsView address (description, tags) =
+  [ Html.div
+     [ class "row" ]
+     [ Html.h5 [] [ text description ] ]
+  , Html.div
+      [ class "row" ]
+      <| List.map (tagView address) tags
+  ]
 
 tagView : Signal.Address Action -> (FilteredTag, String) -> Html.Html
 tagView address tagWithDisplay =
@@ -32,11 +60,11 @@ tagView address tagWithDisplay =
                   (Included t, d) -> ("- " ++ d, "included", Exclude t)
                   (Excluded t, d) -> ("+ " ++ d, "excluded", Include t)
   in
-    Html.li
-      [ Html.Attributes.class tagClass
+    Html.button
+      [ class tagClass
       , Html.Events.onClick address clickAction
       ]
-      [ Html.button [] [ text tagString ]]
+      [ text tagString ]
 
 conferencesView : Signal.Address Action -> List Conference -> List (String, List (FilteredTag, String)) -> List Html.Html
 conferencesView address conferences tagsWithDescriptions =
@@ -48,17 +76,17 @@ conferencesView address conferences tagsWithDescriptions =
 
 conferenceView : Signal.Address Action -> Conference -> Html.Html
 conferenceView address conference =
-  Html.tr
-    []
-    [ Html.td
-        []
-        [Html.a [href conference.link] [text conference.name]]
-    , Html.td
-        []
-        [text <| DateFormatter.formatRange conference.startDate conference.endDate]
-    , Html.td
-        []
-        [text conference.location]
+  Html.div
+    [ class "row" ]
+    [ Html.div
+        [ class "five columns" ]
+        [ Html.a [ href conference.link ] [ text conference.name ] ]
+    , Html.div
+        [ class "three columns" ]
+        [ text <| DateFormatter.formatRange conference.startDate conference.endDate ]
+    , Html.div
+        [ class "four columns" ]
+        [ text conference.location ]
     ]
 
 actions : Signal.Mailbox (Maybe Conferences.Action)
