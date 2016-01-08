@@ -110,6 +110,7 @@ type Tag =
   | SoftwareCraftsmanship
   | SouthAfrica
   | Spain
+  | SVG
   | Sweden
   | Swift
   | Switzerland
@@ -274,6 +275,20 @@ list =
         , location = "New Delhi, India"
         , tags = [English, Developers, India, Java, Groovy, Grails, Gradle]
         }
+      , { name = "O'Reilly Design Conference"
+        , link = "http://conferences.oreilly.com/design/ux-interaction-iot-us"
+        , startDate = parseDate "2016-1-20"
+        , endDate = parseDate "2016-1-22"
+        , location = "San Francisco, CA"
+        , tags = [English, Developers, USA, UX]
+        }
+      , { name = "SVG Summit"
+        , link = "http://environmentsforhumans.com/2016/svg-summit/"
+        , startDate = parseDate "2016-1-21"
+        , endDate = parseDate "2016-1-21"
+        , location = "Remote"
+        , tags = [English, Designers, Developers, Remote, SVG]
+        }
       , { name = "PhoneGap Day"
         , link = "http://pgday.phonegap.com/us2016/"
         , startDate = parseDate "2016-1-28"
@@ -351,6 +366,20 @@ list =
         , location = "San Francisco, CA"
         , tags = [English, Developers, USA, JavaScript, AngularJS, React, NodeJS]
         }
+      , { name = "Jfokus"
+        , link = "http://www.jfokus.se/jfokus/"
+        , startDate = parseDate "2016-2-8"
+        , endDate = parseDate "2016-2-10"
+        , location = "Stockholm, Sweden"
+        , tags = [English, Developers, Sweden, Java, General]
+        }
+      , { name = "Jfokus IoT"
+        , link = "http://www.jfokus.se/iot/"
+        , startDate = parseDate "2016-2-8"
+        , endDate = parseDate "2016-2-10"
+        , location = "Stockholm, Sweden"
+        , tags = [English, Developers, Sweden, InternetOfThings]
+        }
       , { name = "Webstock"
         , link = "http://www.webstock.org.nz/16/"
         , startDate = parseDate "2016-2-9"
@@ -420,6 +449,13 @@ list =
         , endDate = parseDate "2016-2-10"
         , location = "Bengaluru, India"
         , tags = [English, Developers, India, Go]
+        }
+      , { name = "Bulgario Web Summit"
+        , link = "http://bulgariawebsummit.com/"
+        , startDate = parseDate "2016-2-20"
+        , endDate = parseDate "2016-2-20"
+        , location = "Sofia, Bulgaria"
+        , tags = [English, Designers, Developers, Bulgaria, UX, JavaScript, General]
         }
       , { name = ":clojureD"
         , link = "http://www.clojured.de/"
@@ -1553,6 +1589,7 @@ list =
       , (Excluded Ruby, "Ruby")
       , (Excluded SML, "SML")
       , (Excluded Scala, "Scala")
+      , (Excluded SVG, "SVG")
       , (Excluded Swift, "Swift")
       ])
     , ("Topics",
