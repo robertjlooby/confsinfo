@@ -429,6 +429,13 @@ list =
         , location = "San Francisco, CA"
         , tags = [English, Developers, USA, MongoDB, BigData, Elasticserch, Logstash]
         }
+      , { name = "DrupalCon Asia"
+        , link = "https://events.drupal.org/asia2016"
+        , startDate = parseDate "2016-2-18"
+        , endDate = parseDate "2016-2-21"
+        , location = "Mumbai, India"
+        , tags = [English, Developers, India, Drupal]
+        }
       , { name = "Lambda Days"
         , link = "http://www.lambdadays.org/"
         , startDate = parseDate "2016-2-18"
@@ -968,6 +975,13 @@ list =
         , location = "Austin, TX"
         , tags = [English, Developers, USA, Chef, DevOps]
         }
+      , { name = "DrupalCon New Orleans"
+        , link = "https://events.drupal.org/neworleans2016/"
+        , startDate = parseDate "2016-5-9"
+        , endDate = parseDate "2016-5-13"
+        , location = "New Orleans, LA"
+        , tags = [English, Developers, USA, Drupal]
+        }
       , { name = "jsDay"
         , link = "http://2016.jsday.it/"
         , startDate = parseDate "2016-5-11"
@@ -1457,6 +1471,13 @@ list =
         , endDate = parseDate "2016-9-25"
         , location = "Bangalore, India"
         , tags = [English, Developers, India, FunctionalProgramming]
+        }
+      , { name = "DrupalCon Dublin"
+        , link = "https://events.drupal.org/dublin2016/"
+        , startDate = parseDate "2016-9-26"
+        , endDate = parseDate "2016-9-30"
+        , location = "Dublin, Ireland"
+        , tags = [English, Developers, Ireland, Drupal]
         }
       , { name = "GOTO Copenhagen"
         , link = "http://gotocon.com/cph-2015/"
