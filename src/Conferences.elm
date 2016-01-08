@@ -23,6 +23,7 @@ type Tag =
   | Android
   | AngularJS
   | Australia
+  | Belarus
   | Belgium
   | BigData
   | Bulgaria
@@ -36,12 +37,15 @@ type Tag =
   | Cocoa
   | Communications
   | CycleJS
+  | DataVisualization
   | Denmark
   | Designers
   | DevOps
   | Developers
+  | Diversity
   | Docker
   | DotNet
+  | Drupal
   | Elasticserch
   | Ember
   | English
@@ -64,10 +68,12 @@ type Tag =
   | India
   | InternetOfThings
   | Ireland
+  | Italian
   | Italy
   | Japan
   | Java
   | JavaScript
+  | Lebanon
   | Lithuania
   | Logstash
   | Mexico
@@ -75,26 +81,32 @@ type Tag =
   | Mobile
   | MongoDB
   | Netherlands
+  | NewZealand
   | NoSQL
   | NodeJS
   | Norway
   | OCaml
   | OpenSource
   | Philippines
+  | PhoneGap
   | Poland
+  | Portugal
   | ProgressiveEnhancement
   | PureScript
   | Python
   | Rails
   | React
+  | Remote
   | Romania
   | Ruby
   | Russia
   | Russian
+  | Scotland
   | SML
   | Scala
   | Scalability
   | Security
+  | SoftSkills
   | SoftwareCraftsmanship
   | SouthAfrica
   | Spain
@@ -102,6 +114,7 @@ type Tag =
   | Swift
   | Switzerland
   | UAE
+  | Uruguay
   | UK
   | USA
   | UX
@@ -261,6 +274,13 @@ list =
         , location = "New Delhi, India"
         , tags = [English, Developers, India, Java, Groovy, Grails, Gradle]
         }
+      , { name = "PhoneGap Day"
+        , link = "http://pgday.phonegap.com/us2016/"
+        , startDate = parseDate "2016-1-28"
+        , endDate = parseDate "2016-1-28"
+        , location = "Lehi, UT"
+        , tags = [English, Developers, USA, PhoneGap, Mobile]
+        }
       , { name = "/dev/winter"
         , link = "http://devcycles.net/2016/winter/"
         , startDate = parseDate "2016-1-23"
@@ -274,6 +294,13 @@ list =
         , endDate = parseDate "2016-1-29"
         , location = "Paris, France"
         , tags = [English, Developers, France, Swift]
+        }
+      , { name = "AlterConf D.C."
+        , link = "http://www.alterconf.com/sessions/washington-dc"
+        , startDate = parseDate "2016-1-30"
+        , endDate = parseDate "2016-1-30"
+        , location = "Washington, DC"
+        , tags = [English, Designers, Developers, USA, Diversity, SoftSkills]
         }
       , { name = "FOSDEM"
         , link = "https://fosdem.org/2016/"
@@ -310,12 +337,26 @@ list =
         , location = "Berlin, Germany"
         , tags = [English, Developers, Germany, Microservices]
         }
+      , { name = "JSConf Beirut"
+        , link = "http://www.jsconfbeirut.com/"
+        , startDate = parseDate "2016-2-6"
+        , endDate = parseDate "2016-2-7"
+        , location = "Beirut, Lebanon"
+        , tags = [English, Developers, Lebanon, JavaScript]
+        }
       , { name = "Forward JS Workshops"
         , link = "http://forwardjs.com/home"
         , startDate = parseDate "2016-2-8"
         , endDate = parseDate "2016-2-9"
         , location = "San Francisco, CA"
         , tags = [English, Developers, USA, JavaScript, AngularJS, React, NodeJS]
+        }
+      , { name = "Webstock"
+        , link = "http://www.webstock.org.nz/16/"
+        , startDate = parseDate "2016-2-9"
+        , endDate = parseDate "2016-2-12"
+        , location = "Wellington, New Zealand"
+        , tags = [English, Designers, Developers, NewZealand, General]
         }
       , { name = "Forward JS"
         , link = "http://forwardjs.com/home"
@@ -330,6 +371,13 @@ list =
         , endDate = parseDate "2016-2-13"
         , location = "Gold Coast, Australia"
         , tags = [English, Developers, Australia, Ruby]
+        }
+      , { name = "Clojure Remote"
+        , link = "http://clojureremote.com/"
+        , startDate = parseDate "2016-2-11"
+        , endDate = parseDate "2016-2-12"
+        , location = "Remote"
+        , tags = [English, Developers, Remote, Clojure, FunctionalProgramming]
         }
       , { name = "Forward JS Workshops"
         , link = "http://forwardjs.com/home"
@@ -379,6 +427,13 @@ list =
         , endDate = parseDate "2016-2-20"
         , location = "Berlin, Germany"
         , tags = [English, Developers, Germany, FunctionalProgramming, Clojure]
+        }
+      , { name = "The Rolling Scopes Conference"
+        , link = "http://2016.conf.rollingscopes.com/"
+        , startDate = parseDate "2016-2-20"
+        , endDate = parseDate "2016-2-21"
+        , location = "Minsk, Belarus"
+        , tags = [English, Russian, Developers, Belarus, CSS, NodeJS, JavaScript]
         }
       , { name = "React.js Conf"
         , link = "http://conf.reactjs.com/"
@@ -485,6 +540,13 @@ list =
         , location = "Cape Town, South Africa"
         , tags = [English, Developers, SouthAfrica, Scalability]
         }
+      , { name = "Frontier Conf"
+        , link = "https://www.frontierconf.com/"
+        , startDate = parseDate "2016-3-11"
+        , endDate = parseDate "2016-3-11"
+        , location = "London, UK"
+        , tags = [English, Designers, UK, CSS, UX]
+        }
       , { name = "RWDevCon 2016"
         , link = "http://rwdevcon.com/"
         , startDate = parseDate "2016-3-11"
@@ -555,6 +617,13 @@ list =
         , location = "Kochi, India"
         , tags = [English, Developers, India, Ruby]
         }
+      , { name = "CSS Day"
+        , link = "http://2016.cssday.it/"
+        , startDate = parseDate "2016-3-25"
+        , endDate = parseDate "2016-3-25"
+        , location = "Faenza, Italy"
+        , tags = [Italian, Designers, Italy, CSS]
+        }
       , { name = "DevExperience"
         , link = "http://devexperience.ro/"
         , startDate = parseDate "2016-3-25"
@@ -569,6 +638,13 @@ list =
         , location = "Chicago, IL"
         , tags = [English, Developers, USA, Cocoa, IOS]
         }
+      , { name = "Space City JS"
+        , link = "http://spacecity.codes/"
+        , startDate = parseDate "2016-3-26"
+        , endDate = parseDate "2016-3-26"
+        , location = "Houston, TX"
+        , tags = [English, Developers, USA, JavaScript]
+        }
       , { name = "EmberConf"
         , link = "http://emberconf.com/"
         , startDate = parseDate "2016-3-29"
@@ -576,12 +652,26 @@ list =
         , location = "Portland, OR"
         , tags = [English, Developers, USA, Ember]
         }
+      , { name = "Clarity Conf"
+        , link = "http://clarityconf.com/"
+        , startDate = parseDate "2016-3-31"
+        , endDate = parseDate "2016-4-1"
+        , location = "San Francisco, CA"
+        , tags = [English, Designers, USA, UX]
+        }
       , { name = "Ruby on Ales"
         , link = "https://ruby.onales.com/"
         , startDate = parseDate "2016-3-31"
         , endDate = parseDate "2016-4-1"
         , location = "Bend, OR"
         , tags = [English, Developers, USA, Ruby]
+        }
+      , { name = "Fronteers Spring Thing"
+        , link = "https://fronteers.nl/spring"
+        , startDate = parseDate "2016-4-1"
+        , endDate = parseDate "2016-4-1"
+        , location = "Amsterdam, Netherlands"
+        , tags = [English, Developers, Netherlands, JavaScript]
         }
       , { name = "An Event Apart Seattle"
         , link = "http://aneventapart.com/event/seattle-2016"
@@ -603,6 +693,13 @@ list =
         , endDate = parseDate "2016-4-8"
         , location = "St. Augustine, FL"
         , tags = [English, Developers, USA, Ruby]
+        }
+      , { name = "AlterConf Minneapolis"
+        , link = "http://www.alterconf.com/sessions/minneapolis-mn"
+        , startDate = parseDate "2016-4-9"
+        , endDate = parseDate "2016-4-9"
+        , location = "Minneapolis, MN"
+        , tags = [English, Designers, Developers, USA, Diversity, SoftSkills]
         }
       , { name = "RubyConf Philippines"
         , link = "http://rubyconf.ph/"
@@ -660,6 +757,13 @@ list =
         , location = "Austin, TX"
         , tags = [English, Developers, USA, Cocoa, IOS]
         }
+      , { name = "JSConf Uruguay"
+        , link = "https://jsconf.uy/"
+        , startDate = parseDate "2016-4-15"
+        , endDate = parseDate "2016-4-16"
+        , location = "Montevideo, Uruguay"
+        , tags = [English, Developers, Uruguay, JavaScript]
+        }
       , { name = "Scalar"
         , link = "http://scalar-conf.com/"
         , startDate = parseDate "2016-4-16"
@@ -673,6 +777,13 @@ list =
         , endDate = parseDate "2016-4-23"
         , location = "Bristol, UK"
         , tags = [English, Developers, UK, General, CPlusPlus]
+        }
+      , { name = "Industry Conf"
+        , link = "http://2016.industryconf.com/"
+        , startDate = parseDate "2016-4-20"
+        , endDate = parseDate "2016-4-20"
+        , location = "Newcastle, UK"
+        , tags = [English, Developers, UK, General]
         }
       , { name = "CycleConf"
         , link = "https://twitter.com/cycleconf"
@@ -722,6 +833,13 @@ list =
         , endDate = parseDate "2016-4-25"
         , location = "Paris, France"
         , tags = [English, Developers, France, Scalability]
+        }
+      , { name = "OpenVis Conf"
+        , link = "https://openvisconf.com/"
+        , startDate = parseDate "2016-4-25"
+        , endDate = parseDate "2016-4-26"
+        , location = "Boston, MA"
+        , tags = [English, Developers, USA, DataVisualization]
         }
       , { name = "Craft Conf"
         , link = "http://craft-conf.com/2016"
@@ -778,6 +896,13 @@ list =
         , endDate = parseDate "2016-5-7"
         , location = "Seattle, WA"
         , tags = [English, Developers, USA, IOS, Cocoa]
+        }
+      , { name = "SyntaxCon"
+        , link = "http://2016.syntaxcon.com/"
+        , startDate = parseDate "2016-5-6"
+        , endDate = parseDate "2016-5-7"
+        , location = "Charleston, SC"
+        , tags = [English, Developers, USA, General]
         }
       , { name = "C++Now"
         , link = "http://cppnow.org/"
@@ -863,12 +988,19 @@ list =
         , location = "Austin, TX"
         , tags = [English, Developers, USA, OpenSource]
         }
+      , { name = "PhoneGap Day EU"
+        , link = "http://pgday.phonegap.com/eu2016/"
+        , startDate = parseDate "2016-5-19"
+        , endDate = parseDate "2016-5-20"
+        , location = "Amsterdam, Netherlands"
+        , tags = [English, Developers, Netherlands, PhoneGap, Mobile]
+        }
       , { name = "self.conference"
         , link = "http://selfconference.org/"
         , startDate = parseDate "2016-5-20"
         , endDate = parseDate "2016-5-21"
         , location = "Detroit, MI"
-        , tags = [English, Designers, Developers, USA, General]
+        , tags = [English, Designers, Developers, USA, General, SoftSkills]
         }
       , { name = "UIKonf"
         , link = "http://www.uikonf.com/"
@@ -898,6 +1030,13 @@ list =
         , location = "San Francisco, CA"
         , tags = [English, Developers, USA, Communications]
         }
+      , { name = "UXLx"
+        , link = "https://www.ux-lx.com/"
+        , startDate = parseDate "2016-5-24"
+        , endDate = parseDate "2016-5-27"
+        , location = "Lisbon, Portugal"
+        , tags = [English, Designers, Portugal, UX]
+        }
       , { name = "GlueCon"
         , link = "http://gluecon.com/"
         , startDate = parseDate "2016-5-25"
@@ -925,6 +1064,13 @@ list =
         , endDate = parseDate "2016-5-29"
         , location = "Boulder, CO"
         , tags = [English, Developers, USA, FunctionalProgramming, Haskell, Scala, PureScript]
+        }
+      , { name = "Frontend United"
+        , link = "http://frontendunited.org/"
+        , startDate = parseDate "2016-5-27"
+        , endDate = parseDate "2016-5-28"
+        , location = "Ghent, Belgium"
+        , tags = [English, Designers, Developers, Belgium, UX, Drupal]
         }
       , { name = "PyCon Tutorials"
         , link = "https://us.pycon.org/2016/"
@@ -982,6 +1128,20 @@ list =
         , location = "Paris, France"
         , tags = [English, Developers, France, React, JavaScript]
         }
+      , { name = "Scotland JS"
+        , link = "http://scotlandjs.com/"
+        , startDate = parseDate "2016-6-2"
+        , endDate = parseDate "2016-6-3"
+        , location = "Edinburgh, Scotland"
+        , tags = [English, Developers, Scotland, JavaScript]
+        }
+      , { name = "Web Rebels"
+        , link = "https://www.webrebels.org/"
+        , startDate = parseDate "2016-6-2"
+        , endDate = parseDate "2016-6-3"
+        , location = "Oslo, Norway"
+        , tags = [English, Developers, Norway, JavaScript]
+        }
       , { name = "Berlin Buzzwords"
         , link = "http://berlinbuzzwords.de/"
         , startDate = parseDate "2016-6-5"
@@ -1002,6 +1162,13 @@ list =
         , endDate = parseDate "2016-6-10"
         , location = "Oslo, Norway"
         , tags = [English, Developers, Norway, Agile, DotNet, General]
+        }
+      , { name = "UX Scotland"
+        , link = "http://uxscotland.net/2016/"
+        , startDate = parseDate "2016-6-8"
+        , endDate = parseDate "2016-6-10"
+        , location = "Edinburgh, Scotland"
+        , tags = [English, Designers, Scotland, UX]
         }
       , { name = "QCon New York"
         , link = "https://qconnewyork.com/"
@@ -1031,6 +1198,13 @@ list =
         , location = "St. Petersburg, FL"
         , tags = [English, Designers, USA, UX]
         }
+      , { name = "CSS Day"
+        , link = "http://cssday.nl/2016"
+        , startDate = parseDate "2016-6-16"
+        , endDate = parseDate "2016-6-17"
+        , location = "Amsterdam, Netherlands"
+        , tags = [English, Designers, Netherlands, CSS]
+        }
       , { name = "QCon New York Tutorials"
         , link = "https://qconnewyork.com/"
         , startDate = parseDate "2016-6-16"
@@ -1051,6 +1225,13 @@ list =
         , endDate = parseDate "2016-6-23"
         , location = "Santa Clara, CA"
         , tags = [English, Developers, USA, Scalability, DevOps]
+        }
+      , { name = "Web Design Day"
+        , link = "http://webdesignday.com/"
+        , startDate = parseDate "2016-6-23"
+        , endDate = parseDate "2016-6-24"
+        , location = "Pittsburgh, PA"
+        , tags = [English, Designers, USA, UX]
         }
       , { name = "Dinosaur.js"
         , link = "http://dinosaurjs.org/"
@@ -1157,6 +1338,13 @@ list =
         , location = "Salt Lake City, UT"
         , tags = [English, Developers, USA, React, JavaScript]
         }
+      , { name = "AlterConf South Africa"
+        , link = "http://www.alterconf.com/sessions/cape-town-south-africa"
+        , startDate = parseDate "2016-8-27"
+        , endDate = parseDate "2016-8-27"
+        , location = "Cape Town, South Africa"
+        , tags = [English, Designers, Developers, SouthAfrica, Diversity, SoftSkills]
+        }
       , { name = "An Event Apart Chicago"
         , link = "http://aneventapart.com/event/chicago-2016"
         , startDate = parseDate "2016-8-29"
@@ -1191,6 +1379,13 @@ list =
         , endDate = parseDate "2016-9-13"
         , location = "Swansea, UK"
         , tags = [English, Developers, UK, Agile, SoftwareCraftsmanship]
+        }
+      , { name = "From the Front"
+        , link = "http://2016.fromthefront.it/"
+        , startDate = parseDate "2016-9-15"
+        , endDate = parseDate "2016-9-16"
+        , location = "Bologna, Italy"
+        , tags = [English, Designers, Italy, UX]
         }
       , { name = "Strangeloop"
         , link = "http://thestrangeloop.com/"
@@ -1311,6 +1506,7 @@ list =
         (Excluded English, "English")
       , (Excluded French, "French")
       , (Excluded German, "German")
+      , (Excluded Italian, "Italian")
       , (Excluded Russian, "Russian")
       ])
     , ("Audience",
@@ -1330,6 +1526,7 @@ list =
       , (Excluded Cocoa, "Cocoa")
       , (Excluded CycleJS, "CycleJS")
       , (Excluded Docker, "Docker")
+      , (Excluded Drupal, "Drupal")
       , (Excluded DotNet, ".NET")
       , (Excluded Elasticserch, "Elasticserch")
       , (Excluded Ember, "Ember")
@@ -1348,6 +1545,7 @@ list =
       , (Excluded MongoDB, "MongoDB")
       , (Excluded NodeJS, "NodeJS")
       , (Excluded OCaml, "OCaml")
+      , (Excluded PhoneGap, "PhoneGap")
       , (Excluded PureScript, "PureScript")
       , (Excluded Python, "Python")
       , (Excluded Rails, "Rails")
@@ -1363,7 +1561,9 @@ list =
       , (Excluded BigData, "Big Data")
       , (Excluded Cloud, "Cloud")
       , (Excluded Communications, "Communications")
+      , (Excluded DataVisualization, "DataVisualization")
       , (Excluded DevOps, "DevOps")
+      , (Excluded Diversity, "Diversity")
       , (Excluded FunctionalProgramming, "Functional Programming")
       , (Excluded General, "General")
       , (Excluded InternetOfThings, "Internet of Things")
@@ -1374,12 +1574,14 @@ list =
       , (Excluded ProgressiveEnhancement, "Progressive Enhancement")
       , (Excluded Scalability, "Scalability")
       , (Excluded Security, "Security")
+      , (Excluded SoftSkills, "Soft Skills")
       , (Excluded SoftwareCraftsmanship, "Software Craftsmanship")
       , (Excluded UX, "UX")
       ])
     , ("Locations",
       [
         (Excluded Australia, "Australia")
+      , (Excluded Belarus, "Belarus")
       , (Excluded Belgium, "Belgium")
       , (Excluded Bulgaria, "Bulgaria")
       , (Excluded Canada, "Canada")
@@ -1392,19 +1594,25 @@ list =
       , (Excluded Ireland, "Ireland")
       , (Excluded Italy, "Italy")
       , (Excluded Japan, "Japan")
+      , (Excluded Lebanon, "Lebanon")
       , (Excluded Lithuania, "Lithuania")
       , (Excluded Mexico, "Mexico")
       , (Excluded Netherlands, "Netherlands")
+      , (Excluded NewZealand, "New Zealand")
       , (Excluded Norway, "Norway")
       , (Excluded Philippines, "Philippines")
       , (Excluded Poland, "Poland")
+      , (Excluded Portugal, "Portugal")
+      , (Excluded Remote, "Remote")
       , (Excluded Romania, "Romania")
       , (Excluded Russia, "Russia")
+      , (Excluded Scotland, "Scotland")
       , (Excluded SouthAfrica, "South Africa")
       , (Excluded Spain, "Spain")
       , (Excluded Sweden, "Sweden")
       , (Excluded Switzerland, "Switzerland")
       , (Excluded UAE, "UAE")
+      , (Excluded Uruguay, "Uruguay")
       , (Excluded UK, "UK")
       , (Excluded USA, "USA")
       ]
