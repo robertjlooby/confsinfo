@@ -556,7 +556,7 @@ list =
         , tags = [English, Developers, Sweden, Java]
         }
       , { name = "SoCraTes ES"
-        , link = "http://socrates-conference.es/doku.php"
+        , link = "http://www.socrates-conference.es/doku.php"
         , startDate = parseDate "2016-3-10"
         , endDate = parseDate "2016-3-13"
         , location = "Gran Canaria, Spain"
