@@ -1168,7 +1168,7 @@ list =
         , link = "http://socratesuk.org/"
         , startDate = parseDate "2016-6-2"
         , endDate = parseDate "2016-6-5"
-        , location = "Worcestershire, UK"
+        , location = "Dorking, UK"
         , tags = [English, Developers, UK, SoftwareCraftsmanship]
         }
       , { name = "ReactEurope"
