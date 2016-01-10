@@ -50,6 +50,7 @@ type Tag =
   | Ember
   | English
   | Erlang
+  | Finland
   | FSharp
   | France
   | French
@@ -73,6 +74,7 @@ type Tag =
   | Japan
   | Java
   | JavaScript
+  | Latvia
   | Lebanon
   | Lithuania
   | Logstash
@@ -85,6 +87,7 @@ type Tag =
   | NoSQL
   | NodeJS
   | Norway
+  | Norwegian
   | OCaml
   | OpenSource
   | Philippines
@@ -499,6 +502,20 @@ list =
         , location = "Montreal, QC, Canada"
         , tags = [English, French, Developers, Canada, General]
         }
+      , { name = "UX Riga"
+        , link = "http://www.uxriga.lv/"
+        , startDate = parseDate "2016-2-25"
+        , endDate = parseDate "2016-2-25"
+        , location = "Riga, Latvia"
+        , tags = [English, Designers, Latvia, UX]
+        }
+      , { name = "Interaction 16"
+        , link = "http://interaction16.ixda.org/"
+        , startDate = parseDate "2016-3-1"
+        , endDate = parseDate "2016-3-4"
+        , location = "Helsinki, Finland"
+        , tags = [English, Designers, Finland, UX]
+        }
       , { name = "try! Swift"
         , link = "http://www.tryswiftconf.com/en"
         , startDate = parseDate "2016-3-2"
@@ -764,6 +781,13 @@ list =
         , endDate = parseDate "2016-4-10"
         , location = "Sofia, Bulgaria"
         , tags = [English, Developers, Bulgaria, Mobile, IOS, Android]
+        }
+      , { name = "Yggdrasil"
+        , link = "http://yggdrasilkonferansen.no/"
+        , startDate = parseDate "2016-4-11"
+        , endDate = parseDate "2016-4-12"
+        , location = "Sandefjord, Norway"
+        , tags = [Norwegian, Designers, Norway, UX]
         }
       , { name = "Converge SE"
         , link = "http://convergese.com/"
@@ -1564,6 +1588,7 @@ list =
       , (Excluded French, "French")
       , (Excluded German, "German")
       , (Excluded Italian, "Italian")
+      , (Excluded Norwegian, "Norwegian")
       , (Excluded Russian, "Russian")
       ])
     , ("Audience",
@@ -1645,6 +1670,7 @@ list =
       , (Excluded Canada, "Canada")
       , (Excluded China, "China")
       , (Excluded Denmark, "Denmark")
+      , (Excluded Finland, "Finland")
       , (Excluded France, "France")
       , (Excluded Germany, "Germany")
       , (Excluded Hungary, "Hungary")
@@ -1652,6 +1678,7 @@ list =
       , (Excluded Ireland, "Ireland")
       , (Excluded Italy, "Italy")
       , (Excluded Japan, "Japan")
+      , (Excluded Latvia, "Latvia")
       , (Excluded Lebanon, "Lebanon")
       , (Excluded Lithuania, "Lithuania")
       , (Excluded Mexico, "Mexico")
