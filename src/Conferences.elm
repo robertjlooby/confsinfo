@@ -92,6 +92,7 @@ type Tag =
   | OpenSource
   | Philippines
   | PhoneGap
+  | PHP
   | Poland
   | Portugal
   | ProgressiveEnhancement
@@ -313,6 +314,13 @@ list =
         , location = "Paris, France"
         , tags = [English, Developers, France, Swift]
         }
+      , { name = "PHPBenelux"
+        , link = "http://conference.phpbenelux.eu/2016/"
+        , startDate = parseDate "2016-1-29"
+        , endDate = parseDate "2016-1-30"
+        , location = "Antwerp, Belgium"
+        , tags = [English, Developers, Belgium, PHP]
+        }
       , { name = "AlterConf D.C."
         , link = "http://www.alterconf.com/sessions/washington-dc"
         , startDate = parseDate "2016-1-30"
@@ -347,6 +355,13 @@ list =
         , endDate = parseDate "2016-2-5"
         , location = "Cape Town, South Africa"
         , tags = [English, Developers, SouthAfrica, Ruby]
+        }
+      , { name = "SunshinePHP"
+        , link = "http://2016.sunshinephp.com/"
+        , startDate = parseDate "2016-2-4"
+        , endDate = parseDate "2016-2-6"
+        , location = "Miami, FL"
+        , tags = [English, Developers, USA, PHP]
         }
       , { name = "The Microservices Conference"
         , link = "http://microxchg.io/2016/"
@@ -437,7 +452,7 @@ list =
         , startDate = parseDate "2016-2-18"
         , endDate = parseDate "2016-2-21"
         , location = "Mumbai, India"
-        , tags = [English, Developers, India, Drupal]
+        , tags = [English, Developers, India, Drupal, PHP]
         }
       , { name = "Lambda Days"
         , link = "http://www.lambdadays.org/"
@@ -1004,7 +1019,7 @@ list =
         , startDate = parseDate "2016-5-9"
         , endDate = parseDate "2016-5-13"
         , location = "New Orleans, LA"
-        , tags = [English, Developers, USA, Drupal]
+        , tags = [English, Developers, USA, Drupal, PHP]
         }
       , { name = "jsDay"
         , link = "http://2016.jsday.it/"
@@ -1083,6 +1098,13 @@ list =
         , location = "Berlin, Germany"
         , tags = [English, Developers, Germany, IOS]
         }
+      , { name = "php[tek]"
+        , link = "https://tek.phparch.com/"
+        , startDate = parseDate "2016-5-23"
+        , endDate = parseDate "2016-5-27"
+        , location = "St. Louis, MO"
+        , tags = [English, Developers, USA, PHP]
+        }
       , { name = "GOTO Chicago Workshops"
         , link = "http://gotocon.com/chicago-2016"
         , startDate = parseDate "2016-5-23"
@@ -1144,7 +1166,7 @@ list =
         , startDate = parseDate "2016-5-27"
         , endDate = parseDate "2016-5-28"
         , location = "Ghent, Belgium"
-        , tags = [English, Designers, Developers, Belgium, UX, Drupal]
+        , tags = [English, Designers, Developers, Belgium, UX, Drupal, PHP]
         }
       , { name = "PyCon Tutorials"
         , link = "https://us.pycon.org/2016/"
@@ -1363,6 +1385,13 @@ list =
         , location = "Bilbao, Spain"
         , tags = [English, Developers, Spain, Python]
         }
+      , { name = "php[cruise]"
+        , link = "https://cruise.phparch.com/"
+        , startDate = parseDate "2016-7-17"
+        , endDate = parseDate "2016-7-24"
+        , location = "Baltimore, MD"
+        , tags = [English, Developers, USA, PHP]
+        }
       , { name = "An Event Apart DC"
         , link = "http://aneventapart.com/event/washington-dc-2016"
         , startDate = parseDate "2016-7-25"
@@ -1501,7 +1530,7 @@ list =
         , startDate = parseDate "2016-9-26"
         , endDate = parseDate "2016-9-30"
         , location = "Dublin, Ireland"
-        , tags = [English, Developers, Ireland, Drupal]
+        , tags = [English, Developers, Ireland, Drupal, PHP]
         }
       , { name = "GOTO Copenhagen"
         , link = "http://gotocon.com/cph-2015/"
@@ -1628,6 +1657,7 @@ list =
       , (Excluded NodeJS, "NodeJS")
       , (Excluded OCaml, "OCaml")
       , (Excluded PhoneGap, "PhoneGap")
+      , (Excluded PHP, "PHP")
       , (Excluded PureScript, "PureScript")
       , (Excluded Python, "Python")
       , (Excluded Rails, "Rails")
