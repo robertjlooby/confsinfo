@@ -77,6 +77,7 @@ type Tag =
   | JavaScript
   | Latvia
   | Lebanon
+  | Lisp
   | Lithuania
   | Logstash
   | Mexico
@@ -1024,6 +1025,13 @@ list =
         , location = "Charleston, SC"
         , tags = [English, Developers, USA, General]
         }
+      , { name = "9th European Lisp Symposium"
+        , link = "http://www.european-lisp-symposium.org/"
+        , startDate = parseDate "2016-5-9"
+        , endDate = parseDate "2016-5-10"
+        , location = "Krakow, Poland"
+        , tags = [English, Developers, Poland, Lisp, Clojure]
+        }
       , { name = "C++Now"
         , link = "http://cppnow.org/"
         , startDate = parseDate "2016-5-9"
@@ -1712,6 +1720,7 @@ list =
       , (Excluded Java, "Java")
       , (Excluded JavaScript, "JavaScript")
       , (Excluded Logstash, "Logstash")
+      , (Excluded Lisp, "Lisp")
       , (Excluded MongoDB, "MongoDB")
       , (Excluded NodeJS, "NodeJS")
       , (Excluded OCaml, "OCaml")
