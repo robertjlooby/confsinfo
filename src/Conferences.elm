@@ -717,6 +717,13 @@ list =
         , location = "Kochi, India"
         , tags = [English, Developers, India, Ruby]
         }
+      , { name = "MountainWest RubyConf"
+        , link = "http://mtnwestrubyconf.org/2016/"
+        , startDate = parseDate "2016-3-21"
+        , endDate = parseDate "2016-3-22"
+        , location = "Salt Lake City, UT"
+        , tags = [English, Developers, USA, Ruby]
+        }
       , { name = "CSS Day"
         , link = "http://2016.cssday.it/"
         , startDate = parseDate "2016-3-25"
