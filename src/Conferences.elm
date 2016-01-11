@@ -37,6 +37,7 @@ type Tag =
   | Cocoa
   | Communications
   | CycleJS
+  | CzechRepublic
   | DataVisualization
   | Denmark
   | Designers
@@ -95,6 +96,7 @@ type Tag =
   | PHP
   | Poland
   | Portugal
+  | PostgreSQL
   | ProgressiveEnhancement
   | PureScript
   | Python
@@ -106,6 +108,7 @@ type Tag =
   | Russia
   | Russian
   | Scotland
+  | Singapore
   | SML
   | Scala
   | Scalability
@@ -334,6 +337,13 @@ list =
         , endDate = parseDate "2016-1-31"
         , location = "Brussels, Belgium"
         , tags = [English, Developers, Belgium, OpenSource, General]
+        }
+      , { name = "PgConf.Russia"
+        , link = "https://pgconf.ru/"
+        , startDate = parseDate "2016-2-3"
+        , endDate = parseDate "2016-2-5"
+        , location = "Moscow, Russia"
+        , tags = [English, Russian, Developers, Russia, PostgreSQL]
         }
       , { name = "UX/DEV Summit"
         , link = "http://uxdsummit.com/"
@@ -678,6 +688,20 @@ list =
         , location = "Amsterdam, Netherlands"
         , tags = [English, Developers, Netherlands, Mobile, IOS, Android]
         }
+      , { name = "Nordic PGDay"
+        , link = "http://2016.nordicpgday.org/"
+        , startDate = parseDate "2016-3-17"
+        , endDate = parseDate "2016-3-17"
+        , location = "Helsinki, Finland"
+        , tags = [English, Developers, Finland, PostgreSQL]
+        }
+      , { name = "pgDay Asia"
+        , link = "http://2016.pgday.asia/"
+        , startDate = parseDate "2016-3-17"
+        , endDate = parseDate "2016-3-19"
+        , location = "Singapore"
+        , tags = [English, Developers, Singapore, PostgreSQL]
+        }
       , { name = "Scale Summit"
         , link = "http://www.scalesummit.org/"
         , startDate = parseDate "2016-3-18"
@@ -853,6 +877,13 @@ list =
         , location = "Warsaw, Poland"
         , tags = [English, Developers, Poland, Scala]
         }
+      , { name = "PGConf US"
+        , link = "http://www.pgconf.us/2016/"
+        , startDate = parseDate "2016-4-18"
+        , endDate = parseDate "2016-4-20"
+        , location = "New York, NY"
+        , tags = [English, Developers, USA, PostgreSQL]
+        }
       , { name = "ACCU"
         , link = "http://accu.org/index.php/conferences/accu_conference_2016"
         , startDate = parseDate "2016-4-19"
@@ -950,6 +981,13 @@ list =
         , endDate = parseDate "2016-5-5"
         , location = "Chicago, IL"
         , tags = [English, Designers, Developers, USA, UX, JavaScript, InternetOfThings]
+        }
+      , { name = "Continuous Lifecycle London"
+        , link = "http://continuouslifecycle.london/"
+        , startDate = parseDate "2016-5-3"
+        , endDate = parseDate "2016-5-5"
+        , location = "London, UK"
+        , tags = [English, Developers, UK, DevOps]
         }
       , { name = "YOW! West"
         , link = "http://west.yowconference.com.au/"
@@ -1455,6 +1493,13 @@ list =
         , location = "Chicago, IL"
         , tags = [English, Designers, Developers, USA, UX]
         }
+      , { name = "Agile on the Beach"
+        , link = "http://agileonthebeach.com/2016-2/"
+        , startDate = parseDate "2016-9-1"
+        , endDate = parseDate "2016-9-2"
+        , location = "Falmouth, UK"
+        , tags = [English, Developers, UK, Agile]
+        }
       , { name = "Frontend Conference Zurich"
         , link = "https://frontendconf.ch/"
         , startDate = parseDate "2016-9-1"
@@ -1469,12 +1514,26 @@ list =
         , location = "Barcelona, Spain"
         , tags = [English, Developers, Spain, General]
         }
+      , { name = "iOSDevUK"
+        , link = "http://www.iosdevuk.com/"
+        , startDate = parseDate "2016-9-5"
+        , endDate = parseDate "2016-9-8"
+        , location = "Aberystwyth, UK"
+        , tags = [English, Developers, UK, IOS, Swift]
+        }
       , { name = "CocoaConf DC"
         , link = "http://cocoaconf.com/dc-2016/home"
         , startDate = parseDate "2016-9-9"
         , endDate = parseDate "2016-9-10"
         , location = "Washington, DC"
         , tags = [English, Developers, USA, Cocoa, IOS]
+        }
+      , { name = "Agile Prague"
+        , link = "http://agileprague.com/"
+        , startDate = parseDate "2016-9-12"
+        , endDate = parseDate "2016-9-13"
+        , location = "Prague, Czech Republic"
+        , tags = [English, Developers, CzechRepublic, Agile]
         }
       , { name = "SwanseaCon"
         , link = "http://swanseacon.co.uk/"
@@ -1658,6 +1717,7 @@ list =
       , (Excluded OCaml, "OCaml")
       , (Excluded PhoneGap, "PhoneGap")
       , (Excluded PHP, "PHP")
+      , (Excluded PostgreSQL, "PostgreSQL")
       , (Excluded PureScript, "PureScript")
       , (Excluded Python, "Python")
       , (Excluded Rails, "Rails")
@@ -1699,6 +1759,7 @@ list =
       , (Excluded Bulgaria, "Bulgaria")
       , (Excluded Canada, "Canada")
       , (Excluded China, "China")
+      , (Excluded CzechRepublic, "Czech Republic")
       , (Excluded Denmark, "Denmark")
       , (Excluded Finland, "Finland")
       , (Excluded France, "France")
@@ -1722,6 +1783,7 @@ list =
       , (Excluded Romania, "Romania")
       , (Excluded Russia, "Russia")
       , (Excluded Scotland, "Scotland")
+      , (Excluded Singapore, "Singapore")
       , (Excluded SouthAfrica, "South Africa")
       , (Excluded Spain, "Spain")
       , (Excluded Sweden, "Sweden")
