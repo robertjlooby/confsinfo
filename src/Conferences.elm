@@ -54,6 +54,7 @@ type Tag
     | Elasticserch
     | Elixir
     | Ember
+    | England
     | English
     | Erlang
     | FSharp
@@ -129,7 +130,6 @@ type Tag
     | Switzerland
     | Tunisia
     | UAE
-    | UK
     | USA
     | UX
     | Uruguay
@@ -300,15 +300,15 @@ list =
           , link = "http://ndc-london.com/"
           , startDate = ( 2016, Jan, 11 )
           , endDate = ( 2016, Jan, 12 )
-          , location = "London, UK"
-          , tags = [ English, Developers, UK, Agile, DotNet, General ]
+          , location = "London, England"
+          , tags = [ English, Developers, England, Agile, DotNet, General ]
           }
         , { name = "NDC London"
           , link = "http://ndc-london.com/"
           , startDate = ( 2016, Jan, 13 )
           , endDate = ( 2016, Jan, 15 )
-          , location = "London, UK"
-          , tags = [ English, Developers, UK, Agile, DotNet, General ]
+          , location = "London, England"
+          , tags = [ English, Developers, England, Agile, DotNet, General ]
           }
         , { name = "Internet of Things Milan"
           , link = "https://www.mongodb.com/events/internet-of-things-milan"
@@ -342,8 +342,8 @@ list =
           , link = "http://devcycles.net/2016/winter/"
           , startDate = ( 2016, Jan, 23 )
           , endDate = ( 2016, Jan, 23 )
-          , location = "Cambridge, UK"
-          , tags = [ English, Developers, UK, DevOps, NoSQL, FunctionalProgramming ]
+          , location = "Cambridge, England"
+          , tags = [ English, Developers, England, DevOps, NoSQL, FunctionalProgramming ]
           }
         , { name = "PhoneGap Day"
           , link = "http://pgday.phonegap.com/us2016/"
@@ -594,8 +594,8 @@ list =
           , link = "http://enhanceconf.com/"
           , startDate = ( 2016, Mar, 3 )
           , endDate = ( 2016, Mar, 4 )
-          , location = "London, UK"
-          , tags = [ English, Developers, UK, CSS, JavaScript, ProgressiveEnhancement ]
+          , location = "London, England"
+          , tags = [ English, Developers, England, CSS, JavaScript, ProgressiveEnhancement ]
           }
         , { name = "droidcon Tunisia"
           , link = "http://www.droidcon.tn/"
@@ -629,8 +629,8 @@ list =
           , link = "http://qconlondon.com/"
           , startDate = ( 2016, Mar, 7 )
           , endDate = ( 2016, Mar, 9 )
-          , location = "London, UK"
-          , tags = [ English, Developers, UK, General ]
+          , location = "London, England"
+          , tags = [ English, Developers, England, General ]
           }
         , { name = "Fluent Conf"
           , link = "http://conferences.oreilly.com/fluent/javascript-html-us"
@@ -671,22 +671,22 @@ list =
           , link = "http://qconlondon.com/"
           , startDate = ( 2016, Mar, 10 )
           , endDate = ( 2016, Mar, 11 )
-          , location = "London, UK"
-          , tags = [ English, Developers, UK, General ]
+          , location = "London, England"
+          , tags = [ English, Developers, England, General ]
           }
         , { name = "Bath Ruby"
           , link = "http://bathruby.us1.list-manage1.com/subscribe?u=f18bb7508370614edaffb50dd&id=73743da027"
           , startDate = ( 2016, Mar, 11 )
           , endDate = ( 2016, Mar, 11 )
-          , location = "Bath, UK"
-          , tags = [ English, Developers, UK, Ruby ]
+          , location = "Bath, England"
+          , tags = [ English, Developers, England, Ruby ]
           }
         , { name = "Frontier Conf"
           , link = "https://www.frontierconf.com/"
           , startDate = ( 2016, Mar, 11 )
           , endDate = ( 2016, Mar, 11 )
-          , location = "London, UK"
-          , tags = [ English, Designers, UK, CSS, UX ]
+          , location = "London, England"
+          , tags = [ English, Designers, England, CSS, UX ]
           }
         , { name = "RWDevCon 2016"
           , link = "http://rwdevcon.com/"
@@ -720,8 +720,8 @@ list =
           , link = "http://smashingconf.com/"
           , startDate = ( 2016, Mar, 15 )
           , endDate = ( 2016, Mar, 16 )
-          , location = "Oxford, UK"
-          , tags = [ English, Designers, UK, UX ]
+          , location = "Oxford, England"
+          , tags = [ English, Designers, England, UX ]
           }
         , { name = "droidcon San Francisco"
           , link = "http://sf.droidcon.com/"
@@ -755,8 +755,8 @@ list =
           , link = "http://www.scalesummit.org/"
           , startDate = ( 2016, Mar, 18 )
           , endDate = ( 2016, Mar, 18 )
-          , location = "London, UK"
-          , tags = [ English, Developers, UK, Scalability ]
+          , location = "London, England"
+          , tags = [ English, Developers, England, Scalability ]
           }
         , { name = "RubyConf India"
           , link = "http://rubyconfindia.org/"
@@ -979,15 +979,15 @@ list =
           , link = "http://accu.org/index.php/conferences/accu_conference_2016"
           , startDate = ( 2016, Apr, 19 )
           , endDate = ( 2016, Apr, 23 )
-          , location = "Bristol, UK"
-          , tags = [ English, Developers, UK, General, CPlusPlus ]
+          , location = "Bristol, England"
+          , tags = [ English, Developers, England, General, CPlusPlus ]
           }
         , { name = "Industry Conf"
           , link = "http://2016.industryconf.com/"
           , startDate = ( 2016, Apr, 20 )
           , endDate = ( 2016, Apr, 20 )
-          , location = "Newcastle, UK"
-          , tags = [ English, Developers, UK, General ]
+          , location = "Newcastle, England"
+          , tags = [ English, Developers, England, General ]
           }
         , { name = "CycleConf"
           , link = "https://twitter.com/cycleconf"
@@ -1007,8 +1007,8 @@ list =
           , link = "http://2016.render-conf.com/"
           , startDate = ( 2016, Apr, 21 )
           , endDate = ( 2016, Apr, 22 )
-          , location = "Oxford, UK"
-          , tags = [ English, Designers, Developers, UK, CSS, JavaScript, UX ]
+          , location = "Oxford, England"
+          , tags = [ English, Designers, Developers, England, CSS, JavaScript, UX ]
           }
         , { name = "dotSecurity"
           , link = "http://www.dotsecurity.io/"
@@ -1035,8 +1035,8 @@ list =
           , link = "https://futureofwebdesign.com/london-2016/"
           , startDate = ( 2016, Apr, 25 )
           , endDate = ( 2016, Apr, 27 )
-          , location = "London, UK"
-          , tags = [ English, Designers, UK, UX ]
+          , location = "London, England"
+          , tags = [ English, Designers, England, UX ]
           }
         , { name = "OpenVis Conf"
           , link = "https://openvisconf.com/"
@@ -1084,8 +1084,8 @@ list =
           , link = "http://continuouslifecycle.london/"
           , startDate = ( 2016, May, 3 )
           , endDate = ( 2016, May, 5 )
-          , location = "London, UK"
-          , tags = [ English, Developers, UK, DevOps ]
+          , location = "London, England"
+          , tags = [ English, Developers, England, DevOps ]
           }
         , { name = "YOW! West"
           , link = "http://west.yowconference.com.au/"
@@ -1395,12 +1395,12 @@ list =
           , location = "Edinburgh, Scotland"
           , tags = [ English, Developers, Scotland, JavaScript ]
           }
-        , { name = "SoCraTes UK"
+        , { name = "SoCraTes England"
           , link = "http://socratesuk.org/"
           , startDate = ( 2016, Jun, 2 )
           , endDate = ( 2016, Jun, 5 )
-          , location = "Dorking, UK"
-          , tags = [ English, Developers, UK, SoftwareCraftsmanship ]
+          , location = "Dorking, England"
+          , tags = [ English, Developers, England, SoftwareCraftsmanship ]
           }
         , { name = "Web Rebels"
           , link = "https://www.webrebels.org/"
@@ -1560,8 +1560,8 @@ list =
           , link = "http://brightonruby.com/"
           , startDate = ( 2016, Jul, 8 )
           , endDate = ( 2016, Jul, 8 )
-          , location = "Brighton, UK"
-          , tags = [ English, Developers, UK, Ruby ]
+          , location = "Brighton, England"
+          , tags = [ English, Developers, England, Ruby ]
           }
         , { name = "Chef Conf"
           , link = "https://www.chef.io/chefconf/"
@@ -1679,8 +1679,8 @@ list =
           , link = "http://agileonthebeach.com/2016-2/"
           , startDate = ( 2016, Sep, 1 )
           , endDate = ( 2016, Sep, 2 )
-          , location = "Falmouth, UK"
-          , tags = [ English, Developers, UK, Agile ]
+          , location = "Falmouth, England"
+          , tags = [ English, Developers, England, Agile ]
           }
         , { name = "Frontend Conference Zurich"
           , link = "https://frontendconf.ch/"
@@ -1696,12 +1696,12 @@ list =
           , location = "Barcelona, Spain"
           , tags = [ English, Developers, Spain, General ]
           }
-        , { name = "iOSDevUK"
+        , { name = "iOSDevEngland"
           , link = "http://www.iosdevuk.com/"
           , startDate = ( 2016, Sep, 5 )
           , endDate = ( 2016, Sep, 8 )
-          , location = "Aberystwyth, UK"
-          , tags = [ English, Developers, UK, IOS, Swift ]
+          , location = "Aberystwyth, England"
+          , tags = [ English, Developers, England, IOS, Swift ]
           }
         , { name = "CocoaConf DC"
           , link = "http://cocoaconf.com/dc-2016/home"
@@ -1721,8 +1721,8 @@ list =
           , link = "http://swanseacon.co.uk/"
           , startDate = ( 2016, Sep, 12 )
           , endDate = ( 2016, Sep, 13 )
-          , location = "Swansea, UK"
-          , tags = [ English, Developers, UK, Agile, SoftwareCraftsmanship ]
+          , location = "Swansea, England"
+          , tags = [ English, Developers, England, Agile, SoftwareCraftsmanship ]
           }
         , { name = "From the Front"
           , link = "http://2016.fromthefront.it/"
@@ -1805,8 +1805,8 @@ list =
           , link = "http://gotocon.com/"
           , startDate = ( 2016, Oct, 12 )
           , endDate = ( 2016, Oct, 14 )
-          , location = "London, UK"
-          , tags = [ English, Developers, UK, General ]
+          , location = "London, England"
+          , tags = [ English, Developers, England, General ]
           }
         , { name = "ConnectJS"
           , link = "http://connect-js.com/"
@@ -1959,6 +1959,7 @@ list =
             , ( Excluded Croatia, "Croatia" )
             , ( Excluded CzechRepublic, "Czech Republic" )
             , ( Excluded Denmark, "Denmark" )
+            , ( Excluded England, "England" )
             , ( Excluded Finland, "Finland" )
             , ( Excluded France, "France" )
             , ( Excluded Germany, "Germany" )
@@ -1989,7 +1990,6 @@ list =
             , ( Excluded Tunisia, "Tunisia" )
             , ( Excluded UAE, "UAE" )
             , ( Excluded Uruguay, "Uruguay" )
-            , ( Excluded UK, "UK" )
             , ( Excluded USA, "USA" )
             ]
           )
