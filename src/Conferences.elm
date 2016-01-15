@@ -839,6 +839,13 @@ list =
           , location = "St. Augustine, FL"
           , tags = [ English, Developers, USA, Ruby ]
           }
+        , { name = "Respond 2016 Sydney"
+          , link = "http://www.webdirections.org/respond16/"
+          , startDate = ( 2016, Apr, 7 )
+          , endDate = ( 2016, Apr, 8 )
+          , location = "Sydney, Australia"
+          , tags = [ English, Designers, Australia, CSS, UX ]
+          }
         , { name = "AlterConf Minneapolis"
           , link = "http://www.alterconf.com/sessions/minneapolis-mn"
           , startDate = ( 2016, Apr, 9 )
@@ -866,6 +873,13 @@ list =
           , endDate = ( 2016, Apr, 10 )
           , location = "Sofia, Bulgaria"
           , tags = [ English, Developers, Bulgaria, Mobile, IOS, Android ]
+          }
+        , { name = "Respond 2016"
+          , link = "http://www.webdirections.org/respond16/"
+          , startDate = ( 2016, Apr, 11 )
+          , endDate = ( 2016, Apr, 12 )
+          , location = "Melbourne, Australia"
+          , tags = [ English, Designers, Australia, CSS, UX ]
           }
         , { name = "Yggdrasil"
           , link = "http://yggdrasilkonferansen.no/"
