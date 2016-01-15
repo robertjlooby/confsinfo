@@ -338,19 +338,19 @@ list =
           , location = "Remote"
           , tags = [ English, Designers, Developers, Remote, SVG ]
           }
-        , { name = "PhoneGap Day"
-          , link = "http://pgday.phonegap.com/us2016/"
-          , startDate = ( 2016, Jan, 28 )
-          , endDate = ( 2016, Jan, 28 )
-          , location = "Lehi, UT"
-          , tags = [ English, Developers, USA, PhoneGap, Mobile ]
-          }
         , { name = "/dev/winter"
           , link = "http://devcycles.net/2016/winter/"
           , startDate = ( 2016, Jan, 23 )
           , endDate = ( 2016, Jan, 23 )
           , location = "Cambridge, UK"
           , tags = [ English, Developers, UK, DevOps, NoSQL, FunctionalProgramming ]
+          }
+        , { name = "PhoneGap Day"
+          , link = "http://pgday.phonegap.com/us2016/"
+          , startDate = ( 2016, Jan, 28 )
+          , endDate = ( 2016, Jan, 28 )
+          , location = "Lehi, UT"
+          , tags = [ English, Developers, USA, PhoneGap, Mobile ]
           }
         , { name = "dotSwift"
           , link = "http://www.dotswift.io/"
@@ -387,13 +387,6 @@ list =
           , location = "Moscow, Russia"
           , tags = [ English, Russian, Developers, Russia, PostgreSQL ]
           }
-        , { name = "UX/DEV Summit"
-          , link = "http://uxdsummit.com/"
-          , startDate = ( 2016, Feb, 4 )
-          , endDate = ( 2016, Feb, 6 )
-          , location = "Fort Lauderdale, FL"
-          , tags = [ English, Designers, Developers, USA, UX, AngularJS, Ember, React ]
-          }
         , { name = "Compose 2016"
           , link = "http://www.composeconference.org/"
           , startDate = ( 2016, Feb, 4 )
@@ -421,6 +414,13 @@ list =
           , endDate = ( 2016, Feb, 5 )
           , location = "Berlin, Germany"
           , tags = [ English, Developers, Germany, Microservices ]
+          }
+        , { name = "UX/DEV Summit"
+          , link = "http://uxdsummit.com/"
+          , startDate = ( 2016, Feb, 4 )
+          , endDate = ( 2016, Feb, 6 )
+          , location = "Fort Lauderdale, FL"
+          , tags = [ English, Designers, Developers, USA, UX, AngularJS, Ember, React ]
           }
         , { name = "JSConf Beirut"
           , link = "http://www.jsconfbeirut.com/"
@@ -646,19 +646,26 @@ list =
           , location = "Gothenburg, Sweden"
           , tags = [ English, Developers, Sweden, Java ]
           }
-        , { name = "SoCraTes ES"
-          , link = "http://www.socrates-conference.es/doku.php"
-          , startDate = ( 2016, Mar, 10 )
-          , endDate = ( 2016, Mar, 13 )
-          , location = "Gran Canaria, Spain"
-          , tags = [ English, Developers, Spain, SoftwareCraftsmanship ]
-          }
         , { name = "Erlang Factory SF"
           , link = "http://www.erlang-factory.com/sfbay2016/home"
           , startDate = ( 2016, Mar, 10 )
           , endDate = ( 2016, Mar, 11 )
           , location = "San Francisco, CA"
           , tags = [ English, Developers, USA, Erlang ]
+          }
+        , { name = "ScaleConf"
+          , link = "http://scaleconf.org/"
+          , startDate = ( 2016, Mar, 10 )
+          , endDate = ( 2016, Mar, 11 )
+          , location = "Cape Town, South Africa"
+          , tags = [ English, Developers, SouthAfrica, Scalability ]
+          }
+        , { name = "SoCraTes ES"
+          , link = "http://www.socrates-conference.es/doku.php"
+          , startDate = ( 2016, Mar, 10 )
+          , endDate = ( 2016, Mar, 13 )
+          , location = "Gran Canaria, Spain"
+          , tags = [ English, Developers, Spain, SoftwareCraftsmanship ]
           }
         , { name = "QCon London Tutorials"
           , link = "http://qconlondon.com/"
@@ -667,12 +674,12 @@ list =
           , location = "London, UK"
           , tags = [ English, Developers, UK, General ]
           }
-        , { name = "ScaleConf"
-          , link = "http://scaleconf.org/"
-          , startDate = ( 2016, Mar, 10 )
+        , { name = "Bath Ruby"
+          , link = "http://bathruby.us1.list-manage1.com/subscribe?u=f18bb7508370614edaffb50dd&id=73743da027"
+          , startDate = ( 2016, Mar, 11 )
           , endDate = ( 2016, Mar, 11 )
-          , location = "Cape Town, South Africa"
-          , tags = [ English, Developers, SouthAfrica, Scalability ]
+          , location = "Bath, UK"
+          , tags = [ English, Developers, UK, Ruby ]
           }
         , { name = "Frontier Conf"
           , link = "https://www.frontierconf.com/"
@@ -687,13 +694,6 @@ list =
           , endDate = ( 2016, Mar, 12 )
           , location = "Alexandria, VA"
           , tags = [ English, Developers, USA, IOS, Swift ]
-          }
-        , { name = "Bath Ruby"
-          , link = "http://bathruby.us1.list-manage1.com/subscribe?u=f18bb7508370614edaffb50dd&id=73743da027"
-          , startDate = ( 2016, Mar, 11 )
-          , endDate = ( 2016, Mar, 11 )
-          , location = "Bath, UK"
-          , tags = [ English, Developers, UK, Ruby ]
           }
         , { name = "wroc_love.rb"
           , link = "http://www.wrocloverb.com/"
@@ -772,6 +772,13 @@ list =
           , location = "Salt Lake City, UT"
           , tags = [ English, Developers, USA, Ruby ]
           }
+        , { name = "CocoaConf Chicago"
+          , link = "http://cocoaconf.com/chicago-2016/home"
+          , startDate = ( 2016, Mar, 25 )
+          , endDate = ( 2016, Mar, 26 )
+          , location = "Chicago, IL"
+          , tags = [ English, Developers, USA, Cocoa, IOS ]
+          }
         , { name = "CSS Day"
           , link = "http://2016.cssday.it/"
           , startDate = ( 2016, Mar, 25 )
@@ -785,13 +792,6 @@ list =
           , endDate = ( 2016, Mar, 25 )
           , location = "Lasi, Romania"
           , tags = [ English, Developers, Romania, General ]
-          }
-        , { name = "CocoaConf Chicago"
-          , link = "http://cocoaconf.com/chicago-2016/home"
-          , startDate = ( 2016, Mar, 25 )
-          , endDate = ( 2016, Mar, 26 )
-          , location = "Chicago, IL"
-          , tags = [ English, Developers, USA, Cocoa, IOS ]
           }
         , { name = "droidcon Dubai"
           , link = "http://droidcon.ae/"
@@ -870,13 +870,6 @@ list =
           , location = "Sydney, Australia"
           , tags = [ English, Designers, Australia, CSS, UX ]
           }
-        , { name = "AlterConf Minneapolis"
-          , link = "http://www.alterconf.com/sessions/minneapolis-mn"
-          , startDate = ( 2016, Apr, 9 )
-          , endDate = ( 2016, Apr, 9 )
-          , location = "Minneapolis, MN"
-          , tags = [ English, Designers, Developers, USA, Diversity, SoftSkills ]
-          }
         , { name = "RubyConf Philippines"
           , link = "http://rubyconf.ph/"
           , startDate = ( 2016, Apr, 7 )
@@ -890,6 +883,13 @@ list =
           , endDate = ( 2016, Apr, 9 )
           , location = "Madrid, Spain"
           , tags = [ English, Developers, Spain, Java, Groovy, Grails, Gradle ]
+          }
+        , { name = "AlterConf Minneapolis"
+          , link = "http://www.alterconf.com/sessions/minneapolis-mn"
+          , startDate = ( 2016, Apr, 9 )
+          , endDate = ( 2016, Apr, 9 )
+          , location = "Minneapolis, MN"
+          , tags = [ English, Designers, Developers, USA, Diversity, SoftSkills ]
           }
         , { name = "MobCon"
           , link = "http://mobcon.com/mobcon-europe/"
@@ -1024,19 +1024,19 @@ list =
           , location = "New York, NY"
           , tags = [ English, Designers, USA, UX ]
           }
-        , { name = "Future of Web Design"
-          , link = "https://futureofwebdesign.com/london-2016/"
-          , startDate = ( 2016, Apr, 25 )
-          , endDate = ( 2016, Apr, 27 )
-          , location = "London, UK"
-          , tags = [ English, Designers, UK, UX ]
-          }
         , { name = "dotScale"
           , link = "http://www.dotscale.io/"
           , startDate = ( 2016, Apr, 25 )
           , endDate = ( 2016, Apr, 25 )
           , location = "Paris, France"
           , tags = [ English, Developers, France, Scalability ]
+          }
+        , { name = "Future of Web Design"
+          , link = "https://futureofwebdesign.com/london-2016/"
+          , startDate = ( 2016, Apr, 25 )
+          , endDate = ( 2016, Apr, 27 )
+          , location = "London, UK"
+          , tags = [ English, Designers, UK, UX ]
           }
         , { name = "OpenVis Conf"
           , link = "https://openvisconf.com/"
@@ -1129,13 +1129,6 @@ list =
           , location = "Krakow, Poland"
           , tags = [ English, Developers, Poland, Lisp, Clojure ]
           }
-        , { name = "C++Now"
-          , link = "http://cppnow.org/"
-          , startDate = ( 2016, May, 9 )
-          , endDate = ( 2016, May, 14 )
-          , location = "Aspen, CO"
-          , tags = [ English, Developers, USA, CPlusPlus ]
-          }
         , { name = "Apache: Big Data North America"
           , link = "http://www.apachecon.com/"
           , startDate = ( 2016, May, 9 )
@@ -1149,6 +1142,13 @@ list =
           , endDate = ( 2016, May, 11 )
           , location = "Düsseldorf, Germany"
           , tags = [ English, Designers, Developers, Germany, UX, General ]
+          }
+        , { name = "C++Now"
+          , link = "http://cppnow.org/"
+          , startDate = ( 2016, May, 9 )
+          , endDate = ( 2016, May, 14 )
+          , location = "Aspen, CO"
+          , tags = [ English, Developers, USA, CPlusPlus ]
           }
         , { name = "ChefConf"
           , link = "https://www.chef.io/chefconf/"
@@ -1164,6 +1164,13 @@ list =
           , location = "New Orleans, LA"
           , tags = [ English, Developers, USA, Drupal, PHP ]
           }
+        , { name = "CSSConf Budapest"
+          , link = "http://cssconfbp.rocks/"
+          , startDate = ( 2016, May, 11 )
+          , endDate = ( 2016, May, 11 )
+          , location = "Budapest, Hungary"
+          , tags = [ English, Designers, Hungary, CSS ]
+          }
         , { name = "ElixirConf EU"
           , link = "http://www.elixirconf.eu/"
           , startDate = ( 2016, May, 11 )
@@ -1177,13 +1184,6 @@ list =
           , endDate = ( 2016, May, 12 )
           , location = "Verona, Italy"
           , tags = [ English, Developers, Italy, JavaScript ]
-          }
-        , { name = "CSSConf Budapest"
-          , link = "http://cssconfbp.rocks/"
-          , startDate = ( 2016, May, 11 )
-          , endDate = ( 2016, May, 11 )
-          , location = "Budapest, Hungary"
-          , tags = [ English, Designers, Hungary, CSS ]
           }
         , { name = "ApacheCon Core North America"
           , link = "http://www.apachecon.com/"
@@ -1234,19 +1234,19 @@ list =
           , location = "Austin, TX"
           , tags = [ English, Developers, USA, OpenSource ]
           }
-        , { name = "PhoneGap Day EU"
-          , link = "http://pgday.phonegap.com/eu2016/"
-          , startDate = ( 2016, May, 19 )
-          , endDate = ( 2016, May, 20 )
-          , location = "Amsterdam, Netherlands"
-          , tags = [ English, Developers, Netherlands, PhoneGap, Mobile ]
-          }
         , { name = "droidcon Montreal"
           , link = "http://www.droidcon.ca/"
           , startDate = ( 2016, May, 19 )
           , endDate = ( 2016, May, 20 )
           , location = "Montreal, Canada"
           , tags = [ English, Developers, Canada, Android, Mobile ]
+          }
+        , { name = "PhoneGap Day EU"
+          , link = "http://pgday.phonegap.com/eu2016/"
+          , startDate = ( 2016, May, 19 )
+          , endDate = ( 2016, May, 20 )
+          , location = "Amsterdam, Netherlands"
+          , tags = [ English, Developers, Netherlands, PhoneGap, Mobile ]
           }
         , { name = "Valio Con"
           , link = "http://valiocon.com/"
@@ -1269,19 +1269,19 @@ list =
           , location = "Berlin, Germany"
           , tags = [ English, Developers, Germany, IOS ]
           }
-        , { name = "php[tek]"
-          , link = "https://tek.phparch.com/"
-          , startDate = ( 2016, May, 23 )
-          , endDate = ( 2016, May, 27 )
-          , location = "St. Louis, MO"
-          , tags = [ English, Developers, USA, PHP ]
-          }
         , { name = "GOTO Chicago Workshops"
           , link = "http://gotocon.com/chicago-2016"
           , startDate = ( 2016, May, 23 )
           , endDate = ( 2016, May, 23 )
           , location = "Chicago, IL"
           , tags = [ English, Developers, USA, General ]
+          }
+        , { name = "php[tek]"
+          , link = "https://tek.phparch.com/"
+          , startDate = ( 2016, May, 23 )
+          , endDate = ( 2016, May, 27 )
+          , location = "St. Louis, MO"
+          , tags = [ English, Developers, USA, PHP ]
           }
         , { name = "GOTO Chicago"
           , link = "http://gotocon.com/chicago-2016"
@@ -1353,19 +1353,19 @@ list =
           , location = "Portland, OR"
           , tags = [ English, Developers, USA, Python ]
           }
-        , { name = "MagmaConf"
-          , link = "http://www.magmaconf.com/"
-          , startDate = ( 2016, Jun, 1 )
-          , endDate = ( 2016, Jun, 3 )
-          , location = "Manzanillo, Mexico"
-          , tags = [ English, Developers, Mexico, Ruby ]
-          }
         , { name = "CSSConf Nordic"
           , link = "http://cssconf.no/"
           , startDate = ( 2016, Jun, 1 )
           , endDate = ( 2016, Jun, 1 )
           , location = "Oslo, Norway"
           , tags = [ English, Designers, Norway, UX, CSS ]
+          }
+        , { name = "MagmaConf"
+          , link = "http://www.magmaconf.com/"
+          , startDate = ( 2016, Jun, 1 )
+          , endDate = ( 2016, Jun, 3 )
+          , location = "Manzanillo, Mexico"
+          , tags = [ English, Developers, Mexico, Ruby ]
           }
         , { name = "GR8Conf EU"
           , link = "http://gr8conf.eu/"
@@ -1381,13 +1381,6 @@ list =
           , location = "Portland, OR"
           , tags = [ English, Developers, USA, Python ]
           }
-        , { name = "SoCraTes UK"
-          , link = "http://socratesuk.org/"
-          , startDate = ( 2016, Jun, 2 )
-          , endDate = ( 2016, Jun, 5 )
-          , location = "Dorking, UK"
-          , tags = [ English, Developers, UK, SoftwareCraftsmanship ]
-          }
         , { name = "ReactEurope"
           , link = "https://www.react-europe.org/"
           , startDate = ( 2016, Jun, 2 )
@@ -1401,6 +1394,13 @@ list =
           , endDate = ( 2016, Jun, 3 )
           , location = "Edinburgh, Scotland"
           , tags = [ English, Developers, Scotland, JavaScript ]
+          }
+        , { name = "SoCraTes UK"
+          , link = "http://socratesuk.org/"
+          , startDate = ( 2016, Jun, 2 )
+          , endDate = ( 2016, Jun, 5 )
+          , location = "Dorking, UK"
+          , tags = [ English, Developers, UK, SoftwareCraftsmanship ]
           }
         , { name = "Web Rebels"
           , link = "https://www.webrebels.org/"
@@ -1437,19 +1437,19 @@ list =
           , location = "Edinburgh, Scotland"
           , tags = [ English, Designers, Scotland, UX ]
           }
-        , { name = "QCon New York"
-          , link = "https://qconnewyork.com/"
-          , startDate = ( 2016, Jun, 13 )
-          , endDate = ( 2016, Jun, 15 )
-          , location = "New York, NY"
-          , tags = [ English, Developers, USA, General ]
-          }
         , { name = "GOTO Amsterdam Workshops"
           , link = "http://gotocon.com/amsterdam-2016/"
           , startDate = ( 2016, Jun, 13 )
           , endDate = ( 2016, Jun, 13 )
           , location = "Amsterdam, Netherlands"
           , tags = [ English, Developers, Netherlands, General ]
+          }
+        , { name = "QCon New York"
+          , link = "https://qconnewyork.com/"
+          , startDate = ( 2016, Jun, 13 )
+          , endDate = ( 2016, Jun, 15 )
+          , location = "New York, NY"
+          , tags = [ English, Developers, USA, General ]
           }
         , { name = "GOTO Amsterdam"
           , link = "http://gotocon.com/amsterdam-2016/"
@@ -1745,6 +1745,13 @@ list =
           , location = "Chicago, IL"
           , tags = [ English, Developers, USA, Ruby, Rails ]
           }
+        , { name = "CppCon"
+          , link = "http://cppcon.org/"
+          , startDate = ( 2016, Sep, 18 )
+          , endDate = ( 2016, Sep, 23 )
+          , location = "Bellevue, WA"
+          , tags = [ English, Developers, USA, CPlusPlus ]
+          }
         , { name = "International Conference on Functional Programming"
           , link = "http://conf.researchr.org/home/icfp-2016"
           , startDate = ( 2016, Sep, 18 )
@@ -1758,13 +1765,6 @@ list =
           , endDate = ( 2016, Sep, 22 )
           , location = "San Francisco, CA"
           , tags = [ English, Developers, USA, Java ]
-          }
-        , { name = "CppCon"
-          , link = "http://cppcon.org/"
-          , startDate = ( 2016, Sep, 18 )
-          , endDate = ( 2016, Sep, 23 )
-          , location = "Bellevue, WA"
-          , tags = [ English, Developers, USA, CPlusPlus ]
           }
         , { name = "Functional Conf"
           , link = "http://functionalconf.com/"
@@ -1780,19 +1780,19 @@ list =
           , location = "Dublin, Ireland"
           , tags = [ English, Developers, Ireland, Drupal, PHP ]
           }
-        , { name = "GOTO Copenhagen"
-          , link = "http://gotocon.com/cph-2015/"
-          , startDate = ( 2016, Oct, 3 )
-          , endDate = ( 2016, Oct, 6 )
-          , location = "Copenhagen, Denmark"
-          , tags = [ English, Developers, Denmark, General ]
-          }
         , { name = "An Event Apart Orlando"
           , link = "http://aneventapart.com/event/orlando-special-edition-2016"
           , startDate = ( 2016, Oct, 3 )
           , endDate = ( 2016, Oct, 5 )
           , location = "Orlando, FL"
           , tags = [ English, Designers, Developers, USA, UX ]
+          }
+        , { name = "GOTO Copenhagen"
+          , link = "http://gotocon.com/cph-2015/"
+          , startDate = ( 2016, Oct, 3 )
+          , endDate = ( 2016, Oct, 6 )
+          , location = "Copenhagen, Denmark"
+          , tags = [ English, Developers, Denmark, General ]
           }
         , { name = "dotGo"
           , link = "http://2016.dotgo.eu/"
