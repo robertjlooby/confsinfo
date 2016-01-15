@@ -1,8 +1,8 @@
 module ConferencesTest (..) where
 
 import ElmTest exposing (assertEqual, suite, test)
+import Date
 import Conferences exposing (..)
-import DateFormatter exposing (parseDate)
 
 
 tests =
@@ -33,7 +33,7 @@ tests =
             <| let
                 tags = [ Included Agile, Excluded DotNet, Included Ruby ]
 
-                blankConference = { name = "", link = "", startDate = parseDate "", endDate = parseDate "", location = "", tags = [] }
+                blankConference = { name = "", link = "", startDate = ( 1, Date.Jan, 1 ), endDate = ( 1, Date.Jan, 1 ), location = "", tags = [] }
 
                 conference1 = { blankConference | tags = [ Agile, Ruby ] }
 
