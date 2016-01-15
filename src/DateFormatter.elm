@@ -1,33 +1,32 @@
 module DateFormatter (..) where
 
-import Date
+import Date exposing (Month)
 
 
-formatRange : Date.Date -> Date.Date -> String
-formatRange startDate endDate =
+type alias DaTuple =
+    ( Int, Month, Int )
+
+
+formatRange : DaTuple -> DaTuple -> String
+formatRange ( startYear, startMonth, startDay ) ( endYear, endMonth, endDay ) =
     let
-        startMonth = Date.month startDate |> toString
+        startYear' = toString startYear
 
-        startDayOfMonth = Date.day startDate |> toString
+        startMonth' = toString startMonth
 
-        startYear = Date.year startDate |> toString
+        startDay' = toString startDay
 
-        endMonth = Date.month endDate |> toString
+        endYear' = toString endYear
 
-        endDayOfMonth = Date.day endDate |> toString
+        endMonth' = toString endMonth
 
-        endYear = Date.year endDate |> toString
+        endDay' = toString endDay
     in
-        if startYear /= endYear then
-            startMonth ++ " " ++ startDayOfMonth ++ ", " ++ startYear ++ "-" ++ endMonth ++ " " ++ endDayOfMonth ++ ", " ++ endYear
-        else if startMonth == endMonth && startDayOfMonth == endDayOfMonth then
-            startMonth ++ " " ++ startDayOfMonth ++ ", " ++ startYear
-        else if startMonth == endMonth then
-            startMonth ++ " " ++ startDayOfMonth ++ "-" ++ endDayOfMonth ++ ", " ++ startYear
+        if startYear' /= endYear' then
+            startMonth' ++ " " ++ startDay' ++ ", " ++ startYear' ++ "-" ++ endMonth' ++ " " ++ endDay' ++ ", " ++ endYear'
+        else if startMonth' == endMonth' && startDay' == endDay' then
+            startMonth' ++ " " ++ startDay' ++ ", " ++ startYear'
+        else if startMonth' == endMonth' then
+            startMonth' ++ " " ++ startDay' ++ "-" ++ endDay' ++ ", " ++ startYear'
         else
-            startMonth ++ " " ++ startDayOfMonth ++ "-" ++ endMonth ++ " " ++ endDayOfMonth ++ ", " ++ startYear
-
-
-parseDate : String -> Date.Date
-parseDate date =
-    Date.fromString date |> Result.withDefault (Date.fromTime 0)
+            startMonth' ++ " " ++ startDay' ++ "-" ++ endMonth' ++ " " ++ endDay' ++ ", " ++ startYear'
