@@ -39,6 +39,7 @@ type Tag
     | Cloud
     | Cocoa
     | Communications
+    | Croatia
     | CycleJS
     | CzechRepublic
     | DataVisualization
@@ -51,6 +52,7 @@ type Tag
     | DotNet
     | Drupal
     | Elasticserch
+    | Elixir
     | Ember
     | English
     | Erlang
@@ -125,6 +127,7 @@ type Tag
     | Sweden
     | Swift
     | Switzerland
+    | Tunisia
     | UAE
     | Uruguay
     | UK
@@ -594,6 +597,13 @@ list =
           , location = "London, UK"
           , tags = [ English, Developers, UK, CSS, JavaScript, ProgressiveEnhancement ]
           }
+        , { name = "droidcon Tunisia"
+          , link = "http://www.droidcon.tn/"
+          , startDate = ( 2016, Mar, 5 )
+          , endDate = ( 2016, Mar, 6 )
+          , location = "Hammamet, Tunisia"
+          , tags = [ English, Developers, Tunisia, Android, Mobile ]
+          }
         , { name = "Big Data Paris"
           , link = "http://www.bigdataparis.com/"
           , startDate = ( 2016, Mar, 7 )
@@ -783,6 +793,13 @@ list =
           , location = "Chicago, IL"
           , tags = [ English, Developers, USA, Cocoa, IOS ]
           }
+        , { name = "droidcon Dubai"
+          , link = "http://droidcon.ae/"
+          , startDate = ( 2016, Mar, 25 )
+          , endDate = ( 2016, Mar, 26 )
+          , location = "Dubai, UAE"
+          , tags = [ English, Developers, UAE, Android, Mobile ]
+          }
         , { name = "Space City JS"
           , link = "http://spacecity.codes/"
           , startDate = ( 2016, Mar, 26 )
@@ -838,6 +855,13 @@ list =
           , endDate = ( 2016, Apr, 8 )
           , location = "St. Augustine, FL"
           , tags = [ English, Developers, USA, Ruby ]
+          }
+        , { name = "droidcon Italy"
+          , link = "http://it.droidcon.com/2016/"
+          , startDate = ( 2016, Apr, 7 )
+          , endDate = ( 2016, Apr, 8 )
+          , location = "Turin, Italy"
+          , tags = [ English, Developers, Italy, Android, Mobile ]
           }
         , { name = "Respond 2016 Sydney"
           , link = "http://www.webdirections.org/respond16/"
@@ -908,6 +932,13 @@ list =
           , endDate = ( 2016, Apr, 15 )
           , location = "Krakow, Poland"
           , tags = [ English, Developers, Poland, Agile, SoftwareCraftsmanship ]
+          }
+        , { name = "Rootconf"
+          , link = "https://rootconf.in/2016/"
+          , startDate = ( 2016, Apr, 14 )
+          , endDate = ( 2016, Apr, 15 )
+          , location = "Bangalore, India"
+          , tags = [ English, Developers, India, DevOps, Cloud ]
           }
         , { name = "Clojure/west"
           , link = "http://clojurewest.org/"
@@ -1021,6 +1052,13 @@ list =
           , location = "Budapest, Hungary"
           , tags = [ English, Developers, Hungary, SoftwareCraftsmanship ]
           }
+        , { name = "droidcon Zagreb"
+          , link = "http://droidcon.hr/en/"
+          , startDate = ( 2016, Apr, 27 )
+          , endDate = ( 2016, Apr, 29 )
+          , location = "Zagreb, Croatia"
+          , tags = [ English, Developers, Croatia, Android, Mobile ]
+          }
         , { name = "University of Illinois WebCon"
           , link = "http://webcon.illinois.edu/"
           , startDate = ( 2016, Apr, 27 )
@@ -1126,6 +1164,13 @@ list =
           , location = "New Orleans, LA"
           , tags = [ English, Developers, USA, Drupal, PHP ]
           }
+        , { name = "ElixirConf EU"
+          , link = "http://www.elixirconf.eu/"
+          , startDate = ( 2016, May, 11 )
+          , endDate = ( 2016, May, 12 )
+          , location = "Berlin, Germany"
+          , tags = [ English, Developers, Germany, Elixir, FunctionalProgramming, Erlang ]
+          }
         , { name = "jsDay"
           , link = "http://2016.jsday.it/"
           , startDate = ( 2016, May, 11 )
@@ -1195,6 +1240,20 @@ list =
           , endDate = ( 2016, May, 20 )
           , location = "Amsterdam, Netherlands"
           , tags = [ English, Developers, Netherlands, PhoneGap, Mobile ]
+          }
+        , { name = "droidcon Montreal"
+          , link = "http://www.droidcon.ca/"
+          , startDate = ( 2016, May, 19 )
+          , endDate = ( 2016, May, 20 )
+          , location = "Montreal, Canada"
+          , tags = [ English, Developers, Canada, Android, Mobile ]
+          }
+        , { name = "Valio Con"
+          , link = "http://valiocon.com/"
+          , startDate = ( 2016, May, 19 )
+          , endDate = ( 2016, May, 22 )
+          , location = "San Diego, CA"
+          , tags = [ English, Designers, USA, UX ]
           }
         , { name = "self.conference"
           , link = "http://selfconference.org/"
@@ -1399,6 +1458,13 @@ list =
           , location = "Amsterdam, Netherlands"
           , tags = [ English, Developers, Netherlands, General ]
           }
+        , { name = "droidcon Berlin"
+          , link = "http://droidcon.de/"
+          , startDate = ( 2016, Jun, 15 )
+          , endDate = ( 2016, Jun, 17 )
+          , location = "Berlin, Germany"
+          , tags = [ English, Developers, Germany, Android, Mobile ]
+          }
         , { name = "Front End Design Conference"
           , link = "http://frontenddesignconference.com/"
           , startDate = ( 2016, Jun, 15 )
@@ -1420,6 +1486,13 @@ list =
           , location = "New York, NY"
           , tags = [ English, Developers, USA, General ]
           }
+        , { name = "Joy of Coding"
+          , link = "http://joyofcoding.org/"
+          , startDate = ( 2016, Jun, 17 )
+          , endDate = ( 2016, Jun, 17 )
+          , location = "Rotterdam, Netherlands"
+          , tags = [ English, Developers, Netherlands, General ]
+          }
         , { name = "DockerCon"
           , link = "http://2016.dockercon.com/"
           , startDate = ( 2016, Jun, 19 )
@@ -1433,6 +1506,13 @@ list =
           , endDate = ( 2016, Jun, 23 )
           , location = "Santa Clara, CA"
           , tags = [ English, Developers, USA, Scalability, DevOps ]
+          }
+        , { name = "RedDotRubyConf"
+          , link = "http://www.reddotrubyconf.com/"
+          , startDate = ( 2016, Jun, 23 )
+          , endDate = ( 2016, Jun, 24 )
+          , location = "Singapore"
+          , tags = [ English, Developers, Singapore, Ruby ]
           }
         , { name = "Web Design Day"
           , link = "http://webdesignday.com/"
@@ -1469,6 +1549,13 @@ list =
           , location = "New York, NY"
           , tags = [ English, Developers, USA, MongoDB, BigData ]
           }
+        , { name = "PolyConf"
+          , link = "http://polyconf.com/"
+          , startDate = ( 2016, Jun, 30 )
+          , endDate = ( 2016, Jul, 2 )
+          , location = "Poznan, Poland"
+          , tags = [ English, Developers, Poland, General ]
+          }
         , { name = "Brighton Ruby"
           , link = "http://brightonruby.com/"
           , startDate = ( 2016, Jul, 8 )
@@ -1504,6 +1591,13 @@ list =
           , location = "Baltimore, MD"
           , tags = [ English, Developers, USA, PHP ]
           }
+        , { name = "UberConf"
+          , link = "https://uberconf.com/conference/denver/2016/07/home"
+          , startDate = ( 2016, Jul, 19 )
+          , endDate = ( 2016, Jul, 22 )
+          , location = "Denver, CO"
+          , tags = [ English, Developers, USA, Java, Agile, Cloud, Scala, Groovy ]
+          }
         , { name = "An Event Apart DC"
           , link = "http://aneventapart.com/event/washington-dc-2016"
           , startDate = ( 2016, Jul, 25 )
@@ -1532,12 +1626,26 @@ list =
           , location = "Wisconsin Dells, WI"
           , tags = [ English, Developers, USA, Mobile, Cloud ]
           }
+        , { name = "Midwest JS"
+          , link = "http://midwestjs.com/"
+          , startDate = ( 2016, Aug, 10 )
+          , endDate = ( 2016, Aug, 12 )
+          , location = "Minneapolis, MN"
+          , tags = [ English, Developers, USA, JavaScript, NodeJS ]
+          }
         , { name = "FP Conf"
           , link = "http://fpconf.org/"
           , startDate = ( 2016, Aug, 15 )
           , endDate = ( 2016, Aug, 15 )
           , location = "Moscow, Russia"
           , tags = [ English, Russian, Developers, Russia, FunctionalProgramming, Erlang, Scala, Clojure, Haskell ]
+          }
+        , { name = "HybridConf"
+          , link = "https://hybridconf.net/"
+          , startDate = ( 2016, Aug, 18 )
+          , endDate = ( 2016, Aug, 19 )
+          , location = "Berlin, Germany"
+          , tags = [ English, Designers, Germany, General, UX ]
           }
         , { name = "360|iDev"
           , link = "http://360idev.com/"
@@ -1644,6 +1752,13 @@ list =
           , location = "Nara, Japan"
           , tags = [ English, Developers, Japan, FunctionalProgramming, Haskell ]
           }
+        , { name = "JavaOne"
+          , link = "https://www.oracle.com/javaone/index.html"
+          , startDate = ( 2016, Sep, 18 )
+          , endDate = ( 2016, Sep, 22 )
+          , location = "San Francisco, CA"
+          , tags = [ English, Developers, USA, Java ]
+          }
         , { name = "CppCon"
           , link = "http://cppcon.org/"
           , startDate = ( 2016, Sep, 18 )
@@ -1721,6 +1836,13 @@ list =
           , location = "Berlin, Germany"
           , tags = [ English, Designers, Developers, Germany, UX, General ]
           }
+        , { name = "droidconIN"
+          , link = "https://droidcon.in/2016/"
+          , startDate = ( 2016, Nov, 10 )
+          , endDate = ( 2016, Nov, 11 )
+          , location = "Bangalore, India"
+          , tags = [ English, Developers, India, Android, Mobile ]
+          }
         , { name = "RubyConf"
           , link = "http://rubyconf.org/"
           , startDate = ( 2016, Nov, 10 )
@@ -1772,6 +1894,7 @@ list =
             , ( Excluded Drupal, "Drupal" )
             , ( Excluded DotNet, ".NET" )
             , ( Excluded Elasticserch, "Elasticserch" )
+            , ( Excluded Elixir, "Elixir" )
             , ( Excluded Ember, "Ember" )
             , ( Excluded Erlang, "Erlang" )
             , ( Excluded FSharp, "F#" )
@@ -1833,6 +1956,7 @@ list =
             , ( Excluded Bulgaria, "Bulgaria" )
             , ( Excluded Canada, "Canada" )
             , ( Excluded China, "China" )
+            , ( Excluded Croatia, "Croatia" )
             , ( Excluded CzechRepublic, "Czech Republic" )
             , ( Excluded Denmark, "Denmark" )
             , ( Excluded Finland, "Finland" )
@@ -1862,6 +1986,7 @@ list =
             , ( Excluded Spain, "Spain" )
             , ( Excluded Sweden, "Sweden" )
             , ( Excluded Switzerland, "Switzerland" )
+            , ( Excluded Tunisia, "Tunisia" )
             , ( Excluded UAE, "UAE" )
             , ( Excluded Uruguay, "Uruguay" )
             , ( Excluded UK, "UK" )
