@@ -56,8 +56,8 @@ type Tag
     | Ember
     | English
     | Erlang
-    | Finland
     | FSharp
+    | Finland
     | France
     | French
     | FunctionalProgramming
@@ -97,9 +97,9 @@ type Tag
     | Norwegian
     | OCaml
     | OpenSource
+    | PHP
     | Philippines
     | PhoneGap
-    | PHP
     | Poland
     | Portugal
     | PostgreSQL
@@ -113,26 +113,26 @@ type Tag
     | Ruby
     | Russia
     | Russian
-    | Scotland
-    | Singapore
     | SML
+    | SVG
     | Scala
     | Scalability
+    | Scotland
     | Security
+    | Singapore
     | SoftSkills
     | SoftwareCraftsmanship
     | SouthAfrica
     | Spain
-    | SVG
     | Sweden
     | Swift
     | Switzerland
     | Tunisia
     | UAE
-    | Uruguay
     | UK
     | USA
     | UX
+    | Uruguay
 
 
 type FilteredTag
