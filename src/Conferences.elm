@@ -79,6 +79,7 @@ type Tag
     | Italian
     | Italy
     | Japan
+    | Japanese
     | Java
     | JavaScript
     | Latvia
@@ -1703,6 +1704,13 @@ list =
           , location = "Aberystwyth, England"
           , tags = [ English, Developers, England, IOS, Swift ]
           }
+        , { name = "RubyKaigi"
+          , link = "http://rubykaigi.org/2016"
+          , startDate = ( 2016, Sep, 8 )
+          , endDate = ( 2016, Sep, 10 )
+          , location = "Kyoto, Japan"
+          , tags = [ English, Developers, English, Japanese, Ruby ]
+          }
         , { name = "CocoaConf DC"
           , link = "http://cocoaconf.com/dc-2016/home"
           , startDate = ( 2016, Sep, 9 )
@@ -1871,6 +1879,7 @@ list =
             , ( Excluded French, "French" )
             , ( Excluded German, "German" )
             , ( Excluded Italian, "Italian" )
+            , ( Excluded Japanese, "Japanese" )
             , ( Excluded Norwegian, "Norwegian" )
             , ( Excluded Russian, "Russian" )
             ]
