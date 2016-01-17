@@ -1695,7 +1695,7 @@ list =
           , startDate = ( 2016, Sep, 5 )
           , endDate = ( 2016, Sep, 9 )
           , location = "Barcelona, Spain"
-          , tags = [ English, Developers, Spain, General ]
+          , tags = [ English, Developers, Spain, Ruby, JavaScript, General ]
           }
         , { name = "iOSDevEngland"
           , link = "http://www.iosdevuk.com/"
