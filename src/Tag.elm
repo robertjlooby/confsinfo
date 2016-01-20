@@ -111,6 +111,7 @@ type Tag
     | Swift
     | Switzerland
     | Tunisia
+    | Turkey
     | UAE
     | USA
     | UX

@@ -278,6 +278,13 @@ initialState =
           , location = "San Francisco, CA"
           , tags = [ English, Developers, USA, JavaScript, AngularJS, React, NodeJS ]
           }
+        , { name = "DeveloperWeek"
+          , link = "http://www.developerweek.com/"
+          , startDate = ( 2016, Feb, 12 )
+          , endDate = ( 2016, Feb, 18 )
+          , location = "San Francisco, CA"
+          , tags = [ English, Developers, USA, JavaScript, NodeJS, Python, PHP, DevOps, Ruby, Mobile, NoSQL, General ]
+          }
         , { name = "DevNexus"
           , link = "http://devnexus.com/s/index"
           , startDate = ( 2016, Feb, 15 )
@@ -298,6 +305,13 @@ initialState =
           , endDate = ( 2016, Feb, 21 )
           , location = "Mumbai, India"
           , tags = [ English, Developers, India, Drupal, PHP ]
+          }
+        , { name = "hello.js"
+          , link = "http://hellojs.org/"
+          , startDate = ( 2016, Feb, 18 )
+          , endDate = ( 2016, Feb, 19 )
+          , location = "Cluj-Napoca, Romania"
+          , tags = [ English, Developers, Romania, JavaScript ]
           }
         , { name = "Lambda Days"
           , link = "http://www.lambdadays.org/"
@@ -320,7 +334,7 @@ initialState =
           , location = "Bengaluru, India"
           , tags = [ English, Developers, India, Go ]
           }
-        , { name = "Bulgario Web Summit"
+        , { name = "Bulgaria Web Summit"
           , link = "http://bulgariawebsummit.com/"
           , startDate = ( 2016, Feb, 20 )
           , endDate = ( 2016, Feb, 20 )
@@ -341,6 +355,13 @@ initialState =
           , location = "Minsk, Belarus"
           , tags = [ English, Russian, Developers, Belarus, CSS, NodeJS, JavaScript ]
           }
+        , { name = "How.Camp"
+          , link = "http://how.camp/"
+          , startDate = ( 2016, Feb, 21 )
+          , endDate = ( 2016, Feb, 21 )
+          , location = "Sofia, Bulgaria"
+          , tags = [ English, Designers, Developers, Bulgaria, UX, JavaScript ]
+          }
         , { name = "React.js Conf"
           , link = "http://conf.reactjs.com/"
           , startDate = ( 2016, Feb, 22 )
@@ -354,6 +375,13 @@ initialState =
           , endDate = ( 2016, Feb, 23 )
           , location = "Dubai, UAE"
           , tags = [ English, Developers, UAE, Go ]
+          }
+        , { name = "JavaScript Summit"
+          , link = "http://environmentsforhumans.com/2016/javascript-summit/"
+          , startDate = ( 2016, Feb, 23 )
+          , endDate = ( 2016, Feb, 23 )
+          , location = "Remote"
+          , tags = [ English, Developers, Remote, JavaScript ]
           }
         , { name = "ConFoo"
           , link = "http://confoo.ca/en"
@@ -515,6 +543,13 @@ initialState =
           , endDate = ( 2016, Mar, 16 )
           , location = "Oxford, England"
           , tags = [ English, Designers, England, UX ]
+          }
+        , { name = "DIBI"
+          , link = "http://dibiconference.com/"
+          , startDate = ( 2016, Mar, 17 )
+          , endDate = ( 2016, Mar, 18 )
+          , location = "Edinburgh, Scotland"
+          , tags = [ English, Designers, Scotland, UX ]
           }
         , { name = "droidcon San Francisco"
           , link = "http://sf.droidcon.com/"
@@ -978,6 +1013,13 @@ initialState =
           , location = "Verona, Italy"
           , tags = [ English, Developers, Italy, JavaScript ]
           }
+        , { name = "UX Alive"
+          , link = "http://www.uxalive.com/"
+          , startDate = ( 2016, May, 11 )
+          , endDate = ( 2016, May, 13 )
+          , location = "Istanbul, Turkey"
+          , tags = [ English, Designers, Turkey, UX ]
+          }
         , { name = "ApacheCon Core North America"
           , link = "http://www.apachecon.com/"
           , startDate = ( 2016, May, 12 )
@@ -1026,6 +1068,13 @@ initialState =
           , endDate = ( 2016, May, 19 )
           , location = "Austin, TX"
           , tags = [ English, Developers, USA, OpenSource ]
+          }
+        , { name = "UX London"
+          , link = "http://2016.uxlondon.com/"
+          , startDate = ( 2016, May, 18 )
+          , endDate = ( 2016, May, 20 )
+          , location = "London, England"
+          , tags = [ English, Designers, England, UX ]
           }
         , { name = "droidcon Montreal"
           , link = "http://www.droidcon.ca/"
@@ -1160,6 +1209,13 @@ initialState =
           , location = "Manzanillo, Mexico"
           , tags = [ English, Developers, Mexico, Ruby ]
           }
+        , { name = "ScotlandCSS"
+          , link = "http://scotlandcss.launchrock.com/"
+          , startDate = ( 2016, Jun, 1 )
+          , endDate = ( 2016, Jun, 1 )
+          , location = "Edinburgh, Scotland"
+          , tags = [ English, Designers, Scotland, CSS ]
+          }
         , { name = "GR8Conf EU"
           , link = "http://gr8conf.eu/"
           , startDate = ( 2016, Jun, 2 )
@@ -1286,6 +1342,13 @@ initialState =
           , location = "Rotterdam, Netherlands"
           , tags = [ English, Developers, Netherlands, General ]
           }
+        , { name = "Nordic Ruby"
+          , link = "http://www.nordicruby.org/"
+          , startDate = ( 2016, Jun, 17 )
+          , endDate = ( 2016, Jun, 19 )
+          , location = "Stockholm, Sweden"
+          , tags = [ English, Developers, Sweden, Ruby ]
+          }
         , { name = "DockerCon"
           , link = "http://2016.dockercon.com/"
           , startDate = ( 2016, Jun, 19 )
@@ -1397,6 +1460,13 @@ initialState =
           , endDate = ( 2016, Jul, 27 )
           , location = "Washington, DC"
           , tags = [ English, Designers, Developers, USA, UX ]
+          }
+        , { name = "Mobile & Web CodeCamp"
+          , link = "http://www.mobilewebcodecamp.com/"
+          , startDate = ( 2016, Jul, 26 )
+          , endDate = ( 2016, Jul, 29 )
+          , location = "Salt Lake City, UT"
+          , tags = [ English, Developers, USA, Mobile, Android, IOS, JavaScript, PhoneGap ]
           }
         , { name = "NDC Sydney Workshops"
           , link = "http://ndcsydney.com/"
@@ -1789,6 +1859,7 @@ initialState =
             , ( Excluded Sweden, "Sweden" )
             , ( Excluded Switzerland, "Switzerland" )
             , ( Excluded Tunisia, "Tunisia" )
+            , ( Excluded Turkey, "Turkey" )
             , ( Excluded UAE, "UAE" )
             , ( Excluded Uruguay, "Uruguay" )
             , ( Excluded USA, "USA" )
