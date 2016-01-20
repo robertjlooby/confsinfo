@@ -3,7 +3,7 @@ module Main (..) where
 import Console
 import ElmTest exposing (consoleRunner, Test, suite)
 import Task
-import ConferencesTest
+import ModelTest
 import DateFormatterTest
 
 
@@ -11,7 +11,7 @@ tests : Test
 tests =
     suite
         "All tests"
-        [ ConferencesTest.tests
+        [ ModelTest.tests
         , DateFormatterTest.tests
         ]
 

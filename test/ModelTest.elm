@@ -1,13 +1,15 @@
-module ConferencesTest (..) where
+module ModelTest (..) where
 
 import ElmTest exposing (assertEqual, suite, test)
 import Date
-import Conferences exposing (..)
+import Model exposing (..)
+import FilteredTag exposing (FilteredTag(..))
+import Tag exposing (Tag(..))
 
 
 tests =
     suite
-        "Conferences"
+        "Model"
         [ test "update exclude excludes a tag"
             <| let
                 tags = [ ( Included DotNet, "" ), ( Included Ruby, "" ) ]

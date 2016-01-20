@@ -1,144 +1,17 @@
-module Conferences (..) where
+module Model (..) where
 
+import Conference exposing (Conference)
 import Date exposing (Month(..))
 import DateFormatter exposing (DaTuple)
+import FilteredTag exposing (FilteredTag(..))
+import FilteredTagWithName exposing (FilteredTagWithName)
+import Tag exposing (Tag(..))
 
 
 type alias Model =
     { conferences : List Conference
-    , tags : List ( String, List ( FilteredTag, String ) )
+    , tags : List ( String, List FilteredTagWithName )
     }
-
-
-type alias Conference =
-    { name : String
-    , link : String
-    , startDate : DaTuple
-    , endDate : DaTuple
-    , location : String
-    , tags : List Tag
-    }
-
-
-type Tag
-    = AWS
-    | Agile
-    | Android
-    | AngularJS
-    | Australia
-    | Belarus
-    | Belgium
-    | BigData
-    | Bulgaria
-    | CPlusPlus
-    | CSS
-    | Canada
-    | Chef
-    | China
-    | Clojure
-    | Cloud
-    | Cocoa
-    | Communications
-    | Croatia
-    | CycleJS
-    | CzechRepublic
-    | DataVisualization
-    | Denmark
-    | Designers
-    | DevOps
-    | Developers
-    | Diversity
-    | Docker
-    | DotNet
-    | Drupal
-    | Elasticserch
-    | Elixir
-    | Ember
-    | England
-    | English
-    | Erlang
-    | FSharp
-    | Finland
-    | France
-    | French
-    | FunctionalProgramming
-    | General
-    | German
-    | Germany
-    | Go
-    | Gradle
-    | Grails
-    | Groovy
-    | Hadoop
-    | Haskell
-    | Hungary
-    | IOS
-    | India
-    | InternetOfThings
-    | Ireland
-    | Italian
-    | Italy
-    | Japan
-    | Japanese
-    | Java
-    | JavaScript
-    | Latvia
-    | Lebanon
-    | Lisp
-    | Lithuania
-    | Logstash
-    | Mexico
-    | Microservices
-    | Mobile
-    | MongoDB
-    | Netherlands
-    | NewZealand
-    | NoSQL
-    | NodeJS
-    | Norway
-    | Norwegian
-    | OCaml
-    | OpenSource
-    | PHP
-    | Philippines
-    | PhoneGap
-    | Poland
-    | Portugal
-    | PostgreSQL
-    | ProgressiveEnhancement
-    | PureScript
-    | Python
-    | Rails
-    | React
-    | Remote
-    | Romania
-    | Ruby
-    | Russia
-    | Russian
-    | SML
-    | SVG
-    | Scala
-    | Scalability
-    | Scotland
-    | Security
-    | Singapore
-    | SoftSkills
-    | SoftwareCraftsmanship
-    | SouthAfrica
-    | Spain
-    | Sweden
-    | Swift
-    | Switzerland
-    | Tunisia
-    | UAE
-    | USA
-    | UX
-    | Uruguay
-
-
-type FilteredTag
-    = Included Tag
-    | Excluded Tag
 
 
 type Action
@@ -152,77 +25,32 @@ update action model =
     case action of
         Exclude tag ->
             let
-                newTags = applyToAllTagsInList (excludeTag tag) model.tags
+                newTags = applyToAllTagsInList (FilteredTagWithName.excludeTag tag) model.tags
             in
                 { model | tags = newTags }
 
         Include tag ->
             let
-                newTags = applyToAllTagsInList (includeTag tag) model.tags
+                newTags = applyToAllTagsInList (FilteredTagWithName.includeTag tag) model.tags
             in
                 { model | tags = newTags }
 
         Reset ->
             let
-                newTags = applyToAllTagsInList excludeAllTags model.tags
+                newTags = applyToAllTagsInList FilteredTagWithName.excludeAllTags model.tags
             in
                 { model | tags = newTags }
 
 
-applyToAllTagsInList : (( FilteredTag, String ) -> ( FilteredTag, String )) -> List ( String, List ( FilteredTag, String ) ) -> List ( String, List ( FilteredTag, String ) )
+applyToAllTagsInList : (FilteredTagWithName -> FilteredTagWithName) -> List ( String, List FilteredTagWithName ) -> List ( String, List FilteredTagWithName )
 applyToAllTagsInList transform tagsWithDescription =
     List.map (\( description, tags ) -> ( description, List.map transform tags )) tagsWithDescription
-
-
-excludeTag : Tag -> ( FilteredTag, String ) -> ( FilteredTag, String )
-excludeTag tag filteredTagWithDisplay =
-    let
-        ( filteredTag, display ) = filteredTagWithDisplay
-    in
-        case filteredTag of
-            Included t ->
-                if t == tag then
-                    ( Excluded tag, display )
-                else
-                    filteredTagWithDisplay
-
-            _ ->
-                filteredTagWithDisplay
-
-
-includeTag : Tag -> ( FilteredTag, String ) -> ( FilteredTag, String )
-includeTag tag filteredTagWithDisplay =
-    let
-        ( filteredTag, display ) = filteredTagWithDisplay
-    in
-        case filteredTag of
-            Excluded t ->
-                if t == tag then
-                    ( Included tag, display )
-                else
-                    filteredTagWithDisplay
-
-            _ ->
-                filteredTagWithDisplay
-
-
-excludeAllTags : ( FilteredTag, String ) -> ( FilteredTag, String )
-excludeAllTags filteredTagWithDisplay =
-    let
-        ( filteredTag, display ) = filteredTagWithDisplay
-    in
-        case filteredTag of
-            Excluded t ->
-                ( Excluded t, display )
-
-            Included t ->
-                ( Excluded t, display )
 
 
 initialize : List String -> Model -> Model
 initialize includedTags model =
     let
-        filteredTagInitializer = initializeFilteredTag includedTags
+        filteredTagInitializer = FilteredTagWithName.initializeFilteredTag includedTags
 
         sectionInitializer = (\( section, filteredTagsWithDescription ) -> ( section, List.map filteredTagInitializer filteredTagsWithDescription ))
 
@@ -231,64 +59,28 @@ initialize includedTags model =
         { model | tags = newTags }
 
 
-initializeFilteredTag : List String -> ( FilteredTag, String ) -> ( FilteredTag, String )
-initializeFilteredTag includedTags ( filteredTag, description ) =
-    let
-        tag = getTag filteredTag
-    in
-        if List.member (toString tag) includedTags then
-            ( Included tag, description )
-        else
-            ( filteredTag, description )
-
-
 includedTags : Model -> List String
 includedTags model =
     List.map (\( _, filteredTagsWithDescriptions ) -> filteredTagsWithDescriptions) model.tags
         |> List.concat
         |> List.map (\( filteredTag, _ ) -> filteredTag)
-        |> List.filter tagIsIncluded
-        |> List.map getTag
+        |> List.filter FilteredTag.isIncluded
+        |> List.map FilteredTag.getTag
         |> List.map toString
 
 
 shouldShow : List FilteredTag -> List Conference -> List Conference
 shouldShow tags conferences =
     let
-        filteredTagsToShow = List.filter tagIsIncluded tags
+        filteredTagsToShow = List.filter FilteredTag.isIncluded tags
 
-        tagsToShow = List.map getTag filteredTagsToShow
+        tagsToShow = List.map FilteredTag.getTag filteredTagsToShow
     in
-        List.filter (shouldShowConference tagsToShow) conferences
+        List.filter (Conference.shouldShowConference tagsToShow) conferences
 
 
-shouldShowConference : List Tag -> Conference -> Bool
-shouldShowConference tags conference =
-    List.all (\tag -> List.member tag conference.tags) tags
-
-
-tagIsIncluded : FilteredTag -> Bool
-tagIsIncluded tag =
-    case tag of
-        Included _ ->
-            True
-
-        Excluded _ ->
-            False
-
-
-getTag : FilteredTag -> Tag
-getTag tag =
-    case tag of
-        Included t ->
-            t
-
-        Excluded t ->
-            t
-
-
-list : Model
-list =
+initialState : Model
+initialState =
     { conferences =
         [ { name = "@Swift"
           , link = "http://atswift.io/index-en.html"

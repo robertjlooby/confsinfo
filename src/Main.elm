@@ -1,8 +1,11 @@
 module Main (..) where
 
-import Conferences exposing (..)
+import Conference exposing (Conference)
+import Model exposing (..)
 import DateFormatter
 import Debug
+import FilteredTag exposing (FilteredTag(..))
+import FilteredTagWithName exposing (FilteredTagWithName)
 import Html exposing (text)
 import Html.Attributes exposing (class, href)
 import Html.Events
@@ -44,13 +47,13 @@ sourceCodeLink =
         ]
 
 
-allTagsView : Signal.Address Action -> List ( String, List ( FilteredTag, String ) ) -> List Html.Html
+allTagsView : Signal.Address Action -> List ( String, List FilteredTagWithName ) -> List Html.Html
 allTagsView address tagsWithDescriptions =
     List.map (tagsView address) tagsWithDescriptions
         |> List.concat
 
 
-tagsView : Signal.Address Action -> ( String, List ( FilteredTag, String ) ) -> List Html.Html
+tagsView : Signal.Address Action -> ( String, List FilteredTagWithName ) -> List Html.Html
 tagsView address ( description, tags ) =
     [ Html.div
         [ class "row" ]
@@ -61,7 +64,7 @@ tagsView address ( description, tags ) =
     ]
 
 
-tagView : Signal.Address Action -> ( FilteredTag, String ) -> Html.Html
+tagView : Signal.Address Action -> FilteredTagWithName -> Html.Html
 tagView address tagWithDisplay =
     let
         ( tagString, tagClass, clickAction ) =
@@ -79,12 +82,12 @@ tagView address tagWithDisplay =
             [ text tagString ]
 
 
-conferencesView : Signal.Address Action -> List Conference -> List ( String, List ( FilteredTag, String ) ) -> List Html.Html
+conferencesView : Signal.Address Action -> List Conference -> List ( String, List FilteredTagWithName ) -> List Html.Html
 conferencesView address conferences tagsWithDescriptions =
     let
         tagsToShow = List.map (\( _, tagsWithDisplay ) -> List.map fst tagsWithDisplay) tagsWithDescriptions |> List.concat
     in
-        List.map (conferenceView address) (Conferences.shouldShow tagsToShow conferences)
+        List.map (conferenceView address) (Model.shouldShow tagsToShow conferences)
 
 
 conferenceView : Signal.Address Action -> Conference -> Html.Html
@@ -103,40 +106,40 @@ conferenceView address conference =
         ]
 
 
-actions : Signal.Mailbox (Maybe Conferences.Action)
+actions : Signal.Mailbox (Maybe Model.Action)
 actions =
     Signal.mailbox Nothing
 
 
-address : Signal.Address Conferences.Action
+address : Signal.Address Model.Action
 address =
     Signal.forwardTo actions.address Just
 
 
-update : Maybe Conferences.Action -> Conferences.Model -> Conferences.Model
+update : Maybe Model.Action -> Model.Model -> Model.Model
 update maybeAction model =
     case maybeAction of
         Just action ->
-            Conferences.update action model
+            Model.update action model
 
         Nothing ->
             Debug.crash "This should never happen."
 
 
-initialModel : Conferences.Model
+initialModel : Model.Model
 initialModel =
     let
-        model = Conferences.list
+        model = Model.initialState
     in
         case getStorage of
             Just tags ->
-                Conferences.initialize tags model
+                Model.initialize tags model
 
             Nothing ->
                 model
 
 
-model : Signal Conferences.Model
+model : Signal Model.Model
 model =
     Signal.foldp update initialModel actions.signal
 
@@ -149,7 +152,7 @@ main =
 port getStorage : Maybe (List String)
 port setStorage : Signal (List String)
 port setStorage =
-    Signal.map Conferences.includedTags model
+    Signal.map Model.includedTags model
 
 
 port title : String
