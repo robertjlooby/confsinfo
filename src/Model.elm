@@ -383,6 +383,13 @@ initialState =
           , location = "Remote"
           , tags = [ English, Developers, Remote, JavaScript ]
           }
+        , { name = "UXistanbul"
+          , link = "http://uxistanbul.org/"
+          , startDate = ( 2016, Feb, 23 )
+          , endDate = ( 2016, Feb, 23 )
+          , location = "Istanbul, Turkey"
+          , tags = [ English, Designers, Turkey, UX ]
+          }
         , { name = "ConFoo"
           , link = "http://confoo.ca/en"
           , startDate = ( 2016, Feb, 24 )
@@ -670,6 +677,13 @@ initialState =
           , location = "Seattle, WA"
           , tags = [ English, Designers, Developers, USA, UX ]
           }
+        , { name = "Istanbul Tech Talks"
+          , link = "http://www.istanbultechtalks.com/"
+          , startDate = ( 2016, Apr, 5 )
+          , endDate = ( 2016, Apr, 5 )
+          , location = "Istanbul, Turkey"
+          , tags = [ English, Developers, Turkey, General ]
+          }
         , { name = "Smashing Conf SF"
           , link = "http://smashingconf.com/sf-2016/"
           , startDate = ( 2016, Apr, 5 )
@@ -879,6 +893,13 @@ initialState =
           , endDate = ( 2016, Apr, 29 )
           , location = "Budapest, Hungary"
           , tags = [ English, Developers, Hungary, SoftwareCraftsmanship ]
+          }
+        , { name = "TestIstanbul"
+          , link = "http://testistanbul.org/"
+          , startDate = ( 2016, Apr, 26 )
+          , endDate = ( 2016, Apr, 26 )
+          , location = "Istanbul, Turkey"
+          , tags = [ English, Turkish, Developers, Turkey, Testing ]
           }
         , { name = "droidcon Zagreb"
           , link = "http://droidcon.hr/en/"
@@ -1744,6 +1765,7 @@ initialState =
             , ( Excluded Japanese, "Japanese" )
             , ( Excluded Norwegian, "Norwegian" )
             , ( Excluded Russian, "Russian" )
+            , ( Excluded Turkish, "Turkish" )
             ]
           )
         , ( "Audience"
@@ -1817,6 +1839,7 @@ initialState =
             , ( Excluded Security, "Security" )
             , ( Excluded SoftSkills, "Soft Skills" )
             , ( Excluded SoftwareCraftsmanship, "Software Craftsmanship" )
+            , ( Excluded Testing, "Testing" )
             , ( Excluded UX, "UX" )
             ]
           )

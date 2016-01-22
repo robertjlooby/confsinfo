@@ -110,8 +110,10 @@ type Tag
     | Sweden
     | Swift
     | Switzerland
+    | Testing
     | Tunisia
     | Turkey
+    | Turkish
     | UAE
     | USA
     | UX
