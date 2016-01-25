@@ -509,13 +509,6 @@ initialState =
           , location = "Bath, England"
           , tags = [ English, Developers, England, Ruby ]
           }
-        , { name = "Frontier Conf"
-          , link = "https://www.frontierconf.com/"
-          , startDate = ( 2016, Mar, 11 )
-          , endDate = ( 2016, Mar, 11 )
-          , location = "London, England"
-          , tags = [ English, Designers, England, CSS, UX ]
-          }
         , { name = "RWDevCon 2016"
           , link = "http://rwdevcon.com/"
           , startDate = ( 2016, Mar, 11 )
@@ -1747,6 +1740,13 @@ initialState =
           , endDate = ( 2016, Nov, 20 )
           , location = "Vilnius, Lithuania"
           , tags = [ English, Developers, Lithuania, General ]
+          }
+        , { name = "Frontier Conf"
+          , link = "https://www.frontierconf.com/"
+          , startDate = ( 2016, Nov, 16 )
+          , endDate = ( 2016, Nov, 16 )
+          , location = "London, England"
+          , tags = [ English, Designers, England, CSS, UX ]
           }
         , { name = "AWS re:Invent"
           , link = "https://reinvent.awsevents.com/"
