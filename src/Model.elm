@@ -432,6 +432,13 @@ initialState =
           , location = "Hammamet, Tunisia"
           , tags = [ English, Developers, Tunisia, Android, Mobile ]
           }
+        , { name = "Frontend Conference"
+          , link = "http://kfug.jp/frontconf2016/"
+          , startDate = ( 2016, Mar, 5 )
+          , endDate = ( 2016, Mar, 5 )
+          , location = "Osaka, Japan"
+          , tags = [ Japanese, Designers, Developers, Japan, UX, JavaScript, CSS, AngularJS ]
+          }
         , { name = "Big Data Paris"
           , link = "http://www.bigdataparis.com/"
           , startDate = ( 2016, Mar, 7 )
