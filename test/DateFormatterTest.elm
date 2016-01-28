@@ -9,6 +9,7 @@ import DateFormatter exposing (..)
 import ElmTest exposing (assertEqual, suite, test)
 import Lazy.List exposing ((:::), empty)
 import Random
+import Random.Extra
 import Random.Date
 import Shrink exposing (Shrinker)
 
@@ -118,42 +119,66 @@ daTupleShrinker =
     Shrink.tuple3 ( yearShrinker, monthShrinker, dayShrinker )
 
 
-daTupleInvestigator : Investigator.Investigator DaTuple
-daTupleInvestigator =
-    { generator = randomDaTupleGenerator
-    , shrinker = daTupleShrinker
-    }
-
-
 tests =
     suite
         "DateFormatter"
         [ Check.test
-            "formats a single day"
+            "formatRange formats a single day"
             (\date -> formatRange date date)
             (\( y, m, d ) -> toString m ++ " " ++ toString d ++ ", " ++ toString y)
-            daTupleInvestigator
+            { generator = randomDaTupleGenerator
+            , shrinker = daTupleShrinker
+            }
             100
             (Random.initialSeed 1)
-        , Check.test
-            "formats days within a month"
-            (\( y, m, d ) -> formatRange ( y, m, d ) ( y, m, d + 2 ))
-            (\( y, m, d ) -> toString m ++ " " ++ toString d ++ "-" ++ toString (d + 2) ++ ", " ++ toString y)
-            daTupleInvestigator
-            100
-            (Random.initialSeed 1)
-        , Check.test
-            "formats days between months"
-            (\( y, m, d ) -> formatRange ( y, m, d ) ( y, nextMonth m, d ))
-            (\( y, m, d ) -> toString m ++ " " ++ toString d ++ "-" ++ toString (nextMonth m) ++ " " ++ toString d ++ ", " ++ toString y)
-            daTupleInvestigator
-            100
-            (Random.initialSeed 1)
-        , Check.test
-            "formats days between years"
-            (\( y, m, d ) -> formatRange ( y, m, d ) ( y + 1, m, d ))
-            (\( y, m, d ) -> toString m ++ " " ++ toString d ++ ", " ++ toString y ++ "-" ++ toString m ++ " " ++ toString d ++ ", " ++ toString (y + 1))
-            daTupleInvestigator
-            100
-            (Random.initialSeed 1)
+        , let
+            unorderedDays = (\( ( _, _, d ), d' ) -> d >= d')
+          in
+            Check.test
+                "formatRange formats days within a month"
+                (\( ( y, m, d ), d' ) -> formatRange ( y, m, d ) ( y, m, d' ))
+                (\( ( y, m, d ), d' ) -> toString m ++ " " ++ toString d ++ "-" ++ toString d' ++ ", " ++ toString y)
+                { generator =
+                    Random.map2 (,) randomDaTupleGenerator randomDayGenerator
+                        |> Random.Extra.dropIf unorderedDays
+                , shrinker =
+                    Shrink.tuple ( daTupleShrinker, dayShrinker )
+                        |> Shrink.dropIf unorderedDays
+                }
+                100
+                (Random.initialSeed 1)
+        , let
+            unorderedMonths = (\( ( _, m, _ ), m', _ ) -> monthToInt m >= monthToInt m')
+          in
+            Check.test
+                "formatRange formats days between months"
+                (\( ( y, m, d ), m', d' ) -> formatRange ( y, m, d ) ( y, m', d' ))
+                (\( ( y, m, d ), m', d' ) -> toString m ++ " " ++ toString d ++ "-" ++ toString m' ++ " " ++ toString d' ++ ", " ++ toString y)
+                { generator =
+                    Random.map3 (,,) randomDaTupleGenerator randomMonthGenerator randomDayGenerator
+                        |> Random.Extra.dropIf unorderedMonths
+                , shrinker =
+                    Shrink.tuple3 ( daTupleShrinker, monthShrinker, dayShrinker )
+                        |> Shrink.dropIf unorderedMonths
+                }
+                100
+                (Random.initialSeed 1)
+        , let
+            formatDate = (\( y, m, d ) -> toString m ++ " " ++ toString d ++ ", " ++ toString y)
+
+            sameYear = (\( ( y, _, _ ), ( y', _, _ ) ) -> y >= y')
+          in
+            Check.test
+                "formatRange formats days between years"
+                (\( date, date' ) -> formatRange date date')
+                (\( date, date' ) -> formatDate date ++ "-" ++ formatDate date')
+                { generator =
+                    Random.map2 (,) randomDaTupleGenerator randomDaTupleGenerator
+                        |> Random.Extra.dropIf sameYear
+                , shrinker =
+                    Shrink.tuple ( daTupleShrinker, daTupleShrinker )
+                        |> Shrink.dropIf sameYear
+                }
+                100
+                (Random.initialSeed 1)
         ]
