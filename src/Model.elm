@@ -537,6 +537,13 @@ initialState =
           , location = "Nashville, TN"
           , tags = [ English, Designers, Developers, USA, UX ]
           }
+        , { name = "CocoaConf Yosemite"
+          , link = "http://cocoaconf.com/yosemite"
+          , startDate = ( 2016, Mar, 14 )
+          , endDate = ( 2016, Mar, 17 )
+          , location = "National Park, CA"
+          , tags = [ English, Developers, USA, IOS, Cocoa ]
+          }
         , { name = "Erlang Factory SF Workshops"
           , link = "http://www.erlang-factory.com/sfbay2016/home"
           , startDate = ( 2016, Mar, 14 )
@@ -843,7 +850,7 @@ initialState =
           , startDate = ( 2016, Apr, 21 )
           , endDate = ( 2016, Apr, 22 )
           , location = "Warsaw, Poland"
-          , tags = [ English, Designers, Developers, Poland, Mobile ]
+          , tags = [ English, Designers, Developers, Poland, Mobile, UX ]
           }
         , { name = "Render Conf"
           , link = "http://2016.render-conf.com/"
@@ -865,6 +872,13 @@ initialState =
           , endDate = ( 2016, Apr, 22 )
           , location = "New York, NY"
           , tags = [ English, Designers, USA, UX ]
+          }
+        , { name = "Xamarin Evolve"
+          , link = "https://evolve.xamarin.com/"
+          , startDate = ( 2016, Apr, 24 )
+          , endDate = ( 2016, Apr, 28 )
+          , location = "Orlando, FL"
+          , tags = [ English, Developers, USA, Mobile, IOS, Android, DotNet ]
           }
         , { name = "dotScale"
           , link = "http://www.dotscale.io/"
@@ -914,6 +928,13 @@ initialState =
           , endDate = ( 2016, Apr, 28 )
           , location = "Champaign, IL"
           , tags = [ English, Developers, USA, General ]
+          }
+        , { name = "NSNorth"
+          , link = "http://nsnorth.ca/"
+          , startDate = ( 2016, Apr, 28 )
+          , endDate = ( 2016, Apr, 30 )
+          , location = "Toronto, Ontario, Canada"
+          , tags = [ English, Developers, Canada, IOS ]
           }
         , { name = "YOW! Lambda Jam"
           , link = "http://lambdajam.yowconference.com.au/"
@@ -1719,6 +1740,13 @@ initialState =
           , endDate = ( 2016, Nov, 2 )
           , location = "San Francisco, CA"
           , tags = [ English, Designers, Developers, USA, UX ]
+          }
+        , { name = "CocoaConf San Jose"
+          , link = "http://cocoaconf.com/sanjose-2016/home"
+          , startDate = ( 2016, Nov, 4 )
+          , endDate = ( 2016, Nov, 5 )
+          , location = "San Jose, CA"
+          , tags = [ English, Developers, USA, IOS, Cocoa ]
           }
         , { name = "Beyond Tellerrand"
           , link = "http://beyondtellerrand.com/events/berlin-2016"
