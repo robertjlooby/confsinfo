@@ -1195,8 +1195,15 @@ initialState =
           , location = "Broomfield, CO"
           , tags = [ English, Developers, USA, General, DevOps, BigData ]
           }
+        , { name = "PrlConf"
+          , link = "http://www.jonprl.org/prlconf"
+          , startDate = ( 2016, May, 25 )
+          , endDate = ( 2016, May, 25 )
+          , location = "Boulder, CO"
+          , tags = [ English, Developers, USA, FunctionalProgramming ]
+          }
         , { name = "PureScript Conf"
-          , link = "https://twitter.com/lambda_conf/status/667099897984712704"
+          , link = "https://github.com/purescript/purescript/wiki/PureScript-Conf-2016"
           , startDate = ( 2016, May, 25 )
           , endDate = ( 2016, May, 25 )
           , location = "Boulder, CO"
