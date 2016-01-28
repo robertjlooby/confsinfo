@@ -7,6 +7,7 @@ import Date exposing (..)
 import Date.Core exposing (monthList, monthToInt, nextMonth)
 import DateFormatter exposing (..)
 import ElmTest exposing (assertEqual, suite, test)
+import Lazy.List exposing ((:::), empty)
 import Random
 import Random.Date
 import Shrink exposing (Shrinker)
@@ -59,27 +60,57 @@ randomMonthGenerator =
 
 randomDaTupleGenerator : Random.Generator DaTuple
 randomDaTupleGenerator =
-    Random.map3 (\y m d -> ( y, m, d )) randomYearGenerator randomMonthGenerator randomDayGenerator
-
-
-intRangeShrinker : Int -> Int -> Shrinker Int
-intRangeShrinker min max =
-    Shrink.keepIf (\n -> n >= min && n <= max) Shrink.int
+    Random.map3 (,,) randomYearGenerator randomMonthGenerator randomDayGenerator
 
 
 yearShrinker : Shrinker Int
 yearShrinker =
-    intRangeShrinker minYear maxYear
+    Shrink.atLeastInt minYear
 
 
 monthShrinker : Shrinker Month
-monthShrinker =
-    Shrink.convert intToMonth monthToInt (intRangeShrinker 1 12)
+monthShrinker month =
+    case month of
+        Jan ->
+            empty
+
+        Feb ->
+            Jan ::: monthShrinker Jan
+
+        Mar ->
+            Feb ::: monthShrinker Feb
+
+        Apr ->
+            Mar ::: monthShrinker Mar
+
+        May ->
+            Apr ::: monthShrinker Apr
+
+        Jun ->
+            May ::: monthShrinker May
+
+        Jul ->
+            Jun ::: monthShrinker Jun
+
+        Aug ->
+            Jul ::: monthShrinker Jul
+
+        Sep ->
+            Aug ::: monthShrinker Aug
+
+        Oct ->
+            Sep ::: monthShrinker Sep
+
+        Nov ->
+            Oct ::: monthShrinker Oct
+
+        Dec ->
+            Nov ::: monthShrinker Nov
 
 
 dayShrinker : Shrinker Int
 dayShrinker =
-    intRangeShrinker 1 31
+    Shrink.atLeastInt 1
 
 
 daTupleShrinker : Shrink.Shrinker DaTuple
