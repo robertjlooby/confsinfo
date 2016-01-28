@@ -1,12 +1,11 @@
 module DateFormatterTest (..) where
 
-import Array
 import Check.Investigator as Investigator
 import Check.Test as Check
-import Date exposing (..)
-import Date.Core exposing (monthList, monthToInt, nextMonth)
+import Date exposing (Month(..))
+import Date.Core exposing (monthToInt)
 import DateFormatter exposing (..)
-import ElmTest exposing (assertEqual, suite, test)
+import ElmTest exposing (suite)
 import Lazy.List exposing ((:::), empty)
 import Random
 import Random.Extra
@@ -19,31 +18,9 @@ minYear =
     2000
 
 
-maxYear : Int
-maxYear =
-    2100
-
-
-intToMonth : Int -> Month
-intToMonth int =
-    let
-        months = Array.fromList monthList
-
-        index = (int - 1) % 12
-
-        maybeMonth = Array.get index months
-    in
-        case maybeMonth of
-            Just m ->
-                m
-
-            Nothing ->
-                Debug.crash "Month not found!! Should not happen."
-
-
 randomYearGenerator : Random.Generator Int
 randomYearGenerator =
-    Random.int minYear maxYear
+    Random.int minYear 2100
 
 
 randomDayGenerator : Random.Generator Int
@@ -51,17 +28,9 @@ randomDayGenerator =
     Random.int 1 31
 
 
-randomMonthGenerator : Random.Generator Month
-randomMonthGenerator =
-    let
-        randomMonthIndex = Random.int 0 11
-    in
-        Random.map intToMonth randomMonthIndex
-
-
 randomDaTupleGenerator : Random.Generator DaTuple
 randomDaTupleGenerator =
-    Random.map3 (,,) randomYearGenerator randomMonthGenerator randomDayGenerator
+    Random.map3 (,,) randomYearGenerator Random.Date.month randomDayGenerator
 
 
 yearShrinker : Shrinker Int
@@ -155,7 +124,7 @@ tests =
                 (\( ( y, m, d ), m', d' ) -> formatRange ( y, m, d ) ( y, m', d' ))
                 (\( ( y, m, d ), m', d' ) -> toString m ++ " " ++ toString d ++ "-" ++ toString m' ++ " " ++ toString d' ++ ", " ++ toString y)
                 { generator =
-                    Random.map3 (,,) randomDaTupleGenerator randomMonthGenerator randomDayGenerator
+                    Random.map3 (,,) randomDaTupleGenerator Random.Date.month randomDayGenerator
                         |> Random.Extra.dropIf unorderedMonths
                 , shrinker =
                     Shrink.tuple3 ( daTupleShrinker, monthShrinker, dayShrinker )
