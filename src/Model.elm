@@ -10,6 +10,7 @@ import Tag exposing (Tag(..))
 
 type alias Model =
     { conferences : List Conference
+    , includePastEvents : Bool
     , tags : List ( String, List FilteredTagWithName )
     }
 
@@ -17,6 +18,7 @@ type alias Model =
 type Action
     = Include Tag
     | Exclude Tag
+    | IncludePastEvents Bool
     | Reset
 
 
@@ -34,6 +36,9 @@ update action model =
                 newTags = applyToAllTagsInList (FilteredTagWithName.includeTag tag) model.tags
             in
                 { model | tags = newTags }
+
+        IncludePastEvents shouldIncludePastEvents ->
+            { model | includePastEvents = shouldIncludePastEvents }
 
         Reset ->
             let
@@ -1931,4 +1936,5 @@ initialState =
             ]
           )
         ]
+    , includePastEvents = False
     }

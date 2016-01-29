@@ -7,6 +7,14 @@ import FilteredTag exposing (FilteredTag(..))
 import Tag exposing (Tag(..))
 
 
+withTags : List ( String, List ( FilteredTag, String ) ) -> Model
+withTags tags =
+    { conferences = []
+    , includePastEvents = True
+    , tags = tags
+    }
+
+
 tests =
     suite
         "Model"
@@ -14,21 +22,21 @@ tests =
             <| let
                 tags = [ ( Included DotNet, "" ), ( Included Ruby, "" ) ]
 
-                model = { conferences = [], tags = [ ( "", tags ) ] }
+                model = withTags [ ( "", tags ) ]
                in
-                assertEqual { conferences = [], tags = [ ( "", [ ( Included DotNet, "" ), ( Excluded Ruby, "" ) ] ) ] } <| update (Exclude Ruby) model
+                assertEqual (withTags [ ( "", [ ( Included DotNet, "" ), ( Excluded Ruby, "" ) ] ) ]) <| update (Exclude Ruby) model
         , test "update include includes a tag"
             <| let
                 tags = [ ( Excluded DotNet, "" ), ( Included Ruby, "" ) ]
 
-                model = { conferences = [], tags = [ ( "", tags ) ] }
+                model = withTags [ ( "", tags ) ]
                in
-                assertEqual { conferences = [], tags = [ ( "", [ ( Included DotNet, "" ), ( Included Ruby, "" ) ] ) ] } <| update (Include DotNet) model
+                assertEqual (withTags [ ( "", [ ( Included DotNet, "" ), ( Included Ruby, "" ) ] ) ]) <| update (Include DotNet) model
         , test "update reset excludes all tags"
             <| let
                 tags = [ ( Included Agile, "" ), ( Excluded DotNet, "" ), ( Included Ruby, "" ) ]
 
-                model = { conferences = [], tags = [ ( "", tags ) ] }
+                model = withTags [ ( "", tags ) ]
                in
                 assertEqual { model | tags = [ ( "", [ ( Excluded Agile, "" ), ( Excluded DotNet, "" ), ( Excluded Ruby, "" ) ] ) ] } <| update Reset model
         , test "should show conference if it has all included tags"
@@ -54,14 +62,34 @@ tests =
 
                 newTags = [ ( "", [ ( Included Agile, "1" ), ( Excluded DotNet, "2" ) ] ), ( "", [ ( Included Ruby, "3" ) ] ) ]
 
-                model = { conferences = [], tags = tags }
+                model = withTags tags
                in
                 assertEqual { model | tags = newTags } <| initialize [ toString Agile, toString Ruby, "Other" ] model
         , test "included tags gets just string versions of all included tags"
             <| let
                 tags = [ ( "", [ ( Included Agile, "1" ), ( Excluded DotNet, "2" ) ] ), ( "", [ ( Included Ruby, "3" ) ] ) ]
 
-                model = { conferences = [], tags = tags }
+                model = withTags tags
                in
                 assertEqual [ toString Agile, toString Ruby ] <| includedTags model
+        , test "initial model filters out past events"
+            <| assertEqual False initialState.includePastEvents
+        , test "update IncludePastEvents can uninclude past events"
+            <| let
+                blankModel = (withTags [])
+
+                model = { blankModel | includePastEvents = True }
+
+                newModel = update (IncludePastEvents False) model
+               in
+                assertEqual False newModel.includePastEvents
+        , test "update IncludePastEvents can include past events"
+            <| let
+                blankModel = (withTags [])
+
+                model = { blankModel | includePastEvents = False }
+
+                newModel = update (IncludePastEvents True) model
+               in
+                assertEqual True newModel.includePastEvents
         ]
