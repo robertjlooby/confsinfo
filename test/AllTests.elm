@@ -1,18 +1,20 @@
 module Main (..) where
 
 import Console
-import ElmTest exposing (consoleRunner, Test, suite)
-import Task
-import ModelTest
 import DateFormatterTest
+import ElmTest exposing (consoleRunner, Test, suite)
+import FilteredTagTest
+import ModelTest
+import Task
 
 
 tests : Test
 tests =
     suite
         "All tests"
-        [ ModelTest.tests
-        , DateFormatterTest.tests
+        [ DateFormatterTest.tests
+        , FilteredTagTest.tests
+        , ModelTest.tests
         ]
 
 
