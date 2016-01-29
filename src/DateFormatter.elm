@@ -1,6 +1,7 @@
 module DateFormatter (..) where
 
 import Date exposing (Month)
+import Date.Core exposing (monthToInt)
 
 
 type alias DaTuple =
@@ -30,3 +31,22 @@ formatRange ( startYear, startMonth, startDay ) ( endYear, endMonth, endDay ) =
             startMonth' ++ " " ++ startDay' ++ "-" ++ endDay' ++ ", " ++ startYear'
         else
             startMonth' ++ " " ++ startDay' ++ "-" ++ endMonth' ++ " " ++ endDay' ++ ", " ++ startYear'
+
+
+compare' : DaTuple -> DaTuple -> Order
+compare' date date' =
+    let
+        ( y, m, d ) = date
+
+        ( y', m', d' ) = date'
+    in
+        if y > y' then
+            GT
+        else if y < y' then
+            LT
+        else if (monthToInt m) > (monthToInt m') then
+            GT
+        else if (monthToInt m) < (monthToInt m') then
+            LT
+        else
+            compare d d'
