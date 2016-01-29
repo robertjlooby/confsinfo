@@ -17,6 +17,10 @@
 - `npm install -g`
 - `elm-test AllTests.elm`
 
+or
+
+- `npm run test` to watch and run on save
+
 ## Rationale
 
 I wanted to make a central place for designers and developers to find

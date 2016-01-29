@@ -7,10 +7,14 @@
     "type": "git",
     "url": "https://github.com/robertjlooby/confsinfo"
   },
-  "dependencies": {
+  "dependencies": {},
+  "scripts": {
+    "test": "./node_modules/gulp/bin/gulp.js"
   },
   "devDependencies": {
-    "elm-test": "^0.16.0"
+    "elm-test": "^0.16.0",
+    "gulp": "^3.9.0",
+    "gulp-shell": "^0.5.2"
   },
   "license": "MIT"
 }
