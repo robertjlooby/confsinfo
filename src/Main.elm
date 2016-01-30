@@ -9,6 +9,8 @@ import FilteredTagWithName exposing (FilteredTagWithName)
 import Html exposing (text)
 import Html.Attributes exposing (class, href)
 import Html.Events
+import Task exposing (Task, andThen)
+import TaskTutorial exposing (getCurrentTime)
 
 
 view : Signal.Address Action -> Model -> Html.Html
@@ -17,9 +19,33 @@ view address model =
         [ class "container" ]
         <| List.concat
             [ allTagsView address model.tags
+            , [ includePastEventsButtonView address model.includePastEvents ]
             , [ resetButtonView address ]
-            , conferencesView address model.conferences model.tags
+            , conferencesView address model
             , [ sourceCodeLink ]
+            ]
+
+
+includePastEventsButtonView : Signal.Address Action -> Bool -> Html.Html
+includePastEventsButtonView address includePastEvents =
+    let
+        label = "Include Past Events"
+
+        ( buttonText, tagClass, clickAction ) =
+            case includePastEvents of
+                True ->
+                    ( "- " ++ label, "included", IncludePastEvents False )
+
+                False ->
+                    ( "+ " ++ label, "excluded", IncludePastEvents True )
+    in
+        Html.div
+            [ class "row" ]
+            [ Html.button
+                [ class <| "four columns offset-by-four " ++ tagClass
+                , Html.Events.onClick address clickAction
+                ]
+                [ text buttonText ]
             ]
 
 
@@ -82,12 +108,12 @@ tagView address tagWithDisplay =
             [ text tagString ]
 
 
-conferencesView : Signal.Address Action -> List Conference -> List ( String, List FilteredTagWithName ) -> List Html.Html
-conferencesView address conferences tagsWithDescriptions =
+conferencesView : Signal.Address Action -> Model -> List Html.Html
+conferencesView address model =
     let
-        tagsToShow = List.map (\( _, tagsWithDisplay ) -> List.map fst tagsWithDisplay) tagsWithDescriptions |> List.concat
+        tagsToShow = List.map (\( _, tagsWithDisplay ) -> List.map fst tagsWithDisplay) model.tags |> List.concat
     in
-        List.map (conferenceView address) (Model.shouldShow tagsToShow conferences)
+        List.map (conferenceView address) (Model.shouldShow tagsToShow model.currentDate model.includePastEvents model.conferences)
 
 
 conferenceView : Signal.Address Action -> Conference -> Html.Html
@@ -158,3 +184,8 @@ port setStorage =
 port title : String
 port title =
     "confs.info"
+
+
+port runner : Task x ()
+port runner =
+    getCurrentTime `andThen` (\time -> Signal.send actions.address (Just <| SetCurrentDate time))
