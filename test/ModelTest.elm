@@ -41,11 +41,33 @@ tests =
                 model = withTags [ ( "", tags ) ]
                in
                 assertEqual { model | tags = [ ( "", [ ( Excluded Agile, "" ), ( Excluded DotNet, "" ), ( Excluded Ruby, "" ) ] ) ] } <| update Reset model
+        , test "shouldShow filters out past events if includePastEvents is False"
+            <| let
+                blankConference = { name = "", link = "", startDate = ( 1, Date.Jan, 1 ), endDate = ( 1, Date.Jan, 1 ), location = "", tags = [] }
+
+                conference1 = { blankConference | startDate = ( 2015, Date.Dec, 30 ) }
+
+                conference2 = { blankConference | startDate = ( 2016, Date.Jan, 2 ) }
+
+                conferences = [ conference1, conference2 ]
+               in
+                assertEqual [ conference2 ] <| shouldShow [] ( 2016, Jan, 1 ) False conferences
+        , test "shouldShow does not filter out past events if includePastEvents is True"
+            <| let
+                blankConference = { name = "", link = "", startDate = ( 1, Date.Jan, 1 ), endDate = ( 1, Date.Jan, 1 ), location = "", tags = [] }
+
+                conference1 = { blankConference | startDate = ( 2015, Date.Dec, 30 ) }
+
+                conference2 = { blankConference | startDate = ( 2016, Date.Jan, 2 ) }
+
+                conferences = [ conference1, conference2 ]
+               in
+                assertEqual [ conference1, conference2 ] <| shouldShow [] ( 2016, Jan, 1 ) True conferences
         , test "should show conference if it has all included tags"
             <| let
                 tags = [ Included Agile, Excluded DotNet, Included Ruby ]
 
-                blankConference = { name = "", link = "", startDate = ( 1, Date.Jan, 1 ), endDate = ( 1, Date.Jan, 1 ), location = "", tags = [] }
+                blankConference = { name = "", link = "", startDate = ( 2016, Date.Jan, 1 ), endDate = ( 2016, Date.Jan, 1 ), location = "", tags = [] }
 
                 conference1 = { blankConference | tags = [ Agile, Ruby ] }
 
@@ -57,7 +79,7 @@ tests =
 
                 conferences = [ conference1, conference2, conference3, conference4 ]
                in
-                assertEqual [ conference1, conference4 ] <| shouldShow tags conferences
+                assertEqual [ conference1, conference4 ] <| shouldShow tags ( 2015, Jan, 1 ) True conferences
         , test "initialize includes all tags from their string versions"
             <| let
                 tags = [ ( "", [ ( Excluded Agile, "1" ), ( Excluded DotNet, "2" ) ] ), ( "", [ ( Excluded Ruby, "3" ) ] ) ]

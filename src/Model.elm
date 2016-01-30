@@ -2,7 +2,7 @@ module Model (..) where
 
 import Conference exposing (Conference)
 import Date exposing (Month(..))
-import DateFormatter exposing (DaTuple)
+import DateFormatter exposing (DaTuple, compare')
 import FilteredTag exposing (FilteredTag(..))
 import FilteredTagWithName exposing (FilteredTagWithName)
 import Tag exposing (Tag(..))
@@ -85,14 +85,28 @@ includedTags model =
         |> List.map toString
 
 
-shouldShow : List FilteredTag -> List Conference -> List Conference
-shouldShow tags conferences =
+shouldShow : List FilteredTag -> DaTuple -> Bool -> List Conference -> List Conference
+shouldShow tags currentDate includePastEvents conferences =
     let
         filteredTagsToShow = List.filter FilteredTag.isIncluded tags
 
         tagsToShow = List.map FilteredTag.getTag filteredTagsToShow
+
+        compareToCurrentDate = compare' currentDate
+
+        isInFuture date =
+            let
+                order = compareToCurrentDate date
+            in
+                order == LT || order == EQ
+
+        confsToFilterOnTags =
+            if includePastEvents then
+                conferences
+            else
+                List.filter (\c -> isInFuture c.startDate) conferences
     in
-        List.filter (Conference.shouldShowConference tagsToShow) conferences
+        List.filter (Conference.shouldShowConference tagsToShow) confsToFilterOnTags
 
 
 initialState : Model
