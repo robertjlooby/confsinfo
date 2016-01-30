@@ -3,6 +3,7 @@ module ModelTest (..) where
 import ElmTest exposing (assertEqual, suite, test)
 import Date
 import Model exposing (..)
+import Date exposing (Month(..))
 import FilteredTag exposing (FilteredTag(..))
 import Tag exposing (Tag(..))
 
@@ -10,6 +11,7 @@ import Tag exposing (Tag(..))
 withTags : List ( String, List ( FilteredTag, String ) ) -> Model
 withTags tags =
     { conferences = []
+    , currentDate = ( 2016, Jan, 1 )
     , includePastEvents = True
     , tags = tags
     }
@@ -92,4 +94,17 @@ tests =
                 newModel = update (IncludePastEvents True) model
                in
                 assertEqual True newModel.includePastEvents
+        , test "initial model has currentDate at Jan 1, 2016"
+            <| assertEqual ( 2016, Jan, 1 ) initialState.currentDate
+        , test "update SetCurrentDate sets the currentDate"
+            <| let
+                blankModel = (withTags [])
+
+                model = { blankModel | currentDate = ( 2016, Jan, 1 ) }
+
+                newModel = update (SetCurrentDate 1446595200000) model
+
+                ( y, m, d ) = newModel.currentDate
+               in
+                assertEqual True <| y == 2015 && m == Nov && (d <= 5 || d >= 3)
         ]

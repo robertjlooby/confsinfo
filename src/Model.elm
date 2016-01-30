@@ -6,10 +6,12 @@ import DateFormatter exposing (DaTuple)
 import FilteredTag exposing (FilteredTag(..))
 import FilteredTagWithName exposing (FilteredTagWithName)
 import Tag exposing (Tag(..))
+import Time exposing (Time)
 
 
 type alias Model =
     { conferences : List Conference
+    , currentDate : DaTuple
     , includePastEvents : Bool
     , tags : List ( String, List FilteredTagWithName )
     }
@@ -20,6 +22,7 @@ type Action
     | Exclude Tag
     | IncludePastEvents Bool
     | Reset
+    | SetCurrentDate Time
 
 
 update : Action -> Model -> Model
@@ -45,6 +48,14 @@ update action model =
                 newTags = applyToAllTagsInList FilteredTagWithName.excludeAllTags model.tags
             in
                 { model | tags = newTags }
+
+        SetCurrentDate time ->
+            let
+                date = Date.fromTime time
+
+                daTuple = ( Date.year date, Date.month date, Date.day date )
+            in
+                { model | currentDate = daTuple }
 
 
 applyToAllTagsInList : (FilteredTagWithName -> FilteredTagWithName) -> List ( String, List FilteredTagWithName ) -> List ( String, List FilteredTagWithName )
@@ -1803,6 +1814,7 @@ initialState =
           , tags = [ English, Developers, USA, AWS, Cloud ]
           }
         ]
+    , currentDate = ( 2016, Jan, 1 )
     , tags =
         [ ( "Conference Language"
           , [ ( Excluded English, "English" )
