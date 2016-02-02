@@ -467,6 +467,13 @@ initialState =
         , location = "London, England"
         , tags = [ English, Developers, England, CSS, JavaScript, ProgressiveEnhancement ]
         }
+      , { name = "fsharpConf"
+        , link = "http://fsharpconf.com/"
+        , startDate = ( 2016, Mar, 4 )
+        , endDate = ( 2016, Mar, 4 )
+        , location = "Remote"
+        , tags = [ English, Developers, Remote, FSharp, DotNet, FunctionalProgramming ]
+        }
       , { name = "droidcon Tunisia"
         , link = "http://www.droidcon.tn/"
         , startDate = ( 2016, Mar, 5 )
@@ -1593,6 +1600,13 @@ initialState =
         , endDate = ( 2016, Aug, 15 )
         , location = "Moscow, Russia"
         , tags = [ English, Russian, Developers, Russia, FunctionalProgramming, Erlang, Scala, Clojure, Haskell ]
+        }
+      , { name = "Abstractions"
+        , link = "http://abstractions.io/"
+        , startDate = ( 2016, Aug, 18 )
+        , endDate = ( 2016, Aug, 20 )
+        , location = "Pittsburgh, PA"
+        , tags = [ English, Developers, USA, General ]
         }
       , { name = "HybridConf"
         , link = "https://hybridconf.net/"
