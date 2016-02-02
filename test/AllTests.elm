@@ -10,14 +10,14 @@ import Task
 
 tests : Test
 tests =
-    suite
-        "All tests"
-        [ DateFormatterTest.tests
-        , FilteredTagTest.tests
-        , ModelTest.tests
-        ]
+  suite
+    "All tests"
+    [ DateFormatterTest.tests
+    , FilteredTagTest.tests
+    , ModelTest.tests
+    ]
 
 
 port runner : Signal (Task.Task x ())
 port runner =
-    Console.run (consoleRunner tests)
+  Console.run (consoleRunner tests)
