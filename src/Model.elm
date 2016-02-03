@@ -649,6 +649,13 @@ initialState =
         , location = "London, England"
         , tags = [ English, Developers, England, Scalability ]
         }
+      , { name = "Dutch Clojure Days"
+        , link = "http://clojure.org/events/2016/dutch_clojure_days"
+        , startDate = ( 2016, Mar, 19 )
+        , endDate = ( 2016, Mar, 19 )
+        , location = "Amsterdam, Netherlands"
+        , tags = [ English, Developers, Netherlands, Clojure, FunctionalProgramming ]
+        }
       , { name = "RubyConf India"
         , link = "http://rubyconfindia.org/"
         , startDate = ( 2016, Mar, 19 )
@@ -1265,6 +1272,13 @@ initialState =
         , location = "Chicago, IL"
         , tags = [ English, Developers, USA, General ]
         }
+      , { name = "iOSCon"
+        , link = "https://skillsmatter.com/conferences/7598-ioscon-2016-the-conference-for-ios-and-swift-developers"
+        , startDate = ( 2016, May, 26 )
+        , endDate = ( 2016, May, 27 )
+        , location = "London, England"
+        , tags = [ English, Developers, England, IOS ]
+        }
       , { name = "LambdaConf"
         , link = "http://lambdaconf.us/"
         , startDate = ( 2016, May, 26 )
@@ -1852,6 +1866,13 @@ initialState =
         , endDate = ( 2016, Dec, 2 )
         , location = "Las Vegas, NV"
         , tags = [ English, Developers, USA, AWS, Cloud ]
+        }
+      , { name = "Clojure eXchange"
+        , link = "https://skillsmatter.com/conferences/7430-clojure-exchange-2016"
+        , startDate = ( 2016, Dec, 1 )
+        , endDate = ( 2016, Dec, 2 )
+        , location = "London, England"
+        , tags = [ English, Developers, England, Clojure, FunctionalProgramming ]
         }
       ]
   , currentDate = ( 2016, Jan, 1 )
