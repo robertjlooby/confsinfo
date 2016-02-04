@@ -663,6 +663,13 @@ initialState =
         , location = "Kochi, India"
         , tags = [ English, Developers, India, Ruby ]
         }
+      , { name = "SwiftAveiro"
+        , link = "https://attending.io/events/swiftaveiro"
+        , startDate = ( 2016, Mar, 20 )
+        , endDate = ( 2016, Mar, 20 )
+        , location = "Aveiro, Portugal"
+        , tags = [ English, Developers, Portugal, IOS, Swift ]
+        }
       , { name = "MountainWest RubyConf"
         , link = "http://mtnwestrubyconf.org/2016/"
         , startDate = ( 2016, Mar, 21 )
