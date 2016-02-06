@@ -334,6 +334,13 @@ initialState =
         , location = "Atlanta, GA"
         , tags = [ English, Developers, USA, Agile, BigData, Java, JavaScript, General ]
         }
+      , { name = "Spark Summit East"
+        , link = "https://spark-summit.org/east-2016/"
+        , startDate = ( 2016, Feb, 16 )
+        , endDate = ( 2016, Feb, 18 )
+        , location = "New York, NY"
+        , tags = [ English, Developers, USA, BigData ]
+        }
       , { name = "Elastic{ON}"
         , link = "https://www.elastic.co/elasticon"
         , startDate = ( 2016, Feb, 17 )
@@ -1391,6 +1398,13 @@ initialState =
         , location = "Oslo, Norway"
         , tags = [ English, Developers, Norway, Agile, DotNet, General ]
         }
+      , { name = "Spark Summit"
+        , link = "https://spark-summit.org/2016/"
+        , startDate = ( 2016, Jun, 6 )
+        , endDate = ( 2016, Jun, 8 )
+        , location = "San Francisco, CA"
+        , tags = [ English, Developers, USA, BigData ]
+        }
       , { name = "NDC Oslo"
         , link = "http://ndcoslo.com/"
         , startDate = ( 2016, Jun, 8 )
@@ -1817,6 +1831,13 @@ initialState =
         , endDate = ( 2016, Oct, 26 )
         , location = "Barcelona, Spain"
         , tags = [ English, Designers, Spain, UX ]
+        }
+      , { name = "Spark Summit Europe"
+        , link = "https://spark-summit.org/"
+        , startDate = ( 2016, Oct, 25 )
+        , endDate = ( 2016, Oct, 27 )
+        , location = "Brussels, Belgium"
+        , tags = [ English, Developers, Belgium, BigData ]
         }
       , { name = "An Event Apart San Francisco"
         , link = "http://aneventapart.com/event/san-francisco-2016"
