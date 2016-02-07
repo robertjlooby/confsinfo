@@ -50,7 +50,7 @@ tests =
     , test "shouldShow filters out past events if includePastEvents is False"
         <| let
             blankConference =
-              { name = "", link = "", startDate = ( 1, Date.Jan, 1 ), endDate = ( 1, Date.Jan, 1 ), location = "", tags = [] }
+              { name = "", link = "", startDate = ( 1, Date.Jan, 1 ), endDate = ( 1, Date.Jan, 1 ), location = "", cfpStartDate = Nothing, cfpEndDate = Nothing, tags = [] }
 
             conference1 =
               { blankConference | startDate = ( 2015, Date.Dec, 30 ) }
@@ -65,7 +65,7 @@ tests =
     , test "shouldShow does not filter out past events if includePastEvents is True"
         <| let
             blankConference =
-              { name = "", link = "", startDate = ( 1, Date.Jan, 1 ), endDate = ( 1, Date.Jan, 1 ), location = "", tags = [] }
+              { name = "", link = "", startDate = ( 1, Date.Jan, 1 ), endDate = ( 1, Date.Jan, 1 ), location = "", cfpStartDate = Nothing, cfpEndDate = Nothing, tags = [] }
 
             conference1 =
               { blankConference | startDate = ( 2015, Date.Dec, 30 ) }
@@ -83,7 +83,7 @@ tests =
               [ Included Agile, Excluded DotNet, Included Ruby ]
 
             blankConference =
-              { name = "", link = "", startDate = ( 2016, Date.Jan, 1 ), endDate = ( 2016, Date.Jan, 1 ), location = "", tags = [] }
+              { name = "", link = "", startDate = ( 1, Date.Jan, 1 ), endDate = ( 1, Date.Jan, 1 ), location = "", cfpStartDate = Nothing, cfpEndDate = Nothing, tags = [] }
 
             conference1 =
               { blankConference | tags = [ Agile, Ruby ] }

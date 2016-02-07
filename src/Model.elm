@@ -129,6 +129,8 @@ initialState =
         , startDate = ( 2016, Jan, 10 )
         , endDate = ( 2016, Jan, 10 )
         , location = "Beijing, China"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, China, Swift, IOS ]
         }
       , { name = "NDC London Workshops"
@@ -136,6 +138,8 @@ initialState =
         , startDate = ( 2016, Jan, 11 )
         , endDate = ( 2016, Jan, 12 )
         , location = "London, England"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, England, Agile, DotNet, General ]
         }
       , { name = "NDC London"
@@ -143,6 +147,8 @@ initialState =
         , startDate = ( 2016, Jan, 13 )
         , endDate = ( 2016, Jan, 15 )
         , location = "London, England"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, England, Agile, DotNet, General ]
         }
       , { name = "Internet of Things Milan"
@@ -150,6 +156,8 @@ initialState =
         , startDate = ( 2016, Jan, 14 )
         , endDate = ( 2016, Jan, 14 )
         , location = "Milan, Italy"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, Italy, MongoDB, BigData, InternetOfThings ]
         }
       , { name = "GR8Conf IN"
@@ -157,6 +165,8 @@ initialState =
         , startDate = ( 2016, Jan, 16 )
         , endDate = ( 2016, Jan, 16 )
         , location = "New Delhi, India"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, India, Java, Groovy, Grails, Gradle ]
         }
       , { name = "O'Reilly Design Conference"
@@ -164,6 +174,8 @@ initialState =
         , startDate = ( 2016, Jan, 20 )
         , endDate = ( 2016, Jan, 22 )
         , location = "San Francisco, CA"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, UX ]
         }
       , { name = "SVG Summit"
@@ -171,6 +183,8 @@ initialState =
         , startDate = ( 2016, Jan, 21 )
         , endDate = ( 2016, Jan, 21 )
         , location = "Remote"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Designers, Developers, Remote, SVG ]
         }
       , { name = "/dev/winter"
@@ -178,6 +192,8 @@ initialState =
         , startDate = ( 2016, Jan, 23 )
         , endDate = ( 2016, Jan, 23 )
         , location = "Cambridge, England"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, England, DevOps, NoSQL, FunctionalProgramming ]
         }
       , { name = "PhoneGap Day"
@@ -185,6 +201,8 @@ initialState =
         , startDate = ( 2016, Jan, 28 )
         , endDate = ( 2016, Jan, 28 )
         , location = "Lehi, UT"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, PhoneGap, Mobile ]
         }
       , { name = "dotSwift"
@@ -192,6 +210,8 @@ initialState =
         , startDate = ( 2016, Jan, 29 )
         , endDate = ( 2016, Jan, 29 )
         , location = "Paris, France"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, France, Swift ]
         }
       , { name = "PHPBenelux"
@@ -199,6 +219,8 @@ initialState =
         , startDate = ( 2016, Jan, 29 )
         , endDate = ( 2016, Jan, 30 )
         , location = "Antwerp, Belgium"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, Belgium, PHP ]
         }
       , { name = "AlterConf D.C."
@@ -206,6 +228,8 @@ initialState =
         , startDate = ( 2016, Jan, 30 )
         , endDate = ( 2016, Jan, 30 )
         , location = "Washington, DC"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Designers, Developers, USA, Diversity, SoftSkills ]
         }
       , { name = "FOSDEM"
@@ -213,6 +237,8 @@ initialState =
         , startDate = ( 2016, Jan, 30 )
         , endDate = ( 2016, Jan, 31 )
         , location = "Brussels, Belgium"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, Belgium, OpenSource, General ]
         }
       , { name = "PgConf.Russia"
@@ -220,6 +246,8 @@ initialState =
         , startDate = ( 2016, Feb, 3 )
         , endDate = ( 2016, Feb, 5 )
         , location = "Moscow, Russia"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Russian, Developers, Russia, PostgreSQL ]
         }
       , { name = "Compose 2016"
@@ -227,6 +255,8 @@ initialState =
         , startDate = ( 2016, Feb, 4 )
         , endDate = ( 2016, Feb, 5 )
         , location = "Brooklyn, NY"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, FunctionalProgramming, Haskell, FSharp, OCaml, SML ]
         }
       , { name = "RubyFuza"
@@ -234,6 +264,8 @@ initialState =
         , startDate = ( 2016, Feb, 4 )
         , endDate = ( 2016, Feb, 5 )
         , location = "Cape Town, South Africa"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, SouthAfrica, Ruby ]
         }
       , { name = "SunshinePHP"
@@ -241,6 +273,8 @@ initialState =
         , startDate = ( 2016, Feb, 4 )
         , endDate = ( 2016, Feb, 6 )
         , location = "Miami, FL"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, PHP ]
         }
       , { name = "The Microservices Conference"
@@ -248,6 +282,8 @@ initialState =
         , startDate = ( 2016, Feb, 4 )
         , endDate = ( 2016, Feb, 5 )
         , location = "Berlin, Germany"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, Germany, Microservices ]
         }
       , { name = "UX/DEV Summit"
@@ -255,6 +291,8 @@ initialState =
         , startDate = ( 2016, Feb, 4 )
         , endDate = ( 2016, Feb, 6 )
         , location = "Fort Lauderdale, FL"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Designers, Developers, USA, UX, AngularJS, Ember, React ]
         }
       , { name = "JSConf Beirut"
@@ -262,6 +300,8 @@ initialState =
         , startDate = ( 2016, Feb, 6 )
         , endDate = ( 2016, Feb, 7 )
         , location = "Beirut, Lebanon"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, Lebanon, JavaScript ]
         }
       , { name = "Forward JS Workshops"
@@ -269,6 +309,8 @@ initialState =
         , startDate = ( 2016, Feb, 8 )
         , endDate = ( 2016, Feb, 9 )
         , location = "San Francisco, CA"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, JavaScript, AngularJS, React, NodeJS ]
         }
       , { name = "Jfokus"
@@ -276,6 +318,8 @@ initialState =
         , startDate = ( 2016, Feb, 8 )
         , endDate = ( 2016, Feb, 10 )
         , location = "Stockholm, Sweden"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, Sweden, Java, General ]
         }
       , { name = "Jfokus IoT"
@@ -283,6 +327,8 @@ initialState =
         , startDate = ( 2016, Feb, 8 )
         , endDate = ( 2016, Feb, 10 )
         , location = "Stockholm, Sweden"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, Sweden, InternetOfThings ]
         }
       , { name = "Webstock"
@@ -290,6 +336,8 @@ initialState =
         , startDate = ( 2016, Feb, 9 )
         , endDate = ( 2016, Feb, 12 )
         , location = "Wellington, New Zealand"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Designers, Developers, NewZealand, General ]
         }
       , { name = "Forward JS"
@@ -297,6 +345,8 @@ initialState =
         , startDate = ( 2016, Feb, 10 )
         , endDate = ( 2016, Feb, 10 )
         , location = "San Francisco, CA"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, JavaScript, AngularJS, React, NodeJS ]
         }
       , { name = "RubyConf Australia"
@@ -304,6 +354,8 @@ initialState =
         , startDate = ( 2016, Feb, 10 )
         , endDate = ( 2016, Feb, 13 )
         , location = "Gold Coast, Australia"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, Australia, Ruby ]
         }
       , { name = "Clojure Remote"
@@ -311,6 +363,8 @@ initialState =
         , startDate = ( 2016, Feb, 11 )
         , endDate = ( 2016, Feb, 12 )
         , location = "Remote"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, Remote, Clojure, FunctionalProgramming ]
         }
       , { name = "Forward JS Workshops"
@@ -318,6 +372,8 @@ initialState =
         , startDate = ( 2016, Feb, 11 )
         , endDate = ( 2016, Feb, 13 )
         , location = "San Francisco, CA"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, JavaScript, AngularJS, React, NodeJS ]
         }
       , { name = "DeveloperWeek"
@@ -325,6 +381,8 @@ initialState =
         , startDate = ( 2016, Feb, 12 )
         , endDate = ( 2016, Feb, 18 )
         , location = "San Francisco, CA"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, JavaScript, NodeJS, Python, PHP, DevOps, Ruby, Mobile, NoSQL, General ]
         }
       , { name = "DevNexus"
@@ -332,6 +390,8 @@ initialState =
         , startDate = ( 2016, Feb, 15 )
         , endDate = ( 2016, Feb, 17 )
         , location = "Atlanta, GA"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, Agile, BigData, Java, JavaScript, General ]
         }
       , { name = "Spark Summit East"
@@ -339,6 +399,8 @@ initialState =
         , startDate = ( 2016, Feb, 16 )
         , endDate = ( 2016, Feb, 18 )
         , location = "New York, NY"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, BigData ]
         }
       , { name = "Elastic{ON}"
@@ -346,6 +408,8 @@ initialState =
         , startDate = ( 2016, Feb, 17 )
         , endDate = ( 2016, Feb, 19 )
         , location = "San Francisco, CA"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, MongoDB, BigData, Elasticserch, Logstash ]
         }
       , { name = "DrupalCon Asia"
@@ -353,6 +417,8 @@ initialState =
         , startDate = ( 2016, Feb, 18 )
         , endDate = ( 2016, Feb, 21 )
         , location = "Mumbai, India"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, India, Drupal, PHP ]
         }
       , { name = "hello.js"
@@ -360,6 +426,8 @@ initialState =
         , startDate = ( 2016, Feb, 18 )
         , endDate = ( 2016, Feb, 19 )
         , location = "Cluj-Napoca, Romania"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, Romania, JavaScript ]
         }
       , { name = "Lambda Days"
@@ -367,6 +435,8 @@ initialState =
         , startDate = ( 2016, Feb, 18 )
         , endDate = ( 2016, Feb, 19 )
         , location = "Krakow, Poland"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, Poland, FunctionalProgramming, Erlang ]
         }
       , { name = "BOB 2016"
@@ -374,6 +444,8 @@ initialState =
         , startDate = ( 2016, Feb, 19 )
         , endDate = ( 2016, Feb, 19 )
         , location = "Berlin, Germany"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, German, Developers, Germany, FunctionalProgramming, Clojure, Haskell, Scala, Erlang ]
         }
       , { name = "GopherCon India"
@@ -381,6 +453,8 @@ initialState =
         , startDate = ( 2016, Feb, 19 )
         , endDate = ( 2016, Feb, 10 )
         , location = "Bengaluru, India"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, India, Go ]
         }
       , { name = "Bulgaria Web Summit"
@@ -388,6 +462,8 @@ initialState =
         , startDate = ( 2016, Feb, 20 )
         , endDate = ( 2016, Feb, 20 )
         , location = "Sofia, Bulgaria"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Designers, Developers, Bulgaria, UX, JavaScript, General ]
         }
       , { name = ":clojureD"
@@ -395,6 +471,8 @@ initialState =
         , startDate = ( 2016, Feb, 20 )
         , endDate = ( 2016, Feb, 20 )
         , location = "Berlin, Germany"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, Germany, FunctionalProgramming, Clojure ]
         }
       , { name = "The Rolling Scopes Conference"
@@ -402,6 +480,8 @@ initialState =
         , startDate = ( 2016, Feb, 20 )
         , endDate = ( 2016, Feb, 21 )
         , location = "Minsk, Belarus"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Russian, Developers, Belarus, CSS, NodeJS, JavaScript ]
         }
       , { name = "How.Camp"
@@ -409,6 +489,8 @@ initialState =
         , startDate = ( 2016, Feb, 21 )
         , endDate = ( 2016, Feb, 21 )
         , location = "Sofia, Bulgaria"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Designers, Developers, Bulgaria, UX, JavaScript ]
         }
       , { name = "React.js Conf"
@@ -416,6 +498,8 @@ initialState =
         , startDate = ( 2016, Feb, 22 )
         , endDate = ( 2016, Feb, 23 )
         , location = "San Francisco, CA"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, React, JavaScript ]
         }
       , { name = "GopherCon Dubai"
@@ -423,6 +507,8 @@ initialState =
         , startDate = ( 2016, Feb, 23 )
         , endDate = ( 2016, Feb, 23 )
         , location = "Dubai, UAE"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, UAE, Go ]
         }
       , { name = "JavaScript Summit"
@@ -430,6 +516,8 @@ initialState =
         , startDate = ( 2016, Feb, 23 )
         , endDate = ( 2016, Feb, 23 )
         , location = "Remote"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, Remote, JavaScript ]
         }
       , { name = "UXistanbul"
@@ -437,6 +525,8 @@ initialState =
         , startDate = ( 2016, Feb, 23 )
         , endDate = ( 2016, Feb, 23 )
         , location = "Istanbul, Turkey"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Designers, Turkey, UX ]
         }
       , { name = "ConFoo"
@@ -444,6 +534,8 @@ initialState =
         , startDate = ( 2016, Feb, 24 )
         , endDate = ( 2016, Feb, 26 )
         , location = "Montreal, QC, Canada"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, French, Developers, Canada, General ]
         }
       , { name = "UX Riga"
@@ -451,6 +543,8 @@ initialState =
         , startDate = ( 2016, Feb, 25 )
         , endDate = ( 2016, Feb, 25 )
         , location = "Riga, Latvia"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Designers, Latvia, UX ]
         }
       , { name = "Interaction 16"
@@ -458,6 +552,8 @@ initialState =
         , startDate = ( 2016, Mar, 1 )
         , endDate = ( 2016, Mar, 4 )
         , location = "Helsinki, Finland"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Designers, Finland, UX ]
         }
       , { name = "try! Swift"
@@ -465,6 +561,8 @@ initialState =
         , startDate = ( 2016, Mar, 2 )
         , endDate = ( 2016, Mar, 4 )
         , location = "Tokyo, Japan"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, Japan, Swift, IOS ]
         }
       , { name = "EnhanceConf"
@@ -472,6 +570,8 @@ initialState =
         , startDate = ( 2016, Mar, 3 )
         , endDate = ( 2016, Mar, 4 )
         , location = "London, England"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, England, CSS, JavaScript, ProgressiveEnhancement ]
         }
       , { name = "fsharpConf"
@@ -479,6 +579,8 @@ initialState =
         , startDate = ( 2016, Mar, 4 )
         , endDate = ( 2016, Mar, 4 )
         , location = "Remote"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, Remote, FSharp, DotNet, FunctionalProgramming ]
         }
       , { name = "droidcon Tunisia"
@@ -486,6 +588,8 @@ initialState =
         , startDate = ( 2016, Mar, 5 )
         , endDate = ( 2016, Mar, 6 )
         , location = "Hammamet, Tunisia"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, Tunisia, Android, Mobile ]
         }
       , { name = "Frontend Conference"
@@ -493,6 +597,8 @@ initialState =
         , startDate = ( 2016, Mar, 5 )
         , endDate = ( 2016, Mar, 5 )
         , location = "Osaka, Japan"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ Japanese, Designers, Developers, Japan, UX, JavaScript, CSS, AngularJS ]
         }
       , { name = "Big Data Paris"
@@ -500,6 +606,8 @@ initialState =
         , startDate = ( 2016, Mar, 7 )
         , endDate = ( 2016, Mar, 8 )
         , location = "Paris, France"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ French, Developers, France, MongoDB, BigData ]
         }
       , { name = "Erlang Factory SF Workshops"
@@ -507,6 +615,8 @@ initialState =
         , startDate = ( 2016, Mar, 7 )
         , endDate = ( 2016, Mar, 9 )
         , location = "San Francisco, CA"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, Erlang ]
         }
       , { name = "Fluent Conf Trainings"
@@ -514,6 +624,8 @@ initialState =
         , startDate = ( 2016, Mar, 7 )
         , endDate = ( 2016, Mar, 8 )
         , location = "San Francisco, CA"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Designers, Developers, USA, CSS, JavaScript, UX, React, AngularJS, Docker ]
         }
       , { name = "QCon London"
@@ -521,6 +633,8 @@ initialState =
         , startDate = ( 2016, Mar, 7 )
         , endDate = ( 2016, Mar, 9 )
         , location = "London, England"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, England, General ]
         }
       , { name = "Fluent Conf"
@@ -528,6 +642,8 @@ initialState =
         , startDate = ( 2016, Mar, 8 )
         , endDate = ( 2016, Mar, 10 )
         , location = "San Francisco, CA"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Designers, Developers, USA, CSS, JavaScript, UX, React, AngularJS, Docker ]
         }
       , { name = "jDays"
@@ -535,6 +651,8 @@ initialState =
         , startDate = ( 2016, Mar, 8 )
         , endDate = ( 2016, Mar, 9 )
         , location = "Gothenburg, Sweden"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, Sweden, Java ]
         }
       , { name = "Apache Geode Summit"
@@ -542,6 +660,8 @@ initialState =
         , startDate = ( 2016, Mar, 9 )
         , endDate = ( 2016, Mar, 9 )
         , location = "Palo Alto, CA"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, BigData, Cloud ]
         }
       , { name = "Erlang Factory SF"
@@ -549,6 +669,8 @@ initialState =
         , startDate = ( 2016, Mar, 10 )
         , endDate = ( 2016, Mar, 11 )
         , location = "San Francisco, CA"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, Erlang ]
         }
       , { name = "ScaleConf"
@@ -556,6 +678,8 @@ initialState =
         , startDate = ( 2016, Mar, 10 )
         , endDate = ( 2016, Mar, 11 )
         , location = "Cape Town, South Africa"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, SouthAfrica, Scalability ]
         }
       , { name = "SoCraTes ES"
@@ -563,6 +687,8 @@ initialState =
         , startDate = ( 2016, Mar, 10 )
         , endDate = ( 2016, Mar, 13 )
         , location = "Gran Canaria, Spain"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, Spain, SoftwareCraftsmanship ]
         }
       , { name = "QCon London Tutorials"
@@ -570,6 +696,8 @@ initialState =
         , startDate = ( 2016, Mar, 10 )
         , endDate = ( 2016, Mar, 11 )
         , location = "London, England"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, England, General ]
         }
       , { name = "Bath Ruby"
@@ -577,6 +705,8 @@ initialState =
         , startDate = ( 2016, Mar, 11 )
         , endDate = ( 2016, Mar, 11 )
         , location = "Bath, England"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, England, Ruby ]
         }
       , { name = "RWDevCon 2016"
@@ -584,6 +714,8 @@ initialState =
         , startDate = ( 2016, Mar, 11 )
         , endDate = ( 2016, Mar, 12 )
         , location = "Alexandria, VA"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, IOS, Swift ]
         }
       , { name = "wroc_love.rb"
@@ -591,6 +723,8 @@ initialState =
         , startDate = ( 2016, Mar, 11 )
         , endDate = ( 2016, Mar, 13 )
         , location = "Wroclaw, Poland"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, Poland, Ruby ]
         }
       , { name = "An Event Apart Nashville"
@@ -598,6 +732,8 @@ initialState =
         , startDate = ( 2016, Mar, 14 )
         , endDate = ( 2016, Mar, 16 )
         , location = "Nashville, TN"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Designers, Developers, USA, UX ]
         }
       , { name = "CocoaConf Yosemite"
@@ -605,6 +741,8 @@ initialState =
         , startDate = ( 2016, Mar, 14 )
         , endDate = ( 2016, Mar, 17 )
         , location = "National Park, CA"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, IOS, Cocoa ]
         }
       , { name = "Erlang Factory SF Workshops"
@@ -612,6 +750,8 @@ initialState =
         , startDate = ( 2016, Mar, 14 )
         , endDate = ( 2016, Mar, 16 )
         , location = "San Francisco, CA"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, Erlang ]
         }
       , { name = "Smashing Conf"
@@ -619,6 +759,8 @@ initialState =
         , startDate = ( 2016, Mar, 15 )
         , endDate = ( 2016, Mar, 16 )
         , location = "Oxford, England"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Designers, England, UX ]
         }
       , { name = "DIBI"
@@ -626,6 +768,8 @@ initialState =
         , startDate = ( 2016, Mar, 17 )
         , endDate = ( 2016, Mar, 18 )
         , location = "Edinburgh, Scotland"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Designers, Scotland, UX ]
         }
       , { name = "droidcon San Francisco"
@@ -633,6 +777,8 @@ initialState =
         , startDate = ( 2016, Mar, 17 )
         , endDate = ( 2016, Mar, 18 )
         , location = "San Francisco, CA"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, Android, Mobile ]
         }
       , { name = "mdevcon"
@@ -640,6 +786,8 @@ initialState =
         , startDate = ( 2016, Mar, 17 )
         , endDate = ( 2016, Mar, 18 )
         , location = "Amsterdam, Netherlands"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, Netherlands, Mobile, IOS, Android ]
         }
       , { name = "Nordic PGDay"
@@ -647,6 +795,8 @@ initialState =
         , startDate = ( 2016, Mar, 17 )
         , endDate = ( 2016, Mar, 17 )
         , location = "Helsinki, Finland"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, Finland, PostgreSQL ]
         }
       , { name = "pgDay Asia"
@@ -654,6 +804,8 @@ initialState =
         , startDate = ( 2016, Mar, 17 )
         , endDate = ( 2016, Mar, 19 )
         , location = "Singapore"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, Singapore, PostgreSQL ]
         }
       , { name = "Scale Summit"
@@ -661,6 +813,8 @@ initialState =
         , startDate = ( 2016, Mar, 18 )
         , endDate = ( 2016, Mar, 18 )
         , location = "London, England"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, England, Scalability ]
         }
       , { name = "Dutch Clojure Days"
@@ -668,6 +822,8 @@ initialState =
         , startDate = ( 2016, Mar, 19 )
         , endDate = ( 2016, Mar, 19 )
         , location = "Amsterdam, Netherlands"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, Netherlands, Clojure, FunctionalProgramming ]
         }
       , { name = "RubyConf India"
@@ -675,6 +831,8 @@ initialState =
         , startDate = ( 2016, Mar, 19 )
         , endDate = ( 2016, Mar, 20 )
         , location = "Kochi, India"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, India, Ruby ]
         }
       , { name = "SwiftAveiro"
@@ -682,6 +840,8 @@ initialState =
         , startDate = ( 2016, Mar, 20 )
         , endDate = ( 2016, Mar, 20 )
         , location = "Aveiro, Portugal"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, Portugal, IOS, Swift ]
         }
       , { name = "MountainWest RubyConf"
@@ -689,6 +849,8 @@ initialState =
         , startDate = ( 2016, Mar, 21 )
         , endDate = ( 2016, Mar, 22 )
         , location = "Salt Lake City, UT"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, Ruby ]
         }
       , { name = "CocoaConf Chicago"
@@ -696,6 +858,8 @@ initialState =
         , startDate = ( 2016, Mar, 25 )
         , endDate = ( 2016, Mar, 26 )
         , location = "Chicago, IL"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, Cocoa, IOS ]
         }
       , { name = "CSS Day"
@@ -703,6 +867,8 @@ initialState =
         , startDate = ( 2016, Mar, 25 )
         , endDate = ( 2016, Mar, 25 )
         , location = "Faenza, Italy"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ Italian, Designers, Italy, CSS ]
         }
       , { name = "DevExperience"
@@ -710,6 +876,8 @@ initialState =
         , startDate = ( 2016, Mar, 25 )
         , endDate = ( 2016, Mar, 25 )
         , location = "Lasi, Romania"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, Romania, General ]
         }
       , { name = "droidcon Dubai"
@@ -717,6 +885,8 @@ initialState =
         , startDate = ( 2016, Mar, 25 )
         , endDate = ( 2016, Mar, 26 )
         , location = "Dubai, UAE"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, UAE, Android, Mobile ]
         }
       , { name = "Space City JS"
@@ -724,6 +894,8 @@ initialState =
         , startDate = ( 2016, Mar, 26 )
         , endDate = ( 2016, Mar, 26 )
         , location = "Houston, TX"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, JavaScript ]
         }
       , { name = "EmberConf"
@@ -731,6 +903,8 @@ initialState =
         , startDate = ( 2016, Mar, 29 )
         , endDate = ( 2016, Mar, 30 )
         , location = "Portland, OR"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, Ember ]
         }
       , { name = "Clarity Conf"
@@ -738,6 +912,8 @@ initialState =
         , startDate = ( 2016, Mar, 31 )
         , endDate = ( 2016, Apr, 1 )
         , location = "San Francisco, CA"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Designers, USA, UX ]
         }
       , { name = "Ruby on Ales"
@@ -745,6 +921,8 @@ initialState =
         , startDate = ( 2016, Mar, 31 )
         , endDate = ( 2016, Apr, 1 )
         , location = "Bend, OR"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, Ruby ]
         }
       , { name = "Fronteers Spring Thing"
@@ -752,6 +930,8 @@ initialState =
         , startDate = ( 2016, Apr, 1 )
         , endDate = ( 2016, Apr, 1 )
         , location = "Amsterdam, Netherlands"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, Netherlands, JavaScript ]
         }
       , { name = "An Event Apart Seattle"
@@ -759,6 +939,8 @@ initialState =
         , startDate = ( 2016, Apr, 4 )
         , endDate = ( 2016, Apr, 6 )
         , location = "Seattle, WA"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Designers, Developers, USA, UX ]
         }
       , { name = "Istanbul Tech Talks"
@@ -766,6 +948,8 @@ initialState =
         , startDate = ( 2016, Apr, 5 )
         , endDate = ( 2016, Apr, 5 )
         , location = "Istanbul, Turkey"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, Turkey, General ]
         }
       , { name = "Smashing Conf SF"
@@ -773,6 +957,8 @@ initialState =
         , startDate = ( 2016, Apr, 5 )
         , endDate = ( 2016, Apr, 6 )
         , location = "San Francisco, CA"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Designers, USA, UX ]
         }
       , { name = "Ancient City Ruby"
@@ -780,6 +966,8 @@ initialState =
         , startDate = ( 2016, Apr, 6 )
         , endDate = ( 2016, Apr, 8 )
         , location = "St. Augustine, FL"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, Ruby ]
         }
       , { name = "droidcon Italy"
@@ -787,6 +975,8 @@ initialState =
         , startDate = ( 2016, Apr, 7 )
         , endDate = ( 2016, Apr, 8 )
         , location = "Turin, Italy"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, Italy, Android, Mobile ]
         }
       , { name = "Respond 2016 Sydney"
@@ -794,6 +984,8 @@ initialState =
         , startDate = ( 2016, Apr, 7 )
         , endDate = ( 2016, Apr, 8 )
         , location = "Sydney, Australia"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Designers, Australia, CSS, UX ]
         }
       , { name = "RubyConf Philippines"
@@ -801,6 +993,8 @@ initialState =
         , startDate = ( 2016, Apr, 7 )
         , endDate = ( 2016, Apr, 9 )
         , location = "Taguig, Philippines"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, Philippines, Ruby ]
         }
       , { name = "Greach"
@@ -808,6 +1002,8 @@ initialState =
         , startDate = ( 2016, Apr, 8 )
         , endDate = ( 2016, Apr, 9 )
         , location = "Madrid, Spain"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, Spain, Java, Groovy, Grails, Gradle ]
         }
       , { name = "AlterConf Minneapolis"
@@ -815,6 +1011,8 @@ initialState =
         , startDate = ( 2016, Apr, 9 )
         , endDate = ( 2016, Apr, 9 )
         , location = "Minneapolis, MN"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Designers, Developers, USA, Diversity, SoftSkills ]
         }
       , { name = "MobCon"
@@ -822,6 +1020,8 @@ initialState =
         , startDate = ( 2016, Apr, 10 )
         , endDate = ( 2016, Apr, 10 )
         , location = "Sofia, Bulgaria"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, Bulgaria, Mobile, IOS, Android ]
         }
       , { name = "Respond 2016"
@@ -829,6 +1029,8 @@ initialState =
         , startDate = ( 2016, Apr, 11 )
         , endDate = ( 2016, Apr, 12 )
         , location = "Melbourne, Australia"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Designers, Australia, CSS, UX ]
         }
       , { name = "Yggdrasil"
@@ -836,6 +1038,8 @@ initialState =
         , startDate = ( 2016, Apr, 11 )
         , endDate = ( 2016, Apr, 12 )
         , location = "Sandefjord, Norway"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ Norwegian, Designers, Norway, UX ]
         }
       , { name = "Converge SE"
@@ -843,6 +1047,8 @@ initialState =
         , startDate = ( 2016, Apr, 13 )
         , endDate = ( 2016, Apr, 15 )
         , location = "Columbia, SC"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Designers, Developers, USA, General ]
         }
       , { name = "Hadoop Summit Europe"
@@ -850,6 +1056,8 @@ initialState =
         , startDate = ( 2016, Apr, 13 )
         , endDate = ( 2016, Apr, 14 )
         , location = "Dublin, Ireland"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, Ireland, Hadoop, BigData, InternetOfThings ]
         }
       , { name = "ACE! Conference"
@@ -857,6 +1065,8 @@ initialState =
         , startDate = ( 2016, Apr, 14 )
         , endDate = ( 2016, Apr, 15 )
         , location = "Krakow, Poland"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, Poland, Agile, SoftwareCraftsmanship ]
         }
       , { name = "Rootconf"
@@ -864,6 +1074,8 @@ initialState =
         , startDate = ( 2016, Apr, 14 )
         , endDate = ( 2016, Apr, 15 )
         , location = "Bangalore, India"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, India, DevOps, Cloud ]
         }
       , { name = "Clojure/west"
@@ -871,6 +1083,8 @@ initialState =
         , startDate = ( 2016, Apr, 15 )
         , endDate = ( 2016, Apr, 16 )
         , location = "Seattle, WA"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, Clojure, FunctionalProgramming ]
         }
       , { name = "CocoaConf Austin"
@@ -878,6 +1092,8 @@ initialState =
         , startDate = ( 2016, Apr, 15 )
         , endDate = ( 2016, Apr, 16 )
         , location = "Austin, TX"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, Cocoa, IOS ]
         }
       , { name = "JSConf Uruguay"
@@ -885,6 +1101,8 @@ initialState =
         , startDate = ( 2016, Apr, 15 )
         , endDate = ( 2016, Apr, 16 )
         , location = "Montevideo, Uruguay"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, Uruguay, JavaScript ]
         }
       , { name = "Scalar"
@@ -892,6 +1110,8 @@ initialState =
         , startDate = ( 2016, Apr, 16 )
         , endDate = ( 2016, Apr, 16 )
         , location = "Warsaw, Poland"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, Poland, Scala ]
         }
       , { name = "PGConf US"
@@ -899,6 +1119,8 @@ initialState =
         , startDate = ( 2016, Apr, 18 )
         , endDate = ( 2016, Apr, 20 )
         , location = "New York, NY"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, PostgreSQL ]
         }
       , { name = "ACCU"
@@ -906,6 +1128,8 @@ initialState =
         , startDate = ( 2016, Apr, 19 )
         , endDate = ( 2016, Apr, 23 )
         , location = "Bristol, England"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, England, General, CPlusPlus ]
         }
       , { name = "Industry Conf"
@@ -913,6 +1137,8 @@ initialState =
         , startDate = ( 2016, Apr, 20 )
         , endDate = ( 2016, Apr, 20 )
         , location = "Newcastle, England"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, England, General ]
         }
       , { name = "CycleConf"
@@ -920,6 +1146,8 @@ initialState =
         , startDate = ( 2016, Apr, 21 )
         , endDate = ( 2016, Apr, 24 )
         , location = "Copenhagen, Denmark"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, Denmark, CycleJS, JavaScript ]
         }
       , { name = "MCE"
@@ -927,6 +1155,8 @@ initialState =
         , startDate = ( 2016, Apr, 21 )
         , endDate = ( 2016, Apr, 22 )
         , location = "Warsaw, Poland"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Designers, Developers, Poland, Mobile, UX ]
         }
       , { name = "Render Conf"
@@ -934,6 +1164,8 @@ initialState =
         , startDate = ( 2016, Apr, 21 )
         , endDate = ( 2016, Apr, 22 )
         , location = "Oxford, England"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Designers, Developers, England, CSS, JavaScript, UX ]
         }
       , { name = "dotSecurity"
@@ -941,6 +1173,8 @@ initialState =
         , startDate = ( 2016, Apr, 22 )
         , endDate = ( 2016, Apr, 22 )
         , location = "Paris, France"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, France, Security ]
         }
       , { name = "Generate NY"
@@ -948,6 +1182,8 @@ initialState =
         , startDate = ( 2016, Apr, 22 )
         , endDate = ( 2016, Apr, 22 )
         , location = "New York, NY"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Designers, USA, UX ]
         }
       , { name = "Xamarin Evolve"
@@ -955,6 +1191,8 @@ initialState =
         , startDate = ( 2016, Apr, 24 )
         , endDate = ( 2016, Apr, 28 )
         , location = "Orlando, FL"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, Mobile, IOS, Android, DotNet ]
         }
       , { name = "dotScale"
@@ -962,6 +1200,8 @@ initialState =
         , startDate = ( 2016, Apr, 25 )
         , endDate = ( 2016, Apr, 25 )
         , location = "Paris, France"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, France, Scalability ]
         }
       , { name = "Future of Web Design"
@@ -969,6 +1209,8 @@ initialState =
         , startDate = ( 2016, Apr, 25 )
         , endDate = ( 2016, Apr, 27 )
         , location = "London, England"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Designers, England, UX ]
         }
       , { name = "OpenVis Conf"
@@ -976,6 +1218,8 @@ initialState =
         , startDate = ( 2016, Apr, 25 )
         , endDate = ( 2016, Apr, 26 )
         , location = "Boston, MA"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, DataVisualization ]
         }
       , { name = "Craft Conf"
@@ -983,6 +1227,8 @@ initialState =
         , startDate = ( 2016, Apr, 26 )
         , endDate = ( 2016, Apr, 29 )
         , location = "Budapest, Hungary"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, Hungary, SoftwareCraftsmanship ]
         }
       , { name = "Kafka Summit"
@@ -990,6 +1236,8 @@ initialState =
         , startDate = ( 2016, Apr, 26 )
         , endDate = ( 2016, Apr, 26 )
         , location = "San Francisco, CA"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, BigData ]
         }
       , { name = "TestIstanbul"
@@ -997,6 +1245,8 @@ initialState =
         , startDate = ( 2016, Apr, 26 )
         , endDate = ( 2016, Apr, 26 )
         , location = "Istanbul, Turkey"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Turkish, Developers, Turkey, Testing ]
         }
       , { name = "droidcon Zagreb"
@@ -1004,6 +1254,8 @@ initialState =
         , startDate = ( 2016, Apr, 27 )
         , endDate = ( 2016, Apr, 29 )
         , location = "Zagreb, Croatia"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, Croatia, Android, Mobile ]
         }
       , { name = "University of Illinois WebCon"
@@ -1011,6 +1263,8 @@ initialState =
         , startDate = ( 2016, Apr, 27 )
         , endDate = ( 2016, Apr, 28 )
         , location = "Champaign, IL"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, General ]
         }
       , { name = "NSNorth"
@@ -1018,6 +1272,8 @@ initialState =
         , startDate = ( 2016, Apr, 28 )
         , endDate = ( 2016, Apr, 30 )
         , location = "Toronto, Ontario, Canada"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, Canada, IOS ]
         }
       , { name = "YOW! Lambda Jam"
@@ -1025,6 +1281,8 @@ initialState =
         , startDate = ( 2016, Apr, 28 )
         , endDate = ( 2016, Apr, 29 )
         , location = "Brisbane, Australia"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, Australia, FunctionalProgramming ]
         }
       , { name = "Future Insights Live"
@@ -1032,6 +1290,8 @@ initialState =
         , startDate = ( 2016, May, 2 )
         , endDate = ( 2016, May, 5 )
         , location = "Chicago, IL"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Designers, Developers, USA, UX, JavaScript, InternetOfThings ]
         }
       , { name = "Continuous Lifecycle London"
@@ -1039,6 +1299,8 @@ initialState =
         , startDate = ( 2016, May, 3 )
         , endDate = ( 2016, May, 5 )
         , location = "London, England"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, England, DevOps ]
         }
       , { name = "YOW! West"
@@ -1046,6 +1308,8 @@ initialState =
         , startDate = ( 2016, May, 3 )
         , endDate = ( 2016, May, 4 )
         , location = "Perth, Australia"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, Australia, General ]
         }
       , { name = "ng-conf"
@@ -1053,6 +1317,8 @@ initialState =
         , startDate = ( 2016, May, 4 )
         , endDate = ( 2016, May, 6 )
         , location = "Salt Lake City, UT"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, JavaScript, AngularJS ]
         }
       , { name = "RailsConf"
@@ -1060,6 +1326,8 @@ initialState =
         , startDate = ( 2016, May, 4 )
         , endDate = ( 2016, May, 6 )
         , location = "Kansas City, MO"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, Ruby, Rails ]
         }
       , { name = "CocoaConf Seattle"
@@ -1067,6 +1335,8 @@ initialState =
         , startDate = ( 2016, May, 6 )
         , endDate = ( 2016, May, 7 )
         , location = "Seattle, WA"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, IOS, Cocoa ]
         }
       , { name = "SyntaxCon"
@@ -1074,6 +1344,8 @@ initialState =
         , startDate = ( 2016, May, 6 )
         , endDate = ( 2016, May, 7 )
         , location = "Charleston, SC"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, General ]
         }
       , { name = "9th European Lisp Symposium"
@@ -1081,6 +1353,8 @@ initialState =
         , startDate = ( 2016, May, 9 )
         , endDate = ( 2016, May, 10 )
         , location = "Krakow, Poland"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, Poland, Lisp, Clojure ]
         }
       , { name = "Apache: Big Data North America"
@@ -1088,6 +1362,8 @@ initialState =
         , startDate = ( 2016, May, 9 )
         , endDate = ( 2016, May, 11 )
         , location = "Vancouver, BC, Canada"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, Canada, BigData ]
         }
       , { name = "Beyond Tellerrand"
@@ -1095,6 +1371,8 @@ initialState =
         , startDate = ( 2016, May, 9 )
         , endDate = ( 2016, May, 11 )
         , location = "Düsseldorf, Germany"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Designers, Developers, Germany, UX, General ]
         }
       , { name = "C++Now"
@@ -1102,6 +1380,8 @@ initialState =
         , startDate = ( 2016, May, 9 )
         , endDate = ( 2016, May, 14 )
         , location = "Aspen, CO"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, CPlusPlus ]
         }
       , { name = "ChefConf"
@@ -1109,6 +1389,8 @@ initialState =
         , startDate = ( 2016, May, 9 )
         , endDate = ( 2016, May, 11 )
         , location = "Austin, TX"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, Chef, DevOps ]
         }
       , { name = "DrupalCon New Orleans"
@@ -1116,6 +1398,8 @@ initialState =
         , startDate = ( 2016, May, 9 )
         , endDate = ( 2016, May, 13 )
         , location = "New Orleans, LA"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, Drupal, PHP ]
         }
       , { name = "CSSConf Budapest"
@@ -1123,6 +1407,8 @@ initialState =
         , startDate = ( 2016, May, 11 )
         , endDate = ( 2016, May, 11 )
         , location = "Budapest, Hungary"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Designers, Hungary, CSS ]
         }
       , { name = "ElixirConf EU"
@@ -1130,6 +1416,8 @@ initialState =
         , startDate = ( 2016, May, 11 )
         , endDate = ( 2016, May, 12 )
         , location = "Berlin, Germany"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, Germany, Elixir, FunctionalProgramming, Erlang ]
         }
       , { name = "jsDay"
@@ -1137,6 +1425,8 @@ initialState =
         , startDate = ( 2016, May, 11 )
         , endDate = ( 2016, May, 12 )
         , location = "Verona, Italy"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, Italy, JavaScript ]
         }
       , { name = "UX Alive"
@@ -1144,6 +1434,8 @@ initialState =
         , startDate = ( 2016, May, 11 )
         , endDate = ( 2016, May, 13 )
         , location = "Istanbul, Turkey"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Designers, Turkey, UX ]
         }
       , { name = "ApacheCon Core North America"
@@ -1151,6 +1443,8 @@ initialState =
         , startDate = ( 2016, May, 12 )
         , endDate = ( 2016, May, 13 )
         , location = "Vancouver, Canada"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, Canada, OpenSource ]
         }
       , { name = "Front Conference"
@@ -1158,6 +1452,8 @@ initialState =
         , startDate = ( 2016, May, 12 )
         , endDate = ( 2016, May, 13 )
         , location = "Salt Lake City, UT"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Designers, USA, UX ]
         }
       , { name = "JSConf Budapest"
@@ -1165,6 +1461,8 @@ initialState =
         , startDate = ( 2016, May, 12 )
         , endDate = ( 2016, May, 13 )
         , location = "Budapest, Hungary"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, Hungary, JavaScript ]
         }
       , { name = "An Event Apart Boston"
@@ -1172,6 +1470,8 @@ initialState =
         , startDate = ( 2016, May, 16 )
         , endDate = ( 2016, May, 18 )
         , location = "Boston, MA"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Designers, Developers, USA, UX ]
         }
       , { name = "Open Source Convention Tutorials"
@@ -1179,6 +1479,8 @@ initialState =
         , startDate = ( 2016, May, 16 )
         , endDate = ( 2016, May, 17 )
         , location = "Austin, TX"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, OpenSource ]
         }
       , { name = "Front-Trends"
@@ -1186,6 +1488,8 @@ initialState =
         , startDate = ( 2016, May, 18 )
         , endDate = ( 2016, May, 20 )
         , location = "Warsaw, Poland"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Designers, Poland, UX ]
         }
       , { name = "Open Source Convention"
@@ -1193,6 +1497,8 @@ initialState =
         , startDate = ( 2016, May, 18 )
         , endDate = ( 2016, May, 19 )
         , location = "Austin, TX"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, OpenSource ]
         }
       , { name = "UX London"
@@ -1200,6 +1506,8 @@ initialState =
         , startDate = ( 2016, May, 18 )
         , endDate = ( 2016, May, 20 )
         , location = "London, England"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Designers, England, UX ]
         }
       , { name = "droidcon Montreal"
@@ -1207,6 +1515,8 @@ initialState =
         , startDate = ( 2016, May, 19 )
         , endDate = ( 2016, May, 20 )
         , location = "Montreal, Canada"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, Canada, Android, Mobile ]
         }
       , { name = "PhoneGap Day EU"
@@ -1214,6 +1524,8 @@ initialState =
         , startDate = ( 2016, May, 19 )
         , endDate = ( 2016, May, 20 )
         , location = "Amsterdam, Netherlands"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, Netherlands, PhoneGap, Mobile ]
         }
       , { name = "Valio Con"
@@ -1221,6 +1533,8 @@ initialState =
         , startDate = ( 2016, May, 19 )
         , endDate = ( 2016, May, 22 )
         , location = "San Diego, CA"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Designers, USA, UX ]
         }
       , { name = "self.conference"
@@ -1228,6 +1542,8 @@ initialState =
         , startDate = ( 2016, May, 20 )
         , endDate = ( 2016, May, 21 )
         , location = "Detroit, MI"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Designers, Developers, USA, General, SoftSkills ]
         }
       , { name = "UIKonf"
@@ -1235,6 +1551,8 @@ initialState =
         , startDate = ( 2016, May, 22 )
         , endDate = ( 2016, May, 25 )
         , location = "Berlin, Germany"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, Germany, IOS ]
         }
       , { name = "GOTO Chicago Workshops"
@@ -1242,6 +1560,8 @@ initialState =
         , startDate = ( 2016, May, 23 )
         , endDate = ( 2016, May, 23 )
         , location = "Chicago, IL"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, General ]
         }
       , { name = "php[tek]"
@@ -1249,6 +1569,8 @@ initialState =
         , startDate = ( 2016, May, 23 )
         , endDate = ( 2016, May, 27 )
         , location = "St. Louis, MO"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, PHP ]
         }
       , { name = "GOTO Chicago"
@@ -1256,6 +1578,8 @@ initialState =
         , startDate = ( 2016, May, 24 )
         , endDate = ( 2016, May, 25 )
         , location = "Chicago, IL"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, General ]
         }
       , { name = "HBaseCon"
@@ -1263,6 +1587,8 @@ initialState =
         , startDate = ( 2016, May, 25 )
         , endDate = ( 2016, May, 25 )
         , location = "San Francisco, CA"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, Hadoop, BigData, Cloud ]
         }
       , { name = "SIGNAL 2016"
@@ -1270,6 +1596,8 @@ initialState =
         , startDate = ( 2016, May, 24 )
         , endDate = ( 2016, May, 25 )
         , location = "San Francisco, CA"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, Communications ]
         }
       , { name = "UXLx"
@@ -1277,6 +1605,8 @@ initialState =
         , startDate = ( 2016, May, 24 )
         , endDate = ( 2016, May, 27 )
         , location = "Lisbon, Portugal"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Designers, Portugal, UX ]
         }
       , { name = "GlueCon"
@@ -1284,6 +1614,8 @@ initialState =
         , startDate = ( 2016, May, 25 )
         , endDate = ( 2016, May, 26 )
         , location = "Broomfield, CO"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, General, DevOps, BigData ]
         }
       , { name = "PrlConf"
@@ -1291,6 +1623,8 @@ initialState =
         , startDate = ( 2016, May, 25 )
         , endDate = ( 2016, May, 25 )
         , location = "Boulder, CO"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, FunctionalProgramming ]
         }
       , { name = "PureScript Conf"
@@ -1298,6 +1632,8 @@ initialState =
         , startDate = ( 2016, May, 25 )
         , endDate = ( 2016, May, 25 )
         , location = "Boulder, CO"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, FunctionalProgramming, PureScript ]
         }
       , { name = "GOTO Chicago Workshops"
@@ -1305,6 +1641,8 @@ initialState =
         , startDate = ( 2016, May, 26 )
         , endDate = ( 2016, May, 26 )
         , location = "Chicago, IL"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, General ]
         }
       , { name = "iOSCon"
@@ -1312,6 +1650,8 @@ initialState =
         , startDate = ( 2016, May, 26 )
         , endDate = ( 2016, May, 27 )
         , location = "London, England"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, England, IOS ]
         }
       , { name = "LambdaConf"
@@ -1319,6 +1659,8 @@ initialState =
         , startDate = ( 2016, May, 26 )
         , endDate = ( 2016, May, 29 )
         , location = "Boulder, CO"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, FunctionalProgramming, Haskell, Scala, PureScript ]
         }
       , { name = "Frontend United"
@@ -1326,6 +1668,8 @@ initialState =
         , startDate = ( 2016, May, 27 )
         , endDate = ( 2016, May, 28 )
         , location = "Ghent, Belgium"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Designers, Developers, Belgium, UX, Drupal, PHP ]
         }
       , { name = "PyCon Tutorials"
@@ -1333,6 +1677,8 @@ initialState =
         , startDate = ( 2016, May, 28 )
         , endDate = ( 2016, May, 29 )
         , location = "Portland, OR"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, Python ]
         }
       , { name = "PyCon"
@@ -1340,6 +1686,8 @@ initialState =
         , startDate = ( 2016, May, 30 )
         , endDate = ( 2016, Jun, 1 )
         , location = "Portland, OR"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, Python ]
         }
       , { name = "CSSConf Nordic"
@@ -1347,6 +1695,8 @@ initialState =
         , startDate = ( 2016, Jun, 1 )
         , endDate = ( 2016, Jun, 1 )
         , location = "Oslo, Norway"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Designers, Norway, UX, CSS ]
         }
       , { name = "MagmaConf"
@@ -1354,6 +1704,8 @@ initialState =
         , startDate = ( 2016, Jun, 1 )
         , endDate = ( 2016, Jun, 3 )
         , location = "Manzanillo, Mexico"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, Mexico, Ruby ]
         }
       , { name = "ScotlandCSS"
@@ -1361,6 +1713,8 @@ initialState =
         , startDate = ( 2016, Jun, 1 )
         , endDate = ( 2016, Jun, 1 )
         , location = "Edinburgh, Scotland"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Designers, Scotland, CSS ]
         }
       , { name = "GR8Conf EU"
@@ -1368,6 +1722,8 @@ initialState =
         , startDate = ( 2016, Jun, 2 )
         , endDate = ( 2016, Jun, 4 )
         , location = "Copenhagen, Denmark"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, Denmark, Java, Groovy, Grails, Gradle ]
         }
       , { name = "PyCon Sprints"
@@ -1375,6 +1731,8 @@ initialState =
         , startDate = ( 2016, Jun, 2 )
         , endDate = ( 2016, Jun, 5 )
         , location = "Portland, OR"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, Python ]
         }
       , { name = "ReactEurope"
@@ -1382,6 +1740,8 @@ initialState =
         , startDate = ( 2016, Jun, 2 )
         , endDate = ( 2016, Jun, 3 )
         , location = "Paris, France"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, France, React, JavaScript ]
         }
       , { name = "Scotland JS"
@@ -1389,6 +1749,8 @@ initialState =
         , startDate = ( 2016, Jun, 2 )
         , endDate = ( 2016, Jun, 3 )
         , location = "Edinburgh, Scotland"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, Scotland, JavaScript ]
         }
       , { name = "SoCraTes England"
@@ -1396,6 +1758,8 @@ initialState =
         , startDate = ( 2016, Jun, 2 )
         , endDate = ( 2016, Jun, 5 )
         , location = "Dorking, England"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, England, SoftwareCraftsmanship ]
         }
       , { name = "Web Rebels"
@@ -1403,6 +1767,8 @@ initialState =
         , startDate = ( 2016, Jun, 2 )
         , endDate = ( 2016, Jun, 3 )
         , location = "Oslo, Norway"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, Norway, JavaScript ]
         }
       , { name = "Berlin Buzzwords"
@@ -1410,6 +1776,8 @@ initialState =
         , startDate = ( 2016, Jun, 5 )
         , endDate = ( 2016, Jun, 7 )
         , location = "Berlin, Germany"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, Germany, BigData ]
         }
       , { name = "NDC Oslo Workshops"
@@ -1417,6 +1785,8 @@ initialState =
         , startDate = ( 2016, Jun, 6 )
         , endDate = ( 2016, Jun, 7 )
         , location = "Oslo, Norway"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, Norway, Agile, DotNet, General ]
         }
       , { name = "Spark Summit"
@@ -1424,6 +1794,8 @@ initialState =
         , startDate = ( 2016, Jun, 6 )
         , endDate = ( 2016, Jun, 8 )
         , location = "San Francisco, CA"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, BigData ]
         }
       , { name = "NDC Oslo"
@@ -1431,6 +1803,8 @@ initialState =
         , startDate = ( 2016, Jun, 8 )
         , endDate = ( 2016, Jun, 10 )
         , location = "Oslo, Norway"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, Norway, Agile, DotNet, General ]
         }
       , { name = "UX Scotland"
@@ -1438,6 +1812,8 @@ initialState =
         , startDate = ( 2016, Jun, 8 )
         , endDate = ( 2016, Jun, 10 )
         , location = "Edinburgh, Scotland"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Designers, Scotland, UX ]
         }
       , { name = "GOTO Amsterdam Workshops"
@@ -1445,6 +1821,8 @@ initialState =
         , startDate = ( 2016, Jun, 13 )
         , endDate = ( 2016, Jun, 13 )
         , location = "Amsterdam, Netherlands"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, Netherlands, General ]
         }
       , { name = "QCon New York"
@@ -1452,6 +1830,8 @@ initialState =
         , startDate = ( 2016, Jun, 13 )
         , endDate = ( 2016, Jun, 15 )
         , location = "New York, NY"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, General ]
         }
       , { name = "GOTO Amsterdam"
@@ -1459,6 +1839,8 @@ initialState =
         , startDate = ( 2016, Jun, 14 )
         , endDate = ( 2016, Jun, 15 )
         , location = "Amsterdam, Netherlands"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, Netherlands, General ]
         }
       , { name = "droidcon Berlin"
@@ -1466,6 +1848,8 @@ initialState =
         , startDate = ( 2016, Jun, 15 )
         , endDate = ( 2016, Jun, 17 )
         , location = "Berlin, Germany"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, Germany, Android, Mobile ]
         }
       , { name = "Front End Design Conference"
@@ -1473,6 +1857,8 @@ initialState =
         , startDate = ( 2016, Jun, 15 )
         , endDate = ( 2016, Jun, 17 )
         , location = "St. Petersburg, FL"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Designers, USA, UX ]
         }
       , { name = "CSS Day"
@@ -1480,6 +1866,8 @@ initialState =
         , startDate = ( 2016, Jun, 16 )
         , endDate = ( 2016, Jun, 17 )
         , location = "Amsterdam, Netherlands"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Designers, Netherlands, CSS ]
         }
       , { name = "QCon New York Tutorials"
@@ -1487,6 +1875,8 @@ initialState =
         , startDate = ( 2016, Jun, 16 )
         , endDate = ( 2016, Jun, 17 )
         , location = "New York, NY"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, General ]
         }
       , { name = "Joy of Coding"
@@ -1494,6 +1884,8 @@ initialState =
         , startDate = ( 2016, Jun, 17 )
         , endDate = ( 2016, Jun, 17 )
         , location = "Rotterdam, Netherlands"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, Netherlands, General ]
         }
       , { name = "Nordic Ruby"
@@ -1501,6 +1893,8 @@ initialState =
         , startDate = ( 2016, Jun, 17 )
         , endDate = ( 2016, Jun, 19 )
         , location = "Stockholm, Sweden"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, Sweden, Ruby ]
         }
       , { name = "DockerCon"
@@ -1508,6 +1902,8 @@ initialState =
         , startDate = ( 2016, Jun, 19 )
         , endDate = ( 2016, Jun, 21 )
         , location = "Seattle, WA"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, Docker ]
         }
       , { name = "O'Reilly Velocity"
@@ -1515,6 +1911,8 @@ initialState =
         , startDate = ( 2016, Jun, 21 )
         , endDate = ( 2016, Jun, 23 )
         , location = "Santa Clara, CA"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, Scalability, DevOps ]
         }
       , { name = "RedDotRubyConf"
@@ -1522,6 +1920,8 @@ initialState =
         , startDate = ( 2016, Jun, 23 )
         , endDate = ( 2016, Jun, 24 )
         , location = "Singapore"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, Singapore, Ruby ]
         }
       , { name = "Web Design Day"
@@ -1529,6 +1929,8 @@ initialState =
         , startDate = ( 2016, Jun, 23 )
         , endDate = ( 2016, Jun, 24 )
         , location = "Pittsburgh, PA"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Designers, USA, UX ]
         }
       , { name = "Dinosaur.js"
@@ -1536,6 +1938,8 @@ initialState =
         , startDate = ( 2016, Jun, 24 )
         , endDate = ( 2016, Jun, 24 )
         , location = "Denver, CO"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, JavaScript ]
         }
       , { name = "GIANT Conf"
@@ -1543,6 +1947,8 @@ initialState =
         , startDate = ( 2016, Jun, 27 )
         , endDate = ( 2016, Jun, 29 )
         , location = "TBD"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Designers, USA, UX ]
         }
       , { name = "Hadoop Summit North America"
@@ -1550,6 +1956,8 @@ initialState =
         , startDate = ( 2016, Jun, 28 )
         , endDate = ( 2016, Jun, 30 )
         , location = "San Jose, CA"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, Hadoop, BigData, InternetOfThings ]
         }
       , { name = "MongoDB World 2016"
@@ -1557,6 +1965,8 @@ initialState =
         , startDate = ( 2016, Jun, 28 )
         , endDate = ( 2016, Jun, 29 )
         , location = "New York, NY"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, MongoDB, BigData ]
         }
       , { name = "PolyConf"
@@ -1564,6 +1974,8 @@ initialState =
         , startDate = ( 2016, Jun, 30 )
         , endDate = ( 2016, Jul, 2 )
         , location = "Poznan, Poland"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, Poland, General ]
         }
       , { name = "Brighton Ruby"
@@ -1571,6 +1983,8 @@ initialState =
         , startDate = ( 2016, Jul, 8 )
         , endDate = ( 2016, Jul, 8 )
         , location = "Brighton, England"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, England, Ruby ]
         }
       , { name = "Chef Conf"
@@ -1578,6 +1992,8 @@ initialState =
         , startDate = ( 2016, Jul, 11 )
         , endDate = ( 2016, Jul, 13 )
         , location = "Austin, TX"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, Chef, DevOps ]
         }
       , { name = "GopherCon"
@@ -1585,6 +2001,8 @@ initialState =
         , startDate = ( 2016, Jul, 11 )
         , endDate = ( 2016, Jul, 13 )
         , location = "Denver, CO"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, Go ]
         }
       , { name = "EuroPython"
@@ -1592,6 +2010,8 @@ initialState =
         , startDate = ( 2016, Jul, 17 )
         , endDate = ( 2016, Jul, 24 )
         , location = "Bilbao, Spain"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, Spain, Python ]
         }
       , { name = "php[cruise]"
@@ -1599,6 +2019,8 @@ initialState =
         , startDate = ( 2016, Jul, 17 )
         , endDate = ( 2016, Jul, 24 )
         , location = "Baltimore, MD"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, PHP ]
         }
       , { name = "UberConf"
@@ -1606,6 +2028,8 @@ initialState =
         , startDate = ( 2016, Jul, 19 )
         , endDate = ( 2016, Jul, 22 )
         , location = "Denver, CO"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, Java, Agile, Cloud, Scala, Groovy ]
         }
       , { name = "An Event Apart DC"
@@ -1613,6 +2037,8 @@ initialState =
         , startDate = ( 2016, Jul, 25 )
         , endDate = ( 2016, Jul, 27 )
         , location = "Washington, DC"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Designers, Developers, USA, UX ]
         }
       , { name = "Mobile & Web CodeCamp"
@@ -1620,6 +2046,8 @@ initialState =
         , startDate = ( 2016, Jul, 26 )
         , endDate = ( 2016, Jul, 29 )
         , location = "Salt Lake City, UT"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, Mobile, Android, IOS, JavaScript, PhoneGap ]
         }
       , { name = "NDC Sydney Workshops"
@@ -1627,6 +2055,8 @@ initialState =
         , startDate = ( 2016, Aug, 1 )
         , endDate = ( 2016, Aug, 2 )
         , location = "Sydney, Australia"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, Australia, Agile, DotNet, General ]
         }
       , { name = "NDC Sydney"
@@ -1634,6 +2064,8 @@ initialState =
         , startDate = ( 2016, Aug, 3 )
         , endDate = ( 2016, Aug, 5 )
         , location = "Sydney, Australia"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, Australia, Agile, DotNet, General ]
         }
       , { name = "That Conference"
@@ -1641,6 +2073,8 @@ initialState =
         , startDate = ( 2016, Aug, 8 )
         , endDate = ( 2016, Aug, 10 )
         , location = "Wisconsin Dells, WI"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, Mobile, Cloud ]
         }
       , { name = "Midwest JS"
@@ -1648,6 +2082,8 @@ initialState =
         , startDate = ( 2016, Aug, 10 )
         , endDate = ( 2016, Aug, 12 )
         , location = "Minneapolis, MN"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, JavaScript, NodeJS ]
         }
       , { name = "FP Conf"
@@ -1655,6 +2091,8 @@ initialState =
         , startDate = ( 2016, Aug, 15 )
         , endDate = ( 2016, Aug, 15 )
         , location = "Moscow, Russia"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Russian, Developers, Russia, FunctionalProgramming, Erlang, Scala, Clojure, Haskell ]
         }
       , { name = "Abstractions"
@@ -1662,6 +2100,8 @@ initialState =
         , startDate = ( 2016, Aug, 18 )
         , endDate = ( 2016, Aug, 20 )
         , location = "Pittsburgh, PA"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, General ]
         }
       , { name = "HybridConf"
@@ -1669,6 +2109,8 @@ initialState =
         , startDate = ( 2016, Aug, 18 )
         , endDate = ( 2016, Aug, 19 )
         , location = "Berlin, Germany"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Designers, Germany, General, UX ]
         }
       , { name = "360|iDev"
@@ -1676,6 +2118,8 @@ initialState =
         , startDate = ( 2016, Aug, 21 )
         , endDate = ( 2016, Aug, 24 )
         , location = "Denver, CO"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, IOS ]
         }
       , { name = "React Rally"
@@ -1683,6 +2127,8 @@ initialState =
         , startDate = ( 2016, Aug, 25 )
         , endDate = ( 2016, Aug, 26 )
         , location = "Salt Lake City, UT"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, React, JavaScript ]
         }
       , { name = "AlterConf South Africa"
@@ -1690,6 +2136,8 @@ initialState =
         , startDate = ( 2016, Aug, 27 )
         , endDate = ( 2016, Aug, 27 )
         , location = "Cape Town, South Africa"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Designers, Developers, SouthAfrica, Diversity, SoftSkills ]
         }
       , { name = "An Event Apart Chicago"
@@ -1697,6 +2145,8 @@ initialState =
         , startDate = ( 2016, Aug, 29 )
         , endDate = ( 2016, Aug, 31 )
         , location = "Chicago, IL"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Designers, Developers, USA, UX ]
         }
       , { name = "Agile on the Beach"
@@ -1704,6 +2154,8 @@ initialState =
         , startDate = ( 2016, Sep, 1 )
         , endDate = ( 2016, Sep, 2 )
         , location = "Falmouth, England"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, England, Agile ]
         }
       , { name = "Frontend Conference Zurich"
@@ -1711,6 +2163,8 @@ initialState =
         , startDate = ( 2016, Sep, 1 )
         , endDate = ( 2016, Sep, 2 )
         , location = "Zürich, Switzerland"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Designers, Switzerland, UX ]
         }
       , { name = "Full Stack Fest"
@@ -1718,6 +2172,8 @@ initialState =
         , startDate = ( 2016, Sep, 5 )
         , endDate = ( 2016, Sep, 9 )
         , location = "Barcelona, Spain"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, Spain, Ruby, JavaScript, General ]
         }
       , { name = "iOSDevEngland"
@@ -1725,6 +2181,8 @@ initialState =
         , startDate = ( 2016, Sep, 5 )
         , endDate = ( 2016, Sep, 8 )
         , location = "Aberystwyth, England"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, England, IOS, Swift ]
         }
       , { name = "RubyKaigi"
@@ -1732,6 +2190,8 @@ initialState =
         , startDate = ( 2016, Sep, 8 )
         , endDate = ( 2016, Sep, 10 )
         , location = "Kyoto, Japan"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, English, Japanese, Ruby ]
         }
       , { name = "CocoaConf DC"
@@ -1739,6 +2199,8 @@ initialState =
         , startDate = ( 2016, Sep, 9 )
         , endDate = ( 2016, Sep, 10 )
         , location = "Washington, DC"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, Cocoa, IOS ]
         }
       , { name = "Agile Prague"
@@ -1746,6 +2208,8 @@ initialState =
         , startDate = ( 2016, Sep, 12 )
         , endDate = ( 2016, Sep, 13 )
         , location = "Prague, Czech Republic"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, CzechRepublic, Agile ]
         }
       , { name = "SwanseaCon"
@@ -1753,6 +2217,8 @@ initialState =
         , startDate = ( 2016, Sep, 12 )
         , endDate = ( 2016, Sep, 13 )
         , location = "Swansea, England"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, England, Agile, SoftwareCraftsmanship ]
         }
       , { name = "From the Front"
@@ -1760,6 +2226,8 @@ initialState =
         , startDate = ( 2016, Sep, 15 )
         , endDate = ( 2016, Sep, 16 )
         , location = "Bologna, Italy"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Designers, Italy, UX ]
         }
       , { name = "Strangeloop"
@@ -1767,6 +2235,8 @@ initialState =
         , startDate = ( 2016, Sep, 15 )
         , endDate = ( 2016, Sep, 17 )
         , location = "St. Louis, MO"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, General, FunctionalProgramming ]
         }
       , { name = "WindyCityRails"
@@ -1774,6 +2244,8 @@ initialState =
         , startDate = ( 2016, Sep, 15 )
         , endDate = ( 2016, Sep, 16 )
         , location = "Chicago, IL"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, Ruby, Rails ]
         }
       , { name = "CppCon"
@@ -1781,6 +2253,8 @@ initialState =
         , startDate = ( 2016, Sep, 18 )
         , endDate = ( 2016, Sep, 23 )
         , location = "Bellevue, WA"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, CPlusPlus ]
         }
       , { name = "International Conference on Functional Programming"
@@ -1788,6 +2262,8 @@ initialState =
         , startDate = ( 2016, Sep, 18 )
         , endDate = ( 2016, Sep, 24 )
         , location = "Nara, Japan"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, Japan, FunctionalProgramming, Haskell ]
         }
       , { name = "JavaOne"
@@ -1795,6 +2271,8 @@ initialState =
         , startDate = ( 2016, Sep, 18 )
         , endDate = ( 2016, Sep, 22 )
         , location = "San Francisco, CA"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, Java ]
         }
       , { name = "Functional Conf"
@@ -1802,6 +2280,8 @@ initialState =
         , startDate = ( 2016, Sep, 22 )
         , endDate = ( 2016, Sep, 25 )
         , location = "Bangalore, India"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, India, FunctionalProgramming ]
         }
       , { name = "DrupalCon Dublin"
@@ -1809,6 +2289,8 @@ initialState =
         , startDate = ( 2016, Sep, 26 )
         , endDate = ( 2016, Sep, 30 )
         , location = "Dublin, Ireland"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, Ireland, Drupal, PHP ]
         }
       , { name = "An Event Apart Orlando"
@@ -1816,6 +2298,8 @@ initialState =
         , startDate = ( 2016, Oct, 3 )
         , endDate = ( 2016, Oct, 5 )
         , location = "Orlando, FL"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Designers, Developers, USA, UX ]
         }
       , { name = "GOTO Copenhagen"
@@ -1823,6 +2307,8 @@ initialState =
         , startDate = ( 2016, Oct, 3 )
         , endDate = ( 2016, Oct, 6 )
         , location = "Copenhagen, Denmark"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, Denmark, General ]
         }
       , { name = "dotGo"
@@ -1830,6 +2316,8 @@ initialState =
         , startDate = ( 2016, Oct, 10 )
         , endDate = ( 2016, Oct, 10 )
         , location = "Paris, France"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, France, Go ]
         }
       , { name = "GOTO London"
@@ -1837,6 +2325,8 @@ initialState =
         , startDate = ( 2016, Oct, 12 )
         , endDate = ( 2016, Oct, 14 )
         , location = "London, England"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, England, General ]
         }
       , { name = "ConnectJS"
@@ -1844,6 +2334,8 @@ initialState =
         , startDate = ( 2016, Oct, 21 )
         , endDate = ( 2016, Oct, 22 )
         , location = "Atlanta, GA"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, JavaScript ]
         }
       , { name = "Smashing Conf Barcelona"
@@ -1851,6 +2343,8 @@ initialState =
         , startDate = ( 2016, Oct, 25 )
         , endDate = ( 2016, Oct, 26 )
         , location = "Barcelona, Spain"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Designers, Spain, UX ]
         }
       , { name = "Spark Summit Europe"
@@ -1858,6 +2352,8 @@ initialState =
         , startDate = ( 2016, Oct, 25 )
         , endDate = ( 2016, Oct, 27 )
         , location = "Brussels, Belgium"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, Belgium, BigData ]
         }
       , { name = "An Event Apart San Francisco"
@@ -1865,6 +2361,8 @@ initialState =
         , startDate = ( 2016, Oct, 31 )
         , endDate = ( 2016, Nov, 2 )
         , location = "San Francisco, CA"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Designers, Developers, USA, UX ]
         }
       , { name = "CocoaConf San Jose"
@@ -1872,6 +2370,8 @@ initialState =
         , startDate = ( 2016, Nov, 4 )
         , endDate = ( 2016, Nov, 5 )
         , location = "San Jose, CA"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, IOS, Cocoa ]
         }
       , { name = "Beyond Tellerrand"
@@ -1879,6 +2379,8 @@ initialState =
         , startDate = ( 2016, Nov, 7 )
         , endDate = ( 2016, Nov, 9 )
         , location = "Berlin, Germany"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Designers, Developers, Germany, UX, General ]
         }
       , { name = "droidconIN"
@@ -1886,6 +2388,8 @@ initialState =
         , startDate = ( 2016, Nov, 10 )
         , endDate = ( 2016, Nov, 11 )
         , location = "Bangalore, India"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, India, Android, Mobile ]
         }
       , { name = "RubyConf"
@@ -1893,6 +2397,8 @@ initialState =
         , startDate = ( 2016, Nov, 10 )
         , endDate = ( 2016, Nov, 12 )
         , location = "Cincinnati, OH"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, Ruby ]
         }
       , { name = "BuildStuff"
@@ -1900,6 +2406,8 @@ initialState =
         , startDate = ( 2016, Nov, 16 )
         , endDate = ( 2016, Nov, 20 )
         , location = "Vilnius, Lithuania"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, Lithuania, General ]
         }
       , { name = "Frontier Conf"
@@ -1907,6 +2415,8 @@ initialState =
         , startDate = ( 2016, Nov, 16 )
         , endDate = ( 2016, Nov, 16 )
         , location = "London, England"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Designers, England, CSS, UX ]
         }
       , { name = "AWS re:Invent"
@@ -1914,6 +2424,8 @@ initialState =
         , startDate = ( 2016, Nov, 28 )
         , endDate = ( 2016, Dec, 2 )
         , location = "Las Vegas, NV"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, AWS, Cloud ]
         }
       , { name = "Clojure eXchange"
@@ -1921,6 +2433,8 @@ initialState =
         , startDate = ( 2016, Dec, 1 )
         , endDate = ( 2016, Dec, 2 )
         , location = "London, England"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
         , tags = [ English, Developers, England, Clojure, FunctionalProgramming ]
         }
       ]

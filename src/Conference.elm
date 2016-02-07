@@ -10,6 +10,8 @@ type alias Conference =
   , startDate : DaTuple
   , endDate : DaTuple
   , location : String
+  , cfpStartDate : Maybe DaTuple
+  , cfpEndDate : Maybe DaTuple
   , tags : List Tag
   }
 
