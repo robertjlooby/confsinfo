@@ -537,6 +537,13 @@ initialState =
         , location = "Gothenburg, Sweden"
         , tags = [ English, Developers, Sweden, Java ]
         }
+      , { name = "Apache Geode Summit"
+        , link = "http://geodesummit.com/"
+        , startDate = ( 2016, Mar, 9 )
+        , endDate = ( 2016, Mar, 9 )
+        , location = "Palo Alto, CA"
+        , tags = [ English, Developers, USA, BigData, Cloud ]
+        }
       , { name = "Erlang Factory SF"
         , link = "http://www.erlang-factory.com/sfbay2016/home"
         , startDate = ( 2016, Mar, 10 )
@@ -978,6 +985,13 @@ initialState =
         , location = "Budapest, Hungary"
         , tags = [ English, Developers, Hungary, SoftwareCraftsmanship ]
         }
+      , { name = "Kafka Summit"
+        , link = "http://kafka-summit.org/"
+        , startDate = ( 2016, Apr, 26 )
+        , endDate = ( 2016, Apr, 26 )
+        , location = "San Francisco, CA"
+        , tags = [ English, Developers, USA, BigData ]
+        }
       , { name = "TestIstanbul"
         , link = "http://testistanbul.org/"
         , startDate = ( 2016, Apr, 26 )
@@ -1243,6 +1257,13 @@ initialState =
         , endDate = ( 2016, May, 25 )
         , location = "Chicago, IL"
         , tags = [ English, Developers, USA, General ]
+        }
+      , { name = "HBaseCon"
+        , link = "http://www.hbasecon.com/"
+        , startDate = ( 2016, May, 25 )
+        , endDate = ( 2016, May, 25 )
+        , location = "San Francisco, CA"
+        , tags = [ English, Developers, USA, Hadoop, BigData, Cloud ]
         }
       , { name = "SIGNAL 2016"
         , link = "https://www.twilio.com/signal"
