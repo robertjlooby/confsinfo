@@ -1326,8 +1326,8 @@ initialState =
         , startDate = ( 2016, May, 4 )
         , endDate = ( 2016, May, 6 )
         , location = "Kansas City, MO"
-        , cfpStartDate = Nothing
-        , cfpEndDate = Nothing
+        , cfpStartDate = ( 2016, Jan, 1 )
+        , cfpEndDate = ( 2016, Jan, 15 )
         , tags = [ English, Developers, USA, Ruby, Rails ]
         }
       , { name = "CocoaConf Seattle"
@@ -1983,8 +1983,8 @@ initialState =
         , startDate = ( 2016, Jul, 8 )
         , endDate = ( 2016, Jul, 8 )
         , location = "Brighton, England"
-        , cfpStartDate = Nothing
-        , cfpEndDate = Nothing
+        , cfpStartDate = ( 2016, Jan, 1 )
+        , cfpEndDate = ( 2016, Mar, 31 )
         , tags = [ English, Developers, England, Ruby ]
         }
       , { name = "Chef Conf"
