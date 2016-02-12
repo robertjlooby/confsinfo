@@ -363,8 +363,8 @@ initialState =
         , startDate = ( 2016, Feb, 11 )
         , endDate = ( 2016, Feb, 12 )
         , location = "Remote"
-        , cfpStartDate = Nothing
-        , cfpEndDate = Nothing
+        , cfpStartDate = Just ( 2015, Oct, 30 )
+        , cfpEndDate = Just ( 2015, Dec, 31 )
         , tags = [ English, Developers, Remote, Clojure, FunctionalProgramming ]
         }
       , { name = "Forward JS Workshops"
@@ -382,7 +382,7 @@ initialState =
         , endDate = ( 2016, Feb, 18 )
         , location = "San Francisco, CA"
         , cfpStartDate = Nothing
-        , cfpEndDate = Nothing
+        , cfpEndDate = Just ( 2015, Nov, 23 )
         , tags = [ English, Developers, USA, JavaScript, NodeJS, Python, PHP, DevOps, Ruby, Mobile, NoSQL, General ]
         }
       , { name = "DevNexus"
@@ -409,7 +409,7 @@ initialState =
         , endDate = ( 2016, Feb, 19 )
         , location = "San Francisco, CA"
         , cfpStartDate = Nothing
-        , cfpEndDate = Nothing
+        , cfpEndDate = Just ( 2015, Nov, 30 )
         , tags = [ English, Developers, USA, MongoDB, BigData, Elasticserch, Logstash ]
         }
       , { name = "DrupalCon Asia"
@@ -418,7 +418,7 @@ initialState =
         , endDate = ( 2016, Feb, 21 )
         , location = "Mumbai, India"
         , cfpStartDate = Nothing
-        , cfpEndDate = Nothing
+        , cfpEndDate = Just ( 2015, Nov, 2 )
         , tags = [ English, Developers, India, Drupal, PHP ]
         }
       , { name = "hello.js"
@@ -498,8 +498,8 @@ initialState =
         , startDate = ( 2016, Feb, 22 )
         , endDate = ( 2016, Feb, 23 )
         , location = "San Francisco, CA"
-        , cfpStartDate = Nothing
-        , cfpEndDate = Nothing
+        , cfpStartDate = Just ( 2015, Nov, 25 )
+        , cfpEndDate = Just ( 2015, Dec, 13 )
         , tags = [ English, Developers, USA, React, JavaScript ]
         }
       , { name = "GopherCon Dubai"
@@ -1326,8 +1326,8 @@ initialState =
         , startDate = ( 2016, May, 4 )
         , endDate = ( 2016, May, 6 )
         , location = "Kansas City, MO"
-        , cfpStartDate = ( 2016, Jan, 1 )
-        , cfpEndDate = ( 2016, Jan, 15 )
+        , cfpStartDate = Nothing
+        , cfpEndDate = Just ( 2016, Jan, 15 )
         , tags = [ English, Developers, USA, Ruby, Rails ]
         }
       , { name = "CocoaConf Seattle"
@@ -1983,8 +1983,8 @@ initialState =
         , startDate = ( 2016, Jul, 8 )
         , endDate = ( 2016, Jul, 8 )
         , location = "Brighton, England"
-        , cfpStartDate = ( 2016, Jan, 1 )
-        , cfpEndDate = ( 2016, Mar, 31 )
+        , cfpStartDate = Nothing
+        , cfpEndDate = Just ( 2016, Mar, 31 )
         , tags = [ English, Developers, England, Ruby ]
         }
       , { name = "Chef Conf"
