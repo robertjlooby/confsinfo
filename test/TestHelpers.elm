@@ -1,5 +1,8 @@
 module TestHelpers (..) where
 
+import Check.Investigator exposing (Investigator)
+import Check.Test
+import ElmTest exposing (Test)
 import Date exposing (Month(..))
 import DateFormatter exposing (DaTuple)
 import Lazy.List exposing ((:::), empty)
@@ -7,6 +10,21 @@ import Random
 import Random.Date
 import Shrink exposing (Shrinker)
 import Tag exposing (..)
+
+
+numberOfTests : Int
+numberOfTests =
+  100
+
+
+seed : Random.Seed
+seed =
+  Random.initialSeed 1
+
+
+checkTest : String -> (a -> b) -> (a -> b) -> Investigator a -> Test
+checkTest name actualStatement expectedStatement investigator =
+  Check.Test.test name actualStatement expectedStatement investigator numberOfTests seed
 
 
 allTags =

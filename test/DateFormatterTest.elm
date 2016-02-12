@@ -17,20 +17,18 @@ import TestHelpers exposing (..)
 tests =
   suite
     "DateFormatter"
-    [ Check.test
+    [ checkTest
         "formatRange formats a single day"
         (\date -> formatRange date date)
         (\( y, m, d ) -> toString m ++ " " ++ toString d ++ ", " ++ toString y)
         { generator = randomDaTupleGenerator
         , shrinker = daTupleShrinker
         }
-        100
-        (Random.initialSeed 1)
     , let
         unorderedDays =
           (\( ( _, _, d ), d' ) -> d >= d')
       in
-        Check.test
+        checkTest
           "formatRange formats days within a month"
           (\( ( y, m, d ), d' ) -> formatRange ( y, m, d ) ( y, m, d' ))
           (\( ( y, m, d ), d' ) -> toString m ++ " " ++ toString d ++ "-" ++ toString d' ++ ", " ++ toString y)
@@ -41,13 +39,11 @@ tests =
               Shrink.tuple ( daTupleShrinker, dayShrinker )
                 |> Shrink.dropIf unorderedDays
           }
-          100
-          (Random.initialSeed 1)
     , let
         unorderedMonths =
           (\( ( _, m, _ ), m', _ ) -> monthToInt m >= monthToInt m')
       in
-        Check.test
+        checkTest
           "formatRange formats days between months"
           (\( ( y, m, d ), m', d' ) -> formatRange ( y, m, d ) ( y, m', d' ))
           (\( ( y, m, d ), m', d' ) -> toString m ++ " " ++ toString d ++ "-" ++ toString m' ++ " " ++ toString d' ++ ", " ++ toString y)
@@ -58,8 +54,6 @@ tests =
               Shrink.tuple3 ( daTupleShrinker, monthShrinker, dayShrinker )
                 |> Shrink.dropIf unorderedMonths
           }
-          100
-          (Random.initialSeed 1)
     , let
         formatDate =
           (\( y, m, d ) -> toString m ++ " " ++ toString d ++ ", " ++ toString y)
@@ -67,7 +61,7 @@ tests =
         unorderedYears =
           (\( ( y, _, _ ), ( y', _, _ ) ) -> y >= y')
       in
-        Check.test
+        checkTest
           "formatRange formats days between years"
           (\( date, date' ) -> formatRange date date')
           (\( date, date' ) -> formatDate date ++ "-" ++ formatDate date')
@@ -78,22 +72,18 @@ tests =
               Shrink.tuple ( daTupleShrinker, daTupleShrinker )
                 |> Shrink.dropIf unorderedYears
           }
-          100
-          (Random.initialSeed 1)
-    , Check.test
+    , checkTest
         "compare returns EQ for the same date"
         (\date -> compare' date date)
         (\_ -> EQ)
         { generator = randomDaTupleGenerator
         , shrinker = daTupleShrinker
         }
-        100
-        (Random.initialSeed 1)
     , let
         sameYear =
           (\( ( y, _, _ ), ( y', _, _ ) ) -> y == y')
       in
-        Check.test
+        checkTest
           "compare compares year first"
           (\( date, date' ) -> compare' date date')
           (\( ( y, _, _ ), ( y', _, _ ) ) -> compare y y')
@@ -104,13 +94,11 @@ tests =
               Shrink.tuple ( daTupleShrinker, daTupleShrinker )
                 |> Shrink.dropIf sameYear
           }
-          100
-          (Random.initialSeed 1)
     , let
         sameMonth =
           (\( ( _, m, _ ), m', _ ) -> monthToInt m == monthToInt m')
       in
-        Check.test
+        checkTest
           "compare compares month if year is the same"
           (\( ( y, m, d ), m', d' ) -> compare' ( y, m, d ) ( y, m', d' ))
           (\( ( _, m, _ ), m', _ ) -> compare (monthToInt m) (monthToInt m'))
@@ -121,13 +109,11 @@ tests =
               Shrink.tuple3 ( daTupleShrinker, monthShrinker, dayShrinker )
                 |> Shrink.dropIf sameMonth
           }
-          100
-          (Random.initialSeed 1)
     , let
         sameDay =
           (\( ( _, _, d ), d' ) -> d == d')
       in
-        Check.test
+        checkTest
           "compare compares day if year and month are the same"
           (\( ( y, m, d ), d' ) -> compare' ( y, m, d ) ( y, m, d' ))
           (\( ( _, _, d ), d' ) -> compare d d')
@@ -138,6 +124,4 @@ tests =
               Shrink.tuple ( daTupleShrinker, dayShrinker )
                 |> Shrink.dropIf sameDay
           }
-          100
-          (Random.initialSeed 1)
     ]
