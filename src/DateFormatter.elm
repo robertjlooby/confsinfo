@@ -8,6 +8,11 @@ type alias DaTuple =
   ( Int, Month, Int )
 
 
+formatDate : DaTuple -> String
+formatDate date =
+  formatRange date date
+
+
 formatRange : DaTuple -> DaTuple -> String
 formatRange ( startYear, startMonth, startDay ) ( endYear, endMonth, endDay ) =
   let

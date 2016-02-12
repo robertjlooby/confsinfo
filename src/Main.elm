@@ -1,8 +1,8 @@
 module Main (..) where
 
-import Conference exposing (Conference)
+import Conference exposing (cfpStatus, CFPStatus(..), Conference)
 import Model exposing (..)
-import DateFormatter
+import DateFormatter exposing (DaTuple, compare')
 import Debug
 import FilteredTag exposing (FilteredTag(..))
 import FilteredTagWithName exposing (FilteredTagWithName)
@@ -115,16 +115,14 @@ conferencesView address model =
     tagsToShow =
       List.map (\( _, tagsWithDisplay ) -> List.map fst tagsWithDisplay) model.tags |> List.concat
   in
-    List.map (conferenceView address) (Model.shouldShow tagsToShow model.currentDate model.includePastEvents model.conferences)
+    List.map (conferenceView address model.currentDate) (Model.shouldShow tagsToShow model.currentDate model.includePastEvents model.conferences)
 
 
-conferenceView : Signal.Address Action -> Conference -> Html.Html
-conferenceView address conference =
+conferenceView : Signal.Address Action -> DaTuple -> Conference -> Html.Html
+conferenceView address currentDate conference =
   Html.div
     [ class "row" ]
-    [ Html.div
-        [ class "five columns" ]
-        [ Html.a [ href conference.link ] [ text conference.name ] ]
+    [ conferenceNameHtml conference currentDate
     , Html.div
         [ class "three columns" ]
         [ text <| DateFormatter.formatRange conference.startDate conference.endDate ]
@@ -132,6 +130,38 @@ conferenceView address conference =
         [ class "four columns" ]
         [ text conference.location ]
     ]
+
+
+conferenceNameHtml : Conference -> DaTuple -> Html.Html
+conferenceNameHtml conference currentDate =
+  let
+    nameLink =
+      Html.a [ href conference.link ] [ text conference.name ]
+
+    inner =
+      case cfpStatus currentDate conference of
+        ( Open, Just endDate ) ->
+          [ nameLink
+          , Html.small
+              [ class "cfp-open"
+              , Html.Attributes.title <| "Closes " ++ DateFormatter.formatDate endDate
+              ]
+              [ text "CFP open" ]
+          ]
+
+        ( NotYetOpen, Just startDate ) ->
+          [ nameLink
+          , Html.small
+              [ class "cfp-open" ]
+              [ text <| "CFP opens" ++ DateFormatter.formatDate startDate ]
+          ]
+
+        _ ->
+          [ nameLink ]
+  in
+    Html.div
+      [ class "five columns" ]
+      inner
 
 
 actions : Signal.Mailbox (Maybe Model.Action)

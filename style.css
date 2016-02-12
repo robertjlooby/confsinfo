@@ -7,3 +7,11 @@ button {
 .included {
   background-color: #7AF4AD;
 }
+
+.cfp-open {
+  padding-left: 5px;
+}
+
+.cfp-open:hover {
+  cursor: help;
+}
