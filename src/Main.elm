@@ -143,7 +143,7 @@ conferenceNameHtml conference currentDate =
         ( Open, Just endDate ) ->
           [ nameLink
           , Html.small
-              [ class "cfp-open"
+              [ class "cfp cfp-open"
               , Html.Attributes.title <| "Closes " ++ DateFormatter.formatDate endDate
               ]
               [ text "CFP open" ]
@@ -152,8 +152,8 @@ conferenceNameHtml conference currentDate =
         ( NotYetOpen, Just startDate ) ->
           [ nameLink
           , Html.small
-              [ class "cfp-open" ]
-              [ text <| "CFP opens" ++ DateFormatter.formatDate startDate ]
+              [ class "cfp" ]
+              [ text <| "CFP opens " ++ DateFormatter.formatDate startDate ]
           ]
 
         _ ->
