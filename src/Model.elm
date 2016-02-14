@@ -295,15 +295,6 @@ initialState =
         , cfpEndDate = Nothing
         , tags = [ English, Designers, Developers, USA, UX, AngularJS, Ember, React ]
         }
-      , { name = "JSConf Beirut"
-        , link = "http://www.jsconfbeirut.com/"
-        , startDate = ( 2016, Feb, 6 )
-        , endDate = ( 2016, Feb, 7 )
-        , location = "Beirut, Lebanon"
-        , cfpStartDate = Nothing
-        , cfpEndDate = Nothing
-        , tags = [ English, Developers, Lebanon, JavaScript ]
-        }
       , { name = "Forward JS Workshops"
         , link = "http://forwardjs.com/home"
         , startDate = ( 2016, Feb, 8 )
@@ -726,6 +717,15 @@ initialState =
         , cfpStartDate = Nothing
         , cfpEndDate = Nothing
         , tags = [ English, Developers, Poland, Ruby ]
+        }
+      , { name = "JSConf Beirut"
+        , link = "http://www.jsconfbeirut.com/"
+        , startDate = ( 2016, Mar, 12 )
+        , endDate = ( 2016, Mar, 13 )
+        , location = "Beirut, Lebanon"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
+        , tags = [ English, Developers, Lebanon, JavaScript ]
         }
       , { name = "An Event Apart Nashville"
         , link = "http://aneventapart.com/event/nashville-2016"
@@ -1275,15 +1275,6 @@ initialState =
         , cfpStartDate = Nothing
         , cfpEndDate = Just ( 2016, Mar, 13 )
         , tags = [ English, Developers, Australia, FunctionalProgramming ]
-        }
-      , { name = "Future Insights Live"
-        , link = "https://futureinsightslive.com/chicago-2016/"
-        , startDate = ( 2016, May, 2 )
-        , endDate = ( 2016, May, 5 )
-        , location = "Chicago, IL"
-        , cfpStartDate = Nothing
-        , cfpEndDate = Nothing
-        , tags = [ English, Designers, Developers, USA, UX, JavaScript, InternetOfThings ]
         }
       , { name = "Continuous Lifecycle London"
         , link = "http://continuouslifecycle.london/"
@@ -2040,6 +2031,15 @@ initialState =
         , cfpStartDate = Nothing
         , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, Mobile, Android, IOS, JavaScript, PhoneGap ]
+        }
+      , { name = "GR8Conf US"
+        , link = "http://gr8conf.org/"
+        , startDate = ( 2016, Jul, 27 )
+        , endDate = ( 2016, Jul, 29 )
+        , location = "Minneapolis, MN"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Just ( 2016, Feb, 15 )
+        , tags = [ English, Developers, USA, Java, Groovy, Grails, Gradle ]
         }
       , { name = "NDC Sydney Workshops"
         , link = "http://ndcsydney.com/"
