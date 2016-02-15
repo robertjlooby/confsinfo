@@ -826,6 +826,15 @@ initialState =
         , cfpEndDate = Just ( 2016, Feb, 23 )
         , tags = [ English, Developers, Netherlands, Clojure, FunctionalProgramming ]
         }
+      , { name = "GR8Day Warsaw"
+        , link = "http://warsaw.gr8days.pl/"
+        , startDate = ( 2016, Mar, 19 )
+        , endDate = ( 2016, Mar, 19 )
+        , location = "Warsaw, Poland"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Just ( 2016, Mar, 1 )
+        , tags = [ English, Developers, Poland, Java, Groovy, Grails, Gradle ]
+        }
       , { name = "RubyConf India"
         , link = "http://rubyconfindia.org/"
         , startDate = ( 2016, Mar, 19 )
@@ -1276,6 +1285,15 @@ initialState =
         , cfpEndDate = Just ( 2016, Mar, 13 )
         , tags = [ English, Developers, Australia, FunctionalProgramming ]
         }
+      , { name = "flatMap(Oslo)"
+        , link = "http://2016.flatmap.no/"
+        , startDate = ( 2016, May, 2 )
+        , endDate = ( 2016, May, 3 )
+        , location = "Oslo, Norway"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Just ( 2016, Apr, 3 )
+        , tags = [ English, Developers, Norway, Scala, FunctionalProgramming, Java ]
+        }
       , { name = "Continuous Lifecycle London"
         , link = "http://continuouslifecycle.london/"
         , startDate = ( 2016, May, 3 )
@@ -1311,6 +1329,15 @@ initialState =
         , cfpStartDate = Nothing
         , cfpEndDate = Just ( 2016, Jan, 15 )
         , tags = [ English, Developers, USA, Ruby, Rails ]
+        }
+      , { name = "Typelevel Summit"
+        , link = "http://typelevel.org/event/2016-05-summit-oslo/"
+        , startDate = ( 2016, May, 4 )
+        , endDate = ( 2016, May, 4 )
+        , location = "Oslo, Norway"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Just ( 2016, Apr, 3 )
+        , tags = [ English, Developers, Norway, Scala, FunctionalProgramming, Java ]
         }
       , { name = "CocoaConf Seattle"
         , link = "http://cocoaconf.com/seattle-2016/home"
@@ -2319,6 +2346,15 @@ initialState =
         , cfpStartDate = Nothing
         , cfpEndDate = Nothing
         , tags = [ English, Developers, England, General ]
+        }
+      , { name = "CocoaLove"
+        , link = "http://cocoalove.org/"
+        , startDate = ( 2016, Oct, 14 )
+        , endDate = ( 2016, Oct, 16 )
+        , location = "Philadelphia, PA"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
+        , tags = [ English, Developers, USA, Cocoa, IOS ]
         }
       , { name = "ConnectJS"
         , link = "http://connect-js.com/"
