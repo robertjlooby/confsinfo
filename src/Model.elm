@@ -2356,6 +2356,15 @@ initialState =
         , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, Cocoa, IOS ]
         }
+      , { name = "CSS Dev Conf"
+        , link = "http://2016.cssdevconf.com/"
+        , startDate = ( 2016, Oct, 17 )
+        , endDate = ( 2016, Oct, 19 )
+        , location = "San Antonio, TX"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
+        , tags = [ English, Designers, USA, CSS ]
+        }
       , { name = "ConnectJS"
         , link = "http://connect-js.com/"
         , startDate = ( 2016, Oct, 21 )
