@@ -1285,6 +1285,15 @@ initialState =
         , cfpEndDate = Just ( 2016, Mar, 13 )
         , tags = [ English, Developers, Australia, FunctionalProgramming ]
         }
+      , { name = "Chicago Code Camp"
+        , link = "http://www.chicagocodecamp.com/"
+        , startDate = ( 2016, Apr, 30 )
+        , endDate = ( 2016, Apr, 30 )
+        , location = "Chicago, IL"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Just ( 2016, Mar, 1 )
+        , tags = [ English, Developers, USA, General ]
+        }
       , { name = "flatMap(Oslo)"
         , link = "http://2016.flatmap.no/"
         , startDate = ( 2016, May, 2 )
