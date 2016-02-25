@@ -6,19 +6,23 @@ type Tag
   | Agile
   | Android
   | AngularJS
+  | Argentina
   | Australia
   | Belarus
   | Belgium
   | BigData
+  | Brazil
   | Bulgaria
   | CPlusPlus
   | CSS
   | Canada
   | Chef
+  | Chile
   | China
   | Clojure
   | Cloud
   | Cocoa
+  | Colombia
   | Communications
   | Croatia
   | CycleJS
@@ -46,6 +50,7 @@ type Tag
   | General
   | German
   | Germany
+  | Git
   | Go
   | Gradle
   | Grails
@@ -54,9 +59,11 @@ type Tag
   | Haskell
   | Hungary
   | IOS
+  | Iceland
   | India
   | InternetOfThings
   | Ireland
+  | Israel
   | Italian
   | Italy
   | Japan
@@ -68,6 +75,7 @@ type Tag
   | Lisp
   | Lithuania
   | Logstash
+  | Malaysia
   | Mexico
   | Microservices
   | Mobile
@@ -81,6 +89,7 @@ type Tag
   | OCaml
   | OpenSource
   | PHP
+  | Peru
   | Philippines
   | PhoneGap
   | Poland
@@ -92,6 +101,7 @@ type Tag
   | Rails
   | React
   | Remote
+  | Robotics
   | Romania
   | Ruby
   | Russia
@@ -106,10 +116,12 @@ type Tag
   | SoftSkills
   | SoftwareCraftsmanship
   | SouthAfrica
+  | SouthKorea
   | Spain
   | Sweden
   | Swift
   | Switzerland
+  | Taiwan
   | Testing
   | Tunisia
   | Turkey

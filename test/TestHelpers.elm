@@ -32,19 +32,23 @@ allTags =
   , Agile
   , Android
   , AngularJS
+  , Argentina
   , Australia
   , Belarus
   , Belgium
   , BigData
+  , Brazil
   , Bulgaria
   , CPlusPlus
   , CSS
   , Canada
   , Chef
+  , Chile
   , China
   , Clojure
   , Cloud
   , Cocoa
+  , Colombia
   , Communications
   , Croatia
   , CycleJS
@@ -72,6 +76,7 @@ allTags =
   , General
   , German
   , Germany
+  , Git
   , Go
   , Gradle
   , Grails
@@ -80,9 +85,11 @@ allTags =
   , Haskell
   , Hungary
   , IOS
+  , Iceland
   , India
   , InternetOfThings
   , Ireland
+  , Israel
   , Italian
   , Italy
   , Japan
@@ -94,6 +101,7 @@ allTags =
   , Lisp
   , Lithuania
   , Logstash
+  , Malaysia
   , Mexico
   , Microservices
   , Mobile
@@ -107,6 +115,7 @@ allTags =
   , OCaml
   , OpenSource
   , PHP
+  , Peru
   , Philippines
   , PhoneGap
   , Poland
@@ -118,6 +127,7 @@ allTags =
   , Rails
   , React
   , Remote
+  , Robotics
   , Romania
   , Ruby
   , Russia
@@ -132,10 +142,12 @@ allTags =
   , SoftSkills
   , SoftwareCraftsmanship
   , SouthAfrica
+  , SouthKorea
   , Spain
   , Sweden
   , Swift
   , Switzerland
+  , Taiwan
   , Testing
   , Tunisia
   , Turkey
