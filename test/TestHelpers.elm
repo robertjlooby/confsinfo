@@ -144,6 +144,7 @@ allTags =
   , SouthAfrica
   , SouthKorea
   , Spain
+  , Spanish
   , Sweden
   , Swift
   , Switzerland
@@ -155,7 +156,9 @@ allTags =
   , UAE
   , USA
   , UX
+  , Ukraine
   , Uruguay
+  , WordPress
   ]
 
 

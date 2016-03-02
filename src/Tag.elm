@@ -118,6 +118,7 @@ type Tag
   | SouthAfrica
   | SouthKorea
   | Spain
+  | Spanish
   | Sweden
   | Swift
   | Switzerland
@@ -129,4 +130,6 @@ type Tag
   | UAE
   | USA
   | UX
+  | Ukraine
   | Uruguay
+  | WordPress
