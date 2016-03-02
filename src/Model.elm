@@ -2982,7 +2982,7 @@ initialState =
           , ( Excluded Docker, "Docker" )
           , ( Excluded Drupal, "Drupal" )
           , ( Excluded DotNet, ".NET" )
-          , ( Excluded Elasticserch, "Elasticserch" )
+          , ( Excluded Elasticsearch, "Elasticsearch" )
           , ( Excluded Elixir, "Elixir" )
           , ( Excluded Ember, "Ember" )
           , ( Excluded Erlang, "Erlang" )

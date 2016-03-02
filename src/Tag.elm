@@ -36,7 +36,7 @@ type Tag
   | Docker
   | DotNet
   | Drupal
-  | Elasticserch
+  | Elasticsearch
   | Elixir
   | Ember
   | England
