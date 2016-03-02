@@ -410,7 +410,7 @@ initialState =
         , location = "San Francisco, CA"
         , cfpStartDate = Nothing
         , cfpEndDate = Just ( 2015, Nov, 30 )
-        , tags = [ English, Developers, USA, MongoDB, BigData, Elasticserch, Logstash ]
+        , tags = [ English, Developers, USA, MongoDB, BigData, Elasticsearch, Logstash ]
         }
       , { name = "DrupalCon Asia"
         , link = "https://events.drupal.org/asia2016"
