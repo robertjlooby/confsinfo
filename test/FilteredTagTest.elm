@@ -1,7 +1,7 @@
 module FilteredTagTest (..) where
 
-import Check.Test as Check
-import ElmTest exposing (assertEqual, suite, test)
+import Check exposing (claim, for, is, suite, that)
+import Check.Test
 import FilteredTag exposing (..)
 import Lazy.List exposing ((:::), empty)
 import Random
@@ -22,33 +22,32 @@ randomFilterGenerator =
 
 
 tests =
+  Check.Test.evidenceToTest <| Check.quickCheck claims
+
+
+claims : Check.Claim
+claims =
   suite
     "FilteredTag"
-    [ Check.test
+    [ claim
         "getTag gets the tag from a FilteredTag"
-        (\( filter, tag ) -> getTag (filter tag))
-        (\( _, tag ) -> tag)
-        { generator = Random.map2 (,) randomFilterGenerator randomTagGenerator
-        , shrinker = Shrink.tuple ( Shrink.noShrink, Shrink.noShrink )
-        }
-        100
-        (Random.initialSeed 1)
-    , Check.test
+        `that` (\( filter, tag ) -> getTag (filter tag))
+        `is` (\( _, tag ) -> tag)
+        `for` { generator = Random.map2 (,) randomFilterGenerator randomTagGenerator
+              , shrinker = Shrink.tuple ( Shrink.noShrink, Shrink.noShrink )
+              }
+    , claim
         "isIncluded returns True for an Included tag"
-        (\tag -> isIncluded (Included tag))
-        (\_ -> True)
-        { generator = randomTagGenerator
-        , shrinker = Shrink.noShrink
-        }
-        100
-        (Random.initialSeed 1)
-    , Check.test
+        `that` (\tag -> isIncluded (Included tag))
+        `is` (\_ -> True)
+        `for` { generator = randomTagGenerator
+              , shrinker = Shrink.noShrink
+              }
+    , claim
         "isIncluded returns False for an Excluded tag"
-        (\tag -> isIncluded (Excluded tag))
-        (\_ -> False)
-        { generator = randomTagGenerator
-        , shrinker = Shrink.noShrink
-        }
-        100
-        (Random.initialSeed 1)
+        `that` (\tag -> isIncluded (Excluded tag))
+        `is` (\_ -> False)
+        `for` { generator = randomTagGenerator
+              , shrinker = Shrink.noShrink
+              }
     ]

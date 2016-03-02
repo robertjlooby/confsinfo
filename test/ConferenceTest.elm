@@ -1,10 +1,10 @@
 module ConferenceTest (..) where
 
-import Check.Test as Check
+import Check exposing (claim, for, is, suite, that)
+import Check.Test
 import Conference exposing (..)
 import Date exposing (Month(..))
 import DateFormatter exposing (compare')
-import ElmTest exposing (assertEqual, suite, test)
 import FilteredTag exposing (FilteredTag(..))
 import Random
 import Random.Extra
@@ -27,74 +27,79 @@ blankConf =
 
 
 tests =
+  Check.Test.evidenceToTest <| Check.quickCheck claims
+
+
+claims : Check.Claim
+claims =
   suite
     "Model"
-    [ checkTest
+    [ claim
         "cfpStatus is (Closed, Nothing) if start and end are Nothing"
-        (\date -> cfpStatus date blankConf)
-        (\_ -> ( Closed, Nothing ))
-        { generator = randomDaTupleGenerator
-        , shrinker = daTupleShrinker
-        }
-    , checkTest
+        `that` (\date -> cfpStatus date blankConf)
+        `is` (\_ -> ( Closed, Nothing ))
+        `for` { generator = randomDaTupleGenerator
+              , shrinker = daTupleShrinker
+              }
+    , claim
         "cfpStatus is False if cfpEndDate is Nothing"
-        (\date -> cfpStatus date { blankConf | cfpStartDate = Just date })
-        (\_ -> ( Closed, Nothing ))
-        { generator = randomDaTupleGenerator
-        , shrinker = daTupleShrinker
-        }
-    , checkTest
+        `that` (\date -> cfpStatus date { blankConf | cfpStartDate = Just date })
+        `is` (\_ -> ( Closed, Nothing ))
+        `for` { generator = randomDaTupleGenerator
+              , shrinker = daTupleShrinker
+              }
+    , claim
         "cfpStatus is (Open, Just cfpEndDate) if cfpEndDate == currentDate"
-        (\date -> cfpStatus date { blankConf | cfpEndDate = Just date })
-        (\date -> ( Open, Just date ))
-        { generator = randomDaTupleGenerator
-        , shrinker = daTupleShrinker
-        }
-    , checkTest
+        `that` (\date -> cfpStatus date { blankConf | cfpEndDate = Just date })
+        `is` (\date -> ( Open, Just date ))
+        `for` { generator = randomDaTupleGenerator
+              , shrinker = daTupleShrinker
+              }
+    , claim
         "cfpStatus is (Closed, Nothing) if currentDate is after cfpEndDate"
-        (\( currentDate, endDate ) -> cfpStatus currentDate { blankConf | cfpEndDate = Just endDate })
-        (\_ -> ( Closed, Nothing ))
-        { generator =
-            Random.map2 (,) randomDaTupleGenerator randomDaTupleGenerator
-              |> Random.Extra.keepIf (\( currentDate, endDate ) -> GT == compare' currentDate endDate)
-        , shrinker = Shrink.tuple ( daTupleShrinker, daTupleShrinker )
-        }
-    , checkTest
+        `that` (\( currentDate, endDate ) -> cfpStatus currentDate { blankConf | cfpEndDate = Just endDate })
+        `is` (\_ -> ( Closed, Nothing ))
+        `for` { generator =
+                  Random.map2 (,) randomDaTupleGenerator randomDaTupleGenerator
+                    |> Random.Extra.keepIf (\( currentDate, endDate ) -> GT == compare' currentDate endDate)
+              , shrinker = Shrink.tuple ( daTupleShrinker, daTupleShrinker )
+              }
+    , claim
         "cfpStatus is (Open, Just cfpEndDate) if currentDate is before cfpEndDate and cfpStartDate is Nothing"
-        (\( currentDate, endDate ) -> cfpStatus currentDate { blankConf | cfpEndDate = Just endDate })
-        (\( _, date ) -> ( Open, Just date ))
-        { generator =
-            Random.map2 (,) randomDaTupleGenerator randomDaTupleGenerator
-              |> Random.Extra.keepIf (\( currentDate, endDate ) -> LT == compare' currentDate endDate)
-        , shrinker = Shrink.tuple ( daTupleShrinker, daTupleShrinker )
-        }
-    , checkTest
+        `that` (\( currentDate, endDate ) -> cfpStatus currentDate { blankConf | cfpEndDate = Just endDate })
+        `is` (\( _, date ) -> ( Open, Just date ))
+        `for` { generator =
+                  Random.map2 (,) randomDaTupleGenerator randomDaTupleGenerator
+                    |> Random.Extra.keepIf (\( currentDate, endDate ) -> LT == compare' currentDate endDate)
+              , shrinker = Shrink.tuple ( daTupleShrinker, daTupleShrinker )
+              }
+    , claim
         "cfpStatus is (Open, Just cfpEndDate) if currentDate is before cfpEndDate and after cfpStartDate"
-        (\( currentDate, startDate, endDate ) -> cfpStatus currentDate { blankConf | cfpEndDate = Just endDate, cfpStartDate = Just currentDate })
-        (\( _, _, date ) -> ( Open, Just date ))
-        { generator =
-            Random.map3 (,,) randomDaTupleGenerator randomDaTupleGenerator randomDaTupleGenerator
-              |> Random.Extra.keepIf (\( currentDate, _, endDate ) -> LT == compare' currentDate endDate)
-              |> Random.Extra.keepIf (\( currentDate, startDate, _ ) -> GT == compare' currentDate startDate)
-        , shrinker = Shrink.tuple3 ( daTupleShrinker, daTupleShrinker, daTupleShrinker )
-        }
-    , checkTest
+        `that` (\( currentDate, startDate, endDate ) -> cfpStatus currentDate { blankConf | cfpEndDate = Just endDate, cfpStartDate = Just currentDate })
+        `is` (\( _, _, date ) -> ( Open, Just date ))
+        `for` { generator =
+                  Random.map3 (,,) randomDaTupleGenerator randomDaTupleGenerator randomDaTupleGenerator
+                    |> Random.Extra.keepIf (\( currentDate, _, endDate ) -> LT == compare' currentDate endDate)
+                    |> Random.Extra.keepIf (\( currentDate, startDate, _ ) -> GT == compare' currentDate startDate)
+              , shrinker = Shrink.tuple3 ( daTupleShrinker, daTupleShrinker, daTupleShrinker )
+              }
+    , claim
         "cfpStatus is (Open, Just cfpEndDate) if currentDate is before cfpEndDate and equal to cfpStartDate"
-        (\( currentDate, endDate ) -> cfpStatus currentDate { blankConf | cfpEndDate = Just endDate, cfpStartDate = Just currentDate })
-        (\( _, date ) -> ( Open, Just date ))
-        { generator =
-            Random.map2 (,) randomDaTupleGenerator randomDaTupleGenerator
-              |> Random.Extra.keepIf (\( currentDate, endDate ) -> LT == compare' currentDate endDate)
-        , shrinker = Shrink.tuple ( daTupleShrinker, daTupleShrinker )
-        }
-    , checkTest
+        `that` (\( currentDate, endDate ) -> cfpStatus currentDate { blankConf | cfpEndDate = Just endDate, cfpStartDate = Just currentDate })
+        `is` (\( _, date ) -> ( Open, Just date ))
+        `for` { generator =
+                  Random.map2 (,) randomDaTupleGenerator randomDaTupleGenerator
+                    |> Random.Extra.keepIf (\( currentDate, endDate ) -> LT == compare' currentDate endDate)
+              , shrinker = Shrink.tuple ( daTupleShrinker, daTupleShrinker )
+              }
+    , claim
         "cfpStatus is (NotYetOpen, Just cfpStartDate) if currentDate is before cfpEndDate and cfpStartDate"
-        (\( currentDate, startDate, endDate ) -> cfpStatus currentDate { blankConf | cfpEndDate = Just endDate, cfpStartDate = Just startDate })
-        (\( _, date, _ ) -> ( NotYetOpen, Just date ))
-        { generator =
-            Random.map3 (,,) randomDaTupleGenerator randomDaTupleGenerator randomDaTupleGenerator
-              |> Random.Extra.keepIf (\( _, startDate, endDate ) -> LT == compare' startDate endDate)
-              |> Random.Extra.keepIf (\( currentDate, startDate, _ ) -> LT == compare' currentDate startDate)
-        , shrinker = Shrink.tuple3 ( daTupleShrinker, daTupleShrinker, daTupleShrinker )
-        }
+        `that` (\( currentDate, startDate, endDate ) -> cfpStatus currentDate { blankConf | cfpEndDate = Just endDate, cfpStartDate = Just startDate })
+        `is` (\( _, date, _ ) -> ( NotYetOpen, Just date ))
+        `for` { generator =
+                  Random.map3 (,,) randomDaTupleGenerator randomDaTupleGenerator randomDaTupleGenerator
+                    |> Random.Extra.keepIf (\( _, startDate, endDate ) -> LT == compare' startDate endDate)
+                    |> Random.Extra.keepIf (\( currentDate, startDate, _ ) -> LT == compare' currentDate startDate)
+              , shrinker = Shrink.tuple3 ( daTupleShrinker, daTupleShrinker, daTupleShrinker )
+              }
     ]
