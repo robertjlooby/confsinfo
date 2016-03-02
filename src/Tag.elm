@@ -93,6 +93,7 @@ type Tag
   | Philippines
   | PhoneGap
   | Poland
+  | Polish
   | Portugal
   | PostgreSQL
   | ProgressiveEnhancement

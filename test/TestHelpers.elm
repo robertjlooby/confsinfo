@@ -101,6 +101,7 @@ allTags =
   , Philippines
   , PhoneGap
   , Poland
+  , Polish
   , Portugal
   , PostgreSQL
   , ProgressiveEnhancement

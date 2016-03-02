@@ -592,6 +592,15 @@ initialState =
         , cfpEndDate = Nothing
         , tags = [ English, Developers, Remote, FSharp, DotNet, FunctionalProgramming ]
         }
+      , { name = "Chamberconf"
+        , link = "http://chamberconf.pl/"
+        , startDate = ( 2016, Mar, 5 )
+        , endDate = ( 2016, Mar, 6 )
+        , location = "Moszna, Poland"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
+        , tags = [ Polish, Developers, Poland, General ]
+        }
       , { name = "droidcon Tunisia"
         , link = "http://www.droidcon.tn/"
         , startDate = ( 2016, Mar, 5 )
@@ -1311,6 +1320,15 @@ initialState =
         , cfpStartDate = Nothing
         , cfpEndDate = Nothing
         , tags = [ English, Designers, USA, UX ]
+        }
+      , { name = "ProgSCon"
+        , link = "http://progscon.co.uk/"
+        , startDate = ( 2016, Apr, 22 )
+        , endDate = ( 2016, Apr, 22 )
+        , location = "London, England"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Just ( 2016, Jan, 21 )
+        , tags = [ English, Developers, England, General ]
         }
       , { name = "Xamarin Evolve"
         , link = "https://evolve.xamarin.com/"
@@ -3131,6 +3149,7 @@ initialState =
           , ( Excluded Italian, "Italian" )
           , ( Excluded Japanese, "Japanese" )
           , ( Excluded Norwegian, "Norwegian" )
+          , ( Excluded Polish, "Polish" )
           , ( Excluded Russian, "Russian" )
           , ( Excluded Spanish, "Spanish" )
           , ( Excluded Turkish, "Turkish" )
