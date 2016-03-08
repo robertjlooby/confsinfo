@@ -1,4 +1,4 @@
-module DateFormatter (..) where
+module DaTuple (DaTuple, formatDate, formatRange, compare') where
 
 import Date exposing (Month)
 import Date.Core exposing (monthToInt)

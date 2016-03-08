@@ -1,10 +1,12 @@
 module TestHelpers (..) where
 
 import Date exposing (Month(..))
-import DateFormatter exposing (DaTuple)
+import DaTuple exposing (DaTuple)
 import Lazy.List exposing ((:::), empty)
 import Random
 import Random.Date
+import Random.Extra
+import Random.List
 import Shrink exposing (Shrinker)
 import Tag exposing (..)
 
@@ -145,24 +147,39 @@ allTags =
   ]
 
 
+randomTag : Random.Generator Tag
+randomTag =
+  Random.Extra.selectWithDefault FunctionalProgramming allTags
+
+
+randomListOfTags : Random.Generator (List Tag)
+randomListOfTags =
+  Random.List.rangeLengthList 0 10 randomTag
+
+
+randomListOfTagsStrings : Random.Generator (List String)
+randomListOfTagsStrings =
+  Random.map (List.map toString) randomListOfTags
+
+
 minYear : Int
 minYear =
   2000
 
 
-randomYearGenerator : Random.Generator Int
-randomYearGenerator =
+randomYear : Random.Generator Int
+randomYear =
   Random.int minYear 2100
 
 
-randomDayGenerator : Random.Generator Int
-randomDayGenerator =
+randomDay : Random.Generator Int
+randomDay =
   Random.int 1 31
 
 
-randomDaTupleGenerator : Random.Generator DaTuple
-randomDaTupleGenerator =
-  Random.map3 (,,) randomYearGenerator Random.Date.month randomDayGenerator
+randomDaTuple : Random.Generator DaTuple
+randomDaTuple =
+  Random.map3 (,,) randomYear Random.Date.month randomDay
 
 
 yearShrinker : Shrinker Int

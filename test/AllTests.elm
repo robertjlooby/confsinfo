@@ -2,9 +2,10 @@ module Main (..) where
 
 import ConferenceTest
 import Console
-import DateFormatterTest
+import DaTupleTest
 import ElmTest exposing (consoleRunner, Test, suite)
 import FilteredTagTest
+import FilteredTagSectionTest
 import ModelTest
 import Task
 
@@ -14,8 +15,9 @@ tests =
   suite
     "All tests"
     [ ConferenceTest.tests
-    , DateFormatterTest.tests
+    , DaTupleTest.tests
     , FilteredTagTest.tests
+    , FilteredTagSectionTest.tests
     , ModelTest.tests
     ]
 

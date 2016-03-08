@@ -1,10 +1,10 @@
-module DateFormatterTest (..) where
+module DaTupleTest (..) where
 
 import Check exposing (claim, for, is, suite, that)
 import Check.Test
 import Date exposing (Month(..))
 import Date.Core exposing (monthToInt)
-import DateFormatter exposing (..)
+import DaTuple exposing (..)
 import Lazy.List exposing ((:::), empty)
 import Random
 import Random.Extra
@@ -25,7 +25,7 @@ claims =
         "formatRange formats a single day"
         `that` (\date -> formatRange date date)
         `is` (\( y, m, d ) -> toString m ++ " " ++ toString d ++ ", " ++ toString y)
-        `for` { generator = randomDaTupleGenerator
+        `for` { generator = randomDaTuple
               , shrinker = daTupleShrinker
               }
     , let
@@ -37,7 +37,7 @@ claims =
           `that` (\( ( y, m, d ), d' ) -> formatRange ( y, m, d ) ( y, m, d' ))
           `is` (\( ( y, m, d ), d' ) -> toString m ++ " " ++ toString d ++ "-" ++ toString d' ++ ", " ++ toString y)
           `for` { generator =
-                    Random.map2 (,) randomDaTupleGenerator randomDayGenerator
+                    Random.map2 (,) randomDaTuple randomDay
                       |> Random.Extra.dropIf unorderedDays
                 , shrinker =
                     Shrink.tuple ( daTupleShrinker, dayShrinker )
@@ -52,7 +52,7 @@ claims =
           `that` (\( ( y, m, d ), m', d' ) -> formatRange ( y, m, d ) ( y, m', d' ))
           `is` (\( ( y, m, d ), m', d' ) -> toString m ++ " " ++ toString d ++ "-" ++ toString m' ++ " " ++ toString d' ++ ", " ++ toString y)
           `for` { generator =
-                    Random.map3 (,,) randomDaTupleGenerator Random.Date.month randomDayGenerator
+                    Random.map3 (,,) randomDaTuple Random.Date.month randomDay
                       |> Random.Extra.dropIf unorderedMonths
                 , shrinker =
                     Shrink.tuple3 ( daTupleShrinker, monthShrinker, dayShrinker )
@@ -70,7 +70,7 @@ claims =
           `that` (\( date, date' ) -> formatRange date date')
           `is` (\( date, date' ) -> formatDate date ++ "-" ++ formatDate date')
           `for` { generator =
-                    Random.map2 (,) randomDaTupleGenerator randomDaTupleGenerator
+                    Random.map2 (,) randomDaTuple randomDaTuple
                       |> Random.Extra.dropIf unorderedYears
                 , shrinker =
                     Shrink.tuple ( daTupleShrinker, daTupleShrinker )
@@ -80,7 +80,7 @@ claims =
         "compare returns EQ for the same date"
         `that` (\date -> compare' date date)
         `is` (\_ -> EQ)
-        `for` { generator = randomDaTupleGenerator
+        `for` { generator = randomDaTuple
               , shrinker = daTupleShrinker
               }
     , let
@@ -92,7 +92,7 @@ claims =
           `that` (\( date, date' ) -> compare' date date')
           `is` (\( ( y, _, _ ), ( y', _, _ ) ) -> compare y y')
           `for` { generator =
-                    Random.map2 (,) randomDaTupleGenerator randomDaTupleGenerator
+                    Random.map2 (,) randomDaTuple randomDaTuple
                       |> Random.Extra.dropIf sameYear
                 , shrinker =
                     Shrink.tuple ( daTupleShrinker, daTupleShrinker )
@@ -107,7 +107,7 @@ claims =
           `that` (\( ( y, m, d ), m', d' ) -> compare' ( y, m, d ) ( y, m', d' ))
           `is` (\( ( _, m, _ ), m', _ ) -> compare (monthToInt m) (monthToInt m'))
           `for` { generator =
-                    Random.map3 (,,) randomDaTupleGenerator Random.Date.month randomDayGenerator
+                    Random.map3 (,,) randomDaTuple Random.Date.month randomDay
                       |> Random.Extra.dropIf sameMonth
                 , shrinker =
                     Shrink.tuple3 ( daTupleShrinker, monthShrinker, dayShrinker )
@@ -122,7 +122,7 @@ claims =
           `that` (\( ( y, m, d ), d' ) -> compare' ( y, m, d ) ( y, m, d' ))
           `is` (\( ( _, _, d ), d' ) -> compare d d')
           `for` { generator =
-                    Random.map2 (,) randomDaTupleGenerator randomDayGenerator
+                    Random.map2 (,) randomDaTuple randomDay
                       |> Random.Extra.dropIf sameDay
                 , shrinker =
                     Shrink.tuple ( daTupleShrinker, dayShrinker )

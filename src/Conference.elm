@@ -1,45 +1,82 @@
-module Conference (..) where
+module Conference (Model, shouldShow, view) where
 
-import DateFormatter exposing (compare', DaTuple)
+import ConferenceInternal exposing (..)
+import DaTuple exposing (compare', DaTuple)
+import Html exposing (text)
+import Html.Attributes exposing (class, href)
 import Tag exposing (Tag)
 
 
-type alias Conference =
-  { name : String
-  , link : String
-  , startDate : DaTuple
-  , endDate : DaTuple
-  , location : String
-  , cfpStartDate : Maybe DaTuple
-  , cfpEndDate : Maybe DaTuple
-  , tags : List Tag
-  }
+-- Model
 
 
-shouldShowConference : List Tag -> Conference -> Bool
-shouldShowConference tags conference =
-  List.all (\tag -> List.member tag conference.tags) tags
+type alias Model =
+  ConferenceInternal.Model
 
 
-type CFPStatus
-  = Closed
-  | NotYetOpen
-  | Open
+
+-- Public functions
 
 
-cfpStatus : DaTuple -> Conference -> ( CFPStatus, Maybe DaTuple )
-cfpStatus currentDate conference =
-  case Maybe.map (compare' currentDate) conference.cfpEndDate of
-    Nothing ->
-      ( Closed, Nothing )
+shouldShow : List Tag -> Model -> Bool
+shouldShow includedTags conference =
+  List.all (\tag -> List.member tag conference.tags) includedTags
 
-    Just GT ->
-      ( Closed, Nothing )
 
-    Just _ ->
-      case Maybe.map (compare' currentDate) conference.cfpStartDate of
-        Just LT ->
-          ( NotYetOpen, conference.cfpStartDate )
+
+-- View
+
+
+type alias CFPStatus =
+  ConferenceInternal.CFPStatus
+
+
+cfpStatus : DaTuple -> Model -> ( CFPStatus, Maybe DaTuple )
+cfpStatus =
+  ConferenceInternal.cfpStatus
+
+
+view : DaTuple -> Model -> Html.Html
+view currentDate conference =
+  Html.div
+    [ class "row" ]
+    [ conferenceNameHtml conference currentDate
+    , Html.div
+        [ class "three columns" ]
+        [ text <| DaTuple.formatRange conference.startDate conference.endDate ]
+    , Html.div
+        [ class "four columns" ]
+        [ text conference.location ]
+    ]
+
+
+conferenceNameHtml : Model -> DaTuple -> Html.Html
+conferenceNameHtml conference currentDate =
+  let
+    nameLink =
+      Html.a [ href conference.link ] [ text conference.name ]
+
+    inner =
+      case cfpStatus currentDate conference of
+        ( Open, Just endDate ) ->
+          [ nameLink
+          , Html.small
+              [ class "cfp cfp-open"
+              , Html.Attributes.title <| "Closes " ++ DaTuple.formatDate endDate
+              ]
+              [ text "CFP open" ]
+          ]
+
+        ( NotYetOpen, Just startDate ) ->
+          [ nameLink
+          , Html.small
+              [ class "cfp" ]
+              [ text <| "CFP opens " ++ DaTuple.formatDate startDate ]
+          ]
 
         _ ->
-          ( Open, conference.cfpEndDate )
+          [ nameLink ]
+  in
+    Html.div
+      [ class "five columns" ]
+      inner

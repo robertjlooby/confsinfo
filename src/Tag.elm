@@ -1,5 +1,7 @@
 module Tag (..) where
 
+-- Model
+
 
 type Tag
   = AWS
