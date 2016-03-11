@@ -97,6 +97,7 @@ type Tag
   | Poland
   | Polish
   | Portugal
+  | Portuguese
   | PostgreSQL
   | ProgressiveEnhancement
   | PureScript

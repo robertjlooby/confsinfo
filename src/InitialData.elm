@@ -873,6 +873,15 @@ model =
         , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, Ruby ]
         }
+      , { name = "Flourish!"
+        , link = "http://flourishconf.com/2016/"
+        , startDate = ( 2016, Apr, 1 )
+        , endDate = ( 2016, Apr, 2 )
+        , location = "Chicago, IL"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
+        , tags = [ English, Developers, USA, OpenSource ]
+        }
       , { name = "Fronteers Spring Thing"
         , link = "https://fronteers.nl/spring"
         , startDate = ( 2016, Apr, 1 )
@@ -1296,6 +1305,15 @@ model =
         , cfpEndDate = Just ( 2016, Apr, 1 )
         , tags = [ English, Developers, Croatia, Android, Mobile ]
         }
+      , { name = "Squares Conference"
+        , link = "http://squaresconference.com/"
+        , startDate = ( 2016, Apr, 27 )
+        , endDate = ( 2016, Apr, 29 )
+        , location = "Grapevine, TX"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
+        , tags = [ English, Designers, USA, UX ]
+        }
       , { name = "University of Illinois WebCon"
         , link = "http://webcon.illinois.edu/"
         , startDate = ( 2016, Apr, 27 )
@@ -1710,6 +1728,15 @@ model =
         , cfpEndDate = Just ( 2016, Feb, 15 )
         , tags = [ English, Designers, Developers, USA, General, SoftSkills ]
         }
+      , { name = "EmpEx"
+        , link = "http://empex.co/"
+        , startDate = ( 2016, May, 21 )
+        , endDate = ( 2016, May, 21 )
+        , location = "New York, NY"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Just ( 2015, Mar, 15 )
+        , tags = [ English, Developers, USA, Elixir, FunctionalProgramming ]
+        }
       , { name = "UIKonf"
         , link = "http://www.uikonf.com/"
         , startDate = ( 2016, May, 22 )
@@ -2016,6 +2043,15 @@ model =
         , cfpEndDate = Nothing
         , tags = [ English, Developers, Norway, JavaScript ]
         }
+      , { name = "NodeConf Oslo"
+        , link = "http://oslo.nodeconf.com/"
+        , startDate = ( 2016, Jun, 4 )
+        , endDate = ( 2016, Jun, 4 )
+        , location = "Oslo, Norway"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Just ( 2016, Mar, 13 )
+        , tags = [ English, Developers, Norway, NodeJS, JavaScript ]
+        }
       , { name = "Berlin Buzzwords"
         , link = "http://berlinbuzzwords.de/"
         , startDate = ( 2016, Jun, 5 )
@@ -2060,6 +2096,15 @@ model =
         , cfpStartDate = Nothing
         , cfpEndDate = Nothing
         , tags = [ English, Designers, Scotland, UX ]
+        }
+      , { name = "NodeConf"
+        , link = "http://nodeconf.com/"
+        , startDate = ( 2016, Jun, 9 )
+        , endDate = ( 2016, Jun, 12 )
+        , location = "Petaluma, CA"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
+        , tags = [ English, Developers, USA, NodeJS, JavaScript ]
         }
       , { name = "GOTO Amsterdam Workshops"
         , link = "http://gotocon.com/amsterdam-2016/"
@@ -2528,6 +2573,15 @@ model =
         , cfpStartDate = Nothing
         , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, React, JavaScript ]
+        }
+      , { name = "BrazilJS"
+        , link = "https://braziljs.org/conf"
+        , startDate = ( 2016, Aug, 26 )
+        , endDate = ( 2016, Aug, 27 )
+        , location = "Porto Alegre, Brazil"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
+        , tags = [ English, Spanish, Portuguese, Developers, Brazil, JavaScript ]
         }
       , { name = "AlterConf South Africa"
         , link = "http://www.alterconf.com/sessions/cape-town-south-africa"
@@ -3036,6 +3090,7 @@ model =
             , FilteredTag.init Japanese "Japanese"
             , FilteredTag.init Norwegian "Norwegian"
             , FilteredTag.init Polish "Polish"
+            , FilteredTag.init Portuguese "Portuguese"
             , FilteredTag.init Russian "Russian"
             , FilteredTag.init Spanish "Spanish"
             , FilteredTag.init Turkish "Turkish"
