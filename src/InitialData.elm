@@ -720,6 +720,15 @@ model =
         , cfpEndDate = Just ( 2016, Jan, 22 )
         , tags = [ English, Developers, Singapore, PostgreSQL ]
         }
+      , { name = "Codemotion Rome"
+        , link = "http://rome2016.codemotionworld.com/"
+        , startDate = ( 2016, Mar, 18 )
+        , endDate = ( 2016, Mar, 19 )
+        , location = "Rome, Italy"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
+        , tags = [ English, Developers, Italy, General ]
+        }
       , { name = "Scale Summit"
         , link = "http://www.scalesummit.org/"
         , startDate = ( 2016, Mar, 18 )
@@ -872,6 +881,15 @@ model =
         , cfpStartDate = Nothing
         , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, Ruby ]
+        }
+      , { name = "Codemotion Dubai"
+        , link = "http://rome2016.codemotionworld.com/"
+        , startDate = ( 2016, Apr, 1 )
+        , endDate = ( 2016, Apr, 2 )
+        , location = "Dubai, UAE"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
+        , tags = [ English, Developers, UAE, General ]
         }
       , { name = "Flourish!"
         , link = "http://flourishconf.com/2016/"
@@ -1557,6 +1575,15 @@ model =
         , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, Scala ]
         }
+      , { name = "Codemotion Amsterdam"
+        , link = "http://amsterdam2016.codemotionworld.com/"
+        , startDate = ( 2016, May, 11 )
+        , endDate = ( 2016, May, 12 )
+        , location = "Amsterdam, Netherlands"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
+        , tags = [ English, Developers, Netherlands, General ]
+        }
       , { name = "CSSConf Budapest"
         , link = "http://cssconfbp.rocks/"
         , startDate = ( 2016, May, 11 )
@@ -2241,6 +2268,15 @@ model =
         , cfpEndDate = Just ( 2016, Jan, 11 )
         , tags = [ English, Developers, USA, Scalability, DevOps ]
         }
+      , { name = "Codemotion Dublin"
+        , link = "http://dublin2016.codemotionworld.com/"
+        , startDate = ( 2016, Jun, 22 )
+        , endDate = ( 2016, Jun, 23 )
+        , location = "Dublin, Ireland"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
+        , tags = [ English, Developers, Ireland, General ]
+        }
       , { name = "RedDotRubyConf"
         , link = "http://www.reddotrubyconf.com/"
         , startDate = ( 2016, Jun, 23 )
@@ -2483,6 +2519,15 @@ model =
         , cfpStartDate = Nothing
         , cfpEndDate = Just ( 2016, Apr, 1 )
         , tags = [ English, Developers, Australia, Agile, DotNet, General ]
+        }
+      , { name = "CSSconf Argentina"
+        , link = "http://cssconfar.com/"
+        , startDate = ( 2016, Aug, 7 )
+        , endDate = ( 2016, Aug, 7 )
+        , location = "Buenos Aires, Argentina"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
+        , tags = [ English, Designers, Argentina, CSS ]
         }
       , { name = "That Conference"
         , link = "https://www.thatconference.com/"
@@ -2898,6 +2943,15 @@ model =
         , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, JavaScript ]
         }
+      , { name = "Codemotion Berlin"
+        , link = "http://berlin2015.codemotionworld.com/"
+        , startDate = ( 2016, Oct, 24 )
+        , endDate = ( 2016, Oct, 25 )
+        , location = "Berlin, Germany"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
+        , tags = [ English, Developers, Germany, General ]
+        }
       , { name = "ng-europe"
         , link = "https://ngeurope.org/"
         , startDate = ( 2016, Oct, 25 )
@@ -3014,6 +3068,15 @@ model =
         , cfpStartDate = Nothing
         , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, AWS, Cloud ]
+        }
+      , { name = "JS Kongress Munich"
+        , link = "http://js-kongress.de/"
+        , startDate = ( 2016, Nov, 28 )
+        , endDate = ( 2016, Nov, 29 )
+        , location = "Munich, Germany"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Just ( 2016, May, 15 )
+        , tags = [ English, Developers, Germany, JavaScript ]
         }
       , { name = "CSSConf AU"
         , link = "http://2016.cssconf.com.au/"
