@@ -2439,6 +2439,15 @@ model =
         , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, PHP ]
         }
+      , { name = "Curry On"
+        , link = "http://curry-on.org/2016/"
+        , startDate = ( 2016, Jul, 18 )
+        , endDate = ( 2016, Jul, 19 )
+        , location = "Rome, Italy"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
+        , tags = [ English, Developers, Italy, General ]
+        }
       , { name = "UberConf"
         , link = "https://uberconf.com/conference/denver/2016/07/home"
         , startDate = ( 2016, Jul, 19 )
@@ -2447,6 +2456,15 @@ model =
         , cfpStartDate = Nothing
         , cfpEndDate = Nothing
         , tags = [ English, Developers, USA, Java, Agile, Cloud, Scala, Groovy ]
+        }
+      , { name = "European Conference on Object-Oriented Programming"
+        , link = "http://2016.ecoop.org/"
+        , startDate = ( 2016, Jul, 20 )
+        , endDate = ( 2016, Jul, 22 )
+        , location = "Rome, Italy"
+        , cfpStartDate = Nothing
+        , cfpEndDate = Nothing
+        , tags = [ English, Developers, Italy, General ]
         }
       , { name = "An Event Apart DC"
         , link = "http://aneventapart.com/event/washington-dc-2016"
@@ -2933,6 +2951,15 @@ model =
         , cfpStartDate = Nothing
         , cfpEndDate = Nothing
         , tags = [ English, Designers, USA, CSS ]
+        }
+      , { name = "Full Stack Toronto"
+        , link = "https://fsto.co/"
+        , startDate = ( 2016, Oct, 17 )
+        , endDate = ( 2016, Oct, 18 )
+        , location = "Toronto, Canada"
+        , cfpStartDate = Just ( 2016, Jan, 1 )
+        , cfpEndDate = Just ( 2016, Jul, 31 )
+        , tags = [ English, Designers, Developers, Canada, General ]
         }
       , { name = "ConnectJS"
         , link = "http://connect-js.com/"
