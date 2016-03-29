@@ -1,7 +1,8 @@
 module ModelTest (..) where
 
 import ElmTest exposing (assertEqual, suite, test)
-import Date
+import GenericSet as GSet
+import Conference
 import Model exposing (..)
 import ModelInternal exposing (..)
 import Date exposing (Month(..))
@@ -9,9 +10,14 @@ import FilteredTagSection
 import Tag exposing (Tag(..))
 
 
+confSet : List Conference.Model -> GSet.GenericSet Conference.Model
+confSet conferences =
+  GSet.fromList (\c1 c2 -> compare c1.name c2.name) conferences
+
+
 withTags : List FilteredTagSection.Model -> ModelInternal.Model
 withTags tags =
-  { conferences = []
+  { conferences = confSet []
   , currentDate = ( 2016, Jan, 1 )
   , includePastEvents = True
   , tags = tags
@@ -40,14 +46,14 @@ tests =
               }
 
             conference1 =
-              { blankConference | startDate = ( 2015, Date.Dec, 30 ) }
+              { blankConference | startDate = ( 2015, Date.Dec, 30 ), name = "a" }
 
             conference2 =
-              { blankConference | startDate = ( 2016, Date.Jan, 2 ) }
+              { blankConference | startDate = ( 2016, Date.Jan, 2 ), name = "b" }
 
             model =
               { blankModel
-                | conferences = [ conference1, conference2 ]
+                | conferences = confSet [ conference1, conference2 ]
                 , includePastEvents = False
                 , currentDate = ( 2016, Jan, 1 )
               }
@@ -67,14 +73,14 @@ tests =
               }
 
             conference1 =
-              { blankConference | startDate = ( 2015, Date.Dec, 30 ) }
+              { blankConference | startDate = ( 2015, Date.Dec, 30 ), name = "a" }
 
             conference2 =
-              { blankConference | startDate = ( 2016, Date.Jan, 2 ) }
+              { blankConference | startDate = ( 2016, Date.Jan, 2 ), name = "b" }
 
             model =
               { blankModel
-                | conferences = [ conference1, conference2 ]
+                | conferences = confSet [ conference1, conference2 ]
                 , includePastEvents = True
                 , currentDate = ( 2016, Jan, 1 )
               }

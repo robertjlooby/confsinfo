@@ -1,7 +1,7 @@
-module Conference (Model, shouldShow, view) where
+module Conference (Model, shouldShow, compare', view) where
 
 import ConferenceInternal exposing (..)
-import DaTuple exposing (compare', DaTuple)
+import DaTuple exposing (DaTuple)
 import Html exposing (text)
 import Html.Attributes exposing (class, href)
 import Tag exposing (Tag)
@@ -21,6 +21,18 @@ type alias Model =
 shouldShow : List Tag -> Model -> Bool
 shouldShow includedTags conference =
   List.all (\tag -> List.member tag conference.tags) includedTags
+
+
+compare' : Model -> Model -> Order
+compare' conf conf' =
+  let
+    dateCompare =
+      DaTuple.compare' conf.startDate conf'.startDate
+  in
+    if dateCompare == EQ then
+      compare conf.name conf'.name
+    else
+      dateCompare
 
 
 

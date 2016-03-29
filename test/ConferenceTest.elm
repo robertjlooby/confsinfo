@@ -5,9 +5,10 @@ import Check.Test
 import Conference exposing (..)
 import ConferenceInternal exposing (..)
 import Date exposing (Month(..))
-import DaTuple exposing (compare')
+import DaTuple as DT
 import Random
 import Random.Extra
+import Random.String exposing (anyEnglishWord)
 import Shrink exposing (Shrinker)
 import Tag exposing (Tag(..))
 import TestHelpers exposing (..)
@@ -61,7 +62,7 @@ claims =
         `is` (\_ -> ( Closed, Nothing ))
         `for` { generator =
                   Random.map2 (,) randomDaTuple randomDaTuple
-                    |> Random.Extra.keepIf (\( currentDate, endDate ) -> GT == compare' currentDate endDate)
+                    |> Random.Extra.keepIf (\( currentDate, endDate ) -> GT == DT.compare' currentDate endDate)
               , shrinker = Shrink.tuple ( daTupleShrinker, daTupleShrinker )
               }
     , claim
@@ -70,7 +71,7 @@ claims =
         `is` (\( _, date ) -> ( Open, Just date ))
         `for` { generator =
                   Random.map2 (,) randomDaTuple randomDaTuple
-                    |> Random.Extra.keepIf (\( currentDate, endDate ) -> LT == compare' currentDate endDate)
+                    |> Random.Extra.keepIf (\( currentDate, endDate ) -> LT == DT.compare' currentDate endDate)
               , shrinker = Shrink.tuple ( daTupleShrinker, daTupleShrinker )
               }
     , claim
@@ -79,8 +80,8 @@ claims =
         `is` (\( _, _, date ) -> ( Open, Just date ))
         `for` { generator =
                   Random.map3 (,,) randomDaTuple randomDaTuple randomDaTuple
-                    |> Random.Extra.keepIf (\( currentDate, _, endDate ) -> LT == compare' currentDate endDate)
-                    |> Random.Extra.keepIf (\( currentDate, startDate, _ ) -> GT == compare' currentDate startDate)
+                    |> Random.Extra.keepIf (\( currentDate, _, endDate ) -> LT == DT.compare' currentDate endDate)
+                    |> Random.Extra.keepIf (\( currentDate, startDate, _ ) -> GT == DT.compare' currentDate startDate)
               , shrinker = Shrink.tuple3 ( daTupleShrinker, daTupleShrinker, daTupleShrinker )
               }
     , claim
@@ -89,7 +90,7 @@ claims =
         `is` (\( _, date ) -> ( Open, Just date ))
         `for` { generator =
                   Random.map2 (,) randomDaTuple randomDaTuple
-                    |> Random.Extra.keepIf (\( currentDate, endDate ) -> LT == compare' currentDate endDate)
+                    |> Random.Extra.keepIf (\( currentDate, endDate ) -> LT == DT.compare' currentDate endDate)
               , shrinker = Shrink.tuple ( daTupleShrinker, daTupleShrinker )
               }
     , claim
@@ -98,8 +99,33 @@ claims =
         `is` (\( _, date, _ ) -> ( NotYetOpen, Just date ))
         `for` { generator =
                   Random.map3 (,,) randomDaTuple randomDaTuple randomDaTuple
-                    |> Random.Extra.keepIf (\( _, startDate, endDate ) -> LT == compare' startDate endDate)
-                    |> Random.Extra.keepIf (\( currentDate, startDate, _ ) -> LT == compare' currentDate startDate)
+                    |> Random.Extra.keepIf (\( _, startDate, endDate ) -> LT == DT.compare' startDate endDate)
+                    |> Random.Extra.keepIf (\( currentDate, startDate, _ ) -> LT == DT.compare' currentDate startDate)
               , shrinker = Shrink.tuple3 ( daTupleShrinker, daTupleShrinker, daTupleShrinker )
+              }
+    , claim
+        "compare' sorts first by start date"
+        `that` (\( d1, d2 ) -> compare' { blankConf | startDate = d1 } { blankConf | startDate = d2 })
+        `is` (\( d1, d2 ) -> DT.compare' d1 d2)
+        `for` { generator = Random.map2 (,) randomDaTuple randomDaTuple
+              , shrinker = Shrink.tuple ( daTupleShrinker, daTupleShrinker )
+              }
+    , claim
+        "compare' sorts first by start date"
+        `that` (\( d1, d2 ) -> compare' { blankConf | startDate = d1 } { blankConf | startDate = d2 })
+        `is` (\( d1, d2 ) -> DT.compare' d1 d2)
+        `for` { generator = Random.map2 (,) randomDaTuple randomDaTuple
+              , shrinker = Shrink.tuple ( daTupleShrinker, daTupleShrinker )
+              }
+    , claim
+        "compare' sorts by name if the start date is the same"
+        `that` (\( d, n1, n2 ) ->
+                  compare'
+                    { blankConf | name = n1, startDate = d }
+                    { blankConf | name = n2, startDate = d }
+               )
+        `is` (\( _, n1, n2 ) -> compare n1 n2)
+        `for` { generator = Random.map3 (,,) randomDaTuple anyEnglishWord anyEnglishWord
+              , shrinker = Shrink.tuple3 ( daTupleShrinker, Shrink.string, Shrink.string )
               }
     ]
