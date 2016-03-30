@@ -18,7 +18,9 @@
     var startingState = storedState ? JSON.parse(storedState) : null;
     var confsinfo = Elm.fullscreen(Elm.Main, { getStorage: startingState });
     confsinfo.ports.setStorage.subscribe(function(state) {
-      localStorage.setItem('confs-info-state', JSON.stringify(state));
+      try {
+        localStorage.setItem('confs-info-state', JSON.stringify(state));
+      } catch (e) {}
     });
   </script>
   <script>
