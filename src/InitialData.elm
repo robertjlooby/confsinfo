@@ -2786,13 +2786,22 @@ model =
           , tags = [ English, Developers, USA, General, FunctionalProgramming ]
           }
         , { name = "WindyCityRails"
-          , link = "https://www.windycityrails.org/"
+          , link = "https://www.windycityrails.com/"
           , startDate = ( 2016, Sep, 15 )
           , endDate = ( 2016, Sep, 16 )
           , location = "Chicago, IL"
           , cfpStartDate = Nothing
           , cfpEndDate = Just ( 2016, Mar, 31 )
           , tags = [ English, Developers, USA, Ruby, Rails ]
+          }
+        , { name = "WindyCityThings"
+          , link = "https://www.windycitythings.com/"
+          , startDate = ( 2016, Jun, 23 )
+          , endDate = ( 2016, Jun, 24 )
+          , location = "Chicago, IL"
+          , cfpStartDate = Nothing
+          , cfpEndDate = Just ( 2016, Apr, 15 )
+          , tags = [ English, Developers, USA, IoT, InternetofThings, RaspberryPi, Arduino ]
           }
         , { name = "CppCon"
           , link = "http://cppcon.org/"
