@@ -2786,7 +2786,7 @@ model =
           , tags = [ English, Developers, USA, General, FunctionalProgramming ]
           }
         , { name = "WindyCityRails"
-          , link = "https://www.windycityrails.org/"
+          , link = "https://www.windycityrails.com/"
           , startDate = ( 2016, Sep, 15 )
           , endDate = ( 2016, Sep, 16 )
           , location = "Chicago, IL"
@@ -2795,7 +2795,7 @@ model =
           , tags = [ English, Developers, USA, Ruby, Rails ]
           }
         , { name = "WindyCityThings"
-          , link = "https://www.windycitythings.org/"
+          , link = "https://www.windycitythings.com/"
           , startDate = ( 2016, Jun, 23 )
           , endDate = ( 2016, Jun, 24 )
           , location = "Chicago, IL"
