@@ -2794,6 +2794,15 @@ model =
           , cfpEndDate = Just ( 2016, Mar, 31 )
           , tags = [ English, Developers, USA, Ruby, Rails ]
           }
+        , { name = "WindyCityThings"
+          , link = "https://www.windycitythings.org/"
+          , startDate = ( 2016, Jun, 23 )
+          , endDate = ( 2016, Jun, 24 )
+          , location = "Chicago, IL"
+          , cfpStartDate = Nothing
+          , cfpEndDate = Just ( 2016, Apr, 15 )
+          , tags = [ English, Developers, USA, IoT, InternetofThings, RaspberryPi, Arduino ]
+          }
         , { name = "CppCon"
           , link = "http://cppcon.org/"
           , startDate = ( 2016, Sep, 18 )
