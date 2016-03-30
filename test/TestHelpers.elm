@@ -16,6 +16,7 @@ allTags =
   , Agile
   , Android
   , AngularJS
+  , Arduino
   , Argentina
   , Australia
   , Belarus
@@ -110,6 +111,7 @@ allTags =
   , PureScript
   , Python
   , Rails
+  , RaspberryPi
   , React
   , Remote
   , Robotics

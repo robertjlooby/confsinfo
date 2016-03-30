@@ -2801,7 +2801,7 @@ model =
           , location = "Chicago, IL"
           , cfpStartDate = Nothing
           , cfpEndDate = Just ( 2016, Apr, 15 )
-          , tags = [ English, Developers, USA, IoT, InternetofThings, RaspberryPi, Arduino ]
+          , tags = [ English, Developers, USA, InternetOfThings, RaspberryPi, Arduino ]
           }
         , { name = "CppCon"
           , link = "http://cppcon.org/"
@@ -3209,6 +3209,7 @@ model =
         , tags =
             [ FilteredTag.init Android "Android"
             , FilteredTag.init AngularJS "AngularJS"
+            , FilteredTag.init Arduino "Arduino"
             , FilteredTag.init AWS "AWS"
             , FilteredTag.init CPlusPlus "C++"
             , FilteredTag.init CSS "CSS"
@@ -3245,6 +3246,7 @@ model =
             , FilteredTag.init PureScript "PureScript"
             , FilteredTag.init Python "Python"
             , FilteredTag.init Rails "Rails"
+            , FilteredTag.init RaspberryPi "RaspberryPi"
             , FilteredTag.init React "React"
             , FilteredTag.init Ruby "Ruby"
             , FilteredTag.init SML "SML"

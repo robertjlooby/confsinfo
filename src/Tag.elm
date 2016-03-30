@@ -8,6 +8,7 @@ type Tag
   | Agile
   | Android
   | AngularJS
+  | Arduino
   | Argentina
   | Australia
   | Belarus
@@ -103,6 +104,7 @@ type Tag
   | PureScript
   | Python
   | Rails
+  | RaspberryPi
   | React
   | Remote
   | Robotics
