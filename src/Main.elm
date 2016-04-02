@@ -45,11 +45,6 @@ port setStorage =
   Signal.map (Model.includedTags >> List.map toString) app.model
 
 
-port title : String
-port title =
-  "confs.info"
-
-
 initializeDate : Effects Model.Action
 initializeDate =
   getCurrentTime
