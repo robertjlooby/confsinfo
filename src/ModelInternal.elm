@@ -26,7 +26,7 @@ type alias Model =
 type Action
   = UpdateTag FilteredTagSection.Action
   | IncludePastEvents Bool
-  | SetCurrentDate Time
+  | SetCurrentDate (Maybe Time)
 
 
 conferencesToShow : Model -> List Conference.Model

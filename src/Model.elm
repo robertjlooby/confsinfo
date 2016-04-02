@@ -3,6 +3,7 @@ module Model (Model, Action, update, initializeIncludedTags, includedTags, setCu
 import Conference
 import Date
 import DaTuple exposing (DaTuple, compare')
+import Effects exposing (Effects)
 import FilteredTagSection
 import Html exposing (text)
 import Html.Attributes exposing (class, href)
@@ -28,16 +29,16 @@ type alias Action =
   ModelInternal.Action
 
 
-update : Action -> Model -> Model
+update : Action -> Model -> ( Model, Effects Action )
 update action model =
   case action of
     UpdateTag action ->
-      { model | tags = List.map (FilteredTagSection.update action) model.tags }
+      ( { model | tags = List.map (FilteredTagSection.update action) model.tags }, Effects.none )
 
     IncludePastEvents shouldIncludePastEvents ->
-      { model | includePastEvents = shouldIncludePastEvents }
+      ( { model | includePastEvents = shouldIncludePastEvents }, Effects.none )
 
-    SetCurrentDate time ->
+    SetCurrentDate (Just time) ->
       let
         date =
           Date.fromTime time
@@ -45,7 +46,10 @@ update action model =
         daTuple =
           ( Date.year date, Date.month date, Date.day date )
       in
-        { model | currentDate = daTuple }
+        ( { model | currentDate = daTuple }, Effects.none )
+
+    SetCurrentDate Nothing ->
+      ( model, Effects.none )
 
 
 initializeIncludedTags : List String -> Model -> Model
@@ -53,9 +57,9 @@ initializeIncludedTags includedTags model =
   { model | tags = List.map (FilteredTagSection.initializeIncludedTags includedTags) model.tags }
 
 
-setCurrentDate : Signal.Address Action -> Time -> Task x ()
-setCurrentDate address time =
-  Signal.send address <| SetCurrentDate time
+setCurrentDate : Maybe Time -> Action
+setCurrentDate time =
+  SetCurrentDate time
 
 
 

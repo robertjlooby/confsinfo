@@ -1,31 +1,13 @@
 module Main (main) where
 
 import Debug
-import Html
+import Effects exposing (Effects)
+import Html exposing (Html)
 import InitialData
 import Model
+import StartApp exposing (start)
 import Task exposing (Task, andThen)
 import TaskTutorial exposing (getCurrentTime)
-
-
-actions : Signal.Mailbox (Maybe Model.Action)
-actions =
-  Signal.mailbox Nothing
-
-
-address : Signal.Address Model.Action
-address =
-  Signal.forwardTo actions.address Just
-
-
-update : Maybe Model.Action -> Model.Model -> Model.Model
-update maybeAction model =
-  case maybeAction of
-    Just action ->
-      Model.update action model
-
-    Nothing ->
-      Debug.crash "This should never happen."
 
 
 initialModel : Model.Model
@@ -38,20 +20,29 @@ initialModel =
       InitialData.model
 
 
-model : Signal Model.Model
-model =
-  Signal.foldp update initialModel actions.signal
+app =
+  StartApp.start
+    { init = ( initialModel, initializeDate )
+    , view = Model.view
+    , update = Model.update
+    , inputs = []
+    }
 
 
-main : Signal Html.Html
+main : Signal Html
 main =
-  Signal.map (Model.view address) model
+  app.html
+
+
+port tasks : Signal (Task.Task Effects.Never ())
+port tasks =
+  app.tasks
 
 
 port getStorage : Maybe (List String)
 port setStorage : Signal (List String)
 port setStorage =
-  Signal.map (Model.includedTags >> List.map toString) model
+  Signal.map (Model.includedTags >> List.map toString) app.model
 
 
 port title : String
@@ -59,6 +50,9 @@ port title =
   "confs.info"
 
 
-port runner : Task x ()
-port runner =
-  getCurrentTime `andThen` (Model.setCurrentDate address)
+initializeDate : Effects Model.Action
+initializeDate =
+  getCurrentTime
+    |> Task.toMaybe
+    |> Task.map Model.setCurrentDate
+    |> Effects.task
