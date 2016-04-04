@@ -2348,10 +2348,10 @@ model =
           , link = "https://aws.amazon.com/summits/"
           , startDate = ( 2016, Jun, 29 )
           , endDate = ( 2016, Jun, 29 )
-          , location = "Auckland, Australia"
+          , location = "Auckland, New Zealand"
           , cfpStartDate = Nothing
           , cfpEndDate = Nothing
-          , tags = [ English, Developers, Australia, AWS, DevOps ]
+          , tags = [ English, Developers, NewZealand, AWS, DevOps ]
           }
         , { name = "PolyConf"
           , link = "http://polyconf.com/"
