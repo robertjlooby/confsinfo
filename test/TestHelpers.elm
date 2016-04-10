@@ -145,6 +145,8 @@ allTags =
   , UX
   , Ukraine
   , Uruguay
+  , Wales
+  , Web
   , WordPress
   ]
 

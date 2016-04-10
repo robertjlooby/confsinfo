@@ -138,4 +138,6 @@ type Tag
   | UX
   | Ukraine
   | Uruguay
+  | Wales
+  | Web
   | WordPress
