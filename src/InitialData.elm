@@ -2647,7 +2647,7 @@ model =
           , endDate = ( 2016, Aug, 27 )
           , location = "Porto Alegre, Brazil"
           , cfpStartDate = Nothing
-          , cfpEndDate = Just (2016, Apr, 30)
+          , cfpEndDate = Just ( 2016, Apr, 30 )
           , tags = [ English, Spanish, Portuguese, Developers, Brazil, JavaScript ]
           }
         , { name = "AlterConf South Africa"
@@ -3187,8 +3187,8 @@ model =
           , endDate = ( 2016, Aug, 23 )
           , location = "Kansas City, MO"
           , cfpStartDate = Nothing
-          , cfpEndDate = Just (2016, Apr, 30)
-          , tags = [ English, Developers, USA, General]
+          , cfpEndDate = Just ( 2016, Apr, 30 )
+          , tags = [ English, Developers, USA, General ]
           }
         , { name = "ServerlessConf"
           , link = "http://serverlessconf.io/"
@@ -3196,17 +3196,17 @@ model =
           , endDate = ( 2016, May, 27 )
           , location = "New York, NY"
           , cfpStartDate = Nothing
-          , cfpEndDate = Just (2016, Apr, 26)
-          , tags = [ English, Developers, USA, General, AWS, Cloud, Scalability]
+          , cfpEndDate = Just ( 2016, Apr, 26 )
+          , tags = [ English, Developers, USA, General, AWS, Cloud, Scalability ]
           }
         , { name = "AgileIndy"
           , link = "http://agileindy.org/"
           , startDate = ( 2016, Apr, 12 )
-          , endDate = ( 2016, Apr,  12)
+          , endDate = ( 2016, Apr, 12 )
           , location = "Indianapolis, IN"
           , cfpStartDate = Nothing
           , cfpEndDate = Nothing
-          , tags = [ English, Developers, USA, Agile]
+          , tags = [ English, Developers, USA, Agile ]
           }
         , { name = "RSJS"
           , link = "http://rsjs.org/2016/"
@@ -3214,8 +3214,8 @@ model =
           , endDate = ( 2016, Apr, 23 )
           , location = "Porto Alegre, Brazil"
           , cfpStartDate = Nothing
-          , cfpEndDate = Just (2016, Mar, 31)
-          , tags = [ Portuguese, Developers, Brazil, JavaScript]
+          , cfpEndDate = Just ( 2016, Mar, 31 )
+          , tags = [ Portuguese, Developers, Brazil, JavaScript ]
           }
         , { name = "Frontinsampa"
           , link = "http://frontinsampa.com.br/"
@@ -3224,7 +3224,7 @@ model =
           , location = "Sao Paulo, Brazil"
           , cfpStartDate = Nothing
           , cfpEndDate = Nothing
-          , tags = [ Portuguese, Developers, Brazil, JavaScript]
+          , tags = [ Portuguese, Developers, Brazil, JavaScript ]
           }
         , { name = ".NET Fringe"
           , link = "http://dotnetfringe.org/"
@@ -3232,7 +3232,7 @@ model =
           , endDate = ( 2016, Jul, 12 )
           , location = "Portland, OR"
           , cfpStartDate = Nothing
-          , cfpEndDate = Just (2016, Apr, 30)
+          , cfpEndDate = Just ( 2016, Apr, 30 )
           , tags = [ English, Developers, USA, OpenSource, DotNet ]
           }
         , { name = "Úll"
@@ -3242,16 +3242,16 @@ model =
           , location = "Killarney, Ireland"
           , cfpStartDate = Nothing
           , cfpEndDate = Nothing
-          , tags = [ English, Developers, Ireland, IOS]
+          , tags = [ English, Developers, Ireland, IOS ]
           }
         , { name = "Nantes FP Day"
           , link = "http://fpday.org/"
           , startDate = ( 2016, Mar, 26 )
-          , endDate = ( 2016, Mar,  26)
+          , endDate = ( 2016, Mar, 26 )
           , location = "Nantes, France"
           , cfpStartDate = Nothing
           , cfpEndDate = Nothing
-          , tags = [ English, French, Developers, France, FunctionalProgramming]
+          , tags = [ English, French, Developers, France, FunctionalProgramming ]
           }
         , { name = "HalfStack"
           , link = "http://halfstackconf.com/"
@@ -3259,13 +3259,13 @@ model =
           , endDate = ( 2016, Nov, 18 )
           , location = "London, England"
           , cfpStartDate = Nothing
-          , cfpEndDate = Just (2016, Oct, 18)
-          , tags = [ English, Developers, England, JavaScript]
+          , cfpEndDate = Just ( 2016, Oct, 18 )
+          , tags = [ English, Developers, England, JavaScript ]
           }
         , { name = "Front Conference"
           , link = "https://frontutah.com/"
-          , startDate = ( 2016, May,12  )
-          , endDate = ( 2016, May,13  )
+          , startDate = ( 2016, May, 12 )
+          , endDate = ( 2016, May, 13 )
           , location = "Salt Lake City, UT"
           , cfpStartDate = Nothing
           , cfpEndDate = Nothing
@@ -3274,7 +3274,7 @@ model =
         , { name = "Port80"
           , link = "http://port80events.co.uk/"
           , startDate = ( 2016, May, 20 )
-          , endDate = ( 2016,May , 20 )
+          , endDate = ( 2016, May, 20 )
           , location = "Newport, Wales"
           , cfpStartDate = Nothing
           , cfpEndDate = Nothing
@@ -3282,21 +3282,21 @@ model =
           }
         , { name = "Code 2016 Sydney"
           , link = "http://www.webdirections.org/code16/"
-          , startDate = ( 2016, Jul, 28  )
+          , startDate = ( 2016, Jul, 28 )
           , endDate = ( 2016, Jul, 29 )
           , location = "Sydney, Australia"
           , cfpStartDate = Nothing
           , cfpEndDate = Nothing
-          , tags = [ English, Developers, Australia, JavaScript]
+          , tags = [ English, Developers, Australia, JavaScript ]
           }
         , { name = "Code 2016 Melbourne"
           , link = "http://www.webdirections.org/code16/"
-          , startDate = ( 2016, Aug, 1  )
+          , startDate = ( 2016, Aug, 1 )
           , endDate = ( 2016, Aug, 2 )
           , location = "Melbourne, Australia"
           , cfpStartDate = Nothing
           , cfpEndDate = Nothing
-          , tags = [ English, Developers, Australia, JavaScript]
+          , tags = [ English, Developers, Australia, JavaScript ]
           }
         , { name = "CascadiaFest"
           , link = "http://2016.cascadiafest.org/"
@@ -3304,8 +3304,8 @@ model =
           , endDate = ( 2016, Aug, 5 )
           , location = "Semiahmoo, WA"
           , cfpStartDate = Nothing
-          , cfpEndDate = Just (2016, Apr, 11)
-          , tags = [ English, Designers, Developers, USA, CSS, JavaScript, Web, NodeJS]
+          , cfpEndDate = Just ( 2016, Apr, 11 )
+          , tags = [ English, Designers, Developers, USA, CSS, JavaScript, Web, NodeJS ]
           }
         , { name = "React Amsterdam"
           , link = "http://react-amsterdam.com/"
@@ -3314,7 +3314,16 @@ model =
           , location = "Amsterdam, Netherlands"
           , cfpStartDate = Nothing
           , cfpEndDate = Nothing
-          , tags = [ English, Developers, Netherlands, JavaScript, React]
+          , tags = [ English, Developers, Netherlands, JavaScript, React ]
+          }
+        , { name = "NSSpain"
+          , link = "http://nsspain.com/"
+          , startDate = ( 2016, Sep, 14 )
+          , endDate = ( 2016, Sep, 16 )
+          , location = "La Rioja, Spain"
+          , cfpStartDate = Nothing
+          , cfpEndDate = Just ( 2016, Jun, 5 )
+          , tags = [ English, Developers, Spain, IOS ]
           }
         ]
   , currentDate = ( 2016, Jan, 1 )
