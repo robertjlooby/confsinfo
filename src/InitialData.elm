@@ -2814,12 +2814,120 @@ model =
           }
         , { name = "International Conference on Functional Programming"
           , link = "http://conf.researchr.org/home/icfp-2016"
-          , startDate = ( 2016, Sep, 18 )
-          , endDate = ( 2016, Sep, 24 )
+          , startDate = ( 2016, Sep, 19 )
+          , endDate = ( 2016, Sep, 21 )
           , location = "Nara, Japan"
           , cfpStartDate = Nothing
           , cfpEndDate = Just ( 2016, Mar, 16 )
           , tags = [ English, Developers, Japan, FunctionalProgramming, Haskell ]
+          }
+        , { name = "Commercial Users of Functional Programming"
+          , link = "http://cufp.org/2016/"
+          , startDate = ( 2016, Sep, 24 )
+          , endDate = ( 2016, Sep, 24 )
+          , location = "Nara, Japan"
+          , cfpStartDate = Nothing
+          , cfpEndDate = Just ( 2016, Jun, 24 )
+          , tags = [ English, Developers, Japan, FunctionalProgramming, Haskell, OCaml, PureScript, Clojure ]
+          }
+        , { name = "Haskell Implementors' Workshop"
+          , link = "https://wiki.haskell.org/HaskellImplementorsWorkshop/2016"
+          , startDate = ( 2016, Sep, 24 )
+          , endDate = ( 2016, Sep, 24 )
+          , location = "Nara, Japan"
+          , cfpStartDate = Nothing
+          , cfpEndDate = Nothing
+          , tags = [ English, Developers, Japan, FunctionalProgramming, Haskell ]
+          }
+        , { name = "Workshop on Functional Art, Music, Modeling and Design"
+          , link = "http://functional-art.org/2016/"
+          , startDate = ( 2016, Sep, 24 )
+          , endDate = ( 2016, Sep, 24 )
+          , location = "Nara, Japan"
+          , cfpStartDate = Nothing
+          , cfpEndDate = Just ( 2016, Jun, 24 )
+          , tags = [ English, Developers, Japan, FunctionalProgramming ]
+          }
+        , { name = "Haskell Symposium"
+          , link = "https://www.haskell.org/haskell-symposium/2016/index.html"
+          , startDate = ( 2016, Sep, 22 )
+          , endDate = ( 2016, Sep, 23 )
+          , location = "Nara, Japan"
+          , cfpStartDate = Nothing
+          , cfpEndDate = Just ( 2016, Jun, 6 )
+          , tags = [ English, Developers, Japan, FunctionalProgramming, Haskell ]
+          }
+        , { name = "Workshop on ML"
+          , link = "http://www.mlworkshop.org/ml2016"
+          , startDate = ( 2016, Sep, 22 )
+          , endDate = ( 2016, Sep, 22 )
+          , location = "Nara, Japan"
+          , cfpStartDate = Nothing
+          , cfpEndDate = Just ( 2016, Jun, 10 )
+          , tags = [ English, Developers, Japan, FunctionalProgramming, FSharp, OCaml ]
+          }
+        , { name = "OCaml Users and Developers Workshop"
+          , link = "http://www.mlworkshop.org/ml2016"
+          , startDate = ( 2016, Sep, 23 )
+          , endDate = ( 2016, Sep, 23 )
+          , location = "Nara, Japan"
+          , cfpStartDate = Nothing
+          , cfpEndDate = Just ( 2016, Jun, 10 )
+          , tags = [ English, Developers, Japan, FunctionalProgramming, OCaml ]
+          }
+        , { name = "Workshop on Functional High-Performance Computing"
+          , link = "https://sites.google.com/site/fhpcworkshops/"
+          , startDate = ( 2016, Sep, 22 )
+          , endDate = ( 2016, Sep, 22 )
+          , location = "Nara, Japan"
+          , cfpStartDate = Nothing
+          , cfpEndDate = Just ( 2016, Jun, 10 )
+          , tags = [ English, Developers, Japan, FunctionalProgramming ]
+          }
+        , { name = "Erlang Workshop"
+          , link = "http://conf.researchr.org/track/icfp-2016/erlang-2016-papers"
+          , startDate = ( 2016, Sep, 23 )
+          , endDate = ( 2016, Sep, 23 )
+          , location = "Nara, Japan"
+          , cfpStartDate = Nothing
+          , cfpEndDate = Just ( 2016, Jun, 3 )
+          , tags = [ English, Developers, Japan, FunctionalProgramming, Erlang ]
+          }
+        , { name = "Workshop on Type-Driven Development"
+          , link = "http://conf.researchr.org/track/icfp-2016/tyde-2016-papers"
+          , startDate = ( 2016, Sep, 18 )
+          , endDate = ( 2016, Sep, 18 )
+          , location = "Nara, Japan"
+          , cfpStartDate = Nothing
+          , cfpEndDate = Just ( 2016, Jun, 10 )
+          , tags = [ English, Developers, Japan, FunctionalProgramming ]
+          }
+        , { name = "Higher-Order Programming Effects Workshop"
+          , link = "http://conf.researchr.org/track/icfp-2016/hope-2016-papers"
+          , startDate = ( 2016, Sep, 18 )
+          , endDate = ( 2016, Sep, 18 )
+          , location = "Nara, Japan"
+          , cfpStartDate = Nothing
+          , cfpEndDate = Just ( 2016, Jun, 10 )
+          , tags = [ English, Developers, Japan, FunctionalProgramming ]
+          }
+        , { name = "Scheme Workshop"
+          , link = "http://scheme2016.snow-fort.org/"
+          , startDate = ( 2016, Sep, 18 )
+          , endDate = ( 2016, Sep, 18 )
+          , location = "Nara, Japan"
+          , cfpStartDate = Nothing
+          , cfpEndDate = Just ( 2016, Jun, 24 )
+          , tags = [ English, Developers, Japan, FunctionalProgramming, Lisp, Clojure ]
+          }
+        , { name = "Programming Languages Mentoring Workshop"
+          , link = "http://conf.researchr.org/track/PLMW-ICFP-2016/PLMW-ICFP-2016"
+          , startDate = ( 2016, Sep, 18 )
+          , endDate = ( 2016, Sep, 18 )
+          , location = "Nara, Japan"
+          , cfpStartDate = Nothing
+          , cfpEndDate = Nothing
+          , tags = [ English, Developers, Japan, FunctionalProgramming ]
           }
         , { name = "JavaOne"
           , link = "https://www.oracle.com/javaone/index.html"
