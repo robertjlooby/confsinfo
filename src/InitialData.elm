@@ -2782,7 +2782,7 @@ model =
           , endDate = ( 2016, Sep, 17 )
           , location = "St. Louis, MO"
           , cfpStartDate = Nothing
-          , cfpEndDate = Nothing
+          , cfpEndDate = Just ( 2016, May, 9 )
           , tags = [ English, Developers, USA, General, FunctionalProgramming ]
           }
         , { name = "WindyCityRails"
