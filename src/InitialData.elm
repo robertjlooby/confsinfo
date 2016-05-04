@@ -3433,6 +3433,195 @@ model =
           , cfpEndDate = Just ( 2016, Jun, 5 )
           , tags = [ English, Developers, Spain, IOS ]
           }
+        , { name = "try! Swift NYC"
+          , link = "http://www.tryswiftnyc.com/"
+          , startDate = ( 2016, Sep, 1 )
+          , endDate = ( 2016, Sep, 2 )
+          , location = "New York, NY"
+          , cfpStartDate = Nothing
+          , cfpEndDate = Nothing
+          , tags = [ English, Developers, USA, Swift, IOS ]
+          }
+        , { name = "FrenchKit"
+          , link = "http://frenchkit.fr/"
+          , startDate = ( 2016, Sep, 23 )
+          , endDate = ( 2016, Sep, 24 )
+          , location = "Paris, France"
+          , cfpStartDate = Nothing
+          , cfpEndDate = Nothing
+          , tags = [ English, Developers, France, IOS, Cocoa ]
+          }
+        , { name = "AltConf"
+          , link = "http://altconf.com/"
+          , startDate = ( 2016, Jun, 13 )
+          , endDate = ( 2016, Jun, 16 )
+          , location = "San Francisco, CA"
+          , cfpStartDate = Nothing
+          , cfpEndDate = Nothing
+          , tags = [ English, Developers, USA, General ]
+          }
+        , { name = "WWDC"
+          , link = "https://developer.apple.com/wwdc/"
+          , startDate = ( 2016, Jun, 13 )
+          , endDate = ( 2016, Jun, 17 )
+          , location = "San Francisco, CA"
+          , cfpStartDate = Nothing
+          , cfpEndDate = Nothing
+          , tags = [ English, Developers, Designers, USA, IOS ]
+          }
+        , { name = "Thunder Plains"
+          , link = "http://thunderplainsconf.com/"
+          , startDate = ( 2016, Nov, 3 )
+          , endDate = ( 2016, Nov, 3 )
+          , location = "Oklahoma City, OK"
+          , cfpStartDate = Nothing
+          , cfpEndDate = Nothing
+          , tags = [ English, Designers, Developers, USA, JavaScript, CSS, Mobile, Web ]
+          }
+        , { name = "Scala Up North"
+          , link = "http://scalaupnorth.com/"
+          , startDate = ( 2016, Aug, 5 )
+          , endDate = ( 2016, Aug, 6 )
+          , location = "Montreal, Canada"
+          , cfpStartDate = Nothing
+          , cfpEndDate = Just ( 2016, May, 14 )
+          , tags = [ English, Developers, Canada, Scala ]
+          }
+        , { name = "XP 2016"
+          , link = "http://conf.xp2016.org/"
+          , startDate = ( 2016, May, 24 )
+          , endDate = ( 2016, May, 27 )
+          , location = "Edinbrugh, Scotland"
+          , cfpStartDate = Nothing
+          , cfpEndDate = Nothing
+          , tags = [ English, Developers, Scotland, Agile ]
+          }
+        , { name = "Valio Con"
+          , link = "http://valiocon.com/"
+          , startDate = ( 2016, May, 19 )
+          , endDate = ( 2016, May, 22 )
+          , location = "San Diego, CA"
+          , cfpStartDate = Nothing
+          , cfpEndDate = Nothing
+          , tags = [ English, Designers, USA, UX ]
+          }
+        , { name = "JailbreakCon"
+          , link = "http://www.jailbreakcon.com/"
+          , startDate = ( 2016, Jun, 20 )
+          , endDate = ( 2016, Jun, 21 )
+          , location = "San Francisco, CA"
+          , cfpStartDate = Nothing
+          , cfpEndDate = Nothing
+          , tags = [ English, Developers, USA, IOS ]
+          }
+        , { name = "#Pragma Conference"
+          , link = "http://pragmaconference.com/"
+          , startDate = ( 2016, Oct, 12 )
+          , endDate = ( 2016, Oct, 14 )
+          , location = "Verona, Italy"
+          , cfpStartDate = Nothing
+          , cfpEndDate = Nothing
+          , tags = [ English, Developers, Italy, IOS ]
+          }
+        , { name = "DEF CON"
+          , link = "https://www.defcon.org/"
+          , startDate = ( 2016, Aug, 4 )
+          , endDate = ( 2016, Aug, 7 )
+          , location = "Las Vegas, NV"
+          , cfpStartDate = Nothing
+          , cfpEndDate = Just ( 2016, May, 2 )
+          , tags = [ English, Developers, USA, Security ]
+          }
+        , { name = "DerbyCon"
+          , link = "https://www.derbycon.com/"
+          , startDate = ( 2016, Aug, 23 )
+          , endDate = ( 2016, Aug, 25 )
+          , location = "Louisville, KY"
+          , cfpStartDate = Nothing
+          , cfpEndDate = Just ( 2016, Aug, 1 )
+          , tags = [ English, Developers, USA, Security ]
+          }
+        , { name = "Black Hat"
+          , link = "https://www.blackhat.com/us-16/"
+          , startDate = ( 2016, Jul, 30 )
+          , endDate = ( 2016, Aug, 4 )
+          , location = "Las Vegas, NV"
+          , cfpStartDate = Just ( 2016, Feb, 9 )
+          , cfpEndDate = Just ( 2016, Apr, 11 )
+          , tags = [ English, Developers, USA, Security ]
+          }
+        , { name = "RSA Conference USA"
+          , link = "http://www.rsaconference.com/events/us16"
+          , startDate = ( 2016, Feb, 29 )
+          , endDate = ( 2016, Mar, 4 )
+          , location = "San Francisco, CA"
+          , cfpStartDate = Nothing
+          , cfpEndDate = Nothing
+          , tags = [ English, Developers, USA, Security ]
+          }
+        , { name = "RSA Conference Asia Pacific & Japan"
+          , link = "http://www.rsaconference.com/events/ap16"
+          , startDate = ( 2016, Jul, 20 )
+          , endDate = ( 2016, Jul, 22 )
+          , location = "Singapore"
+          , cfpStartDate = Nothing
+          , cfpEndDate = Nothing
+          , tags = [ English, Developers, Singapore, Security ]
+          }
+        , { name = "RSA Conference Abu Dhabi"
+          , link = "http://www.rsaconference.com/events/ad16"
+          , startDate = ( 2016, Nov, 15 )
+          , endDate = ( 2016, Nov, 16 )
+          , location = "Abu Dhabi, UAE"
+          , cfpStartDate = Nothing
+          , cfpEndDate = Nothing
+          , tags = [ English, Developers, UAE, Security ]
+          }
+        , { name = "CanSecWest"
+          , link = "https://cansecwest.com/"
+          , startDate = ( 2016, Mar, 16 )
+          , endDate = ( 2016, Mar, 18 )
+          , location = "Vancouver, Canada"
+          , cfpStartDate = Nothing
+          , cfpEndDate = Nothing
+          , tags = [ English, Developers, Canada, Security ]
+          }
+        , { name = "PanSec"
+          , link = "https://pacsec.jp/"
+          , startDate = ( 2016, Oct, 26 )
+          , endDate = ( 2016, Oct, 27 )
+          , location = "Tokyo, Japan"
+          , cfpStartDate = Nothing
+          , cfpEndDate = Nothing
+          , tags = [ English, Developers, Japan, Security ]
+          }
+        , { name = "EUSecWest"
+          , link = "https://eusecwest.com/"
+          , startDate = ( 2016, Sep, 19 )
+          , endDate = ( 2016, Sep, 20 )
+          , location = "Amsterdam, Netherlands"
+          , cfpStartDate = Nothing
+          , cfpEndDate = Nothing
+          , tags = [ English, Developers, Netherlands, Security ]
+          }
+        , { name = "CarolinaCon"
+          , link = "http://www.carolinacon.org/"
+          , startDate = ( 2016, Mar, 4 )
+          , endDate = ( 2016, Mar, 4 )
+          , location = "Raleigh, North Carolina"
+          , cfpStartDate = Nothing
+          , cfpEndDate = Nothing
+          , tags = [ English, Developers, USA, Security ]
+          }
+        , { name = "THOTCON"
+          , link = "http://thotcon.org/"
+          , startDate = ( 2016, May, 5 )
+          , endDate = ( 2016, May, 6 )
+          , location = "Chicago, IL"
+          , cfpStartDate = Nothing
+          , cfpEndDate = Nothing
+          , tags = [ English, Developers, USA, Security ]
+          }
         ]
   , currentDate = ( 2016, Jan, 1 )
   , tags =
