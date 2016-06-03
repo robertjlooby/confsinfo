@@ -4,9 +4,10 @@ import Date exposing (Month(..))
 import DaTuple exposing (DaTuple)
 import Lazy.List exposing ((:::), empty)
 import Random
+import Random.Char
 import Random.Date
 import Random.Extra
-import Random.List
+import Random.String
 import Shrink exposing (Shrinker)
 import Tag exposing (..)
 
@@ -153,17 +154,23 @@ allTags =
 
 randomTag : Random.Generator Tag
 randomTag =
-    Random.Extra.selectWithDefault FunctionalProgramming allTags
+    Random.Extra.sample allTags
+        |> Random.map (Maybe.withDefault FunctionalProgramming)
 
 
 randomListOfTags : Random.Generator (List Tag)
 randomListOfTags =
-    Random.List.rangeLengthList 0 10 randomTag
+    Random.Extra.rangeLengthList 0 10 randomTag
 
 
 randomListOfTagsStrings : Random.Generator (List String)
 randomListOfTagsStrings =
     Random.map (List.map toString) randomListOfTags
+
+
+randomWord : Random.Generator String
+randomWord =
+    Random.String.rangeLengthString 1 100 Random.Char.english
 
 
 minYear : Int

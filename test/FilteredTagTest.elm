@@ -7,7 +7,6 @@ import FilteredTagInternal exposing (..)
 import Lazy.List exposing ((:::), empty)
 import Random
 import Random.Extra
-import Random.String
 import Shrink
 import Tag exposing (Tag(FunctionalProgramming))
 import TestHelpers exposing (..)
@@ -15,7 +14,8 @@ import TestHelpers exposing (..)
 
 randomState : Random.Generator State
 randomState =
-    Random.Extra.selectWithDefault Excluded [ Included, Excluded ]
+    Random.Extra.sample [ Included, Excluded ]
+        |> Random.map (Maybe.withDefault Excluded)
 
 
 randomModel : Random.Generator Model
@@ -23,7 +23,7 @@ randomModel =
     Random.map3 (\tag state string -> { tag = tag, state = state, display = string })
         randomTag
         randomState
-        Random.String.anyEnglishWord
+        randomWord
 
 
 tests =
@@ -36,7 +36,7 @@ claims =
         [ claim "init starts with the tag Excluded"
             `that` (\( tag, string ) -> init tag string)
             `is` (\( tag, string ) -> { tag = tag, state = Excluded, display = string })
-            `for` { generator = Random.map2 (,) randomTag Random.String.anyEnglishWord
+            `for` { generator = Random.map2 (,) randomTag randomWord
                   , shrinker = Shrink.tuple ( Shrink.noShrink, Shrink.string )
                   }
         , claim "update with Include includes a model"

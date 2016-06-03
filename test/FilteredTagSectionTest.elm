@@ -10,31 +10,31 @@ import FilteredTagSectionInternal exposing (..)
 import FilteredTagTest
 import Random
 import Random.Extra
-import Random.List
-import Random.String
 import Shrink
 import Tag exposing (Tag(..))
+import TestHelpers exposing (..)
 
 
 randomModel : Random.Generator Model
 randomModel =
     Random.map2 (\tags string -> { tags = tags, sectionName = string })
-        (Random.List.rangeLengthList 0 10 FilteredTagTest.randomModel)
-        Random.String.anyEnglishWord
+        (Random.Extra.rangeLengthList 0 10 FilteredTagTest.randomModel)
+        randomWord
 
 
 randomModelPartsForUpdate : Random.Generator ( String, List FilteredTag.Model, FilteredTag.Model, List FilteredTag.Model )
 randomModelPartsForUpdate =
     Random.map4 (,,,)
-        Random.String.anyEnglishWord
-        (Random.List.rangeLengthList 0 10 FilteredTagTest.randomModel)
+        randomWord
+        (Random.Extra.rangeLengthList 0 10 FilteredTagTest.randomModel)
         FilteredTagTest.randomModel
-        (Random.List.rangeLengthList 0 10 FilteredTagTest.randomModel)
-        |> Random.Extra.dropIf
+        (Random.Extra.rangeLengthList 0 10 FilteredTagTest.randomModel)
+        |> Random.Extra.filter
             (\( _, t1, t, t2 ) ->
                 List.concat [ t1, t2 ]
                     |> List.map .tag
                     |> List.member t.tag
+                    |> not
             )
 
 

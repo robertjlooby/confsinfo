@@ -35,7 +35,7 @@ claims =
                 `is` (\( ( y, m, d ), d' ) -> toString m ++ " " ++ toString d ++ "-" ++ toString d' ++ ", " ++ toString y)
                 `for` { generator =
                             Random.map2 (,) randomDaTuple randomDay
-                                |> Random.Extra.dropIf unorderedDays
+                                |> Random.Extra.filter (not << unorderedDays)
                       , shrinker =
                             Shrink.tuple ( daTupleShrinker, dayShrinker )
                                 |> Shrink.dropIf unorderedDays
@@ -49,7 +49,7 @@ claims =
                 `is` (\( ( y, m, d ), m', d' ) -> toString m ++ " " ++ toString d ++ "-" ++ toString m' ++ " " ++ toString d' ++ ", " ++ toString y)
                 `for` { generator =
                             Random.map3 (,,) randomDaTuple Random.Date.month randomDay
-                                |> Random.Extra.dropIf unorderedMonths
+                                |> Random.Extra.filter (not << unorderedMonths)
                       , shrinker =
                             Shrink.tuple3 ( daTupleShrinker, monthShrinker, dayShrinker )
                                 |> Shrink.dropIf unorderedMonths
@@ -66,7 +66,7 @@ claims =
                 `is` (\( date, date' ) -> formatDate date ++ "-" ++ formatDate date')
                 `for` { generator =
                             Random.map2 (,) randomDaTuple randomDaTuple
-                                |> Random.Extra.dropIf unorderedYears
+                                |> Random.Extra.filter (not << unorderedYears)
                       , shrinker =
                             Shrink.tuple ( daTupleShrinker, daTupleShrinker )
                                 |> Shrink.dropIf unorderedYears
@@ -86,7 +86,7 @@ claims =
                 `is` (\( ( y, _, _ ), ( y', _, _ ) ) -> compare y y')
                 `for` { generator =
                             Random.map2 (,) randomDaTuple randomDaTuple
-                                |> Random.Extra.dropIf sameYear
+                                |> Random.Extra.filter (not << sameYear)
                       , shrinker =
                             Shrink.tuple ( daTupleShrinker, daTupleShrinker )
                                 |> Shrink.dropIf sameYear
@@ -100,7 +100,7 @@ claims =
                 `is` (\( ( _, m, _ ), m', _ ) -> compare (monthToInt m) (monthToInt m'))
                 `for` { generator =
                             Random.map3 (,,) randomDaTuple Random.Date.month randomDay
-                                |> Random.Extra.dropIf sameMonth
+                                |> Random.Extra.filter (not << sameMonth)
                       , shrinker =
                             Shrink.tuple3 ( daTupleShrinker, monthShrinker, dayShrinker )
                                 |> Shrink.dropIf sameMonth
@@ -114,7 +114,7 @@ claims =
                 `is` (\( ( _, _, d ), d' ) -> compare d d')
                 `for` { generator =
                             Random.map2 (,) randomDaTuple randomDay
-                                |> Random.Extra.dropIf sameDay
+                                |> Random.Extra.filter (not << sameDay)
                       , shrinker =
                             Shrink.tuple ( daTupleShrinker, dayShrinker )
                                 |> Shrink.dropIf sameDay

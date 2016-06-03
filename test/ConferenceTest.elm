@@ -8,7 +8,6 @@ import Date exposing (Month(..))
 import DaTuple as DT
 import Random
 import Random.Extra
-import Random.String exposing (anyEnglishWord)
 import Shrink exposing (Shrinker)
 import Tag exposing (Tag(..))
 import TestHelpers exposing (..)
@@ -33,7 +32,7 @@ tests =
 
 claims : Check.Claim
 claims =
-    suite "Model"
+    suite "Conference"
         [ claim "cfpStatus is (Closed, Nothing) if start and end are Nothing"
             `that` (\date -> cfpStatus date blankConf)
             `is` (\_ -> ( Closed, Nothing ))
@@ -57,7 +56,7 @@ claims =
             `is` (\_ -> ( Closed, Nothing ))
             `for` { generator =
                         Random.map2 (,) randomDaTuple randomDaTuple
-                            |> Random.Extra.keepIf (\( currentDate, endDate ) -> GT == DT.compare' currentDate endDate)
+                            |> Random.Extra.filter (\( currentDate, endDate ) -> GT == DT.compare' currentDate endDate)
                   , shrinker = Shrink.tuple ( daTupleShrinker, daTupleShrinker )
                   }
         , claim "cfpStatus is (Open, Just cfpEndDate) if currentDate is before cfpEndDate and cfpStartDate is Nothing"
@@ -65,7 +64,7 @@ claims =
             `is` (\( _, date ) -> ( Open, Just date ))
             `for` { generator =
                         Random.map2 (,) randomDaTuple randomDaTuple
-                            |> Random.Extra.keepIf (\( currentDate, endDate ) -> LT == DT.compare' currentDate endDate)
+                            |> Random.Extra.filter (\( currentDate, endDate ) -> LT == DT.compare' currentDate endDate)
                   , shrinker = Shrink.tuple ( daTupleShrinker, daTupleShrinker )
                   }
         , claim "cfpStatus is (Open, Just cfpEndDate) if currentDate is before cfpEndDate and after cfpStartDate"
@@ -73,8 +72,8 @@ claims =
             `is` (\( _, _, date ) -> ( Open, Just date ))
             `for` { generator =
                         Random.map3 (,,) randomDaTuple randomDaTuple randomDaTuple
-                            |> Random.Extra.keepIf (\( currentDate, _, endDate ) -> LT == DT.compare' currentDate endDate)
-                            |> Random.Extra.keepIf (\( currentDate, startDate, _ ) -> GT == DT.compare' currentDate startDate)
+                            |> Random.Extra.filter (\( currentDate, _, endDate ) -> LT == DT.compare' currentDate endDate)
+                            |> Random.Extra.filter (\( currentDate, startDate, _ ) -> GT == DT.compare' currentDate startDate)
                   , shrinker = Shrink.tuple3 ( daTupleShrinker, daTupleShrinker, daTupleShrinker )
                   }
         , claim "cfpStatus is (Open, Just cfpEndDate) if currentDate is before cfpEndDate and equal to cfpStartDate"
@@ -82,7 +81,7 @@ claims =
             `is` (\( _, date ) -> ( Open, Just date ))
             `for` { generator =
                         Random.map2 (,) randomDaTuple randomDaTuple
-                            |> Random.Extra.keepIf (\( currentDate, endDate ) -> LT == DT.compare' currentDate endDate)
+                            |> Random.Extra.filter (\( currentDate, endDate ) -> LT == DT.compare' currentDate endDate)
                   , shrinker = Shrink.tuple ( daTupleShrinker, daTupleShrinker )
                   }
         , claim "cfpStatus is (NotYetOpen, Just cfpStartDate) if currentDate is before cfpEndDate and cfpStartDate"
@@ -90,8 +89,8 @@ claims =
             `is` (\( _, date, _ ) -> ( NotYetOpen, Just date ))
             `for` { generator =
                         Random.map3 (,,) randomDaTuple randomDaTuple randomDaTuple
-                            |> Random.Extra.keepIf (\( _, startDate, endDate ) -> LT == DT.compare' startDate endDate)
-                            |> Random.Extra.keepIf (\( currentDate, startDate, _ ) -> LT == DT.compare' currentDate startDate)
+                            |> Random.Extra.filter (\( _, startDate, endDate ) -> LT == DT.compare' startDate endDate)
+                            |> Random.Extra.filter (\( currentDate, startDate, _ ) -> LT == DT.compare' currentDate startDate)
                   , shrinker = Shrink.tuple3 ( daTupleShrinker, daTupleShrinker, daTupleShrinker )
                   }
         , claim "compare' sorts first by start date"
@@ -112,7 +111,7 @@ claims =
                             { blankConf | name = n2, startDate = d }
                    )
             `is` (\( _, n1, n2 ) -> compare n1 n2)
-            `for` { generator = Random.map3 (,,) randomDaTuple anyEnglishWord anyEnglishWord
+            `for` { generator = Random.map3 (,,) randomDaTuple randomWord randomWord
                   , shrinker = Shrink.tuple3 ( daTupleShrinker, Shrink.string, Shrink.string )
                   }
         ]
