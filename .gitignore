@@ -1,5 +1,6 @@
 elm-stuff
 node_modules
 elm.js
+elm.min.js
 publish.sh
 test/test.js
