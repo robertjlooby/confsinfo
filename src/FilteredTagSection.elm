@@ -13,15 +13,15 @@ import Tag exposing (Tag)
 
 
 type alias Model =
-  { sectionName : String
-  , tags : List FilteredTag.Model
-  }
+    { sectionName : String
+    , tags : List FilteredTag.Model
+    }
 
 
 includedTags : Model -> List Tag
 includedTags model =
-  List.filter FilteredTag.isIncluded model.tags
-    |> List.map .tag
+    List.filter FilteredTag.isIncluded model.tags
+        |> List.map .tag
 
 
 
@@ -29,29 +29,29 @@ includedTags model =
 
 
 type alias Msg =
-  FilteredTagSectionInternal.Msg
+    FilteredTagSectionInternal.Msg
 
 
 update : Msg -> Model -> Model
 update msg model =
-  case msg of
-    UpdateTag tag tagAction ->
-      let
-        updateTag filteredTag =
-          if filteredTag.tag == tag then
-            FilteredTag.update tagAction filteredTag
-          else
-            filteredTag
-      in
-        { model | tags = List.map updateTag model.tags }
+    case msg of
+        UpdateTag tag tagAction ->
+            let
+                updateTag filteredTag =
+                    if filteredTag.tag == tag then
+                        FilteredTag.update tagAction filteredTag
+                    else
+                        filteredTag
+            in
+                { model | tags = List.map updateTag model.tags }
 
-    Reset ->
-      { model | tags = List.map FilteredTag.exclude model.tags }
+        Reset ->
+            { model | tags = List.map FilteredTag.exclude model.tags }
 
 
 initializeIncludedTags : List String -> Model -> Model
 initializeIncludedTags includedTags model =
-  { model | tags = List.map (FilteredTag.initializeIncludedTag includedTags) model.tags }
+    { model | tags = List.map (FilteredTag.initializeIncludedTag includedTags) model.tags }
 
 
 
@@ -60,22 +60,19 @@ initializeIncludedTags includedTags model =
 
 view : Model -> List (Html.Html Msg)
 view { sectionName, tags } =
-  [ Html.div
-      [ class "row" ]
-      [ Html.h5 [] [ text sectionName ] ]
-  , Html.div
-      [ class "row" ]
-      <| List.map (\tag -> App.map (UpdateTag tag.tag) (FilteredTag.view tag)) tags
-  ]
+    [ Html.div [ class "row" ]
+        [ Html.h5 [] [ text sectionName ] ]
+    , Html.div [ class "row" ]
+        <| List.map (\tag -> App.map (UpdateTag tag.tag) (FilteredTag.view tag)) tags
+    ]
 
 
 resetButtonView : Html.Html Msg
 resetButtonView =
-  Html.div
-    [ class "row" ]
-    [ Html.button
-        [ class "two columns offset-by-five"
-        , Html.Events.onClick Reset
+    Html.div [ class "row" ]
+        [ Html.button
+            [ class "two columns offset-by-five"
+            , Html.Events.onClick Reset
+            ]
+            [ text "Reset" ]
         ]
-        [ text "Reset" ]
-    ]

@@ -10,16 +10,15 @@ import ModelTest
 
 tests : Test
 tests =
-  suite
-    "All tests"
-    [ ConferenceTest.tests
-    , DaTupleTest.tests
-    , FilteredTagTest.tests
-    , FilteredTagSectionTest.tests
-    , ModelTest.tests
-    ]
+    suite "All tests"
+        [ ConferenceTest.tests
+        , DaTupleTest.tests
+        , FilteredTagTest.tests
+        , FilteredTagSectionTest.tests
+        , ModelTest.tests
+        ]
 
 
 main : Program Never
 main =
-  runSuite tests
+    runSuite tests

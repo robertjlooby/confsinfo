@@ -4,8 +4,8 @@ module FilteredTagInternal exposing (..)
 
 
 type State
-  = Included
-  | Excluded
+    = Included
+    | Excluded
 
 
 
@@ -13,5 +13,5 @@ type State
 
 
 type Msg
-  = Include
-  | Exclude
+    = Include
+    | Exclude

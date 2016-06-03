@@ -11,22 +11,22 @@ import Tag exposing (Tag)
 
 
 type alias State =
-  FilteredTagInternal.State
+    FilteredTagInternal.State
 
 
 type alias Model =
-  { tag : Tag
-  , state : State
-  , display : String
-  }
+    { tag : Tag
+    , state : State
+    , display : String
+    }
 
 
 init : Tag -> String -> Model
 init tag display =
-  { tag = tag
-  , state = Excluded
-  , display = display
-  }
+    { tag = tag
+    , state = Excluded
+    , display = display
+    }
 
 
 
@@ -34,17 +34,17 @@ init tag display =
 
 
 type alias Msg =
-  FilteredTagInternal.Msg
+    FilteredTagInternal.Msg
 
 
 update : Msg -> Model -> Model
 update msg model =
-  case msg of
-    Include ->
-      { model | state = Included }
+    case msg of
+        Include ->
+            { model | state = Included }
 
-    Exclude ->
-      { model | state = Excluded }
+        Exclude ->
+            { model | state = Excluded }
 
 
 
@@ -53,25 +53,25 @@ update msg model =
 
 initializeIncludedTag : List String -> Model -> Model
 initializeIncludedTag includedTags model =
-  if List.member (toString model.tag) includedTags then
-    update Include model
-  else
-    model
+    if List.member (toString model.tag) includedTags then
+        update Include model
+    else
+        model
 
 
 exclude : Model -> Model
 exclude model =
-  update Exclude model
+    update Exclude model
 
 
 isIncluded : Model -> Bool
 isIncluded model =
-  case model.state of
-    Included ->
-      True
+    case model.state of
+        Included ->
+            True
 
-    Excluded ->
-      False
+        Excluded ->
+            False
 
 
 
@@ -80,17 +80,17 @@ isIncluded model =
 
 view : Model -> Html.Html Msg
 view model =
-  let
-    ( tagString, tagClass, clickAction ) =
-      case model.state of
-        Included ->
-          ( "- " ++ model.display, "included", Exclude )
+    let
+        ( tagString, tagClass, clickAction ) =
+            case model.state of
+                Included ->
+                    ( "- " ++ model.display, "included", Exclude )
 
-        Excluded ->
-          ( "+ " ++ model.display, "excluded", Include )
-  in
-    Html.button
-      [ class tagClass
-      , Html.Events.onClick clickAction
-      ]
-      [ text tagString ]
+                Excluded ->
+                    ( "+ " ++ model.display, "excluded", Include )
+    in
+        Html.button
+            [ class tagClass
+            , Html.Events.onClick clickAction
+            ]
+            [ text tagString ]

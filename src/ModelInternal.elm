@@ -12,11 +12,11 @@ import Time exposing (Time)
 
 
 type alias Model =
-  { conferences : GSet.GenericSet Conference.Model
-  , currentDate : DaTuple
-  , includePastEvents : Bool
-  , tags : List FilteredTagSection.Model
-  }
+    { conferences : GSet.GenericSet Conference.Model
+    , currentDate : DaTuple
+    , includePastEvents : Bool
+    , tags : List FilteredTagSection.Model
+    }
 
 
 
@@ -24,24 +24,24 @@ type alias Model =
 
 
 type Msg
-  = UpdateTag FilteredTagSection.Msg
-  | IncludePastEvents Bool
-  | SetCurrentDate (Maybe Time)
+    = UpdateTag FilteredTagSection.Msg
+    | IncludePastEvents Bool
+    | SetCurrentDate (Maybe Time)
 
 
 conferencesToShow : Model -> List Conference.Model
 conferencesToShow model =
-  let
-    isInFuture conference =
-      compare' model.currentDate conference.startDate /= GT
+    let
+        isInFuture conference =
+            compare' model.currentDate conference.startDate /= GT
 
-    confsToFilterOnTags =
-      if model.includePastEvents then
-        GSet.toList model.conferences
-      else
-        List.filter isInFuture <| GSet.toList model.conferences
-  in
-    List.filter (Conference.shouldShow <| includedTags model) confsToFilterOnTags
+        confsToFilterOnTags =
+            if model.includePastEvents then
+                GSet.toList model.conferences
+            else
+                List.filter isInFuture <| GSet.toList model.conferences
+    in
+        List.filter (Conference.shouldShow <| includedTags model) confsToFilterOnTags
 
 
 
@@ -50,5 +50,5 @@ conferencesToShow model =
 
 includedTags : Model -> List Tag
 includedTags model =
-  List.map FilteredTagSection.includedTags model.tags
-    |> List.concat
+    List.map FilteredTagSection.includedTags model.tags
+        |> List.concat

@@ -8,5 +8,5 @@ import Tag exposing (Tag)
 
 
 type Msg
-  = UpdateTag Tag FilteredTag.Msg
-  | Reset
+    = UpdateTag Tag FilteredTag.Msg
+    | Reset
