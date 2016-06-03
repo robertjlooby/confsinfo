@@ -1,13 +1,11 @@
-module Main (..) where
+module Main exposing (..)
 
 import ConferenceTest
-import Console
 import DaTupleTest
-import ElmTest exposing (consoleRunner, Test, suite)
+import ElmTest exposing (runSuite, Test, suite)
 import FilteredTagTest
 import FilteredTagSectionTest
 import ModelTest
-import Task
 
 
 tests : Test
@@ -22,6 +20,6 @@ tests =
     ]
 
 
-port runner : Signal (Task.Task x ())
-port runner =
-  Console.run (consoleRunner tests)
+main : Program Never
+main =
+  runSuite tests

@@ -1,4 +1,4 @@
-module InitialData (model) where
+module InitialData exposing (model)
 
 import Conference
 import Date exposing (Month(..))

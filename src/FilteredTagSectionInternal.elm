@@ -1,4 +1,4 @@
-module FilteredTagSectionInternal (..) where
+module FilteredTagSectionInternal exposing (..)
 
 import FilteredTag
 import Tag exposing (Tag)
@@ -7,6 +7,6 @@ import Tag exposing (Tag)
 -- Update
 
 
-type Action
-  = UpdateTag Tag FilteredTag.Action
+type Msg
+  = UpdateTag Tag FilteredTag.Msg
   | Reset

@@ -1,4 +1,4 @@
-module ModelTest (..) where
+module ModelTest exposing (..)
 
 import ElmTest exposing (assertEqual, suite, test)
 import GenericSet as GSet

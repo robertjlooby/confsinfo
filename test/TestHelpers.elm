@@ -1,4 +1,4 @@
-module TestHelpers (..) where
+module TestHelpers exposing (..)
 
 import Date exposing (Month(..))
 import DaTuple exposing (DaTuple)

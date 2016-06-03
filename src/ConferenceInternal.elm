@@ -1,4 +1,4 @@
-module ConferenceInternal (..) where
+module ConferenceInternal exposing (..)
 
 import DaTuple exposing (compare', DaTuple)
 import Tag exposing (Tag)

@@ -3,19 +3,16 @@
 ## Running
 
 - `elm package install`
-- `elm reactor`
-- [http://localhost:8000/src/Main.elm](http://localhost:8000/src/Main.elm)
-
-## Make
-
-`elm make src/Main.elm --output elm.js`
+- `elm make src/Main.elm --output elm.js`
+- `open index.html`
 
 ## Tests
 
 - `cd test`
 - `elm package install`
 - `npm install -g`
-- `elm-test AllTests.elm`
+- `elm make AllTests.elm --output test.js`
+- `node test.js`
 
 or
 

@@ -1,4 +1,4 @@
-module Conference (Model, shouldShow, compare', view) where
+module Conference exposing (Model, shouldShow, compare', view)
 
 import ConferenceInternal exposing (..)
 import DaTuple exposing (DaTuple)
@@ -48,7 +48,7 @@ cfpStatus =
   ConferenceInternal.cfpStatus
 
 
-view : DaTuple -> Model -> Html.Html
+view : DaTuple -> Model -> Html.Html msg
 view currentDate conference =
   Html.div
     [ class "row" ]
@@ -62,7 +62,7 @@ view currentDate conference =
     ]
 
 
-conferenceNameHtml : Model -> DaTuple -> Html.Html
+conferenceNameHtml : Model -> DaTuple -> Html.Html msg
 conferenceNameHtml conference currentDate =
   let
     nameLink =

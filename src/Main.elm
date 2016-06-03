@@ -1,53 +1,40 @@
-module Main (main) where
+module Main exposing (main)
 
-import Debug
-import Effects exposing (Effects)
 import Html exposing (Html)
+import Html.App as App
 import InitialData
 import Model
-import StartApp exposing (start)
 import Task exposing (Task, andThen)
-import TaskTutorial exposing (getCurrentTime)
+import Time
 
 
-initialModel : Model.Model
-initialModel =
-  case getStorage of
-    Just tags ->
-      Model.initializeIncludedTags tags InitialData.model
+init : Maybe (List String) -> ( Model.Model, Cmd Model.Msg )
+init maybeTags =
+  let
+    model =
+      case maybeTags of
+        Just tags ->
+          Model.initializeIncludedTags tags InitialData.model
 
-    Nothing ->
-      InitialData.model
+        Nothing ->
+          InitialData.model
+  in
+    (model, initializeDate)
 
 
-app =
-  StartApp.start
-    { init = ( initialModel, initializeDate )
+main : Program (Maybe (List String))
+main =
+  App.programWithFlags
+    { init = init
     , view = Model.view
     , update = Model.update
-    , inputs = []
+    , subscriptions = (\_ -> Sub.none)
     }
 
 
-main : Signal Html
-main =
-  app.html
-
-
-port tasks : Signal (Task.Task Effects.Never ())
-port tasks =
-  app.tasks
-
-
-port getStorage : Maybe (List String)
-port setStorage : Signal (List String)
-port setStorage =
-  Signal.map (Model.includedTags >> List.map toString) app.model
-
-
-initializeDate : Effects Model.Action
+initializeDate : Cmd Model.Msg
 initializeDate =
-  getCurrentTime
-    |> Task.toMaybe
-    |> Task.map Model.setCurrentDate
-    |> Effects.task
+    Task.perform
+      (\_ -> Model.setCurrentDate Nothing)
+      (\time -> Model.setCurrentDate <| Just time)
+      Time.now

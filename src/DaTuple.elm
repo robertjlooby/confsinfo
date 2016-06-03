@@ -1,7 +1,7 @@
-module DaTuple (DaTuple, formatDate, formatRange, compare') where
+module DaTuple exposing (DaTuple, formatDate, formatRange, compare')
 
 import Date exposing (Month)
-import Date.Core exposing (monthToInt)
+import Date.Extra.Core exposing (monthToInt)
 
 
 type alias DaTuple =

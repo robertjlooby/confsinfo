@@ -1,4 +1,4 @@
-module FilteredTag (init, Model, Action, update, view, initializeIncludedTag, isIncluded, exclude) where
+module FilteredTag exposing (init, Model, Msg, update, view, initializeIncludedTag, isIncluded, exclude)
 
 import FilteredTagInternal exposing (..)
 import Html exposing (text)
@@ -33,13 +33,13 @@ init tag display =
 -- Update
 
 
-type alias Action =
-  FilteredTagInternal.Action
+type alias Msg =
+  FilteredTagInternal.Msg
 
 
-update : Action -> Model -> Model
-update action model =
-  case action of
+update : Msg -> Model -> Model
+update msg model =
+  case msg of
     Include ->
       { model | state = Included }
 
@@ -78,8 +78,8 @@ isIncluded model =
 -- View
 
 
-view : Signal.Address Action -> Model -> Html.Html
-view address model =
+view : Model -> Html.Html Msg
+view model =
   let
     ( tagString, tagClass, clickAction ) =
       case model.state of
@@ -91,6 +91,6 @@ view address model =
   in
     Html.button
       [ class tagClass
-      , Html.Events.onClick address clickAction
+      , Html.Events.onClick clickAction
       ]
       [ text tagString ]

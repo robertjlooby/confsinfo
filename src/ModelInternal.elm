@@ -1,4 +1,4 @@
-module ModelInternal (..) where
+module ModelInternal exposing (..)
 
 import Conference
 import DaTuple exposing (DaTuple, compare')
@@ -23,8 +23,8 @@ type alias Model =
 -- Update
 
 
-type Action
-  = UpdateTag FilteredTagSection.Action
+type Msg
+  = UpdateTag FilteredTagSection.Msg
   | IncludePastEvents Bool
   | SetCurrentDate (Maybe Time)
 

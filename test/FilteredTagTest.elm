@@ -1,4 +1,4 @@
-module FilteredTagTest (..) where
+module FilteredTagTest exposing (..)
 
 import Check exposing (claim, for, is, suite, that)
 import Check.Test
@@ -7,7 +7,6 @@ import FilteredTagInternal exposing (..)
 import Lazy.List exposing ((:::), empty)
 import Random
 import Random.Extra
-import Random.List
 import Random.String
 import Shrink
 import Tag exposing (Tag(FunctionalProgramming))

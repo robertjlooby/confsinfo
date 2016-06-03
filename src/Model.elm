@@ -1,14 +1,14 @@
-module Model (Model, Action, update, initializeIncludedTags, includedTags, setCurrentDate, view) where
+port module Model exposing (Model, Msg, update, initializeIncludedTags, includedTags, setCurrentDate, view)
 
 import Conference
 import Date
 import DaTuple exposing (DaTuple, compare')
-import Effects exposing (Effects)
 import FilteredTagSection
 import Html exposing (text)
+import Html.App as App
 import Html.Attributes exposing (class, href)
 import Html.Events
-import ModelInternal exposing (Action(..))
+import ModelInternal exposing (Msg(..))
 import Tag exposing (Tag)
 import Task exposing (Task)
 import Time exposing (Time)
@@ -25,18 +25,22 @@ type alias Model =
 -- Update
 
 
-type alias Action =
-  ModelInternal.Action
+type alias Msg =
+  ModelInternal.Msg
 
 
-update : Action -> Model -> ( Model, Effects Action )
-update action model =
-  case action of
+update : Msg -> Model -> ( Model, Cmd Msg )
+update msg model =
+  case msg of
     UpdateTag action ->
-      ( { model | tags = List.map (FilteredTagSection.update action) model.tags }, Effects.none )
+      let
+        newModel = { model | tags = List.map (FilteredTagSection.update action) model.tags }
+        cmd = setStorage <| (includedTags >> List.map toString) newModel
+      in
+        ( newModel, cmd )
 
     IncludePastEvents shouldIncludePastEvents ->
-      ( { model | includePastEvents = shouldIncludePastEvents }, Effects.none )
+      ( { model | includePastEvents = shouldIncludePastEvents }, Cmd.none )
 
     SetCurrentDate (Just time) ->
       let
@@ -46,10 +50,13 @@ update action model =
         daTuple =
           ( Date.year date, Date.month date, Date.day date )
       in
-        ( { model | currentDate = daTuple }, Effects.none )
+        ( { model | currentDate = daTuple }, Cmd.none )
 
     SetCurrentDate Nothing ->
-      ( model, Effects.none )
+      ( model, Cmd.none )
+
+
+port setStorage : List String -> Cmd msg
 
 
 initializeIncludedTags : List String -> Model -> Model
@@ -57,7 +64,7 @@ initializeIncludedTags includedTags model =
   { model | tags = List.map (FilteredTagSection.initializeIncludedTags includedTags) model.tags }
 
 
-setCurrentDate : Maybe Time -> Action
+setCurrentDate : Maybe Time -> Msg
 setCurrentDate time =
   SetCurrentDate time
 
@@ -75,21 +82,21 @@ includedTags =
 -- View
 
 
-view : Signal.Address Action -> Model -> Html.Html
-view address model =
+view : Model -> Html.Html Msg
+view model =
   Html.div
     [ class "container" ]
     <| List.concat
-        [ allTagsView address model.tags
-        , [ includePastEventsButtonView address model.includePastEvents ]
-        , [ FilteredTagSection.resetButtonView (Signal.forwardTo address UpdateTag) ]
+        [ allTagsView model.tags
+        , [ includePastEventsButtonView model.includePastEvents ]
+        , [ App.map UpdateTag FilteredTagSection.resetButtonView ]
         , conferencesView model
         , [ sourceCodeLink ]
         ]
 
 
-includePastEventsButtonView : Signal.Address Action -> Bool -> Html.Html
-includePastEventsButtonView address includePastEvents =
+includePastEventsButtonView : Bool -> Html.Html Msg
+includePastEventsButtonView includePastEvents =
   let
     label =
       "Include Past Events"
@@ -106,13 +113,13 @@ includePastEventsButtonView address includePastEvents =
       [ class "row" ]
       [ Html.button
           [ class <| "four columns offset-by-four " ++ tagClass
-          , Html.Events.onClick address clickAction
+          , Html.Events.onClick clickAction
           ]
           [ text buttonText ]
       ]
 
 
-sourceCodeLink : Html.Html
+sourceCodeLink : Html.Html msg
 sourceCodeLink =
   Html.div
     [ class "row" ]
@@ -124,12 +131,13 @@ sourceCodeLink =
     ]
 
 
-conferencesView : Model -> List Html.Html
+conferencesView : Model -> List (Html.Html Msg)
 conferencesView model =
   List.map (Conference.view model.currentDate) (ModelInternal.conferencesToShow model)
 
 
-allTagsView : Signal.Address Action -> List FilteredTagSection.Model -> List Html.Html
-allTagsView address filteredTagSections =
-  List.map (FilteredTagSection.view <| Signal.forwardTo address UpdateTag) filteredTagSections
+allTagsView : List FilteredTagSection.Model -> List (Html.Html Msg)
+allTagsView filteredTagSections =
+  List.map FilteredTagSection.view filteredTagSections
     |> List.concat
+    |> List.map (App.map UpdateTag)

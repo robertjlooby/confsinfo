@@ -1,9 +1,9 @@
-module DaTupleTest (..) where
+module DaTupleTest exposing (..)
 
 import Check exposing (claim, for, is, suite, that)
 import Check.Test
 import Date exposing (Month(..))
-import Date.Core exposing (monthToInt)
+import Date.Extra.Core exposing (monthToInt)
 import DaTuple exposing (..)
 import Lazy.List exposing ((:::), empty)
 import Random

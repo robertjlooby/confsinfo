@@ -1,4 +1,4 @@
-module Tag (..) where
+module Tag exposing (..)
 
 -- Model
 

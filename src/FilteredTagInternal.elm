@@ -1,4 +1,4 @@
-module FilteredTagInternal (..) where
+module FilteredTagInternal exposing (..)
 
 -- Model
 
@@ -12,6 +12,6 @@ type State
 -- Update
 
 
-type Action
+type Msg
   = Include
   | Exclude

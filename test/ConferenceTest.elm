@@ -1,4 +1,4 @@
-module ConferenceTest (..) where
+module ConferenceTest exposing (..)
 
 import Check exposing (claim, for, is, suite, that)
 import Check.Test

@@ -16,7 +16,7 @@
   <script type="text/javascript">
     var storedState = localStorage.getItem('confs-info-state');
     var startingState = storedState ? JSON.parse(storedState) : null;
-    var confsinfo = Elm.fullscreen(Elm.Main, { getStorage: startingState });
+    var confsinfo = Elm.Main.fullscreen(startingState);
     confsinfo.ports.setStorage.subscribe(function(state) {
       try {
         localStorage.setItem('confs-info-state', JSON.stringify(state));

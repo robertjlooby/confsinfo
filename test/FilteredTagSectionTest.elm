@@ -1,4 +1,4 @@
-module FilteredTagSectionTest (..) where
+module FilteredTagSectionTest exposing (..)
 
 import Check exposing (claim, for, is, that)
 import Check.Test

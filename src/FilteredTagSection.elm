@@ -1,8 +1,9 @@
-module FilteredTagSection (Model, initializeIncludedTags, includedTags, Action, update, view, resetButtonView) where
+module FilteredTagSection exposing (Model, initializeIncludedTags, includedTags, Msg, update, view, resetButtonView)
 
 import FilteredTag
 import FilteredTagSectionInternal exposing (..)
 import Html exposing (text)
+import Html.App as App
 import Html.Attributes exposing (class)
 import Html.Events
 import Tag exposing (Tag)
@@ -27,13 +28,13 @@ includedTags model =
 -- Update
 
 
-type alias Action =
-  FilteredTagSectionInternal.Action
+type alias Msg =
+  FilteredTagSectionInternal.Msg
 
 
-update : Action -> Model -> Model
-update action model =
-  case action of
+update : Msg -> Model -> Model
+update msg model =
+  case msg of
     UpdateTag tag tagAction ->
       let
         updateTag filteredTag =
@@ -57,24 +58,24 @@ initializeIncludedTags includedTags model =
 -- View
 
 
-view : Signal.Address Action -> Model -> List Html.Html
-view address { sectionName, tags } =
+view : Model -> List (Html.Html Msg)
+view { sectionName, tags } =
   [ Html.div
       [ class "row" ]
       [ Html.h5 [] [ text sectionName ] ]
   , Html.div
       [ class "row" ]
-      <| List.map (\tag -> FilteredTag.view (Signal.forwardTo address (UpdateTag tag.tag)) tag) tags
+      <| List.map (\tag -> App.map (UpdateTag tag.tag) (FilteredTag.view tag)) tags
   ]
 
 
-resetButtonView : Signal.Address Action -> Html.Html
-resetButtonView address =
+resetButtonView : Html.Html Msg
+resetButtonView =
   Html.div
     [ class "row" ]
     [ Html.button
         [ class "two columns offset-by-five"
-        , Html.Events.onClick address Reset
+        , Html.Events.onClick Reset
         ]
         [ text "Reset" ]
     ]
