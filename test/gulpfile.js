@@ -2,6 +2,7 @@ var gulp = require('gulp'),
     shell = require('gulp-shell')
 
 gulp.task('run-tests', shell.task([
+  'elm make ../src/Main.elm --output /dev/null',
   'elm make AllTests.elm --output test.js',
   'node test.js'
 ]))
