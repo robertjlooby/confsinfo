@@ -3,7 +3,6 @@ module ConferenceTest exposing (..)
 import Check exposing (claim, for, is, suite, that)
 import Check.Test
 import Conference exposing (..)
-import ConferenceInternal exposing (..)
 import Date exposing (Month(..))
 import DaTuple as DT
 import Random

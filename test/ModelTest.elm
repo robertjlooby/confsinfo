@@ -4,7 +4,6 @@ import ElmTest exposing (assertEqual, suite, test)
 import GenericSet as GSet
 import Conference
 import Model exposing (..)
-import ModelInternal exposing (..)
 import Date exposing (Month(..))
 import FilteredTagSection
 import Tag exposing (Tag(..))
@@ -15,7 +14,7 @@ confSet conferences =
     GSet.fromList (\c1 c2 -> compare c1.name c2.name) conferences
 
 
-withTags : List FilteredTagSection.Model -> ModelInternal.Model
+withTags : List FilteredTagSection.Model -> Model
 withTags tags =
     { conferences = confSet []
     , currentDate = ( 2016, Jan, 1 )
@@ -24,7 +23,7 @@ withTags tags =
     }
 
 
-blankModel : ModelInternal.Model
+blankModel : Model
 blankModel =
     withTags []
 

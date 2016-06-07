@@ -1,14 +1,14 @@
-port module Model exposing (Model, Msg, update, initializeIncludedTags, includedTags, setCurrentDate, view)
+port module Model exposing (Model, Msg(..), conferencesToShow, update, initializeIncludedTags, includedTags, setCurrentDate, view)
 
 import Conference
 import Date
 import DaTuple exposing (DaTuple, compare')
+import GenericSet as GSet
 import FilteredTagSection
 import Html exposing (text)
 import Html.App as App
 import Html.Attributes exposing (class, href)
 import Html.Events
-import ModelInternal exposing (Msg(..))
 import Tag exposing (Tag)
 import Task exposing (Task)
 import Time exposing (Time)
@@ -18,15 +18,21 @@ import Time exposing (Time)
 
 
 type alias Model =
-    ModelInternal.Model
+    { conferences : GSet.GenericSet Conference.Model
+    , currentDate : DaTuple
+    , includePastEvents : Bool
+    , tags : List FilteredTagSection.Model
+    }
 
 
 
 -- Update
 
 
-type alias Msg =
-    ModelInternal.Msg
+type Msg
+    = UpdateTag FilteredTagSection.Msg
+    | IncludePastEvents Bool
+    | SetCurrentDate (Maybe Time)
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
@@ -77,8 +83,9 @@ setCurrentDate time =
 
 
 includedTags : Model -> List Tag
-includedTags =
-    ModelInternal.includedTags
+includedTags model =
+    List.map FilteredTagSection.includedTags model.tags
+        |> List.concat
 
 
 
@@ -131,9 +138,24 @@ sourceCodeLink =
         ]
 
 
+conferencesToShow : Model -> List Conference.Model
+conferencesToShow model =
+    let
+        isInFuture conference =
+            compare' model.currentDate conference.startDate /= GT
+
+        confsToFilterOnTags =
+            if model.includePastEvents then
+                GSet.toList model.conferences
+            else
+                List.filter isInFuture <| GSet.toList model.conferences
+    in
+        List.filter (Conference.shouldShow <| includedTags model) confsToFilterOnTags
+
+
 conferencesView : Model -> List (Html.Html Msg)
 conferencesView model =
-    List.map (Conference.view model.currentDate) (ModelInternal.conferencesToShow model)
+    List.map (Conference.view model.currentDate) (conferencesToShow model)
 
 
 allTagsView : List FilteredTagSection.Model -> List (Html.Html Msg)

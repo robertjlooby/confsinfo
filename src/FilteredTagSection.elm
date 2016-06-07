@@ -1,7 +1,6 @@
-module FilteredTagSection exposing (Model, initializeIncludedTags, includedTags, Msg, update, view, resetButtonView)
+module FilteredTagSection exposing (Model, initializeIncludedTags, includedTags, Msg(..), update, view, resetButtonView)
 
 import FilteredTag
-import FilteredTagSectionInternal exposing (..)
 import Html exposing (text)
 import Html.App as App
 import Html.Attributes exposing (class)
@@ -28,8 +27,9 @@ includedTags model =
 -- Update
 
 
-type alias Msg =
-    FilteredTagSectionInternal.Msg
+type Msg
+    = UpdateTag Tag FilteredTag.Msg
+    | Reset
 
 
 update : Msg -> Model -> Model

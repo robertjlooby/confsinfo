@@ -1,6 +1,5 @@
-module FilteredTag exposing (init, Model, Msg, update, view, initializeIncludedTag, isIncluded, exclude)
+module FilteredTag exposing (init, Model, Msg(..), State(..), update, view, initializeIncludedTag, isIncluded, exclude)
 
-import FilteredTagInternal exposing (..)
 import Html exposing (text)
 import Html.Attributes exposing (class)
 import Html.Events
@@ -10,8 +9,9 @@ import Tag exposing (Tag)
 -- Model
 
 
-type alias State =
-    FilteredTagInternal.State
+type State
+    = Included
+    | Excluded
 
 
 type alias Model =
@@ -33,8 +33,9 @@ init tag display =
 -- Update
 
 
-type alias Msg =
-    FilteredTagInternal.Msg
+type Msg
+    = Include
+    | Exclude
 
 
 update : Msg -> Model -> Model

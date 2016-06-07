@@ -3,7 +3,6 @@ module FilteredTagTest exposing (..)
 import Check exposing (claim, for, is, suite, that)
 import Check.Test
 import FilteredTag exposing (..)
-import FilteredTagInternal exposing (..)
 import Lazy.List exposing ((:::), empty)
 import Random
 import Random.Extra

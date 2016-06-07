@@ -9,6 +9,7 @@
     ],
     "exposed-modules": [],
     "dependencies": {
+        "Bogdanp/elm-route": "2.0.3 <= v < 3.0.0",
         "elm-community/elm-check": "1.0.2 <= v < 2.0.0",
         "elm-community/elm-lazy-list": "1.0.1 <= v < 2.0.0",
         "elm-community/elm-test": "1.1.0 <= v < 2.0.0",

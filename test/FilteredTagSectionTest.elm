@@ -3,10 +3,8 @@ module FilteredTagSectionTest exposing (..)
 import Check exposing (claim, for, is, that)
 import Check.Test
 import ElmTest exposing (Test, test, assertEqual)
-import FilteredTag
-import FilteredTagInternal exposing (..)
+import FilteredTag exposing (Msg(..), State(..))
 import FilteredTagSection exposing (..)
-import FilteredTagSectionInternal exposing (..)
 import FilteredTagTest
 import Random
 import Random.Extra
