@@ -1,4 +1,4 @@
-port module Model exposing (Model, Msg(..), conferencesToShow, update, initializeIncludedTags, includedTags, setCurrentDate, view)
+module Model exposing (Model, Msg(..), conferencesToShow, update, initializeIncludedTags, includedTags, setCurrentDate, view)
 
 import Conference
 import Date
@@ -42,11 +42,8 @@ update msg model =
             let
                 newModel =
                     { model | tags = List.map (FilteredTagSection.update action) model.tags }
-
-                cmd =
-                    setStorage <| (includedTags >> List.map toString) newModel
             in
-                ( newModel, cmd )
+                ( newModel, Cmd.none )
 
         IncludePastEvents shouldIncludePastEvents ->
             ( { model | includePastEvents = shouldIncludePastEvents }, Cmd.none )
@@ -63,9 +60,6 @@ update msg model =
 
         SetCurrentDate Nothing ->
             ( model, Cmd.none )
-
-
-port setStorage : List String -> Cmd msg
 
 
 initializeIncludedTags : List String -> Model -> Model

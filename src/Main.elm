@@ -8,23 +8,14 @@ import Task exposing (Task, andThen)
 import Time
 
 
-init : Maybe (List String) -> ( Model.Model, Cmd Model.Msg )
-init maybeTags =
-    let
-        model =
-            case maybeTags of
-                Just tags ->
-                    Model.initializeIncludedTags tags InitialData.model
-
-                Nothing ->
-                    InitialData.model
-    in
-        ( model, initializeDate )
+init : ( Model.Model, Cmd Model.Msg )
+init =
+    ( InitialData.model, initializeDate )
 
 
-main : Program (Maybe (List String))
+main : Program Never
 main =
-    App.programWithFlags
+    App.program
         { init = init
         , view = Model.view
         , update = Model.update
