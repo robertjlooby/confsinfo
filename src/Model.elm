@@ -1,4 +1,4 @@
-module Model exposing (Model, Msg(..), conferencesToShow, update, initializeIncludedTags, includedTags, setCurrentDate, view)
+module Model exposing (Model, Msg(..), conferencesToShow, init, update, urlUpdate, initializeIncludedTags, includedTags, setCurrentDate, view)
 
 import Conference
 import Date
@@ -9,6 +9,8 @@ import Html exposing (text)
 import Html.App as App
 import Html.Attributes exposing (class, href)
 import Html.Events
+import Navigation exposing (modifyUrl)
+import Route.QueryString exposing (QueryString, add, all, empty, render, parse)
 import Tag exposing (Tag)
 import Task exposing (Task)
 import Time exposing (Time)
@@ -23,6 +25,18 @@ type alias Model =
     , includePastEvents : Bool
     , tags : List FilteredTagSection.Model
     }
+
+
+init : Model -> QueryString -> ( Model, Cmd Msg )
+init initialModel queryString =
+    let
+        tags =
+            all "tag" queryString
+
+        model =
+            initializeIncludedTags tags initialModel
+    in
+        ( model, initializeDate )
 
 
 
@@ -42,8 +56,13 @@ update msg model =
             let
                 newModel =
                     { model | tags = List.map (FilteredTagSection.update action) model.tags }
+
+                cmd =
+                    List.foldr (toString >> add "tag") empty (includedTags newModel)
+                        |> render
+                        |> modifyUrl
             in
-                ( newModel, Cmd.none )
+                ( newModel, cmd )
 
         IncludePastEvents shouldIncludePastEvents ->
             ( { model | includePastEvents = shouldIncludePastEvents }, Cmd.none )
@@ -62,9 +81,21 @@ update msg model =
             ( model, Cmd.none )
 
 
+urlUpdate : QueryString -> Model -> ( Model, Cmd Msg )
+urlUpdate =
+    (\_ model -> ( model, Cmd.none ))
+
+
 initializeIncludedTags : List String -> Model -> Model
 initializeIncludedTags includedTags model =
     { model | tags = List.map (FilteredTagSection.initializeIncludedTags includedTags) model.tags }
+
+
+initializeDate : Cmd Msg
+initializeDate =
+    Task.perform (\_ -> setCurrentDate Nothing)
+        (\time -> setCurrentDate <| Just time)
+        Time.now
 
 
 setCurrentDate : Maybe Time -> Msg
