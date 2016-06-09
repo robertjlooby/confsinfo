@@ -10,7 +10,7 @@ import Html.App as App
 import Html.Attributes exposing (class, href)
 import Html.Events
 import Navigation exposing (modifyUrl)
-import Route.QueryString exposing (QueryString, add, all, empty, render, parse)
+import Route.QueryString exposing (QueryString, add, all, empty, one, render, string, parse)
 import Tag exposing (Tag)
 import Task exposing (Task)
 import Time exposing (Time)
@@ -33,8 +33,13 @@ init initialModel queryString =
         tags =
             all "tag" queryString
 
+        includePastEvents =
+            one string "includePastEvents" queryString == Just "True"
+
         model =
             initializeIncludedTags tags initialModel
+                |> update (IncludePastEvents includePastEvents)
+                |> fst
     in
         ( model, initializeDate )
 
@@ -56,16 +61,15 @@ update msg model =
             let
                 newModel =
                     { model | tags = List.map (FilteredTagSection.update action) model.tags }
-
-                cmd =
-                    List.foldr (toString >> add "tag") empty (includedTags newModel)
-                        |> render
-                        |> modifyUrl
             in
-                ( newModel, cmd )
+                ( newModel, updateQueryString newModel )
 
         IncludePastEvents shouldIncludePastEvents ->
-            ( { model | includePastEvents = shouldIncludePastEvents }, Cmd.none )
+            let
+                newModel =
+                    { model | includePastEvents = shouldIncludePastEvents }
+            in
+                ( newModel, updateQueryString newModel )
 
         SetCurrentDate (Just time) ->
             let
@@ -84,6 +88,18 @@ update msg model =
 urlUpdate : QueryString -> Model -> ( Model, Cmd Msg )
 urlUpdate =
     (\_ model -> ( model, Cmd.none ))
+
+
+updateQueryString : Model -> Cmd Msg
+updateQueryString model =
+    List.foldr (toString >> add "tag") empty (includedTags model)
+        |> (if model.includePastEvents then
+                add "includePastEvents" (toString model.includePastEvents)
+            else
+                identity
+           )
+        |> render
+        |> modifyUrl
 
 
 initializeIncludedTags : List String -> Model -> Model
