@@ -4,13 +4,13 @@ language: node_js
 
 cache:
   directories:
-    - tests/elm-stuff/build-artifacts
+    - frontend/tests/elm-stuff/build-artifacts
 
 node_js:
   - "5"
 
 before_script:
-  - cd test
+  - cd frontend/test
   - npm install -g elm@0.17.1
   - npm install -g elm-test@0.17.3
 

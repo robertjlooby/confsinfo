@@ -2,9 +2,10 @@
 
 ## Running
 
+- `cd frontend`
 - `elm package install`
-- `elm make src/Main.elm --output elm.min.js`
-- `open index.html`
+- `elm make src/Main.elm --output ../dist/elm.min.js`
+- `open ../dist/index.html`
 
 ## Tests
 
