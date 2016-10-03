@@ -1,5 +1,7 @@
 # confs.info
 
+[![Build Status](https://travis-ci.org/robertjlooby/confsinfo.svg?branch=add-travis)](https://travis-ci.org/robertjlooby/confsinfo)
+
 ## Running
 
 - `cd frontend`
