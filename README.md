@@ -3,20 +3,15 @@
 ## Running
 
 - `elm package install`
-- `elm make src/Main.elm --output elm.js`
+- `elm make src/Main.elm --output elm.min.js`
 - `open index.html`
 
 ## Tests
 
 - `cd test`
 - `elm package install`
-- `npm install -g`
-- `elm make AllTests.elm --output test.js`
-- `node test.js`
-
-or
-
-- `npm run test` to watch and run on save
+- `npm install`
+- `node_modules/elm-test/bin/elm-test AllTests.elm`
 
 ## Rationale
 
