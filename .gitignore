@@ -1,6 +1,2 @@
-elm-stuff
-node_modules
-elm.js
-elm.min.js
-publish.sh
-test/test.js
+dist/elm.js
+dist/elm.min.js
