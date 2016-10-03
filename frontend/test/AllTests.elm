@@ -1,16 +1,18 @@
-module Main exposing (..)
+port module Main exposing (..)
 
 import ConferenceTest
 import DaTupleTest
-import ElmTest exposing (runSuite, Test, suite)
 import FilteredTagTest
 import FilteredTagSectionTest
 import ModelTest
+import Json.Encode exposing (Value)
+import Test exposing (Test, describe)
+import Test.Runner.Node exposing (run)
 
 
 tests : Test
 tests =
-    suite "All tests"
+    describe "All tests"
         [ ConferenceTest.tests
         , DaTupleTest.tests
         , FilteredTagTest.tests
@@ -19,6 +21,9 @@ tests =
         ]
 
 
-main : Program Never
+main : Program Value
 main =
-    runSuite tests
+    run emit tests
+
+
+port emit : ( String, Value ) -> Cmd msg

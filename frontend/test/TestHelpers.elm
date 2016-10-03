@@ -1,14 +1,9 @@
 module TestHelpers exposing (..)
 
-import Date exposing (Month(..))
+import Date exposing (Month)
 import DaTuple exposing (DaTuple)
-import Lazy.List exposing ((:::), empty)
-import Random
-import Random.Char
-import Random.Date
-import Random.Extra
-import Random.String
-import Shrink exposing (Shrinker)
+import Date.Extra.Core exposing (intToMonth)
+import Fuzz exposing (Fuzzer)
 import Tag exposing (..)
 
 
@@ -152,25 +147,11 @@ allTags =
     ]
 
 
-randomTag : Random.Generator Tag
-randomTag =
-    Random.Extra.sample allTags
-        |> Random.map (Maybe.withDefault FunctionalProgramming)
-
-
-randomListOfTags : Random.Generator (List Tag)
-randomListOfTags =
-    Random.Extra.rangeLengthList 0 10 randomTag
-
-
-randomListOfTagsStrings : Random.Generator (List String)
-randomListOfTagsStrings =
-    Random.map (List.map toString) randomListOfTags
-
-
-randomWord : Random.Generator String
-randomWord =
-    Random.String.rangeLengthString 1 100 Random.Char.english
+tagFuzzer : Fuzzer Tag
+tagFuzzer =
+    List.map Fuzz.constant allTags
+        |> List.map ((,) 1)
+        |> Fuzz.frequencyOrCrash
 
 
 minYear : Int
@@ -178,71 +159,22 @@ minYear =
     2000
 
 
-randomYear : Random.Generator Int
-randomYear =
-    Random.int minYear 2100
+yearFuzzer : Fuzzer Int
+yearFuzzer =
+    Fuzz.intRange minYear 2100
 
 
-randomDay : Random.Generator Int
-randomDay =
-    Random.int 1 31
+monthFuzzer : Fuzzer Month
+monthFuzzer =
+    Fuzz.intRange 1 12
+        |> Fuzz.map intToMonth
 
 
-randomDaTuple : Random.Generator DaTuple
-randomDaTuple =
-    Random.map3 (,,) randomYear Random.Date.month randomDay
+dayFuzzer : Fuzzer Int
+dayFuzzer =
+    Fuzz.intRange 1 31
 
 
-yearShrinker : Shrinker Int
-yearShrinker =
-    Shrink.atLeastInt minYear
-
-
-monthShrinker : Shrinker Month
-monthShrinker month =
-    case month of
-        Jan ->
-            empty
-
-        Feb ->
-            Jan ::: monthShrinker Jan
-
-        Mar ->
-            Feb ::: monthShrinker Feb
-
-        Apr ->
-            Mar ::: monthShrinker Mar
-
-        May ->
-            Apr ::: monthShrinker Apr
-
-        Jun ->
-            May ::: monthShrinker May
-
-        Jul ->
-            Jun ::: monthShrinker Jun
-
-        Aug ->
-            Jul ::: monthShrinker Jul
-
-        Sep ->
-            Aug ::: monthShrinker Aug
-
-        Oct ->
-            Sep ::: monthShrinker Sep
-
-        Nov ->
-            Oct ::: monthShrinker Oct
-
-        Dec ->
-            Nov ::: monthShrinker Nov
-
-
-dayShrinker : Shrinker Int
-dayShrinker =
-    Shrink.atLeastInt 1
-
-
-daTupleShrinker : Shrink.Shrinker DaTuple
-daTupleShrinker =
-    Shrink.tuple3 ( yearShrinker, monthShrinker, dayShrinker )
+daTupleFuzzer : Fuzzer DaTuple
+daTupleFuzzer =
+    Fuzz.map3 (,,) yearFuzzer monthFuzzer dayFuzzer

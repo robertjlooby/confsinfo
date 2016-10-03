@@ -1,89 +1,69 @@
 module FilteredTagTest exposing (..)
 
-import Check exposing (claim, for, is, suite, that)
-import Check.Test
+import Expect
 import FilteredTag exposing (..)
+import Fuzz exposing (Fuzzer)
 import Lazy.List exposing ((:::), empty)
-import Random
-import Random.Extra
 import Shrink
 import Tag exposing (Tag(FunctionalProgramming))
+import Test exposing (describe, fuzz, fuzz2)
 import TestHelpers exposing (..)
 
 
-randomState : Random.Generator State
-randomState =
-    Random.Extra.sample [ Included, Excluded ]
-        |> Random.map (Maybe.withDefault Excluded)
+stateFuzzer : Fuzzer State
+stateFuzzer =
+    Fuzz.frequencyOrCrash
+        [ ( 1, Fuzz.constant Included )
+        , ( 1, Fuzz.constant Excluded )
+        ]
 
 
-randomModel : Random.Generator Model
-randomModel =
-    Random.map3 (\tag state string -> { tag = tag, state = state, display = string })
-        randomTag
-        randomState
-        randomWord
+modelFuzzer : Fuzzer Model
+modelFuzzer =
+    Fuzz.map3 (\tag state string -> { tag = tag, state = state, display = string })
+        tagFuzzer
+        stateFuzzer
+        Fuzz.string
 
 
 tests =
-    Check.Test.evidenceToTest <| Check.quickCheck claims
-
-
-claims : Check.Claim
-claims =
-    suite "FilteredTag"
-        [ claim "init starts with the tag Excluded"
-            `that` (\( tag, string ) -> init tag string)
-            `is` (\( tag, string ) -> { tag = tag, state = Excluded, display = string })
-            `for` { generator = Random.map2 (,) randomTag randomWord
-                  , shrinker = Shrink.tuple ( Shrink.noShrink, Shrink.string )
-                  }
-        , claim "update with Include includes a model"
-            `that` (\model -> update Include model |> .state)
-            `is` (\_ -> Included)
-            `for` { generator = randomModel
-                  , shrinker = Shrink.noShrink
-                  }
-        , claim "update with Exclude excludes a model"
-            `that` (\model -> update Exclude model |> .state)
-            `is` (\_ -> Excluded)
-            `for` { generator = randomModel
-                  , shrinker = Shrink.noShrink
-                  }
-        , claim "initializeIncludedTag includes a model if its tag is in the list"
-            `that` (\( tags, model ) -> initializeIncludedTag tags model |> .state)
-            `is` (\_ -> Included)
-            `for` { generator =
-                        Random.map2 (\tags model -> ( toString model.tag :: tags, model ))
-                            randomListOfTagsStrings
-                            randomModel
-                  , shrinker = Shrink.noShrink
-                  }
-        , claim "initializeIncludedTag returns the model if its tag is not in the list"
-            `that` (\( tags, model ) -> initializeIncludedTag tags model)
-            `is` (\( _, model ) -> model)
-            `for` { generator =
-                        Random.map2 (\tags model -> ( List.filter (\t -> t /= toString model.tag) tags, model ))
-                            randomListOfTagsStrings
-                            randomModel
-                  , shrinker = Shrink.noShrink
-                  }
-        , claim "exclude excludes a model"
-            `that` (\model -> exclude model |> .state)
-            `is` (\_ -> Excluded)
-            `for` { generator = randomModel
-                  , shrinker = Shrink.noShrink
-                  }
-        , claim "isIncluded returns True for an Included tag"
-            `that` (\model -> isIncluded <| { model | state = Included })
-            `is` (\_ -> True)
-            `for` { generator = randomModel
-                  , shrinker = Shrink.noShrink
-                  }
-        , claim "isIncluded returns False for an Excluded tag"
-            `that` (\model -> isIncluded <| { model | state = Excluded })
-            `is` (\_ -> False)
-            `for` { generator = randomModel
-                  , shrinker = Shrink.noShrink
-                  }
+    describe "FilteredTag"
+        [ fuzz2 tagFuzzer Fuzz.string "init starts with the tag Excluded" <|
+            \tag string ->
+                (init tag string)
+                    |> Expect.equal { tag = tag, state = Excluded, display = string }
+        , fuzz modelFuzzer "update with Include includes a model" <|
+            \model ->
+                update Include model
+                    |> .state
+                    |> Expect.equal Included
+        , fuzz modelFuzzer "update with Exclude excludes a model" <|
+            \model ->
+                update Exclude model
+                    |> .state
+                    |> Expect.equal Excluded
+        , fuzz2 modelFuzzer (Fuzz.list Fuzz.string) "initializeIncludedTag includes a model if its tag is in the list" <|
+            \model strings ->
+                initializeIncludedTag (toString model.tag :: strings) model
+                    |> .state
+                    |> Expect.equal Included
+        , fuzz2 modelFuzzer (Fuzz.list Fuzz.string) "initializeIncludedTag returns the model if its tag is not in the list" <|
+            \model strings ->
+                initializeIncludedTag (List.filter ((/=) (toString model.tag)) strings) model
+                    |> Expect.equal model
+        , fuzz modelFuzzer "exclude excludes a model" <|
+            \model ->
+                exclude model
+                    |> .state
+                    |> Expect.equal Excluded
+        , fuzz modelFuzzer "isIncluded returns True for an Included tag" <|
+            \model ->
+                { model | state = Included }
+                    |> isIncluded
+                    |> Expect.equal True
+        , fuzz modelFuzzer "isIncluded returns False for an Excluded tag" <|
+            \model ->
+                { model | state = Excluded }
+                    |> isIncluded
+                    |> Expect.equal False
         ]
