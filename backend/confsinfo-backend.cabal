@@ -1,0 +1,33 @@
+name:                confsinfo-backend
+version:             0.1.0.0
+synopsis:            Initial project template from stack
+description:         Please see README.md
+homepage:            https://github.com/robertjlooby/confsinfo-backend#readme
+author:              Robert Looby
+maintainer:          robertjlooby@gmail.com
+copyright:           2016 Robert Looby
+category:            Web
+build-type:          Simple
+-- extra-source-files:
+cabal-version:       >=1.10
+
+executable confsinfo-backend-exe
+  hs-source-dirs:      app
+  main-is:             Main.hs
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  build-depends:       base
+                     , scotty
+  default-language:    Haskell2010
+
+test-suite confsinfo-backend-test
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      test
+  main-is:             Spec.hs
+  build-depends:       base
+                     , scotty
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  default-language:    Haskell2010
+
+source-repository head
+  type:     git
+  location: https://github.com/robertjlooby/confsinfo-backend
