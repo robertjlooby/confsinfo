@@ -6,15 +6,23 @@
 
 - `cd frontend`
 - `elm package install`
-- `elm make src/Main.elm --output ../dist/elm.min.js`
-- `open ../dist/index.html`
+- `elm make src/Main.elm --output ../frontend/dist/elm.min.js`
+- `cd ../backend`
+- `stack build`
+- `stack exec confsinfo-backend-exe`
+- `open http://localhost:3000`
 
 ## Tests
 
-- `cd test`
+- `cd frontend/test`
 - `elm package install`
 - `npm install`
 - `node_modules/elm-test/bin/elm-test AllTests.elm`
+
+and
+
+- `cd backend`
+- `stack test`
 
 ## Rationale
 
