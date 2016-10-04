@@ -5,9 +5,23 @@ language: node_js
 cache:
   directories:
     - frontend/tests/elm-stuff/build-artifacts
+    - $HOME/.stack
 
 node_js:
   - "5"
+
+before_install:
+  - mkdir -p ~/.local/bin
+  - export PATH=$HOME/.local/bin:$PATH
+  - export PATH=/opt/ghc/8.0.1/bin:$PATH
+  - travis_retry curl -L https://www.stackage.org/stack/linux-x86_64 | tar xz --wildcards --strip-components=1 -C ~/.local/bin '*/stack'
+
+addons:
+  apt:
+    sources:
+      - hvr-ghc
+    packages:
+      - ghc-8.0.1
 
 before_script:
   - cd frontend/test
@@ -16,3 +30,5 @@ before_script:
 
 script:
   - elm-test AllTests.elm
+  - cd ../../backend
+  - stack --no-terminal --skip-ghc-check test
