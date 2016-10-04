@@ -5,6 +5,7 @@ language: node_js
 cache:
   directories:
     - frontend/tests/elm-stuff/build-artifacts
+    - sysconfcpus
     - $HOME/.stack
 
 node_js:
@@ -15,6 +16,22 @@ before_install:
   - export PATH=$HOME/.local/bin:$PATH
   - export PATH=/opt/ghc/8.0.1/bin:$PATH
   - travis_retry curl -L https://www.stackage.org/stack/linux-x86_64 | tar xz --wildcards --strip-components=1 -C ~/.local/bin '*/stack'
+  - | # epic build time improvement - see https://github.com/elm-lang/elm-compiler/issues/1473#issuecomment-245704142
+    if [ ! -d sysconfcpus/bin ];
+    then
+      git clone https://github.com/obmarg/libsysconfcpus.git;
+      cd libsysconfcpus;
+      ./configure --prefix=$TRAVIS_BUILD_DIR/sysconfcpus;
+      make && make install;
+      cd ..;
+    fi
+
+install:
+  - npm install -g elm@0.17.1
+  - npm install -g elm-test@0.17.3
+  - mv $(npm config get prefix)/bin/elm-make $(npm config get prefix)/bin/elm-make-old
+  - echo "#\!/bin/bash\\n\\necho \"Running elm-make with sysconfcpus -n 2\"\\n\\n$TRAVIS_BUILD_DIR/sysconfcpus/bin/sysconfcpus -n 2 elm-make-old \"\$@\"" > $(npm config get prefix)/bin/elm-make
+  - chmod +x $(npm config get prefix)/bin/elm-make
 
 addons:
   apt:
@@ -25,8 +42,6 @@ addons:
 
 before_script:
   - cd frontend/test
-  - npm install -g elm@0.17.1
-  - npm install -g elm-test@0.17.3
 
 script:
   - elm-test AllTests.elm
