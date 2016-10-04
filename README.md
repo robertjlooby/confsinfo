@@ -8,9 +8,10 @@
 - `elm package install`
 - `elm make src/Main.elm --output ../frontend/dist/elm.min.js`
 - `cd ../backend`
-- `stack build`
-- `stack exec confsinfo-backend-exe`
-- `open http://localhost:3000`
+- `docker build -t confsinfo .`
+- `docker run --rm -t -p3000:3000 confsinfo`
+- `open http://localhost:3000/index.html`
+- to exit, Ctrl+C and then get the container id with `docker ps` and `docker stop <container id>`
 
 ## Tests
 
