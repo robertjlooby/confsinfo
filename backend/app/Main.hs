@@ -1,11 +1,11 @@
 {-# LANGUAGE OverloadedStrings #-}
 module Main where
 
+import Network.Wai.Middleware.RequestLogger (logStdoutDev)
+import Network.Wai.Middleware.Static (addBase, staticPolicy)
 import Web.Scotty
-import Data.Monoid (mconcat)
 
 main :: IO ()
 main = scotty 3000 $ do
-    get "/:word" $ do
-        beam <- param "word"
-        html $ mconcat ["<h1>Scotty, ", beam, " me up!</h1>"]
+    middleware logStdoutDev
+    middleware $ staticPolicy (addBase "dist")

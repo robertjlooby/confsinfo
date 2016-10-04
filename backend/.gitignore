@@ -1,4 +1,5 @@
-dist
+dist/elm.js
+dist/elm.min.js
 dist-*
 cabal-dev
 *.o
