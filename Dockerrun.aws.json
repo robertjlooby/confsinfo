@@ -1,0 +1,11 @@
+{
+  "AWSEBDockerrunVersion": 1,
+  "Image": {
+    "Name": "robertjlooby/confsinfo"
+  },
+  "Ports": [
+    {
+      "ContainerPort": "3000"
+    }
+  ]
+}
