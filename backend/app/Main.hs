@@ -9,3 +9,7 @@ main :: IO ()
 main = scotty 3000 $ do
     middleware logStdoutDev
     middleware $ staticPolicy (addBase "dist")
+
+    get "/" $ do
+        setHeader "Content-Type" "text/html"
+        file "dist/index.html"
