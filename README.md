@@ -1,6 +1,6 @@
 # confs.info
 
-[![Build Status](https://travis-ci.org/robertjlooby/confsinfo.svg?branch=master)](https://travis-ci.org/robertjlooby/confsinfo)
+[![CircleCI](https://circleci.com/gh/robertjlooby/confsinfo/tree/master.svg?style=svg)](https://circleci.com/gh/robertjlooby/confsinfo/tree/master)
 
 ## Running
 
