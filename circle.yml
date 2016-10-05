@@ -48,7 +48,7 @@ deployment:
           pwd: backend
       - docker push "robertjlooby/confsinfo:$CIRCLE_BUILD_NUM"
       - sed -i'' -e "s;%BUILD_NUM%;$CIRCLE_BUILD_NUM;g" ./.deploy/Dockerrun.aws.json
-      - eb init -r us-east-1 confsinfo-env:
+      - eb init -r us-east-1 confsinfo:
           pwd: .deploy
       - eb deploy -l $CIRCLE_BUILD_NUM:
           pwd: .deploy
