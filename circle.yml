@@ -1,0 +1,50 @@
+machine:
+  services:
+    - docker
+  python:
+    version: 2.7
+
+dependencies:
+  cache_directories:
+    - "~/.stack"
+    - frontend/tests/elm-stuff/build-artifacts
+    - sysconfcpus
+  pre:
+    - pip install awsebcli
+    - | # epic build time improvement - see https://github.com/elm-lang/elm-compiler/issues/1473#issuecomment-245704142
+      if [ ! -d sysconfcpus/bin ];
+      then
+        git clone https://github.com/obmarg/libsysconfcpus.git;
+        cd libsysconfcpus;
+        ./configure --prefix=$TRAVIS_BUILD_DIR/sysconfcpus;
+        make && make install;
+        cd ..;
+      fi
+    - npm install -g elm@0.17.1
+    - npm install -g elm-test@0.17.3
+    - mv $(npm config get prefix)/bin/elm-make $(npm config get prefix)/bin/elm-make-old
+    - echo "#\!/bin/bash\\n\\necho \"Running elm-make with sysconfcpus -n 2\"\\n\\n$TRAVIS_BUILD_DIR/sysconfcpus/bin/sysconfcpus -n 2 elm-make-old \"\$@\"" > $(npm config get prefix)/bin/elm-make
+    - chmod +x $(npm config get prefix)/bin/elm-make
+    - curl -L https://www.stackage.org/stack/linux-x86_64 | tar xz --wildcards --strip-components=1 -C ~/bin '*/stack'
+
+test:
+  override:
+    - elm make src/Main.elm --output ../backend/dist/elm.min.js:
+        pwd: frontend
+    - elm-test AllTests.elm:
+        pwd: frontend/test
+    - stack --no-terminal --skip-ghc-check test:
+        pwd: backend
+
+deployment:
+  production:
+    branch: master
+    commands:
+      - docker login -e "$DOCKER_EMAIL" -u "$DOCKER_USER" -p "$DOCKER_PASS"
+      - docker build -t "robertjlooby/confsinfo:$CIRCLE_BUILD_NUM" .
+      - docker push "robertjlooby/confsinfo:$CIRCLE_BUILD_NUM"
+      - sed -i'' -e "s;%BUILD_NUM%;$CIRCLE_BUILD_NUM;g" ./.deploy/Dockerrun.aws.json
+      - eb init -r us-east-1 confsinfo-env:
+          pwd: .deploy
+      - eb deploy -l $CIRCLE_BUILD_NUM:
+          pwd: .deploy
