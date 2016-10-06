@@ -11,7 +11,7 @@ dependencies:
     - "~/.stack"
     - "backend/.stack-work"
     - frontend/elm-stuff/build-artifacts
-    - frontend/tests/elm-stuff/build-artifacts
+    - frontend/test/elm-stuff/build-artifacts
     - ~/sysconfcpus
   pre:
     - pip install awsebcli
