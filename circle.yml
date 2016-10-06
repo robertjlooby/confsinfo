@@ -1,8 +1,8 @@
 machine:
   services:
     - docker
-  ghc:
-    version: 7.10.1
+  environment:
+    PATH: "~/.cabal/bin:/opt/cabal/1.22/bin:/opt/ghc/7.10.3/bin:$PATH"
   python:
     version: 2.7.11
 
@@ -19,20 +19,25 @@ dependencies:
       then
         git clone https://github.com/obmarg/libsysconfcpus.git;
         cd libsysconfcpus;
-        ./configure --prefix=$TRAVIS_BUILD_DIR/sysconfcpus;
+        ./configure --prefix=$HOME/sysconfcpus;
         make && make install;
         cd ..;
       fi
+    - sudo apt-get update
+    - sudo apt-get install -y software-properties-common
+    - sudo add-apt-repository -y ppa:hvr/ghc
+    - sudo apt-get update
+    - sudo apt-get install -y cabal-install-1.22 ghc-7.10.3
     - npm install -g elm@0.17.1
     - npm install -g elm-test@0.17.3
     - mv $(npm config get prefix)/bin/elm-make $(npm config get prefix)/bin/elm-make-old
-    - echo "#\!/bin/bash\\n\\necho \"Running elm-make with sysconfcpus -n 2\"\\n\\n$TRAVIS_BUILD_DIR/sysconfcpus/bin/sysconfcpus -n 2 elm-make-old \"\$@\"" > $(npm config get prefix)/bin/elm-make
+    - printf '%s\n\n' '#\!/bin/bash' 'echo "Running elm-make with sysconfcpus -n 2"' '$HOME/sysconfcpus/bin/sysconfcpus -n 2 elm-make-old "$@"' > $(npm config get prefix)/bin/elm-make
     - chmod +x $(npm config get prefix)/bin/elm-make
     - curl -L https://www.stackage.org/stack/linux-x86_64 | tar xz --wildcards --strip-components=1 -C ~/bin '*/stack'
 
 test:
   override:
-    - elm make src/Main.elm --output ../backend/dist/elm.min.js:
+    - elm make --yes src/Main.elm --output ../backend/dist/elm.min.js:
         pwd: frontend
     - elm-test AllTests.elm:
         pwd: frontend/test
