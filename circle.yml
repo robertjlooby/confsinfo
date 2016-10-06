@@ -8,13 +8,25 @@ machine:
 
 dependencies:
   cache_directories:
-    - "~/.stack"
-    - "backend/.stack-work"
+    - ~/.stack
+    - backend/.stack-work
     - frontend/elm-stuff/build-artifacts
     - frontend/test/elm-stuff/build-artifacts
     - ~/sysconfcpus
+    - ~/closure-compiler
   pre:
     - pip install awsebcli
+    - |
+      if [ ! -d $HOME/closure-compiler/compiler.jar ];
+      then
+        cd $HOME;
+        mkdir -p closure-compiler;
+        curl -L https://dl.google.com/closure-compiler/compiler-latest.zip > closure-compiler/compiler.zip;
+        apt-get install unzip;
+        cd closure-compiler;
+        unzip compiler.zip;
+        mv closure-compiler-*.jar compiler.jar;
+      fi
     - | # epic build time improvement - see https://github.com/elm-lang/elm-compiler/issues/1473#issuecomment-245704142
       if [ ! -d $HOME/sysconfcpus/bin ];
       then
@@ -35,7 +47,7 @@ dependencies:
     - printf '%s\n\n' '#\!/bin/bash' 'echo "Running elm-make with sysconfcpus -n 2"' '$HOME/sysconfcpus/bin/sysconfcpus -n 2 elm-make-old "$@"' > $(npm config get prefix)/bin/elm-make
     - chmod +x $(npm config get prefix)/bin/elm-make
     - curl -L https://www.stackage.org/stack/linux-x86_64 | tar xz --wildcards --strip-components=1 -C ~/bin '*/stack'
-    - elm make --yes src/Main.elm --output ../backend/dist/elm.min.js:
+    - elm make --yes src/Main.elm --output ../backend/dist/elm.js:
         pwd: frontend
     - elm make --yes AllTests.elm --output /dev/null:
         pwd: frontend/test
@@ -53,6 +65,8 @@ deployment:
   production:
     branch: master
     commands:
+      - java -jar ~/closure-compiler/compiler.jar --js dist/elm.js --js_output_file dist/elm.min.js:
+          pwd: backend
       - docker login -e "$DOCKER_EMAIL" -u "$DOCKER_USER" -p "$DOCKER_PASS"
       - docker build -t "robertjlooby/confsinfo:$CIRCLE_BUILD_NUM" .:
           pwd: backend
