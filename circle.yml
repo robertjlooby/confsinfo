@@ -16,7 +16,7 @@ dependencies:
   pre:
     - pip install awsebcli
     - | # epic build time improvement - see https://github.com/elm-lang/elm-compiler/issues/1473#issuecomment-245704142
-      if [ ! -d sysconfcpus/bin ];
+      if [ ! -d $HOME/sysconfcpus/bin ];
       then
         git clone https://github.com/obmarg/libsysconfcpus.git;
         cd libsysconfcpus;
