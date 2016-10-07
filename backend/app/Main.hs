@@ -13,3 +13,6 @@ main = scotty 3000 $ do
     get "/" $ do
         setHeader "Content-Type" "text/html"
         file "dist/index.html"
+
+    get "/health" $ do
+        text "OK"
