@@ -17,7 +17,7 @@ dependencies:
   pre:
     - pip install awsebcli
     - |
-      if [ ! -d $HOME/closure-compiler/compiler.jar ];
+      if [ ! -d $HOME/closure-compiler ];
       then
         cd $HOME;
         mkdir -p closure-compiler;
