@@ -1,16 +1,13 @@
 {-# LANGUAGE OverloadedStrings #-}
 module Main where
 
-import Data.Default (def)
-import Network.Wai.Middleware.RequestLogger (autoFlush, destination, outputFormat, mkRequestLogger, OutputFormat( Apache ), Destination( Logger ), IPAddrSource( FromHeader ))
+import Network.Wai.Middleware.RequestLogger (logStdoutDev)
 import Network.Wai.Middleware.Static (addBase, staticPolicy)
-import System.IO.Unsafe (unsafePerformIO)
-import System.Log.FastLogger (defaultBufSize, newFileLoggerSet)
 import Web.Scotty
 
 main :: IO ()
 main = scotty 3000 $ do
-    middleware $ unsafePerformIO $ mkRequestLogger $ def { outputFormat = Apache FromHeader, autoFlush = False, destination = Logger $ unsafePerformIO (newFileLoggerSet defaultBufSize "log/prod.log")}
+    middleware logStdoutDev
     middleware $ staticPolicy (addBase "dist")
 
     get "/" $ do
