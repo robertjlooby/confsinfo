@@ -16,6 +16,7 @@ executable confsinfo-backend-exe
   main-is:             Main.hs
   ghc-options:         -threaded -rtsopts -with-rtsopts=-N
   build-depends:       base
+                     , data-default
                      , scotty
                      , wai-extra
                      , wai-middleware-static
@@ -26,6 +27,7 @@ test-suite confsinfo-backend-test
   hs-source-dirs:      test
   main-is:             Spec.hs
   build-depends:       base
+                     , data-default
                      , scotty
                      , wai-extra
                      , wai-middleware-static
