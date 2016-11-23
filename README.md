@@ -9,7 +9,7 @@
 - `elm make src/Main.elm --output ../frontend/dist/elm.min.js`
 - `cd ../backend`
 - `docker build -t confsinfo .`
-- `docker run --rm -t -p3000:3000 confsinfo`
+- `docker run -e PORT=3000 --rm -t -p3000:3000 confsinfo`
 - `open http://localhost:3000/index.html`
 - to exit, Ctrl+C and then get the container id with `docker ps` and `docker stop <container id>`
 
