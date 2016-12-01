@@ -5,6 +5,6 @@ COPY dist /var/confsinfo/dist
 COPY confsinfo-backend.cabal stack.yaml /var/confsinfo/
 
 WORKDIR /var/confsinfo
-RUN stack build
+RUN stack build --copy-bins
 
-CMD stack exec confsinfo-backend-exe
+CMD /root/.local/bin/confsinfo-backend-exe
