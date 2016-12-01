@@ -60,12 +60,5 @@ deployment:
     commands:
       - java -jar ~/closure-compiler/compiler.jar --js dist/elm.js --js_output_file dist/elm.min.js:
           pwd: backend
-      - docker login -e "$DOCKER_EMAIL" -u "$DOCKER_USER" -p "$DOCKER_PASS"
-      - docker build -t "robertjlooby/confsinfo:$CIRCLE_BUILD_NUM" .:
+      - heroku container:push web --app confs-info:
           pwd: backend
-      - docker push "robertjlooby/confsinfo:$CIRCLE_BUILD_NUM"
-      - sed -i'' -e "s;%BUILD_NUM%;$CIRCLE_BUILD_NUM;g" ./.deploy/Dockerrun.aws.json
-      - eb init -r us-east-1 confsinfo:
-          pwd: .deploy
-      - eb deploy -l $CIRCLE_BUILD_NUM:
-          pwd: .deploy
