@@ -58,6 +58,7 @@ deployment:
       - java -jar ~/closure-compiler/compiler.jar --js dist/elm.js --js_output_file dist/elm.min.js:
           pwd: backend
       - printf '%s\n' 'machine api.heroku.com' '  login $HEROKU_EMAIL' '  password $HEROKU_API_TOKEN' > ~/.netrc
+      - chmod 0600 ~/.netrc
       - heroku plugins:install heroku-container-registry
       - heroku container:push web --app confs-info:
           pwd: backend
