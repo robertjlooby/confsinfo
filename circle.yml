@@ -5,7 +5,6 @@ machine:
 dependencies:
   cache_directories:
     - ~/.stack
-    - backend/.stack-work
     - frontend/elm-stuff/build-artifacts
     - frontend/test/elm-stuff/build-artifacts
     - ~/sysconfcpus
@@ -36,20 +35,17 @@ dependencies:
     - mv $(npm config get prefix)/bin/elm-make $(npm config get prefix)/bin/elm-make-old
     - printf '%s\n\n' '#\!/bin/bash' 'echo "Running elm-make with sysconfcpus -n 2"' '$HOME/sysconfcpus/bin/sysconfcpus -n 2 elm-make-old "$@"' > $(npm config get prefix)/bin/elm-make
     - chmod +x $(npm config get prefix)/bin/elm-make
-    - curl -L https://www.stackage.org/stack/linux-x86_64 | tar xz --wildcards --strip-components=1 -C ~/bin '*/stack'
     - elm make --yes src/Main.elm --output ../backend/dist/elm.js:
         pwd: frontend
     - elm make --yes AllTests.elm --output /dev/null:
         pwd: frontend/test
-    - stack --no-terminal --skip-ghc-check build:
+    - docker build --rm=false .:
         pwd: backend
 
 test:
   override:
     - elm-test AllTests.elm:
         pwd: frontend/test
-    - stack --no-terminal --skip-ghc-check test:
-        pwd: backend
 
 deployment:
   production:
@@ -60,8 +56,6 @@ deployment:
       - printf '%s\n' "machine api.heroku.com" "  login $HEROKU_EMAIL" "  password $HEROKU_API_TOKEN" > ~/.netrc
       - chmod 0600 ~/.netrc
       - heroku plugins:install heroku-container-registry
-      - docker build --rm=false .:
-          pwd: backend
       - docker login --email=_ --username=_ --password=$(heroku auth:token) registry.heroku.com
       - heroku container:push web --app confs-info:
           pwd: backend
