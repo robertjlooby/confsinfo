@@ -57,5 +57,5 @@ deployment:
       - chmod 0600 ~/.netrc
       - heroku plugins:install heroku-container-registry
       - docker login --email=_ --username=_ --password=$(heroku auth:token) registry.heroku.com
-      - heroku container:push registry.heroku.com/confs-info/web:
+      - heroku container:push registry.heroku.com/confs-info/web --app confs-info:
           pwd: backend
