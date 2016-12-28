@@ -1,3 +1,4 @@
+{-# LANGUAGE FlexibleInstances          #-}
 {-# LANGUAGE GADTs                      #-}
 {-# LANGUAGE GeneralizedNewtypeDeriving #-}
 {-# LANGUAGE MultiParamTypeClasses      #-}
@@ -11,7 +12,7 @@ module AddConference where
 import Database.Persist.TH
 
 share [mkPersist sqlSettings, mkMigrate "addConference"] [persistLowerCase|
-Conference
+Conference json
     name String
     deriving Show
 |]
