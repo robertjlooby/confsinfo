@@ -19,7 +19,10 @@ executable confsinfo-backend-exe
   build-depends:       base
                      , bytestring
                      , data-default
+                     , monad-control
                      , monad-logger
+                     , mtl
+                     , persistent
                      , persistent-postgresql
                      , persistent-template
                      , scotty
