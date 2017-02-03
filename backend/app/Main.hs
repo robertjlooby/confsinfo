@@ -52,6 +52,3 @@ main = do
             conference <- getConference
             id <- runStdoutLoggingT $ runDB connStr $ insert conference
             json id
-
-        get "/health" $ do
-            text "OK"
