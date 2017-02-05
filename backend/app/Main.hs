@@ -4,6 +4,7 @@
 module Main where
 
 import AddConference (Conference)
+import Configuration.Dotenv (loadFile)
 import Control.Monad.IO.Class (MonadIO)
 import Control.Monad.Logger (MonadLogger, runStdoutLoggingT)
 import Control.Monad.Reader (ReaderT)
@@ -30,6 +31,7 @@ getConnStr = fmap pack $ getEnv "DATABASE_URL"
 
 main :: IO ()
 main = do
+    loadFile False "config/config.env"
     connStr <- getConnStr
     runStdoutLoggingT $ runDB connStr migrateAll
     port <- getPort

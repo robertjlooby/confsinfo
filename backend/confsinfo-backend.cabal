@@ -19,6 +19,7 @@ executable confsinfo-backend-exe
   build-depends:       base
                      , bytestring
                      , data-default
+                     , dotenv
                      , monad-control
                      , monad-logger
                      , mtl
