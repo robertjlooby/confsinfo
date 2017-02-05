@@ -4,16 +4,10 @@
 
 ## Dependencies
 
-- [stack](https://docs.haskellstack.org/en/stable/README/)
 - [elm](https://guide.elm-lang.org/install.html)
 - [docker](https://www.docker.com/products/overview)
-- [postgres](https://www.postgresql.org/download/)
 
 ## Running
-
-Make the confsinfo table:
-
-`createdb confsinfo`
 
 #### Compile Elm code:
 - `cd frontend`
@@ -22,17 +16,8 @@ Make the confsinfo table:
 
 #### Build and run server
 - `cd ../backend`
-- `docker build -t confsinfo .`
-- `docker run -e PORT=3000 --rm -t -p3000:3000 confsinfo`
+- `docker-compose up`
 - `open http://localhost:3000/index.html`
-- to exit, Ctrl+C and then get the container id with `docker ps` and `docker stop <container id>`
-
-OR
-
-- `cd ../backend`
-- `stack build`
-- `PORT=3000 DATABASE_URL="postgres://<user>:<password>@localhost:5432/confsinfo" stack exec confsinfo-backend-exe`
-
 
 ## Tests
 
@@ -44,7 +29,7 @@ OR
 and
 
 - `cd backend`
-- `stack test`
+- `docker-compose -f docker-compose.yml -f docker-compose.test.yml run web`
 
 ## Rationale
 
