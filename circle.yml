@@ -4,13 +4,11 @@ machine:
 
 dependencies:
   cache_directories:
-    - ~/.stack
     - frontend/elm-stuff/build-artifacts
     - frontend/test/elm-stuff/build-artifacts
     - ~/sysconfcpus
     - ~/closure-compiler
   pre:
-    - sudo pip install docker-compose
     - |
       if [ ! -d $HOME/closure-compiler ];
       then
