@@ -29,7 +29,7 @@
 and
 
 - `cd backend`
-- `docker-compose -f docker-compose.yml -f docker-compose.test.yml run web`
+- `docker-compose -f docker-compose.test.yml run test`
 
 ## Rationale
 
