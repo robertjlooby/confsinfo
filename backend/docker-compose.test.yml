@@ -1,13 +1,4 @@
-db:
-  image: postgres
-  environment:
-    POSTGRES_USER: 'confsinfo'
-web:
-  build: .
-  command: sh -c 'stack test'
-  volumes:
-    - .:/var/confsinfo
-  ports:
-    - "3000:3000"
-  links:
-    - db
+version: '2'
+services:
+  web:
+    command: sh -c 'stack test'
