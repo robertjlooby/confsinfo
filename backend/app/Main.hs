@@ -1,23 +1,23 @@
-{-# LANGUAGE FlexibleContexts #-}
 {-# LANGUAGE OverloadedStrings #-}
 
 module Main where
 
 import Configuration.Dotenv (loadFile)
+import Conference (create, findAll)
 import Data.Default (def)
 import Network.Wai.Middleware.RequestLogger (autoFlush, outputFormat, mkRequestLogger, OutputFormat( Apache ), IPAddrSource( FromHeader ))
 import Network.Wai.Middleware.Static (addBase, staticPolicy)
-import System.Environment (getEnv)
+import RunMigrations (runAllMigrations)
+import Util (getConn, getPort)
 import Web.Scotty
-
-getPort :: IO Int
-getPort = fmap read (getEnv "PORT")
 
 main :: IO ()
 main = do
     loadFile False "config/config.env"
+    conn <- getConn
+    runAllMigrations conn
     port <- getPort
-    requestLogger <- mkRequestLogger def { outputFormat = Apache FromHeader, autoFlush = False }
+    requestLogger <- mkRequestLogger def { autoFlush = True }
     scotty port $ do
         middleware requestLogger
         middleware $ staticPolicy (addBase "dist")
@@ -25,3 +25,12 @@ main = do
         get "/" $ do
             setHeader "Content-Type" "text/html"
             file "dist/index.html"
+
+        get "/conferences" $ do
+            conferences <- liftAndCatchIO $ findAll conn
+            json conferences
+
+        post "/conferences" $ do
+            conference <- jsonData
+            conference' <- liftAndCatchIO $ create conn conference
+            json conference'

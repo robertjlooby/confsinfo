@@ -13,12 +13,22 @@ cabal-version:       >=1.10
 
 executable confsinfo-backend-exe
   hs-source-dirs:      app
+                     , app/models
+                     , db
   main-is:             Main.hs
+  other-modules:       Conference
+                     , RunMigrations
+                     , Util
   ghc-options:         -threaded -rtsopts -with-rtsopts=-N
   build-depends:       base
+                     , aeson
+                     , bytestring
                      , data-default
                      , dotenv
+                     , postgresql-simple
+                     , postgresql-simple-migration
                      , scotty
+                     , time
                      , wai-extra
                      , wai-middleware-static
   default-language:    Haskell2010
@@ -26,12 +36,23 @@ executable confsinfo-backend-exe
 test-suite confsinfo-backend-test
   type:                exitcode-stdio-1.0
   hs-source-dirs:      test
+                     , app
+                     , app/models
+                     , db
   main-is:             Spec.hs
+  other-modules:       Conference
+                     , ConferenceSpec
+                     , RunMigrations
+                     ,  Util
   build-depends:       base
-                     , data-default
-                     , scotty
-                     , wai-extra
-                     , wai-middleware-static
+                     , aeson
+                     , bytestring
+                     , dotenv
+                     , hspec
+                     , QuickCheck
+                     , postgresql-simple
+                     , postgresql-simple-migration
+                     , time
   ghc-options:         -threaded -rtsopts -with-rtsopts=-N
   default-language:    Haskell2010
 
