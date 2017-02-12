@@ -47,7 +47,7 @@ test:
   override:
     - elm-test AllTests.elm:
         pwd: frontend/test
-    - docker-compose -f docker-compose.ci.yml run web:
+    - docker-compose -f docker-compose.ci.yml run test:
         pwd: backend
 
 deployment:

@@ -2,8 +2,8 @@ db:
   image: postgres
   environment:
     POSTGRES_USER: 'confsinfo'
-web:
+test:
   image: registry.heroku.com/confs-info/web
-  command: sh -c 'stack test'
+  command: stack test
   links:
     - db
