@@ -16,7 +16,7 @@
 
 #### Build and run server
 - `cd ../backend`
-- `docker-compose up`
+- `docker-compose up web`
 - `open http://localhost:3000/index.html`
 
 ## Tests
@@ -29,7 +29,7 @@
 and
 
 - `cd backend`
-- `docker-compose -f docker-compose.yml -f docker-compose.test.yml run web`
+- `docker-compose run test`
 
 ## Rationale
 

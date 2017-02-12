@@ -4,7 +4,7 @@ services:
     image: postgres
     environment:
       POSTGRES_USER: 'confsinfo'
-  web:
+  web: &WEB
     build: .
     command: sh -c 'stack build && stack exec confsinfo-backend-exe'
     volumes:
@@ -13,3 +13,6 @@ services:
       - "3000:3000"
     depends_on:
       - db
+  test:
+    <<: *WEB
+    command: stack test
