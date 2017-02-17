@@ -2,15 +2,14 @@ module Model exposing (Model, Msg(..), conferencesToShow, init, update, urlUpdat
 
 import Conference
 import Date
-import DaTuple exposing (DaTuple, compare')
+import DaTuple exposing (DaTuple, compareDaTuples)
 import GenericSet as GSet
 import FilteredTagSection
 import Html exposing (text)
-import Html.App as App
 import Html.Attributes exposing (class, href)
 import Html.Events
 import Navigation exposing (modifyUrl)
-import Route.QueryString exposing (QueryString, add, all, empty, one, render, string, parse)
+import QueryString exposing (QueryString, add, all, empty, one, render, string, parse)
 import Tag exposing (Tag)
 import Task exposing (Task)
 import Time exposing (Time)
@@ -27,9 +26,12 @@ type alias Model =
     }
 
 
-init : Model -> QueryString -> ( Model, Cmd Msg )
-init initialModel queryString =
+init : Model -> Navigation.Location -> ( Model, Cmd Msg )
+init initialModel { search } =
     let
+        queryString =
+            parse search
+
         tags =
             all "tag" queryString
 
@@ -39,7 +41,7 @@ init initialModel queryString =
         model =
             initializeIncludedTags tags initialModel
                 |> update (IncludePastEvents includePastEvents)
-                |> fst
+                |> Tuple.first
     in
         ( model, initializeDate )
 
@@ -49,7 +51,8 @@ init initialModel queryString =
 
 
 type Msg
-    = UpdateTag FilteredTagSection.Msg
+    = NoOp
+    | UpdateTag FilteredTagSection.Msg
     | IncludePastEvents Bool
     | SetCurrentDate (Maybe Time)
 
@@ -57,6 +60,9 @@ type Msg
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
+        NoOp ->
+            model ! []
+
         UpdateTag action ->
             let
                 newModel =
@@ -109,7 +115,7 @@ initializeIncludedTags includedTags model =
 
 initializeDate : Cmd Msg
 initializeDate =
-    Task.perform (\_ -> setCurrentDate Nothing)
+    Task.perform
         (\time -> setCurrentDate <| Just time)
         Time.now
 
@@ -135,11 +141,11 @@ includedTags model =
 
 view : Model -> Html.Html Msg
 view model =
-    Html.div [ class "container" ]
-        <| List.concat
+    Html.div [ class "container" ] <|
+        List.concat
             [ allTagsView model.tags
             , [ includePastEventsButtonView model.includePastEvents ]
-            , [ App.map UpdateTag FilteredTagSection.resetButtonView ]
+            , [ Html.map UpdateTag FilteredTagSection.resetButtonView ]
             , conferencesView model
             , [ sourceCodeLink ]
             ]
@@ -183,7 +189,7 @@ conferencesToShow : Model -> List Conference.Model
 conferencesToShow model =
     let
         isInFuture conference =
-            compare' model.currentDate conference.startDate /= GT
+            compareDaTuples model.currentDate conference.startDate /= GT
 
         confsToFilterOnTags =
             if model.includePastEvents then
@@ -203,4 +209,4 @@ allTagsView : List FilteredTagSection.Model -> List (Html.Html Msg)
 allTagsView filteredTagSections =
     List.map FilteredTagSection.view filteredTagSections
         |> List.concat
-        |> List.map (App.map UpdateTag)
+        |> List.map (Html.map UpdateTag)

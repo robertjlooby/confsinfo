@@ -29,8 +29,8 @@ dependencies:
         make && make install;
         cd ..;
       fi
-    - npm install -g elm@0.17.1
-    - npm install -g elm-test@0.17.3
+    - npm install -g elm@0.18.0
+    - npm install -g elm-test@0.18.2
     - mv $(npm config get prefix)/bin/elm-make $(npm config get prefix)/bin/elm-make-old
     - printf '%s\n\n' '#\!/bin/bash' 'echo "Running elm-make with sysconfcpus -n 2"' '$HOME/sysconfcpus/bin/sysconfcpus -n 2 elm-make-old "$@"' > $(npm config get prefix)/bin/elm-make
     - chmod +x $(npm config get prefix)/bin/elm-make

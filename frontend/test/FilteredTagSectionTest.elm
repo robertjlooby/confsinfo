@@ -26,9 +26,9 @@ modelPartsForUpdateFuzzer =
         |> Fuzz.map
             (\( s, t1, t, t2 ) ->
                 ( s
-                , List.filter (\t' -> (t'.tag /= t.tag)) t1
+                , List.filter (\t2 -> (t2.tag /= t.tag)) t1
                 , t
-                , List.filter (\t' -> (t'.tag /= t.tag)) t2
+                , List.filter (\t2 -> (t2.tag /= t.tag)) t2
                 )
             )
 

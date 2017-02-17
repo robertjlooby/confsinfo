@@ -3,15 +3,13 @@ module Main exposing (main)
 import Model
 import InitialData
 import Navigation
-import Route.QueryString exposing (parse)
 
 
-main : Program Never
+main : Program Never Model.Model Model.Msg
 main =
-    Navigation.program (Navigation.makeParser (\{ search } -> parse search))
+    Navigation.program (\_ -> Model.NoOp)
         { init = Model.init InitialData.model
         , view = Model.view
         , update = Model.update
-        , urlUpdate = Model.urlUpdate
         , subscriptions = (\_ -> Sub.none)
         }

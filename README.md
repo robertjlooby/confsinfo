@@ -12,7 +12,7 @@
 #### Compile Elm code:
 - `cd frontend`
 - `elm package install`
-- `elm make src/Main.elm --output ../frontend/dist/elm.min.js`
+- `elm make src/Main.elm --output ../backend/dist/elm.min.js`
 
 #### Build and run server
 - `cd ../backend`

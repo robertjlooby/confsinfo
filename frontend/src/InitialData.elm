@@ -11,7 +11,7 @@ import Tag exposing (Tag(..))
 model : Model.Model
 model =
     { conferences =
-        GenericSet.fromList Conference.compare'
+        GenericSet.fromList Conference.compareConferences
             [ { name = "@Swift"
               , link = "http://atswift.io/index-en.html"
               , startDate = ( 2016, Jan, 10 )
