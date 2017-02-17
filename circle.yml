@@ -34,12 +34,10 @@ dependencies:
     - mv $(npm config get prefix)/bin/elm-make $(npm config get prefix)/bin/elm-make-old
     - printf '%s\n\n' '#\!/bin/bash' 'echo "Running elm-make with sysconfcpus -n 2"' '$HOME/sysconfcpus/bin/sysconfcpus -n 2 elm-make-old "$@"' > $(npm config get prefix)/bin/elm-make
     - chmod +x $(npm config get prefix)/bin/elm-make
-    - elm make --yes src/Main.elm --output ../backend/dist/elm.js:
+    - elm make --yes src/Main.elm --output ../backend/dist/elm.min.js:
         pwd: frontend
     - elm make --yes AllTests.elm --output /dev/null:
         pwd: frontend/test
-    - java -jar ~/closure-compiler/compiler.jar --js dist/elm.js --js_output_file dist/elm.min.js:
-        pwd: backend
     - docker build --rm=false -t registry.heroku.com/confs-info/web .:
         pwd: backend
 
