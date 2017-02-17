@@ -1,4 +1,4 @@
-module Conference exposing (Model, CFPStatus(..), cfpStatus, shouldShow, compare', view)
+module Conference exposing (Model, CFPStatus(..), cfpStatus, shouldShow, compareConferences, view)
 
 import DaTuple exposing (DaTuple)
 import Html exposing (text)
@@ -30,14 +30,14 @@ shouldShow includedTags conference =
     List.all (\tag -> List.member tag conference.tags) includedTags
 
 
-compare' : Model -> Model -> Order
-compare' conf conf' =
+compareConferences : Model -> Model -> Order
+compareConferences conf conf2 =
     let
         dateCompare =
-            DaTuple.compare' conf.startDate conf'.startDate
+            DaTuple.compareDaTuples conf.startDate conf2.startDate
     in
         if dateCompare == EQ then
-            compare conf.name conf'.name
+            compare conf.name conf2.name
         else
             dateCompare
 
@@ -54,7 +54,7 @@ type CFPStatus
 
 cfpStatus : DaTuple -> Model -> ( CFPStatus, Maybe DaTuple )
 cfpStatus currentDate conference =
-    case Maybe.map (DaTuple.compare' currentDate) conference.cfpEndDate of
+    case Maybe.map (DaTuple.compareDaTuples currentDate) conference.cfpEndDate of
         Nothing ->
             ( Closed, Nothing )
 
@@ -62,7 +62,7 @@ cfpStatus currentDate conference =
             ( Closed, Nothing )
 
         Just _ ->
-            case Maybe.map (DaTuple.compare' currentDate) conference.cfpStartDate of
+            case Maybe.map (DaTuple.compareDaTuples currentDate) conference.cfpStartDate of
                 Just LT ->
                     ( NotYetOpen, conference.cfpStartDate )
 

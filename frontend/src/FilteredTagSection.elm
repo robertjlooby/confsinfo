@@ -2,7 +2,6 @@ module FilteredTagSection exposing (Model, initializeIncludedTags, includedTags,
 
 import FilteredTag
 import Html exposing (text)
-import Html.App as App
 import Html.Attributes exposing (class)
 import Html.Events
 import Tag exposing (Tag)
@@ -62,8 +61,8 @@ view : Model -> List (Html.Html Msg)
 view { sectionName, tags } =
     [ Html.div [ class "row" ]
         [ Html.h5 [] [ text sectionName ] ]
-    , Html.div [ class "row" ]
-        <| List.map (\tag -> App.map (UpdateTag tag.tag) (FilteredTag.view tag)) tags
+    , Html.div [ class "row" ] <|
+        List.map (\tag -> Html.map (UpdateTag tag.tag) (FilteredTag.view tag)) tags
     ]
 
 

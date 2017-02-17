@@ -18,14 +18,14 @@ tests =
                     |> Expect.equal (toString m ++ " " ++ toString d ++ ", " ++ toString y)
         , let
             daysWithinMonthFuzzer =
-                Fuzz.map2 (\( y, m, d ) d' -> ( y, m, d, d + d' ))
+                Fuzz.map2 (\( y, m, d ) d2 -> ( y, m, d, d + d2 ))
                     daTupleFuzzer
                     dayFuzzer
           in
             fuzz daysWithinMonthFuzzer "formatRange formats days within a month" <|
-                \( y, m, d, d' ) ->
-                    (formatRange ( y, m, d ) ( y, m, d' ))
-                        |> Expect.equal (toString m ++ " " ++ toString d ++ "-" ++ toString d' ++ ", " ++ toString y)
+                \( y, m, d, d2 ) ->
+                    (formatRange ( y, m, d ) ( y, m, d2 ))
+                        |> Expect.equal (toString m ++ " " ++ toString d ++ "-" ++ toString d2 ++ ", " ++ toString y)
           --        , let
           --            unorderedMonths =
           --                (\( ( _, m, _ ), m', _ ) -> monthToInt m >= monthToInt m')
@@ -61,7 +61,7 @@ tests =
           --                    }
         , fuzz daTupleFuzzer "compare returns EQ for the same date" <|
             \date ->
-                (compare' date date)
+                (compareDaTuples date date)
                     |> Expect.equal EQ
           --        , let
           --            sameYear =

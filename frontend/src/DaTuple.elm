@@ -1,4 +1,4 @@
-module DaTuple exposing (DaTuple, formatDate, formatRange, compare')
+module DaTuple exposing (DaTuple, formatDate, formatRange, compareDaTuples)
 
 import Date exposing (Month)
 import Date.Extra.Core exposing (monthToInt)
@@ -16,50 +16,50 @@ formatDate date =
 formatRange : DaTuple -> DaTuple -> String
 formatRange ( startYear, startMonth, startDay ) ( endYear, endMonth, endDay ) =
     let
-        startYear' =
+        startYearString =
             toString startYear
 
-        startMonth' =
+        startMonthString =
             toString startMonth
 
-        startDay' =
+        startDayString =
             toString startDay
 
-        endYear' =
+        endYearString =
             toString endYear
 
-        endMonth' =
+        endMonthString =
             toString endMonth
 
-        endDay' =
+        endDayString =
             toString endDay
     in
-        if startYear' /= endYear' then
-            startMonth' ++ " " ++ startDay' ++ ", " ++ startYear' ++ "-" ++ endMonth' ++ " " ++ endDay' ++ ", " ++ endYear'
-        else if startMonth' == endMonth' && startDay' == endDay' then
-            startMonth' ++ " " ++ startDay' ++ ", " ++ startYear'
-        else if startMonth' == endMonth' then
-            startMonth' ++ " " ++ startDay' ++ "-" ++ endDay' ++ ", " ++ startYear'
+        if startYearString /= endYearString then
+            startMonthString ++ " " ++ startDayString ++ ", " ++ startYearString ++ "-" ++ endMonthString ++ " " ++ endDayString ++ ", " ++ endYearString
+        else if startMonthString == endMonthString && startDayString == endDayString then
+            startMonthString ++ " " ++ startDayString ++ ", " ++ startYearString
+        else if startMonthString == endMonthString then
+            startMonthString ++ " " ++ startDayString ++ "-" ++ endDayString ++ ", " ++ startYearString
         else
-            startMonth' ++ " " ++ startDay' ++ "-" ++ endMonth' ++ " " ++ endDay' ++ ", " ++ startYear'
+            startMonthString ++ " " ++ startDayString ++ "-" ++ endMonthString ++ " " ++ endDayString ++ ", " ++ startYearString
 
 
-compare' : DaTuple -> DaTuple -> Order
-compare' date date' =
+compareDaTuples : DaTuple -> DaTuple -> Order
+compareDaTuples date date2 =
     let
         ( y, m, d ) =
             date
 
-        ( y', m', d' ) =
-            date'
+        ( y2, m2, d2 ) =
+            date2
     in
-        if y > y' then
+        if y > y2 then
             GT
-        else if y < y' then
+        else if y < y2 then
             LT
-        else if (monthToInt m) > (monthToInt m') then
+        else if (monthToInt m) > (monthToInt m2) then
             GT
-        else if (monthToInt m) < (monthToInt m') then
+        else if (monthToInt m) < (monthToInt m2) then
             LT
         else
-            compare d d'
+            compare d d2

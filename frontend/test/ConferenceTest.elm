@@ -79,12 +79,12 @@ tests =
           --                            |> Random.Extra.filter (\( currentDate, startDate, _ ) -> LT == DT.compare' currentDate startDate)
           --                  , shrinker = Shrink.tuple3 ( daTupleShrinker, daTupleShrinker, daTupleShrinker )
           --                  }
-        , fuzz2 daTupleFuzzer daTupleFuzzer "compare' sorts first by start date" <|
+        , fuzz2 daTupleFuzzer daTupleFuzzer "compareConferences sorts first by start date" <|
             \d1 d2 ->
-                compare' { blankConf | startDate = d1 } { blankConf | startDate = d2 }
-                    |> Expect.equal (DT.compare' d1 d2)
-        , fuzz3 daTupleFuzzer Fuzz.string Fuzz.string "compare' sorts by name if the start date is the same" <|
+                compareConferences { blankConf | startDate = d1 } { blankConf | startDate = d2 }
+                    |> Expect.equal (DT.compareDaTuples d1 d2)
+        , fuzz3 daTupleFuzzer Fuzz.string Fuzz.string "compareConferences sorts by name if the start date is the same" <|
             \d n1 n2 ->
-                compare' { blankConf | name = n1, startDate = d } { blankConf | name = n2, startDate = d }
+                compareConferences { blankConf | name = n1, startDate = d } { blankConf | name = n2, startDate = d }
                     |> Expect.equal (compare n1 n2)
         ]

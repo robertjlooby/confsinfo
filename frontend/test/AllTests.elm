@@ -7,7 +7,7 @@ import FilteredTagSectionTest
 import ModelTest
 import Json.Encode exposing (Value)
 import Test exposing (Test, describe)
-import Test.Runner.Node exposing (run)
+import Test.Runner.Node exposing (TestProgram, run)
 
 
 tests : Test
@@ -21,7 +21,7 @@ tests =
         ]
 
 
-main : Program Value
+main : TestProgram
 main =
     run emit tests
 

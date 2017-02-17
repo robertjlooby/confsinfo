@@ -8,7 +8,7 @@
     "url": "https://github.com/robertjlooby/confsinfo"
   },
   "dependencies": {
-    "elm-test": "0.17.3"
+    "elm-test": "0.18.2"
   },
   "license": "MIT"
 }
