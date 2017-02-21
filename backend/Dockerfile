@@ -6,6 +6,6 @@ RUN apt-get update && \
 COPY . /var/confsinfo
 
 WORKDIR /var/confsinfo
-RUN stack --no-terminal build --copy-bins
+RUN stack --no-terminal --install-ghc build --copy-bins
 
 CMD /root/.local/bin/confsinfo-backend-exe
