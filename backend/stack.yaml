@@ -2,14 +2,14 @@
 # For more information, see: http://docs.haskellstack.org/en/stable/yaml_configuration/
 
 # Specifies the GHC version and set of packages available (e.g., lts-3.5, nightly-2015-09-21, ghc-7.10.2)
-resolver: lts-7.18
+resolver: lts-8.2
 
 # Local packages, usually specified by relative directory name
 packages:
 - '.'
 # Packages to be pulled from upstream that are not in the resolver (e.g., acme-missiles-0.3)
 extra-deps:
-  - postgresql-simple-migration-0.1.8.0
+  - postgresql-simple-migration-0.1.9.0
 
 # Override default flag values for local packages and extra-deps
 flags: {}
