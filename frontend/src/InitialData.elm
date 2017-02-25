@@ -19,7 +19,7 @@ model =
               , location = "Beijing, China"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, China, Swift, IOS ]
+              , tags = [ Tag "English", Tag "Developers", Tag "China", Tag "Swift", Tag "IOS" ]
               }
             , { name = "NDC London Workshops"
               , link = "http://ndc-london.com/"
@@ -28,7 +28,7 @@ model =
               , location = "London, England"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, England, Agile, DotNet, General ]
+              , tags = [ Tag "English", Tag "Developers", Tag "England", Tag "Agile", Tag "DotNet", Tag "General" ]
               }
             , { name = "NDC London"
               , link = "http://ndc-london.com/"
@@ -37,7 +37,7 @@ model =
               , location = "London, England"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, England, Agile, DotNet, General ]
+              , tags = [ Tag "English", Tag "Developers", Tag "England", Tag "Agile", Tag "DotNet", Tag "General" ]
               }
             , { name = "Internet of Things Milan"
               , link = "https://www.mongodb.com/events/internet-of-things-milan"
@@ -46,7 +46,7 @@ model =
               , location = "Milan, Italy"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Italy, MongoDB, BigData, InternetOfThings ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Italy", Tag "MongoDB", Tag "BigData", Tag "InternetOfThings" ]
               }
             , { name = "JS Remote Conf"
               , link = "https://allremoteconfs.com/js-2016"
@@ -55,7 +55,7 @@ model =
               , location = "Remote"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Remote, JavaScript ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Remote", Tag "JavaScript" ]
               }
             , { name = "GR8Conf IN"
               , link = "http://gr8conf.in/"
@@ -64,7 +64,7 @@ model =
               , location = "New Delhi, India"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, India, Java, Groovy, Grails, Gradle ]
+              , tags = [ Tag "English", Tag "Developers", Tag "India", Tag "Java", Tag "Groovy", Tag "Grails", Tag "Gradle" ]
               }
             , { name = "O'Reilly Design Conference"
               , link = "http://conferences.oreilly.com/design/ux-interaction-iot-us"
@@ -73,7 +73,7 @@ model =
               , location = "San Francisco, CA"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, USA, UX ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "UX" ]
               }
             , { name = "SVG Summit"
               , link = "http://environmentsforhumans.com/2016/svg-summit/"
@@ -82,7 +82,7 @@ model =
               , location = "Remote"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Designers, Developers, Remote, SVG ]
+              , tags = [ Tag "English", Tag "Designers", Tag "Developers", Tag "Remote", Tag "SVG" ]
               }
             , { name = "/dev/winter"
               , link = "http://devcycles.net/2016/winter/"
@@ -91,7 +91,7 @@ model =
               , location = "Cambridge, England"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, England, DevOps, NoSQL, FunctionalProgramming ]
+              , tags = [ Tag "English", Tag "Developers", Tag "England", Tag "DevOps", Tag "NoSQL", Tag "FunctionalProgramming" ]
               }
             , { name = "PhoneGap Day"
               , link = "http://pgday.phonegap.com/us2016/"
@@ -100,7 +100,7 @@ model =
               , location = "Lehi, UT"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, USA, PhoneGap, Mobile ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "PhoneGap", Tag "Mobile" ]
               }
             , { name = "dotSwift"
               , link = "http://www.dotswift.io/"
@@ -109,7 +109,7 @@ model =
               , location = "Paris, France"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, France, Swift ]
+              , tags = [ Tag "English", Tag "Developers", Tag "France", Tag "Swift" ]
               }
             , { name = "PHPBenelux"
               , link = "http://conference.phpbenelux.eu/2016/"
@@ -118,7 +118,7 @@ model =
               , location = "Antwerp, Belgium"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Belgium, PHP ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Belgium", Tag "PHP" ]
               }
             , { name = "AlterConf D.C."
               , link = "http://www.alterconf.com/sessions/washington-dc"
@@ -127,7 +127,7 @@ model =
               , location = "Washington, DC"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Designers, Developers, USA, Diversity, SoftSkills ]
+              , tags = [ Tag "English", Tag "Designers", Tag "Developers", Tag "USA", Tag "Diversity", Tag "SoftSkills" ]
               }
             , { name = "FOSDEM"
               , link = "https://fosdem.org/2016/"
@@ -136,7 +136,7 @@ model =
               , location = "Brussels, Belgium"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Belgium, OpenSource, General ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Belgium", Tag "OpenSource", Tag "General" ]
               }
             , { name = "PgConf.Russia"
               , link = "https://pgconf.ru/"
@@ -145,7 +145,7 @@ model =
               , location = "Moscow, Russia"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Russian, Developers, Russia, PostgreSQL ]
+              , tags = [ Tag "English", Tag "Russian", Tag "Developers", Tag "Russia", Tag "PostgreSQL" ]
               }
             , { name = "Compose 2016"
               , link = "http://www.composeconference.org/"
@@ -154,7 +154,7 @@ model =
               , location = "Brooklyn, NY"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, USA, FunctionalProgramming, Haskell, FSharp, OCaml, SML ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "FunctionalProgramming", Tag "Haskell", Tag "FSharp", Tag "OCaml", Tag "SML" ]
               }
             , { name = "RubyFuza"
               , link = "http://www.rubyfuza.org/"
@@ -163,7 +163,7 @@ model =
               , location = "Cape Town, South Africa"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, SouthAfrica, Ruby ]
+              , tags = [ Tag "English", Tag "Developers", Tag "SouthAfrica", Tag "Ruby" ]
               }
             , { name = "SunshinePHP"
               , link = "http://2016.sunshinephp.com/"
@@ -172,7 +172,7 @@ model =
               , location = "Miami, FL"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, USA, PHP ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "PHP" ]
               }
             , { name = "The Microservices Conference"
               , link = "http://microxchg.io/2016/"
@@ -181,7 +181,7 @@ model =
               , location = "Berlin, Germany"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Germany, Microservices ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Germany", Tag "Microservices" ]
               }
             , { name = "UX/DEV Summit"
               , link = "http://uxdsummit.com/"
@@ -190,7 +190,7 @@ model =
               , location = "Fort Lauderdale, FL"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Designers, Developers, USA, UX, AngularJS, Ember, React ]
+              , tags = [ Tag "English", Tag "Designers", Tag "Developers", Tag "USA", Tag "UX", Tag "AngularJS", Tag "Ember", Tag "React" ]
               }
             , { name = "Forward JS Workshops"
               , link = "http://forwardjs.com/home"
@@ -199,7 +199,7 @@ model =
               , location = "San Francisco, CA"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, USA, JavaScript, AngularJS, React, NodeJS ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "JavaScript", Tag "AngularJS", Tag "React", Tag "NodeJS" ]
               }
             , { name = "Jfokus"
               , link = "http://www.jfokus.se/jfokus/"
@@ -208,7 +208,7 @@ model =
               , location = "Stockholm, Sweden"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Sweden, Java, General ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Sweden", Tag "Java", Tag "General" ]
               }
             , { name = "Jfokus IoT"
               , link = "http://www.jfokus.se/iot/"
@@ -217,7 +217,7 @@ model =
               , location = "Stockholm, Sweden"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Sweden, InternetOfThings ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Sweden", Tag "InternetOfThings" ]
               }
             , { name = "Webstock"
               , link = "http://www.webstock.org.nz/16/"
@@ -226,7 +226,7 @@ model =
               , location = "Wellington, New Zealand"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Designers, Developers, NewZealand, General ]
+              , tags = [ Tag "English", Tag "Designers", Tag "Developers", Tag "NewZealand", Tag "General" ]
               }
             , { name = "Forward JS"
               , link = "http://forwardjs.com/home"
@@ -235,7 +235,7 @@ model =
               , location = "San Francisco, CA"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, USA, JavaScript, AngularJS, React, NodeJS ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "JavaScript", Tag "AngularJS", Tag "React", Tag "NodeJS" ]
               }
             , { name = "RubyConf Australia"
               , link = "http://www.rubyconf.org.au/2016"
@@ -244,7 +244,7 @@ model =
               , location = "Gold Coast, Australia"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Australia, Ruby ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Australia", Tag "Ruby" ]
               }
             , { name = "Clojure Remote"
               , link = "http://clojureremote.com/"
@@ -253,7 +253,7 @@ model =
               , location = "Remote"
               , cfpStartDate = Just ( 2015, Oct, 30 )
               , cfpEndDate = Just ( 2015, Dec, 31 )
-              , tags = [ English, Developers, Remote, Clojure, FunctionalProgramming ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Remote", Tag "Clojure", Tag "FunctionalProgramming" ]
               }
             , { name = "Forward JS Workshops"
               , link = "http://forwardjs.com/home"
@@ -262,7 +262,7 @@ model =
               , location = "San Francisco, CA"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, USA, JavaScript, AngularJS, React, NodeJS ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "JavaScript", Tag "AngularJS", Tag "React", Tag "NodeJS" ]
               }
             , { name = "DeveloperWeek"
               , link = "http://www.developerweek.com/"
@@ -271,7 +271,7 @@ model =
               , location = "San Francisco, CA"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2015, Nov, 23 )
-              , tags = [ English, Developers, USA, JavaScript, NodeJS, Python, PHP, DevOps, Ruby, Mobile, NoSQL, General ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "JavaScript", Tag "NodeJS", Tag "Python", Tag "PHP", Tag "DevOps", Tag "Ruby", Tag "Mobile", Tag "NoSQL", Tag "General" ]
               }
             , { name = "DevNexus"
               , link = "http://devnexus.com/s/index"
@@ -280,7 +280,7 @@ model =
               , location = "Atlanta, GA"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, USA, Agile, BigData, Java, JavaScript, General ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "Agile", Tag "BigData", Tag "Java", Tag "JavaScript", Tag "General" ]
               }
             , { name = "Spark Summit East"
               , link = "https://spark-summit.org/east-2016/"
@@ -289,7 +289,7 @@ model =
               , location = "New York, NY"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, USA, BigData ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "BigData" ]
               }
             , { name = "Elastic{ON}"
               , link = "https://www.elastic.co/elasticon"
@@ -298,7 +298,7 @@ model =
               , location = "San Francisco, CA"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2015, Nov, 30 )
-              , tags = [ English, Developers, USA, MongoDB, BigData, Elasticsearch, Logstash ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "MongoDB", Tag "BigData", Tag "Elasticsearch", Tag "Logstash" ]
               }
             , { name = "DrupalCon Asia"
               , link = "https://events.drupal.org/asia2016"
@@ -307,7 +307,7 @@ model =
               , location = "Mumbai, India"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2015, Nov, 2 )
-              , tags = [ English, Developers, India, Drupal, PHP ]
+              , tags = [ Tag "English", Tag "Developers", Tag "India", Tag "Drupal", Tag "PHP" ]
               }
             , { name = "hello.js"
               , link = "http://hellojs.org/"
@@ -316,7 +316,7 @@ model =
               , location = "Cluj-Napoca, Romania"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Romania, JavaScript ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Romania", Tag "JavaScript" ]
               }
             , { name = "Lambda Days"
               , link = "http://www.lambdadays.org/"
@@ -325,7 +325,7 @@ model =
               , location = "Krakow, Poland"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Poland, FunctionalProgramming, Erlang ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Poland", Tag "FunctionalProgramming", Tag "Erlang" ]
               }
             , { name = "BOB 2016"
               , link = "http://bobkonf.de/2016/en/"
@@ -334,7 +334,7 @@ model =
               , location = "Berlin, Germany"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, German, Developers, Germany, FunctionalProgramming, Clojure, Haskell, Scala, Erlang ]
+              , tags = [ Tag "English", Tag "German", Tag "Developers", Tag "Germany", Tag "FunctionalProgramming", Tag "Clojure", Tag "Haskell", Tag "Scala", Tag "Erlang" ]
               }
             , { name = "GopherCon India"
               , link = "http://www.gophercon.in/"
@@ -343,7 +343,7 @@ model =
               , location = "Bengaluru, India"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, India, Go ]
+              , tags = [ Tag "English", Tag "Developers", Tag "India", Tag "Go" ]
               }
             , { name = "Bulgaria Web Summit"
               , link = "http://bulgariawebsummit.com/"
@@ -352,7 +352,7 @@ model =
               , location = "Sofia, Bulgaria"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Designers, Developers, Bulgaria, UX, JavaScript, General ]
+              , tags = [ Tag "English", Tag "Designers", Tag "Developers", Tag "Bulgaria", Tag "UX", Tag "JavaScript", Tag "General" ]
               }
             , { name = ":clojureD"
               , link = "http://www.clojured.de/"
@@ -361,7 +361,7 @@ model =
               , location = "Berlin, Germany"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Germany, FunctionalProgramming, Clojure ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Germany", Tag "FunctionalProgramming", Tag "Clojure" ]
               }
             , { name = "The Rolling Scopes Conference"
               , link = "http://2016.conf.rollingscopes.com/"
@@ -370,7 +370,7 @@ model =
               , location = "Minsk, Belarus"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Russian, Developers, Belarus, CSS, NodeJS, JavaScript ]
+              , tags = [ Tag "English", Tag "Russian", Tag "Developers", Tag "Belarus", Tag "CSS", Tag "NodeJS", Tag "JavaScript" ]
               }
             , { name = "How.Camp"
               , link = "http://how.camp/"
@@ -379,7 +379,7 @@ model =
               , location = "Sofia, Bulgaria"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Designers, Developers, Bulgaria, UX, JavaScript ]
+              , tags = [ Tag "English", Tag "Designers", Tag "Developers", Tag "Bulgaria", Tag "UX", Tag "JavaScript" ]
               }
             , { name = "React.js Conf"
               , link = "http://conf.reactjs.com/"
@@ -388,7 +388,7 @@ model =
               , location = "San Francisco, CA"
               , cfpStartDate = Just ( 2015, Nov, 25 )
               , cfpEndDate = Just ( 2015, Dec, 13 )
-              , tags = [ English, Developers, USA, React, JavaScript ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "React", Tag "JavaScript" ]
               }
             , { name = "GopherCon Dubai"
               , link = "http://www.gophercon.ae/"
@@ -397,7 +397,7 @@ model =
               , location = "Dubai, UAE"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, UAE, Go ]
+              , tags = [ Tag "English", Tag "Developers", Tag "UAE", Tag "Go" ]
               }
             , { name = "JavaScript Summit"
               , link = "http://environmentsforhumans.com/2016/javascript-summit/"
@@ -406,7 +406,7 @@ model =
               , location = "Remote"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Remote, JavaScript ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Remote", Tag "JavaScript" ]
               }
             , { name = "UXistanbul"
               , link = "http://uxistanbul.org/"
@@ -415,7 +415,7 @@ model =
               , location = "Istanbul, Turkey"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Designers, Turkey, UX ]
+              , tags = [ Tag "English", Tag "Designers", Tag "Turkey", Tag "UX" ]
               }
             , { name = "ConFoo"
               , link = "http://confoo.ca/en"
@@ -424,7 +424,7 @@ model =
               , location = "Montreal, QC, Canada"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, French, Developers, Canada, General ]
+              , tags = [ Tag "English", Tag "French", Tag "Developers", Tag "Canada", Tag "General" ]
               }
             , { name = "Freelance Remote Conf"
               , link = "https://allremoteconfs.com/freelance-2016"
@@ -433,7 +433,7 @@ model =
               , location = "Remote"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Designers, Remote, General, SoftSkills ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Designers", Tag "Remote", Tag "General", Tag "SoftSkills" ]
               }
             , { name = "UX Riga"
               , link = "http://www.uxriga.lv/"
@@ -442,7 +442,7 @@ model =
               , location = "Riga, Latvia"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Designers, Latvia, UX ]
+              , tags = [ Tag "English", Tag "Designers", Tag "Latvia", Tag "UX" ]
               }
             , { name = "Interaction 16"
               , link = "http://interaction16.ixda.org/"
@@ -451,7 +451,7 @@ model =
               , location = "Helsinki, Finland"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Designers, Finland, UX ]
+              , tags = [ Tag "English", Tag "Designers", Tag "Finland", Tag "UX" ]
               }
             , { name = "try! Swift"
               , link = "http://www.tryswiftconf.com/en"
@@ -460,7 +460,7 @@ model =
               , location = "Tokyo, Japan"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Japan, Swift, IOS ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Japan", Tag "Swift", Tag "IOS" ]
               }
             , { name = "EnhanceConf"
               , link = "http://enhanceconf.com/"
@@ -469,7 +469,7 @@ model =
               , location = "London, England"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, England, CSS, JavaScript, ProgressiveEnhancement ]
+              , tags = [ Tag "English", Tag "Developers", Tag "England", Tag "CSS", Tag "JavaScript", Tag "ProgressiveEnhancement" ]
               }
             , { name = "fsharpConf"
               , link = "http://fsharpconf.com/"
@@ -478,7 +478,7 @@ model =
               , location = "Remote"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Remote, FSharp, DotNet, FunctionalProgramming ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Remote", Tag "FSharp", Tag "DotNet", Tag "FunctionalProgramming" ]
               }
             , { name = "Chamberconf"
               , link = "http://chamberconf.pl/"
@@ -487,7 +487,7 @@ model =
               , location = "Moszna, Poland"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ Polish, Developers, Poland, General ]
+              , tags = [ Tag "Polish", Tag "Developers", Tag "Poland", Tag "General" ]
               }
             , { name = "droidcon Tunisia"
               , link = "http://www.droidcon.tn/"
@@ -496,7 +496,7 @@ model =
               , location = "Hammamet, Tunisia"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Tunisia, Android, Mobile ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Tunisia", Tag "Android", Tag "Mobile" ]
               }
             , { name = "Frontend Conference"
               , link = "http://kfug.jp/frontconf2016/"
@@ -505,7 +505,7 @@ model =
               , location = "Osaka, Japan"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ Japanese, Designers, Developers, Japan, UX, JavaScript, CSS, AngularJS ]
+              , tags = [ Tag "Japanese", Tag "Designers", Tag "Developers", Tag "Japan", Tag "UX", Tag "JavaScript", Tag "CSS", Tag "AngularJS" ]
               }
             , { name = "Big Data Paris"
               , link = "http://www.bigdataparis.com/"
@@ -514,7 +514,7 @@ model =
               , location = "Paris, France"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ French, Developers, France, MongoDB, BigData ]
+              , tags = [ Tag "French", Tag "Developers", Tag "France", Tag "MongoDB", Tag "BigData" ]
               }
             , { name = "Erlang Factory SF Workshops"
               , link = "http://www.erlang-factory.com/sfbay2016/home"
@@ -523,7 +523,7 @@ model =
               , location = "San Francisco, CA"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, USA, Erlang ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "Erlang" ]
               }
             , { name = "Fluent Conf Trainings"
               , link = "http://conferences.oreilly.com/fluent/javascript-html-us"
@@ -532,7 +532,7 @@ model =
               , location = "San Francisco, CA"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Designers, Developers, USA, CSS, JavaScript, UX, React, AngularJS, Docker ]
+              , tags = [ Tag "English", Tag "Designers", Tag "Developers", Tag "USA", Tag "CSS", Tag "JavaScript", Tag "UX", Tag "React", Tag "AngularJS", Tag "Docker" ]
               }
             , { name = "QCon London"
               , link = "http://qconlondon.com/"
@@ -541,7 +541,7 @@ model =
               , location = "London, England"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, England, General ]
+              , tags = [ Tag "English", Tag "Developers", Tag "England", Tag "General" ]
               }
             , { name = "Fluent Conf"
               , link = "http://conferences.oreilly.com/fluent/javascript-html-us"
@@ -550,7 +550,7 @@ model =
               , location = "San Francisco, CA"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Designers, Developers, USA, CSS, JavaScript, UX, React, AngularJS, Docker ]
+              , tags = [ Tag "English", Tag "Designers", Tag "Developers", Tag "USA", Tag "CSS", Tag "JavaScript", Tag "UX", Tag "React", Tag "AngularJS", Tag "Docker" ]
               }
             , { name = "jDays"
               , link = "http://www.jdays.se/"
@@ -559,7 +559,7 @@ model =
               , location = "Gothenburg, Sweden"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Sweden, Java ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Sweden", Tag "Java" ]
               }
             , { name = "Apache Geode Summit"
               , link = "http://geodesummit.com/"
@@ -568,7 +568,7 @@ model =
               , location = "Palo Alto, CA"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, USA, BigData, Cloud ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "BigData", Tag "Cloud" ]
               }
             , { name = "Erlang Factory SF"
               , link = "http://www.erlang-factory.com/sfbay2016/home"
@@ -577,7 +577,7 @@ model =
               , location = "San Francisco, CA"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, USA, Erlang ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "Erlang" ]
               }
             , { name = "ScaleConf"
               , link = "http://scaleconf.org/"
@@ -586,7 +586,7 @@ model =
               , location = "Cape Town, South Africa"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, SouthAfrica, Scalability ]
+              , tags = [ Tag "English", Tag "Developers", Tag "SouthAfrica", Tag "Scalability" ]
               }
             , { name = "SoCraTes ES"
               , link = "http://www.socrates-conference.es/doku.php"
@@ -595,7 +595,7 @@ model =
               , location = "Gran Canaria, Spain"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Spain, SoftwareCraftsmanship ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Spain", Tag "SoftwareCraftsmanship" ]
               }
             , { name = "QCon London Tutorials"
               , link = "http://qconlondon.com/"
@@ -604,7 +604,7 @@ model =
               , location = "London, England"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, England, General ]
+              , tags = [ Tag "English", Tag "Developers", Tag "England", Tag "General" ]
               }
             , { name = "Bath Ruby"
               , link = "http://bathruby.us1.list-manage1.com/subscribe?u=f18bb7508370614edaffb50dd&id=73743da027"
@@ -613,7 +613,7 @@ model =
               , location = "Bath, England"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, England, Ruby ]
+              , tags = [ Tag "English", Tag "Developers", Tag "England", Tag "Ruby" ]
               }
             , { name = "RWDevCon 2016"
               , link = "http://rwdevcon.com/"
@@ -622,7 +622,7 @@ model =
               , location = "Alexandria, VA"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, USA, IOS, Swift ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "IOS", Tag "Swift" ]
               }
             , { name = "wroc_love.rb"
               , link = "http://www.wrocloverb.com/"
@@ -631,7 +631,7 @@ model =
               , location = "Wroclaw, Poland"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Poland, Ruby ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Poland", Tag "Ruby" ]
               }
             , { name = "JSConf Beirut"
               , link = "http://www.jsconfbeirut.com/"
@@ -640,7 +640,7 @@ model =
               , location = "Beirut, Lebanon"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Lebanon, JavaScript ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Lebanon", Tag "JavaScript" ]
               }
             , { name = "An Event Apart Nashville"
               , link = "http://aneventapart.com/event/nashville-2016"
@@ -649,7 +649,7 @@ model =
               , location = "Nashville, TN"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Designers, Developers, USA, UX ]
+              , tags = [ Tag "English", Tag "Designers", Tag "Developers", Tag "USA", Tag "UX" ]
               }
             , { name = "CocoaConf Yosemite"
               , link = "http://cocoaconf.com/yosemite"
@@ -658,7 +658,7 @@ model =
               , location = "National Park, CA"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, USA, IOS, Cocoa ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "IOS", Tag "Cocoa" ]
               }
             , { name = "Erlang Factory SF Workshops"
               , link = "http://www.erlang-factory.com/sfbay2016/home"
@@ -667,7 +667,7 @@ model =
               , location = "San Francisco, CA"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, USA, Erlang ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "Erlang" ]
               }
             , { name = "Smashing Conf"
               , link = "http://smashingconf.com/"
@@ -676,7 +676,7 @@ model =
               , location = "Oxford, England"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Designers, England, UX ]
+              , tags = [ Tag "English", Tag "Designers", Tag "England", Tag "UX" ]
               }
             , { name = "DIBI"
               , link = "http://dibiconference.com/"
@@ -685,7 +685,7 @@ model =
               , location = "Edinburgh, Scotland"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Designers, Scotland, UX ]
+              , tags = [ Tag "English", Tag "Designers", Tag "Scotland", Tag "UX" ]
               }
             , { name = "droidcon San Francisco"
               , link = "http://sf.droidcon.com/"
@@ -694,7 +694,7 @@ model =
               , location = "San Francisco, CA"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, USA, Android, Mobile ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "Android", Tag "Mobile" ]
               }
             , { name = "mdevcon"
               , link = "http://mdevcon.com/"
@@ -703,7 +703,7 @@ model =
               , location = "Amsterdam, Netherlands"
               , cfpStartDate = Just ( 2015, Nov, 8 )
               , cfpEndDate = Just ( 2015, Dec, 23 )
-              , tags = [ English, Developers, Netherlands, Mobile, IOS, Android ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Netherlands", Tag "Mobile", Tag "IOS", Tag "Android" ]
               }
             , { name = "Nordic PGDay"
               , link = "http://2016.nordicpgday.org/"
@@ -712,7 +712,7 @@ model =
               , location = "Helsinki, Finland"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Finland, PostgreSQL ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Finland", Tag "PostgreSQL" ]
               }
             , { name = "pgDay Asia"
               , link = "http://2016.pgday.asia/"
@@ -721,7 +721,7 @@ model =
               , location = "Singapore"
               , cfpStartDate = Just ( 2015, Nov, 26 )
               , cfpEndDate = Just ( 2016, Jan, 22 )
-              , tags = [ English, Developers, Singapore, PostgreSQL ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Singapore", Tag "PostgreSQL" ]
               }
             , { name = "Codemotion Rome"
               , link = "http://rome2016.codemotionworld.com/"
@@ -730,7 +730,7 @@ model =
               , location = "Rome, Italy"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Italy, General ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Italy", Tag "General" ]
               }
             , { name = "Scale Summit"
               , link = "http://www.scalesummit.org/"
@@ -739,7 +739,7 @@ model =
               , location = "London, England"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, England, Scalability ]
+              , tags = [ Tag "English", Tag "Developers", Tag "England", Tag "Scalability" ]
               }
             , { name = "Dutch Clojure Days"
               , link = "http://clojure.org/events/2016/dutch_clojure_days"
@@ -748,7 +748,7 @@ model =
               , location = "Amsterdam, Netherlands"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Feb, 23 )
-              , tags = [ English, Developers, Netherlands, Clojure, FunctionalProgramming ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Netherlands", Tag "Clojure", Tag "FunctionalProgramming" ]
               }
             , { name = "GR8Day Warsaw"
               , link = "http://warsaw.gr8days.pl/"
@@ -757,7 +757,7 @@ model =
               , location = "Warsaw, Poland"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Mar, 1 )
-              , tags = [ English, Developers, Poland, Java, Groovy, Grails, Gradle ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Poland", Tag "Java", Tag "Groovy", Tag "Grails", Tag "Gradle" ]
               }
             , { name = "RubyConf India"
               , link = "http://rubyconfindia.org/"
@@ -766,7 +766,7 @@ model =
               , location = "Kochi, India"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Jan, 18 )
-              , tags = [ English, Developers, India, Ruby ]
+              , tags = [ Tag "English", Tag "Developers", Tag "India", Tag "Ruby" ]
               }
             , { name = "SwiftAveiro"
               , link = "https://attending.io/events/swiftaveiro"
@@ -775,7 +775,7 @@ model =
               , location = "Aveiro, Portugal"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Portugal, IOS, Swift ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Portugal", Tag "IOS", Tag "Swift" ]
               }
             , { name = "MountainWest RubyConf"
               , link = "http://mtnwestrubyconf.org/2016/"
@@ -784,7 +784,7 @@ model =
               , location = "Salt Lake City, UT"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, USA, Ruby ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "Ruby" ]
               }
             , { name = "PIPELINE"
               , link = "http://web.pipelineconf.info/"
@@ -793,7 +793,7 @@ model =
               , location = "London, England"
               , cfpStartDate = Just ( 2015, Oct, 19 )
               , cfpEndDate = Just ( 2015, Dec, 18 )
-              , tags = [ English, Developers, England, Agile ]
+              , tags = [ Tag "English", Tag "Developers", Tag "England", Tag "Agile" ]
               }
             , { name = "Ruby Remote Conf"
               , link = "https://allremoteconfs.com/ruby-2016"
@@ -802,7 +802,7 @@ model =
               , location = "Remote"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Mar, 5 )
-              , tags = [ English, Developers, Remote, Ruby ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Remote", Tag "Ruby" ]
               }
             , { name = "CocoaConf Chicago"
               , link = "http://cocoaconf.com/chicago-2016/home"
@@ -811,7 +811,7 @@ model =
               , location = "Chicago, IL"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, USA, Cocoa, IOS ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "Cocoa", Tag "IOS" ]
               }
             , { name = "CSS Day"
               , link = "http://2016.cssday.it/"
@@ -820,7 +820,7 @@ model =
               , location = "Faenza, Italy"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ Italian, Designers, Italy, CSS ]
+              , tags = [ Tag "Italian", Tag "Designers", Tag "Italy", Tag "CSS" ]
               }
             , { name = "DevExperience"
               , link = "http://devexperience.ro/"
@@ -829,7 +829,7 @@ model =
               , location = "Lasi, Romania"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Romania, General ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Romania", Tag "General" ]
               }
             , { name = "droidcon Dubai"
               , link = "http://droidcon.ae/"
@@ -838,7 +838,7 @@ model =
               , location = "Dubai, UAE"
               , cfpStartDate = Just ( 2015, Oct, 27 )
               , cfpEndDate = Just ( 2016, Feb, 28 )
-              , tags = [ English, Developers, UAE, Android, Mobile ]
+              , tags = [ Tag "English", Tag "Developers", Tag "UAE", Tag "Android", Tag "Mobile" ]
               }
             , { name = "Space City JS"
               , link = "http://spacecity.codes/"
@@ -847,7 +847,7 @@ model =
               , location = "Houston, TX"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Jan, 15 )
-              , tags = [ English, Developers, USA, JavaScript ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "JavaScript" ]
               }
             , { name = "EmberConf"
               , link = "http://emberconf.com/"
@@ -856,7 +856,7 @@ model =
               , location = "Portland, OR"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, USA, Ember ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "Ember" ]
               }
             , { name = "RWD Summit"
               , link = "http://environmentsforhumans.com/2016/responsive-web-design-summit/"
@@ -865,7 +865,7 @@ model =
               , location = "Remote"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Designers, Remote, CSS, UX ]
+              , tags = [ Tag "English", Tag "Designers", Tag "Remote", Tag "CSS", Tag "UX" ]
               }
             , { name = "Clarity Conf"
               , link = "http://clarityconf.com/"
@@ -874,7 +874,7 @@ model =
               , location = "San Francisco, CA"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Designers, USA, UX ]
+              , tags = [ Tag "English", Tag "Designers", Tag "USA", Tag "UX" ]
               }
             , { name = "Ruby on Ales"
               , link = "https://ruby.onales.com/"
@@ -883,7 +883,7 @@ model =
               , location = "Bend, OR"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, USA, Ruby ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "Ruby" ]
               }
             , { name = "Codemotion Dubai"
               , link = "http://rome2016.codemotionworld.com/"
@@ -892,7 +892,7 @@ model =
               , location = "Dubai, UAE"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, UAE, General ]
+              , tags = [ Tag "English", Tag "Developers", Tag "UAE", Tag "General" ]
               }
             , { name = "Flourish!"
               , link = "http://flourishconf.com/2016/"
@@ -901,7 +901,7 @@ model =
               , location = "Chicago, IL"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, USA, OpenSource ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "OpenSource" ]
               }
             , { name = "Fronteers Spring Thing"
               , link = "https://fronteers.nl/spring"
@@ -910,7 +910,7 @@ model =
               , location = "Amsterdam, Netherlands"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Netherlands, JavaScript ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Netherlands", Tag "JavaScript" ]
               }
             , { name = "An Event Apart Seattle"
               , link = "http://aneventapart.com/event/seattle-2016"
@@ -919,7 +919,7 @@ model =
               , location = "Seattle, WA"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Designers, Developers, USA, UX ]
+              , tags = [ Tag "English", Tag "Designers", Tag "Developers", Tag "USA", Tag "UX" ]
               }
             , { name = "Istanbul Tech Talks"
               , link = "http://www.istanbultechtalks.com/"
@@ -928,7 +928,7 @@ model =
               , location = "Istanbul, Turkey"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Turkey, General ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Turkey", Tag "General" ]
               }
             , { name = "Smashing Conf SF"
               , link = "http://smashingconf.com/sf-2016/"
@@ -937,7 +937,7 @@ model =
               , location = "San Francisco, CA"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Designers, USA, UX ]
+              , tags = [ Tag "English", Tag "Designers", Tag "USA", Tag "UX" ]
               }
             , { name = "Ancient City Ruby"
               , link = "http://www.ancientcityruby.com/"
@@ -946,7 +946,7 @@ model =
               , location = "St. Augustine, FL"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, USA, Ruby ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "Ruby" ]
               }
             , { name = "AWS Summit Bogotá"
               , link = "https://aws.amazon.com/summits/"
@@ -955,7 +955,7 @@ model =
               , location = "Bogotá, Colombia"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Colombia, AWS, DevOps ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Colombia", Tag "AWS", Tag "DevOps" ]
               }
             , { name = "droidcon Italy"
               , link = "http://it.droidcon.com/2016/"
@@ -964,7 +964,7 @@ model =
               , location = "Turin, Italy"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Jan, 31 )
-              , tags = [ English, Developers, Italy, Android, Mobile ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Italy", Tag "Android", Tag "Mobile" ]
               }
             , { name = "Respond 2016 Sydney"
               , link = "http://www.webdirections.org/respond16/"
@@ -973,7 +973,7 @@ model =
               , location = "Sydney, Australia"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Designers, Australia, CSS, UX ]
+              , tags = [ Tag "English", Tag "Designers", Tag "Australia", Tag "CSS", Tag "UX" ]
               }
             , { name = "RubyConf Philippines"
               , link = "http://rubyconf.ph/"
@@ -982,7 +982,7 @@ model =
               , location = "Taguig, Philippines"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Philippines, Ruby ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Philippines", Tag "Ruby" ]
               }
             , { name = "Greach"
               , link = "http://greachconf.com/"
@@ -991,7 +991,7 @@ model =
               , location = "Madrid, Spain"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Spain, Java, Groovy, Grails, Gradle ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Spain", Tag "Java", Tag "Groovy", Tag "Grails", Tag "Gradle" ]
               }
             , { name = "Jazoon TechDays"
               , link = "http://jazoon.com/"
@@ -1000,7 +1000,7 @@ model =
               , location = "Bern, Switzerland"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Switzerland, JavaScript, AngularJS, Ember ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Switzerland", Tag "JavaScript", Tag "AngularJS", Tag "Ember" ]
               }
             , { name = "AlterConf Minneapolis"
               , link = "http://www.alterconf.com/sessions/minneapolis-mn"
@@ -1009,7 +1009,7 @@ model =
               , location = "Minneapolis, MN"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Mar, 1 )
-              , tags = [ English, Designers, Developers, USA, Diversity, SoftSkills ]
+              , tags = [ Tag "English", Tag "Designers", Tag "Developers", Tag "USA", Tag "Diversity", Tag "SoftSkills" ]
               }
             , { name = "MobCon"
               , link = "http://mobcon.com/mobcon-europe/"
@@ -1018,7 +1018,7 @@ model =
               , location = "Sofia, Bulgaria"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Feb, 14 )
-              , tags = [ English, Developers, Bulgaria, Mobile, IOS, Android ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Bulgaria", Tag "Mobile", Tag "IOS", Tag "Android" ]
               }
             , { name = "Respond 2016"
               , link = "http://www.webdirections.org/respond16/"
@@ -1027,7 +1027,7 @@ model =
               , location = "Melbourne, Australia"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Designers, Australia, CSS, UX ]
+              , tags = [ Tag "English", Tag "Designers", Tag "Australia", Tag "CSS", Tag "UX" ]
               }
             , { name = "Yggdrasil"
               , link = "http://yggdrasilkonferansen.no/"
@@ -1036,7 +1036,7 @@ model =
               , location = "Sandefjord, Norway"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ Norwegian, Designers, Norway, UX ]
+              , tags = [ Tag "Norwegian", Tag "Designers", Tag "Norway", Tag "UX" ]
               }
             , { name = "AWS Summit Berlin"
               , link = "https://aws.amazon.com/summits/"
@@ -1045,7 +1045,7 @@ model =
               , location = "Berlin, Germany"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Germany, AWS, DevOps ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Germany", Tag "AWS", Tag "DevOps" ]
               }
             , { name = "Converge SE"
               , link = "http://convergese.com/"
@@ -1054,7 +1054,7 @@ model =
               , location = "Columbia, SC"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Designers, Developers, USA, General ]
+              , tags = [ Tag "English", Tag "Designers", Tag "Developers", Tag "USA", Tag "General" ]
               }
             , { name = "Hadoop Summit Europe"
               , link = "http://2016.hadoopsummit.org/dublin/"
@@ -1063,7 +1063,7 @@ model =
               , location = "Dublin, Ireland"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Ireland, Hadoop, BigData, InternetOfThings ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Ireland", Tag "Hadoop", Tag "BigData", Tag "InternetOfThings" ]
               }
             , { name = "iOS Remote Conf"
               , link = "https://allremoteconfs.com/ios-2016"
@@ -1072,7 +1072,7 @@ model =
               , location = "Remote"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Mar, 12 )
-              , tags = [ English, Developers, Remote, IOS ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Remote", Tag "IOS" ]
               }
             , { name = "Peers Conference"
               , link = "http://peersconf.com/"
@@ -1081,7 +1081,7 @@ model =
               , location = "St. Petersburg, FL"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Designers, Developers, USA, SoftSkills ]
+              , tags = [ Tag "English", Tag "Designers", Tag "Developers", Tag "USA", Tag "SoftSkills" ]
               }
             , { name = "ACE! Conference"
               , link = "http://aceconf.com/"
@@ -1090,7 +1090,7 @@ model =
               , location = "Krakow, Poland"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Poland, Agile, SoftwareCraftsmanship ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Poland", Tag "Agile", Tag "SoftwareCraftsmanship" ]
               }
             , { name = "AWS Summit Milan"
               , link = "https://aws.amazon.com/summits/"
@@ -1099,7 +1099,7 @@ model =
               , location = "Milan, Italy"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Italy, AWS, DevOps ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Italy", Tag "AWS", Tag "DevOps" ]
               }
             , { name = "Rootconf"
               , link = "https://rootconf.in/2016/"
@@ -1108,7 +1108,7 @@ model =
               , location = "Bangalore, India"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Feb, 1 )
-              , tags = [ English, Developers, India, DevOps, Cloud ]
+              , tags = [ Tag "English", Tag "Developers", Tag "India", Tag "DevOps", Tag "Cloud" ]
               }
             , { name = "Clojure/west"
               , link = "http://clojurewest.org/"
@@ -1117,7 +1117,7 @@ model =
               , location = "Seattle, WA"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, USA, Clojure, FunctionalProgramming ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "Clojure", Tag "FunctionalProgramming" ]
               }
             , { name = "CocoaConf Austin"
               , link = "http://cocoaconf.com/austin-2016/home"
@@ -1126,7 +1126,7 @@ model =
               , location = "Austin, TX"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, USA, Cocoa, IOS ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "Cocoa", Tag "IOS" ]
               }
             , { name = "JSConf Uruguay"
               , link = "https://jsconf.uy/"
@@ -1135,7 +1135,7 @@ model =
               , location = "Montevideo, Uruguay"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Uruguay, JavaScript ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Uruguay", Tag "JavaScript" ]
               }
             , { name = "Scalar"
               , link = "http://scalar-conf.com/"
@@ -1144,7 +1144,7 @@ model =
               , location = "Warsaw, Poland"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Poland, Scala ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Poland", Tag "Scala" ]
               }
             , { name = "JavaScript Frameworks Day"
               , link = "http://frameworksdays.com/event/js-frameworks-day-2016"
@@ -1153,7 +1153,7 @@ model =
               , location = "Kiev, Ukraine"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ Russian, Developers, Ukraine, JavaScript ]
+              , tags = [ Tag "Russian", Tag "Developers", Tag "Ukraine", Tag "JavaScript" ]
               }
             , { name = "AWS Summit Chicago"
               , link = "https://aws.amazon.com/summits/"
@@ -1162,7 +1162,7 @@ model =
               , location = "Chicago, IL"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, USA, AWS, DevOps ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "AWS", Tag "DevOps" ]
               }
             , { name = "PGConf US"
               , link = "http://www.pgconf.us/2016/"
@@ -1171,7 +1171,7 @@ model =
               , location = "New York, NY"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Jan, 31 )
-              , tags = [ English, Developers, USA, PostgreSQL ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "PostgreSQL" ]
               }
             , { name = "ACCU"
               , link = "http://accu.org/index.php/conferences/accu_conference_2016"
@@ -1180,7 +1180,7 @@ model =
               , location = "Bristol, England"
               , cfpStartDate = Just ( 2015, Oct, 12 )
               , cfpEndDate = Just ( 2015, Nov, 13 )
-              , tags = [ English, Developers, England, General, CPlusPlus ]
+              , tags = [ Tag "English", Tag "Developers", Tag "England", Tag "General", Tag "CPlusPlus" ]
               }
             , { name = "Industry Conf"
               , link = "http://2016.industryconf.com/"
@@ -1189,7 +1189,7 @@ model =
               , location = "Newcastle, England"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, England, General ]
+              , tags = [ Tag "English", Tag "Developers", Tag "England", Tag "General" ]
               }
             , { name = "CycleConf"
               , link = "http://cycleconf.com/"
@@ -1198,7 +1198,7 @@ model =
               , location = "Copenhagen, Denmark"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Denmark, CycleJS, JavaScript ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Denmark", Tag "CycleJS", Tag "JavaScript" ]
               }
             , { name = "MCE"
               , link = "http://mceconf.com/"
@@ -1207,7 +1207,7 @@ model =
               , location = "Warsaw, Poland"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Feb, 29 )
-              , tags = [ English, Designers, Developers, Poland, Mobile, UX ]
+              , tags = [ Tag "English", Tag "Designers", Tag "Developers", Tag "Poland", Tag "Mobile", Tag "UX" ]
               }
             , { name = "Render Conf"
               , link = "http://2016.render-conf.com/"
@@ -1216,7 +1216,7 @@ model =
               , location = "Oxford, England"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Designers, Developers, England, CSS, JavaScript, UX ]
+              , tags = [ Tag "English", Tag "Designers", Tag "Developers", Tag "England", Tag "CSS", Tag "JavaScript", Tag "UX" ]
               }
             , { name = "dotSecurity"
               , link = "http://www.dotsecurity.io/"
@@ -1225,7 +1225,7 @@ model =
               , location = "Paris, France"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, France, Security ]
+              , tags = [ Tag "English", Tag "Developers", Tag "France", Tag "Security" ]
               }
             , { name = "Generate NY"
               , link = "http://generateconf.com/new-york-2016"
@@ -1234,7 +1234,7 @@ model =
               , location = "New York, NY"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Designers, USA, UX ]
+              , tags = [ Tag "English", Tag "Designers", Tag "USA", Tag "UX" ]
               }
             , { name = "ProgSCon"
               , link = "http://progscon.co.uk/"
@@ -1243,7 +1243,7 @@ model =
               , location = "London, England"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Jan, 21 )
-              , tags = [ English, Developers, England, General ]
+              , tags = [ Tag "English", Tag "Developers", Tag "England", Tag "General" ]
               }
             , { name = "Xamarin Evolve"
               , link = "https://evolve.xamarin.com/"
@@ -1252,7 +1252,7 @@ model =
               , location = "Orlando, FL"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, USA, Mobile, IOS, Android, DotNet ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "Mobile", Tag "IOS", Tag "Android", Tag "DotNet" ]
               }
             , { name = "dotScale"
               , link = "http://www.dotscale.io/"
@@ -1261,7 +1261,7 @@ model =
               , location = "Paris, France"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, France, Scalability ]
+              , tags = [ Tag "English", Tag "Developers", Tag "France", Tag "Scalability" ]
               }
             , { name = "OpenVis Conf"
               , link = "https://openvisconf.com/"
@@ -1270,7 +1270,7 @@ model =
               , location = "Boston, MA"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, USA, DataVisualization ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "DataVisualization" ]
               }
             , { name = "AWS Summit Kuala Lumpur"
               , link = "https://aws.amazon.com/summits/"
@@ -1279,7 +1279,7 @@ model =
               , location = "Kuala Lumpur, Malaysia"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Malaysia, AWS, DevOps ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Malaysia", Tag "AWS", Tag "DevOps" ]
               }
             , { name = "AWS Summit Sydney"
               , link = "https://aws.amazon.com/summits/"
@@ -1288,7 +1288,7 @@ model =
               , location = "Sydney, Australia"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Australia, AWS, DevOps ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Australia", Tag "AWS", Tag "DevOps" ]
               }
             , { name = "Craft Conf"
               , link = "http://craft-conf.com/2016"
@@ -1297,7 +1297,7 @@ model =
               , location = "Budapest, Hungary"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Hungary, SoftwareCraftsmanship ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Hungary", Tag "SoftwareCraftsmanship" ]
               }
             , { name = "Kafka Summit"
               , link = "http://kafka-summit.org/"
@@ -1306,7 +1306,7 @@ model =
               , location = "San Francisco, CA"
               , cfpStartDate = Just ( 2015, Sep, 29 )
               , cfpEndDate = Just ( 2016, Jan, 11 )
-              , tags = [ English, Developers, USA, BigData ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "BigData" ]
               }
             , { name = "TestIstanbul"
               , link = "http://testistanbul.org/"
@@ -1315,7 +1315,7 @@ model =
               , location = "Istanbul, Turkey"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Turkish, Developers, Turkey, Testing ]
+              , tags = [ Tag "English", Tag "Turkish", Tag "Developers", Tag "Turkey", Tag "Testing" ]
               }
             , { name = "droidcon Zagreb"
               , link = "http://droidcon.hr/en/"
@@ -1324,7 +1324,7 @@ model =
               , location = "Zagreb, Croatia"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Apr, 1 )
-              , tags = [ English, Developers, Croatia, Android, Mobile ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Croatia", Tag "Android", Tag "Mobile" ]
               }
             , { name = "Squares Conference"
               , link = "http://squaresconference.com/"
@@ -1333,7 +1333,7 @@ model =
               , location = "Grapevine, TX"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Designers, USA, UX ]
+              , tags = [ Tag "English", Tag "Designers", Tag "USA", Tag "UX" ]
               }
             , { name = "University of Illinois WebCon"
               , link = "http://webcon.illinois.edu/"
@@ -1342,7 +1342,7 @@ model =
               , location = "Champaign, IL"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, USA, General ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "General" ]
               }
             , { name = "AWS Summit Buenos Aires"
               , link = "https://aws.amazon.com/summits/"
@@ -1351,7 +1351,7 @@ model =
               , location = "Buenos Aires, Argentina"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Argentina, AWS, DevOps ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Argentina", Tag "AWS", Tag "DevOps" ]
               }
             , { name = "AWS Summit Singapore"
               , link = "https://aws.amazon.com/summits/"
@@ -1360,7 +1360,7 @@ model =
               , location = "Singapore"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Singapore, AWS, DevOps ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Singapore", Tag "AWS", Tag "DevOps" ]
               }
             , { name = "NSNorth"
               , link = "http://nsnorth.ca/"
@@ -1369,7 +1369,7 @@ model =
               , location = "Toronto, Ontario, Canada"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Canada, IOS ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Canada", Tag "IOS" ]
               }
             , { name = "YOW! Lambda Jam"
               , link = "http://lambdajam.yowconference.com.au/"
@@ -1378,7 +1378,7 @@ model =
               , location = "Brisbane, Australia"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Mar, 13 )
-              , tags = [ English, Developers, Australia, FunctionalProgramming ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Australia", Tag "FunctionalProgramming" ]
               }
             , { name = "JSDayES"
               , link = "http://jsday.es/"
@@ -1387,7 +1387,7 @@ model =
               , location = "Madrid, Spain"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Feb, 28 )
-              , tags = [ Spanish, Developers, Spain, JavaScript, NodeJS, AngularJS ]
+              , tags = [ Tag "Spanish", Tag "Developers", Tag "Spain", Tag "JavaScript", Tag "NodeJS", Tag "AngularJS" ]
               }
             , { name = "Chicago Code Camp"
               , link = "http://www.chicagocodecamp.com/"
@@ -1396,7 +1396,7 @@ model =
               , location = "Chicago, IL"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Mar, 1 )
-              , tags = [ English, Developers, USA, General ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "General" ]
               }
             , { name = "flatMap(Oslo)"
               , link = "http://2016.flatmap.no/"
@@ -1405,7 +1405,7 @@ model =
               , location = "Oslo, Norway"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Apr, 3 )
-              , tags = [ English, Developers, Norway, Scala, FunctionalProgramming, Java ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Norway", Tag "Scala", Tag "FunctionalProgramming", Tag "Java" ]
               }
             , { name = "AWS Summit Santiago"
               , link = "https://aws.amazon.com/summits/"
@@ -1414,7 +1414,7 @@ model =
               , location = "Santiago, Chile"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Chile, AWS, DevOps ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Chile", Tag "AWS", Tag "DevOps" ]
               }
             , { name = "Continuous Lifecycle London"
               , link = "http://continuouslifecycle.london/"
@@ -1423,7 +1423,7 @@ model =
               , location = "London, England"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, England, DevOps ]
+              , tags = [ Tag "English", Tag "Developers", Tag "England", Tag "DevOps" ]
               }
             , { name = "JSConf Belgium"
               , link = "https://jsconf.be/nl/"
@@ -1432,7 +1432,7 @@ model =
               , location = "Brugge, Belgium"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Belgium, JavaScript ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Belgium", Tag "JavaScript" ]
               }
             , { name = "YOW! West"
               , link = "http://west.yowconference.com.au/"
@@ -1441,7 +1441,7 @@ model =
               , location = "Perth, Australia"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Mar, 13 )
-              , tags = [ English, Developers, Australia, General ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Australia", Tag "General" ]
               }
             , { name = "ng-conf"
               , link = "http://www.ng-conf.org/"
@@ -1450,7 +1450,7 @@ model =
               , location = "Salt Lake City, UT"
               , cfpStartDate = Just ( 2016, Jan, 13 )
               , cfpEndDate = Just ( 2016, Feb, 14 )
-              , tags = [ English, Developers, USA, JavaScript, AngularJS ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "JavaScript", Tag "AngularJS" ]
               }
             , { name = "AWS Summit Stockholm"
               , link = "https://aws.amazon.com/summits/"
@@ -1459,7 +1459,7 @@ model =
               , location = "Stockholm, Sweden"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Sweden, AWS, DevOps ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Sweden", Tag "AWS", Tag "DevOps" ]
               }
             , { name = "RailsConf"
               , link = "http://railsconf.com/"
@@ -1468,7 +1468,7 @@ model =
               , location = "Kansas City, MO"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Jan, 15 )
-              , tags = [ English, Developers, USA, Ruby, Rails ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "Ruby", Tag "Rails" ]
               }
             , { name = "Typelevel Summit"
               , link = "http://typelevel.org/event/2016-05-summit-oslo/"
@@ -1477,7 +1477,7 @@ model =
               , location = "Oslo, Norway"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Apr, 3 )
-              , tags = [ English, Developers, Norway, Scala, FunctionalProgramming, Java ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Norway", Tag "Scala", Tag "FunctionalProgramming", Tag "Java" ]
               }
             , { name = "AWS Summit Manila"
               , link = "https://aws.amazon.com/summits/"
@@ -1486,7 +1486,7 @@ model =
               , location = "Manila, Philippines"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Philippines, AWS, DevOps ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Philippines", Tag "AWS", Tag "DevOps" ]
               }
             , { name = "CocoaConf Seattle"
               , link = "http://cocoaconf.com/seattle-2016/home"
@@ -1495,7 +1495,7 @@ model =
               , location = "Seattle, WA"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, USA, IOS, Cocoa ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "IOS", Tag "Cocoa" ]
               }
             , { name = "SyntaxCon"
               , link = "http://2016.syntaxcon.com/"
@@ -1504,7 +1504,7 @@ model =
               , location = "Charleston, SC"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Feb, 12 )
-              , tags = [ English, Developers, USA, General ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "General" ]
               }
             , { name = "!!Con"
               , link = "http://bangbangcon.com/"
@@ -1513,7 +1513,7 @@ model =
               , location = "New York, NY"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Mar, 18 )
-              , tags = [ English, Developers, USA, General ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "General" ]
               }
             , { name = "9th European Lisp Symposium"
               , link = "http://www.european-lisp-symposium.org/"
@@ -1522,7 +1522,7 @@ model =
               , location = "Krakow, Poland"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Feb, 19 )
-              , tags = [ English, Developers, Poland, Lisp, Clojure ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Poland", Tag "Lisp", Tag "Clojure" ]
               }
             , { name = "Apache: Big Data North America"
               , link = "http://www.apachecon.com/"
@@ -1531,7 +1531,7 @@ model =
               , location = "Vancouver, BC, Canada"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Feb, 12 )
-              , tags = [ English, Developers, Canada, BigData ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Canada", Tag "BigData" ]
               }
             , { name = "Beyond Tellerrand"
               , link = "http://beyondtellerrand.com/events/duesseldorf-2016"
@@ -1540,7 +1540,7 @@ model =
               , location = "Düsseldorf, Germany"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Designers, Developers, Germany, UX, General ]
+              , tags = [ Tag "English", Tag "Designers", Tag "Developers", Tag "Germany", Tag "UX", Tag "General" ]
               }
             , { name = "C++Now"
               , link = "http://cppnow.org/"
@@ -1549,7 +1549,7 @@ model =
               , location = "Aspen, CO"
               , cfpStartDate = Just ( 2015, Nov, 17 )
               , cfpEndDate = Just ( 2016, Jan, 29 )
-              , tags = [ English, Developers, USA, CPlusPlus ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "CPlusPlus" ]
               }
             , { name = "ChefConf"
               , link = "https://www.chef.io/chefconf/"
@@ -1558,7 +1558,7 @@ model =
               , location = "Austin, TX"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Feb, 29 )
-              , tags = [ English, Developers, USA, Chef, DevOps ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "Chef", Tag "DevOps" ]
               }
             , { name = "DrupalCon New Orleans"
               , link = "https://events.drupal.org/neworleans2016/"
@@ -1567,7 +1567,7 @@ model =
               , location = "New Orleans, LA"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Feb, 29 )
-              , tags = [ English, Developers, USA, Drupal, PHP ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "Drupal", Tag "PHP" ]
               }
             , { name = "Scala Days New York"
               , link = "http://event.scaladays.org/scaladays-nyc-2016"
@@ -1576,7 +1576,7 @@ model =
               , location = "New York, NY"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, USA, Scala ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "Scala" ]
               }
             , { name = "Codemotion Amsterdam"
               , link = "http://amsterdam2016.codemotionworld.com/"
@@ -1585,7 +1585,7 @@ model =
               , location = "Amsterdam, Netherlands"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Netherlands, General ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Netherlands", Tag "General" ]
               }
             , { name = "CSSConf Budapest"
               , link = "http://cssconfbp.rocks/"
@@ -1594,7 +1594,7 @@ model =
               , location = "Budapest, Hungary"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Designers, Hungary, CSS ]
+              , tags = [ Tag "English", Tag "Designers", Tag "Hungary", Tag "CSS" ]
               }
             , { name = "ElixirConf EU"
               , link = "http://www.elixirconf.eu/"
@@ -1603,7 +1603,7 @@ model =
               , location = "Berlin, Germany"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Feb, 18 )
-              , tags = [ English, Developers, Germany, Elixir, FunctionalProgramming, Erlang ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Germany", Tag "Elixir", Tag "FunctionalProgramming", Tag "Erlang" ]
               }
             , { name = "jsDay"
               , link = "http://2016.jsday.it/"
@@ -1612,7 +1612,7 @@ model =
               , location = "Verona, Italy"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Jan, 31 )
-              , tags = [ English, Developers, Italy, JavaScript ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Italy", Tag "JavaScript" ]
               }
             , { name = "React Remote Conf"
               , link = "https://allremoteconfs.com/react-2016"
@@ -1621,7 +1621,7 @@ model =
               , location = "Remote"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Apr, 9 )
-              , tags = [ English, Developers, Remote, JavaScript, React ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Remote", Tag "JavaScript", Tag "React" ]
               }
             , { name = "UX Alive"
               , link = "http://www.uxalive.com/"
@@ -1630,7 +1630,7 @@ model =
               , location = "Istanbul, Turkey"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Designers, Turkey, UX ]
+              , tags = [ Tag "English", Tag "Designers", Tag "Turkey", Tag "UX" ]
               }
             , { name = "ApacheCon Core North America"
               , link = "http://www.apachecon.com/"
@@ -1639,7 +1639,7 @@ model =
               , location = "Vancouver, Canada"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Feb, 12 )
-              , tags = [ English, Developers, Canada, OpenSource ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Canada", Tag "OpenSource" ]
               }
             , { name = "Front Conference"
               , link = "http://www.frontutah.com/"
@@ -1648,7 +1648,7 @@ model =
               , location = "Salt Lake City, UT"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Designers, USA, UX ]
+              , tags = [ Tag "English", Tag "Designers", Tag "USA", Tag "UX" ]
               }
             , { name = "JSConf Budapest"
               , link = "http://jsconfbp.com/"
@@ -1657,7 +1657,7 @@ model =
               , location = "Budapest, Hungary"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Hungary, JavaScript ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Hungary", Tag "JavaScript" ]
               }
             , { name = "An Event Apart Boston"
               , link = "http://aneventapart.com/event/boston-2016"
@@ -1666,7 +1666,7 @@ model =
               , location = "Boston, MA"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Designers, Developers, USA, UX ]
+              , tags = [ Tag "English", Tag "Designers", Tag "Developers", Tag "USA", Tag "UX" ]
               }
             , { name = "Open Source Convention Tutorials"
               , link = "http://conferences.oreilly.com/oscon/open-source"
@@ -1675,7 +1675,7 @@ model =
               , location = "Austin, TX"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, USA, OpenSource ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "OpenSource" ]
               }
             , { name = "AWS Summit Seoul"
               , link = "https://aws.amazon.com/summits/"
@@ -1684,7 +1684,7 @@ model =
               , location = "Seoul, South Korea"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, SouthKorea, AWS, DevOps ]
+              , tags = [ Tag "English", Tag "Developers", Tag "SouthKorea", Tag "AWS", Tag "DevOps" ]
               }
             , { name = "Front-Trends"
               , link = "http://2016.front-trends.com/"
@@ -1693,7 +1693,7 @@ model =
               , location = "Warsaw, Poland"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Apr, 4 )
-              , tags = [ English, Designers, Poland, UX ]
+              , tags = [ Tag "English", Tag "Designers", Tag "Poland", Tag "UX" ]
               }
             , { name = "Open Source Convention"
               , link = "http://conferences.oreilly.com/oscon/open-source"
@@ -1702,7 +1702,7 @@ model =
               , location = "Austin, TX"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, USA, OpenSource ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "OpenSource" ]
               }
             , { name = "UX London"
               , link = "http://2016.uxlondon.com/"
@@ -1711,7 +1711,7 @@ model =
               , location = "London, England"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Designers, England, UX ]
+              , tags = [ Tag "English", Tag "Designers", Tag "England", Tag "UX" ]
               }
             , { name = "droidcon Montreal"
               , link = "http://www.droidcon.ca/"
@@ -1720,7 +1720,7 @@ model =
               , location = "Montreal, Canada"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Mar, 4 )
-              , tags = [ English, Developers, Canada, Android, Mobile ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Canada", Tag "Android", Tag "Mobile" ]
               }
             , { name = "PhoneGap Day EU"
               , link = "http://pgday.phonegap.com/eu2016/"
@@ -1729,7 +1729,7 @@ model =
               , location = "Amsterdam, Netherlands"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Netherlands, PhoneGap, Mobile ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Netherlands", Tag "PhoneGap", Tag "Mobile" ]
               }
             , { name = "Valio Con"
               , link = "http://valiocon.com/"
@@ -1738,7 +1738,7 @@ model =
               , location = "San Diego, CA"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Designers, USA, UX ]
+              , tags = [ Tag "English", Tag "Designers", Tag "USA", Tag "UX" ]
               }
             , { name = "AWS Summit Taipei"
               , link = "https://aws.amazon.com/summits/"
@@ -1747,7 +1747,7 @@ model =
               , location = "Taipei, Taiwan"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Taiwan, AWS, DevOps ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Taiwan", Tag "AWS", Tag "DevOps" ]
               }
             , { name = "self.conference"
               , link = "http://selfconference.org/"
@@ -1756,7 +1756,7 @@ model =
               , location = "Detroit, MI"
               , cfpStartDate = Just ( 2016, Jan, 18 )
               , cfpEndDate = Just ( 2016, Feb, 15 )
-              , tags = [ English, Designers, Developers, USA, General, SoftSkills ]
+              , tags = [ Tag "English", Tag "Designers", Tag "Developers", Tag "USA", Tag "General", Tag "SoftSkills" ]
               }
             , { name = "EmpEx"
               , link = "http://empex.co/"
@@ -1765,7 +1765,7 @@ model =
               , location = "New York, NY"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2015, Mar, 15 )
-              , tags = [ English, Developers, USA, Elixir, FunctionalProgramming ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "Elixir", Tag "FunctionalProgramming" ]
               }
             , { name = "UIKonf"
               , link = "http://www.uikonf.com/"
@@ -1774,7 +1774,7 @@ model =
               , location = "Berlin, Germany"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Germany, IOS ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Germany", Tag "IOS" ]
               }
             , { name = "GOTO Chicago Workshops"
               , link = "http://gotocon.com/chicago-2016"
@@ -1783,7 +1783,7 @@ model =
               , location = "Chicago, IL"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, USA, General ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "General" ]
               }
             , { name = "php[tek]"
               , link = "https://tek.phparch.com/"
@@ -1792,7 +1792,7 @@ model =
               , location = "St. Louis, MO"
               , cfpStartDate = Just ( 2015, Dec, 14 )
               , cfpEndDate = Just ( 2016, Jan, 16 )
-              , tags = [ English, Developers, USA, PHP ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "PHP" ]
               }
             , { name = "AWS Summit Netherlands"
               , link = "https://aws.amazon.com/summits/"
@@ -1801,7 +1801,7 @@ model =
               , location = "Nieuwegein, Netherlands"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Netherlands, AWS, DevOps ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Netherlands", Tag "AWS", Tag "DevOps" ]
               }
             , { name = "GOTO Chicago"
               , link = "http://gotocon.com/chicago-2016"
@@ -1810,7 +1810,7 @@ model =
               , location = "Chicago, IL"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, USA, General ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "General" ]
               }
             , { name = "AWS Summit Mumbai"
               , link = "https://aws.amazon.com/summits/"
@@ -1819,7 +1819,7 @@ model =
               , location = "Mumbai, India"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, India, AWS, DevOps ]
+              , tags = [ Tag "English", Tag "Developers", Tag "India", Tag "AWS", Tag "DevOps" ]
               }
             , { name = "HBaseCon"
               , link = "http://www.hbasecon.com/"
@@ -1828,7 +1828,7 @@ model =
               , location = "San Francisco, CA"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Feb, 28 )
-              , tags = [ English, Developers, USA, Hadoop, BigData, Cloud ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "Hadoop", Tag "BigData", Tag "Cloud" ]
               }
             , { name = "SIGNAL 2016"
               , link = "https://www.twilio.com/signal"
@@ -1837,7 +1837,7 @@ model =
               , location = "San Francisco, CA"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, USA, Communications ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "Communications" ]
               }
             , { name = "UXLx"
               , link = "https://www.ux-lx.com/"
@@ -1846,7 +1846,7 @@ model =
               , location = "Lisbon, Portugal"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Designers, Portugal, UX ]
+              , tags = [ Tag "English", Tag "Designers", Tag "Portugal", Tag "UX" ]
               }
             , { name = "GlueCon"
               , link = "http://gluecon.com/"
@@ -1855,7 +1855,7 @@ model =
               , location = "Broomfield, CO"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, May, 1 )
-              , tags = [ English, Developers, USA, General, DevOps, BigData ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "General", Tag "DevOps", Tag "BigData" ]
               }
             , { name = "PrlConf"
               , link = "http://www.jonprl.org/prlconf"
@@ -1864,7 +1864,7 @@ model =
               , location = "Boulder, CO"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, USA, FunctionalProgramming ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "FunctionalProgramming" ]
               }
             , { name = "PureScript Conf"
               , link = "https://github.com/purescript/purescript/wiki/PureScript-Conf-2016"
@@ -1873,7 +1873,7 @@ model =
               , location = "Boulder, CO"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, USA, FunctionalProgramming, PureScript ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "FunctionalProgramming", Tag "PureScript" ]
               }
             , { name = "AWS Summit Mexico City"
               , link = "https://aws.amazon.com/summits/"
@@ -1882,7 +1882,7 @@ model =
               , location = "Mexico City, Mexico"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Mexico, AWS, DevOps ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Mexico", Tag "AWS", Tag "DevOps" ]
               }
             , { name = "DevSum"
               , link = "http://www.devsum.se/"
@@ -1891,7 +1891,7 @@ model =
               , location = "Stockholm, Sweden"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Mar, 13 )
-              , tags = [ English, Developers, Sweden, DotNet ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Sweden", Tag "DotNet" ]
               }
             , { name = "GOTO Chicago Workshops"
               , link = "http://gotocon.com/chicago-2016"
@@ -1900,7 +1900,7 @@ model =
               , location = "Chicago, IL"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, USA, General ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "General" ]
               }
             , { name = "iOSCon"
               , link = "https://skillsmatter.com/conferences/7598-ioscon-2016-the-conference-for-ios-and-swift-developers"
@@ -1909,7 +1909,7 @@ model =
               , location = "London, England"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, England, IOS ]
+              , tags = [ Tag "English", Tag "Developers", Tag "England", Tag "IOS" ]
               }
             , { name = "LambdaConf"
               , link = "http://lambdaconf.us/"
@@ -1918,7 +1918,7 @@ model =
               , location = "Boulder, CO"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, USA, FunctionalProgramming, Haskell, Scala, PureScript ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "FunctionalProgramming", Tag "Haskell", Tag "Scala", Tag "PureScript" ]
               }
             , { name = "Frontend United"
               , link = "http://frontendunited.org/"
@@ -1927,7 +1927,7 @@ model =
               , location = "Ghent, Belgium"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Designers, Developers, Belgium, UX, Drupal, PHP ]
+              , tags = [ Tag "English", Tag "Designers", Tag "Developers", Tag "Belgium", Tag "UX", Tag "Drupal", Tag "PHP" ]
               }
             , { name = "PyCon Tutorials"
               , link = "https://us.pycon.org/2016/"
@@ -1936,7 +1936,7 @@ model =
               , location = "Portland, OR"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, USA, Python ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "Python" ]
               }
             , { name = "PyCon"
               , link = "https://us.pycon.org/2016/"
@@ -1945,7 +1945,7 @@ model =
               , location = "Portland, OR"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, USA, Python ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "Python" ]
               }
             , { name = "AWS Summit Paris"
               , link = "https://aws.amazon.com/summits/"
@@ -1954,7 +1954,7 @@ model =
               , location = "Paris, France"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, France, AWS, DevOps ]
+              , tags = [ Tag "English", Tag "Developers", Tag "France", Tag "AWS", Tag "DevOps" ]
               }
             , { name = "AWS Summit Tokyo"
               , link = "https://aws.amazon.com/summits/"
@@ -1963,7 +1963,7 @@ model =
               , location = "Tokyo, Japan"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Japan, AWS, DevOps ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Japan", Tag "AWS", Tag "DevOps" ]
               }
             , { name = "CSSConf Nordic"
               , link = "http://cssconf.no/"
@@ -1972,7 +1972,7 @@ model =
               , location = "Oslo, Norway"
               , cfpStartDate = Just ( 2015, Dec, 23 )
               , cfpEndDate = Just ( 2016, Jan, 31 )
-              , tags = [ English, Designers, Norway, UX, CSS ]
+              , tags = [ Tag "English", Tag "Designers", Tag "Norway", Tag "UX", Tag "CSS" ]
               }
             , { name = "Git Remote Conf"
               , link = "https://allremoteconfs.com/git-2016"
@@ -1981,7 +1981,7 @@ model =
               , location = "Remote"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, May, 6 )
-              , tags = [ English, Designers, Developers, Remote, Git ]
+              , tags = [ Tag "English", Tag "Designers", Tag "Developers", Tag "Remote", Tag "Git" ]
               }
             , { name = "MagmaConf"
               , link = "http://www.magmaconf.com/"
@@ -1990,7 +1990,7 @@ model =
               , location = "Manzanillo, Mexico"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Mexico, Ruby ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Mexico", Tag "Ruby" ]
               }
             , { name = "ScotlandCSS"
               , link = "http://scotlandcss.launchrock.com/"
@@ -1999,7 +1999,7 @@ model =
               , location = "Edinburgh, Scotland"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Designers, Scotland, CSS ]
+              , tags = [ Tag "English", Tag "Designers", Tag "Scotland", Tag "CSS" ]
               }
             , { name = "AWS Summit Madrid"
               , link = "https://aws.amazon.com/summits/"
@@ -2008,7 +2008,7 @@ model =
               , location = "Madrid, Spain"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Spain, AWS, DevOps ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Spain", Tag "AWS", Tag "DevOps" ]
               }
             , { name = "AWS Summit Sao Paulo"
               , link = "https://aws.amazon.com/summits/"
@@ -2017,7 +2017,7 @@ model =
               , location = "Sao Paulo, Brazil"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Brazil, AWS, DevOps ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Brazil", Tag "AWS", Tag "DevOps" ]
               }
             , { name = "GR8Conf EU"
               , link = "http://gr8conf.eu/"
@@ -2026,7 +2026,7 @@ model =
               , location = "Copenhagen, Denmark"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Feb, 13 )
-              , tags = [ English, Developers, Denmark, Java, Groovy, Grails, Gradle ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Denmark", Tag "Java", Tag "Groovy", Tag "Grails", Tag "Gradle" ]
               }
             , { name = "PyCon Sprints"
               , link = "https://us.pycon.org/2016/"
@@ -2035,7 +2035,7 @@ model =
               , location = "Portland, OR"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, USA, Python ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "Python" ]
               }
             , { name = "ReactEurope"
               , link = "https://www.react-europe.org/"
@@ -2044,7 +2044,7 @@ model =
               , location = "Paris, France"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, France, React, JavaScript ]
+              , tags = [ Tag "English", Tag "Developers", Tag "France", Tag "React", Tag "JavaScript" ]
               }
             , { name = "Scotland JS"
               , link = "http://scotlandjs.com/"
@@ -2053,7 +2053,7 @@ model =
               , location = "Edinburgh, Scotland"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Feb, 12 )
-              , tags = [ English, Developers, Scotland, JavaScript ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Scotland", Tag "JavaScript" ]
               }
             , { name = "SoCraTes England"
               , link = "http://socratesuk.org/"
@@ -2062,7 +2062,7 @@ model =
               , location = "Dorking, England"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, England, SoftwareCraftsmanship ]
+              , tags = [ Tag "English", Tag "Developers", Tag "England", Tag "SoftwareCraftsmanship" ]
               }
             , { name = "Web Rebels"
               , link = "https://www.webrebels.org/"
@@ -2071,7 +2071,7 @@ model =
               , location = "Oslo, Norway"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Norway, JavaScript ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Norway", Tag "JavaScript" ]
               }
             , { name = "NodeConf Oslo"
               , link = "http://oslo.nodeconf.com/"
@@ -2080,7 +2080,7 @@ model =
               , location = "Oslo, Norway"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Mar, 13 )
-              , tags = [ English, Developers, Norway, NodeJS, JavaScript ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Norway", Tag "NodeJS", Tag "JavaScript" ]
               }
             , { name = "Berlin Buzzwords"
               , link = "http://berlinbuzzwords.de/"
@@ -2089,7 +2089,7 @@ model =
               , location = "Berlin, Germany"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Feb, 7 )
-              , tags = [ English, Developers, Germany, BigData ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Germany", Tag "BigData" ]
               }
             , { name = "NDC Oslo Workshops"
               , link = "http://ndcoslo.com/"
@@ -2098,7 +2098,7 @@ model =
               , location = "Oslo, Norway"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Feb, 15 )
-              , tags = [ English, Developers, Norway, Agile, DotNet, General ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Norway", Tag "Agile", Tag "DotNet", Tag "General" ]
               }
             , { name = "Spark Summit"
               , link = "https://spark-summit.org/2016/"
@@ -2107,7 +2107,7 @@ model =
               , location = "San Francisco, CA"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Feb, 29 )
-              , tags = [ English, Developers, USA, BigData ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "BigData" ]
               }
             , { name = "NDC Oslo"
               , link = "http://ndcoslo.com/"
@@ -2116,7 +2116,7 @@ model =
               , location = "Oslo, Norway"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Norway, Agile, DotNet, General ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Norway", Tag "Agile", Tag "DotNet", Tag "General" ]
               }
             , { name = "UX Scotland"
               , link = "http://uxscotland.net/2016/"
@@ -2125,7 +2125,7 @@ model =
               , location = "Edinburgh, Scotland"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Designers, Scotland, UX ]
+              , tags = [ Tag "English", Tag "Designers", Tag "Scotland", Tag "UX" ]
               }
             , { name = "NodeConf"
               , link = "http://nodeconf.com/"
@@ -2134,7 +2134,7 @@ model =
               , location = "Petaluma, CA"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, USA, NodeJS, JavaScript ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "NodeJS", Tag "JavaScript" ]
               }
             , { name = "GOTO Amsterdam Workshops"
               , link = "http://gotocon.com/amsterdam-2016/"
@@ -2143,7 +2143,7 @@ model =
               , location = "Amsterdam, Netherlands"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Netherlands, General ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Netherlands", Tag "General" ]
               }
             , { name = "QCon New York"
               , link = "https://qconnewyork.com/"
@@ -2152,7 +2152,7 @@ model =
               , location = "New York, NY"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, USA, General ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "General" ]
               }
             , { name = "enterJS"
               , link = "https://www.enterjs.de/"
@@ -2161,7 +2161,7 @@ model =
               , location = "Darmstadt, Germany"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ German, Developers, Germany, JavaScript ]
+              , tags = [ Tag "German", Tag "Developers", Tag "Germany", Tag "JavaScript" ]
               }
             , { name = "GOTO Amsterdam"
               , link = "http://gotocon.com/amsterdam-2016/"
@@ -2170,7 +2170,7 @@ model =
               , location = "Amsterdam, Netherlands"
               , cfpStartDate = Just ( 2016, Jan, 14 )
               , cfpEndDate = Just ( 2016, Mar, 13 )
-              , tags = [ English, Developers, Netherlands, General ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Netherlands", Tag "General" ]
               }
             , { name = "droidcon Berlin"
               , link = "http://droidcon.de/"
@@ -2179,7 +2179,7 @@ model =
               , location = "Berlin, Germany"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Feb, 28 )
-              , tags = [ English, Developers, Germany, Android, Mobile ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Germany", Tag "Android", Tag "Mobile" ]
               }
             , { name = "Front End Design Conference"
               , link = "http://frontenddesignconference.com/"
@@ -2188,7 +2188,7 @@ model =
               , location = "St. Petersburg, FL"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Feb, 15 )
-              , tags = [ English, Designers, USA, UX ]
+              , tags = [ Tag "English", Tag "Designers", Tag "USA", Tag "UX" ]
               }
             , { name = "Scala Days Berlin"
               , link = "http://event.scaladays.org/scaladays-berlin-2016"
@@ -2197,7 +2197,7 @@ model =
               , location = "Berlin, Germany"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Germany, Scala ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Germany", Tag "Scala" ]
               }
             , { name = "AWS Summit Tel Aviv"
               , link = "https://aws.amazon.com/summits/"
@@ -2206,7 +2206,7 @@ model =
               , location = "Tel Aviv, Israel"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Israel, AWS, DevOps ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Israel", Tag "AWS", Tag "DevOps" ]
               }
             , { name = "CSS Day"
               , link = "http://cssday.nl/2016"
@@ -2215,7 +2215,7 @@ model =
               , location = "Amsterdam, Netherlands"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Designers, Netherlands, CSS ]
+              , tags = [ Tag "English", Tag "Designers", Tag "Netherlands", Tag "CSS" ]
               }
             , { name = "QCon New York Tutorials"
               , link = "https://qconnewyork.com/"
@@ -2224,7 +2224,7 @@ model =
               , location = "New York, NY"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, USA, General ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "General" ]
               }
             , { name = "Joy of Coding"
               , link = "http://joyofcoding.org/"
@@ -2233,7 +2233,7 @@ model =
               , location = "Rotterdam, Netherlands"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Feb, 17 )
-              , tags = [ English, Developers, Netherlands, General ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Netherlands", Tag "General" ]
               }
             , { name = "Nordic Ruby"
               , link = "http://www.nordicruby.org/"
@@ -2242,7 +2242,7 @@ model =
               , location = "Stockholm, Sweden"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Sweden, Ruby ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Sweden", Tag "Ruby" ]
               }
             , { name = "DockerCon"
               , link = "http://2016.dockercon.com/"
@@ -2251,7 +2251,7 @@ model =
               , location = "Seattle, WA"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Mar, 18 )
-              , tags = [ English, Developers, USA, Docker ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "Docker" ]
               }
             , { name = "Public Sector Summit"
               , link = "https://aws.amazon.com/summits/"
@@ -2260,7 +2260,7 @@ model =
               , location = "Washington, DC"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, USA, AWS, DevOps ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "AWS", Tag "DevOps" ]
               }
             , { name = "O'Reilly Velocity"
               , link = "http://conferences.oreilly.com/velocity/devops-web-performance-ca/"
@@ -2269,7 +2269,7 @@ model =
               , location = "Santa Clara, CA"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Jan, 11 )
-              , tags = [ English, Developers, USA, Scalability, DevOps ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "Scalability", Tag "DevOps" ]
               }
             , { name = "Codemotion Dublin"
               , link = "http://dublin2016.codemotionworld.com/"
@@ -2278,7 +2278,7 @@ model =
               , location = "Dublin, Ireland"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Ireland, General ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Ireland", Tag "General" ]
               }
             , { name = "RedDotRubyConf"
               , link = "http://www.reddotrubyconf.com/"
@@ -2287,7 +2287,7 @@ model =
               , location = "Singapore"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Mar, 28 )
-              , tags = [ English, Developers, Singapore, Ruby ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Singapore", Tag "Ruby" ]
               }
             , { name = "Web Design Day"
               , link = "http://webdesignday.com/"
@@ -2296,7 +2296,7 @@ model =
               , location = "Pittsburgh, PA"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Designers, USA, UX ]
+              , tags = [ Tag "English", Tag "Designers", Tag "USA", Tag "UX" ]
               }
             , { name = "Dinosaur.js"
               , link = "http://dinosaurjs.org/"
@@ -2305,7 +2305,7 @@ model =
               , location = "Denver, CO"
               , cfpStartDate = Just ( 2016, Feb, 1 )
               , cfpEndDate = Just ( 2016, Mar, 14 )
-              , tags = [ English, Developers, USA, JavaScript ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "JavaScript" ]
               }
             , { name = "GIANT Conf"
               , link = "http://www.giantux.com/conf2016/"
@@ -2314,7 +2314,7 @@ model =
               , location = "TBD"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Designers, USA, UX ]
+              , tags = [ Tag "English", Tag "Designers", Tag "USA", Tag "UX" ]
               }
             , { name = "You Gotta Love Frontend"
               , link = "http://yougottalovefrontend.com/"
@@ -2323,7 +2323,7 @@ model =
               , location = "Tel Aviv, Israel"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Mar, 31 )
-              , tags = [ English, Designers, Developers, Israel, JavaScript, AngularJS, React, CSS, General ]
+              , tags = [ Tag "English", Tag "Designers", Tag "Developers", Tag "Israel", Tag "JavaScript", Tag "AngularJS", Tag "React", Tag "CSS", Tag "General" ]
               }
             , { name = "Hadoop Summit North America"
               , link = "http://2016.hadoopsummit.org/san-jose/"
@@ -2332,7 +2332,7 @@ model =
               , location = "San Jose, CA"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, USA, Hadoop, BigData, InternetOfThings ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "Hadoop", Tag "BigData", Tag "InternetOfThings" ]
               }
             , { name = "MongoDB World 2016"
               , link = "https://www.mongodb.com/world16"
@@ -2341,7 +2341,7 @@ model =
               , location = "New York, NY"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, USA, MongoDB, BigData ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "MongoDB", Tag "BigData" ]
               }
             , { name = "AWS Summit Auckland"
               , link = "https://aws.amazon.com/summits/"
@@ -2350,7 +2350,7 @@ model =
               , location = "Auckland, New Zealand"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, NewZealand, AWS, DevOps ]
+              , tags = [ Tag "English", Tag "Developers", Tag "NewZealand", Tag "AWS", Tag "DevOps" ]
               }
             , { name = "PolyConf"
               , link = "http://polyconf.com/"
@@ -2359,7 +2359,7 @@ model =
               , location = "Poznan, Poland"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Poland, General ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Poland", Tag "General" ]
               }
             , { name = "AWS Summit London"
               , link = "https://aws.amazon.com/summits/"
@@ -2368,7 +2368,7 @@ model =
               , location = "London, England"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, England, AWS, DevOps ]
+              , tags = [ Tag "English", Tag "Developers", Tag "England", Tag "AWS", Tag "DevOps" ]
               }
             , { name = "Brighton Ruby"
               , link = "http://brightonruby.com/"
@@ -2377,7 +2377,7 @@ model =
               , location = "Brighton, England"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Mar, 31 )
-              , tags = [ English, Developers, England, Ruby ]
+              , tags = [ Tag "English", Tag "Developers", Tag "England", Tag "Ruby" ]
               }
             , { name = "Chef Conf"
               , link = "https://www.chef.io/chefconf/"
@@ -2386,7 +2386,7 @@ model =
               , location = "Austin, TX"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Feb, 29 )
-              , tags = [ English, Developers, USA, Chef, DevOps ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "Chef", Tag "DevOps" ]
               }
             , { name = "GopherCon"
               , link = "https://www.gophercon.com/"
@@ -2395,7 +2395,7 @@ model =
               , location = "Denver, CO"
               , cfpStartDate = Just ( 2016, Jan, 1 )
               , cfpEndDate = Just ( 2016, Jan, 31 )
-              , tags = [ English, Developers, USA, Go ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "Go" ]
               }
             , { name = "AWS Summit Santa Clara"
               , link = "https://aws.amazon.com/summits/"
@@ -2404,7 +2404,7 @@ model =
               , location = "Santa Clara, CA"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, USA, AWS, DevOps ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "AWS", Tag "DevOps" ]
               }
             , { name = "Newbie Remote Conf"
               , link = "https://allremoteconfs.com/newbie-2016"
@@ -2413,7 +2413,7 @@ model =
               , location = "Remote"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Jun, 11 )
-              , tags = [ English, Designers, Developers, Remote, General ]
+              , tags = [ Tag "English", Tag "Designers", Tag "Developers", Tag "Remote", Tag "General" ]
               }
             , { name = "Generate San Francisco"
               , link = "http://www.generateconf.com/san-francisco-2016/"
@@ -2422,7 +2422,7 @@ model =
               , location = "San Francisco, CA"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Designers, USA, UX ]
+              , tags = [ Tag "English", Tag "Designers", Tag "USA", Tag "UX" ]
               }
             , { name = "EuroPython"
               , link = "http://ep2016.europython.eu/"
@@ -2431,7 +2431,7 @@ model =
               , location = "Bilbao, Spain"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Spain, Python ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Spain", Tag "Python" ]
               }
             , { name = "php[cruise]"
               , link = "https://cruise.phparch.com/"
@@ -2440,7 +2440,7 @@ model =
               , location = "Baltimore, MD"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, USA, PHP ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "PHP" ]
               }
             , { name = "Curry On"
               , link = "http://curry-on.org/2016/"
@@ -2449,7 +2449,7 @@ model =
               , location = "Rome, Italy"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Italy, General ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Italy", Tag "General" ]
               }
             , { name = "UberConf"
               , link = "https://uberconf.com/conference/denver/2016/07/home"
@@ -2458,7 +2458,7 @@ model =
               , location = "Denver, CO"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, USA, Java, Agile, Cloud, Scala, Groovy ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "Java", Tag "Agile", Tag "Cloud", Tag "Scala", Tag "Groovy" ]
               }
             , { name = "European Conference on Object-Oriented Programming"
               , link = "http://2016.ecoop.org/"
@@ -2467,7 +2467,7 @@ model =
               , location = "Rome, Italy"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Italy, General ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Italy", Tag "General" ]
               }
             , { name = "An Event Apart DC"
               , link = "http://aneventapart.com/event/washington-dc-2016"
@@ -2476,7 +2476,7 @@ model =
               , location = "Washington, DC"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Designers, Developers, USA, UX ]
+              , tags = [ Tag "English", Tag "Designers", Tag "Developers", Tag "USA", Tag "UX" ]
               }
             , { name = "Mobile & Web CodeCamp"
               , link = "http://www.mobilewebcodecamp.com/"
@@ -2485,7 +2485,7 @@ model =
               , location = "Salt Lake City, UT"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, USA, Mobile, Android, IOS, JavaScript, PhoneGap ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "Mobile", Tag "Android", Tag "IOS", Tag "JavaScript", Tag "PhoneGap" ]
               }
             , { name = "GR8Conf US"
               , link = "http://gr8conf.org/"
@@ -2494,7 +2494,7 @@ model =
               , location = "Minneapolis, MN"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Feb, 15 )
-              , tags = [ English, Developers, USA, Java, Groovy, Grails, Gradle ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "Java", Tag "Groovy", Tag "Grails", Tag "Gradle" ]
               }
             , { name = "Forward 5 Web Summit"
               , link = "http://forwardjs.com/"
@@ -2503,7 +2503,7 @@ model =
               , location = "San Francisco, CA"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Apr, 15 )
-              , tags = [ English, Developers, USA, JavaScript ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "JavaScript" ]
               }
             , { name = "Forward Swift"
               , link = "http://forwardjs.com/"
@@ -2512,7 +2512,7 @@ model =
               , location = "San Francisco, CA"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Apr, 15 )
-              , tags = [ English, Developers, USA, Swift ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "Swift" ]
               }
             , { name = "NDC Sydney Workshops"
               , link = "http://ndcsydney.com/"
@@ -2521,7 +2521,7 @@ model =
               , location = "Sydney, Australia"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Apr, 1 )
-              , tags = [ English, Developers, Australia, Agile, DotNet, General ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Australia", Tag "Agile", Tag "DotNet", Tag "General" ]
               }
             , { name = "AWS Summit Canberra"
               , link = "https://aws.amazon.com/summits/"
@@ -2530,7 +2530,7 @@ model =
               , location = "Canberra, Australia"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Australia, AWS, DevOps ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Australia", Tag "AWS", Tag "DevOps" ]
               }
             , { name = "NDC Sydney"
               , link = "http://ndcsydney.com/"
@@ -2539,7 +2539,7 @@ model =
               , location = "Sydney, Australia"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Apr, 1 )
-              , tags = [ English, Developers, Australia, Agile, DotNet, General ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Australia", Tag "Agile", Tag "DotNet", Tag "General" ]
               }
             , { name = "CSSconf Argentina"
               , link = "http://cssconfar.com/"
@@ -2548,7 +2548,7 @@ model =
               , location = "Buenos Aires, Argentina"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Designers, Argentina, CSS ]
+              , tags = [ Tag "English", Tag "Designers", Tag "Argentina", Tag "CSS" ]
               }
             , { name = "That Conference"
               , link = "https://www.thatconference.com/"
@@ -2557,7 +2557,7 @@ model =
               , location = "Wisconsin Dells, WI"
               , cfpStartDate = Just ( 2016, Mar, 1 )
               , cfpEndDate = Just ( 2016, Mar, 31 )
-              , tags = [ English, Developers, USA, Mobile, Cloud ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "Mobile", Tag "Cloud" ]
               }
             , { name = "AWS Summit New York"
               , link = "https://aws.amazon.com/summits/"
@@ -2566,7 +2566,7 @@ model =
               , location = "New York, NY"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, USA, AWS, DevOps ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "AWS", Tag "DevOps" ]
               }
             , { name = "Midwest JS"
               , link = "http://midwestjs.com/"
@@ -2575,7 +2575,7 @@ model =
               , location = "Minneapolis, MN"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Mar, 5 )
-              , tags = [ English, Developers, USA, JavaScript, NodeJS ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "JavaScript", Tag "NodeJS" ]
               }
             , { name = "Robots Remote Conf"
               , link = "https://allremoteconfs.com/robots-2016"
@@ -2584,7 +2584,7 @@ model =
               , location = "Remote"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Jul, 9 )
-              , tags = [ English, Developers, Remote, Robotics ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Remote", Tag "Robotics" ]
               }
             , { name = "FP Conf"
               , link = "http://fpconf.org/"
@@ -2593,7 +2593,7 @@ model =
               , location = "Moscow, Russia"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Russian, Developers, Russia, FunctionalProgramming, Erlang, Scala, Clojure, Haskell ]
+              , tags = [ Tag "English", Tag "Russian", Tag "Developers", Tag "Russia", Tag "FunctionalProgramming", Tag "Erlang", Tag "Scala", Tag "Clojure", Tag "Haskell" ]
               }
             , { name = "Abstractions"
               , link = "http://abstractions.io/"
@@ -2602,7 +2602,7 @@ model =
               , location = "Pittsburgh, PA"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Mar, 31 )
-              , tags = [ English, Developers, USA, General ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "General" ]
               }
             , { name = "HybridConf"
               , link = "https://hybridconf.net/"
@@ -2611,7 +2611,7 @@ model =
               , location = "Berlin, Germany"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Designers, Germany, General, UX ]
+              , tags = [ Tag "English", Tag "Designers", Tag "Germany", Tag "General", Tag "UX" ]
               }
             , { name = "360|iDev"
               , link = "http://360idev.com/"
@@ -2620,7 +2620,7 @@ model =
               , location = "Denver, CO"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, USA, IOS ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "IOS" ]
               }
             , { name = "JSConf Iceland"
               , link = "http://2016.jsconf.is/"
@@ -2629,7 +2629,7 @@ model =
               , location = "Reykjavik, Iceland"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Mar, 31 )
-              , tags = [ English, Developers, Iceland, JavaScript ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Iceland", Tag "JavaScript" ]
               }
             , { name = "React Rally"
               , link = "http://www.reactrally.com/"
@@ -2638,7 +2638,7 @@ model =
               , location = "Salt Lake City, UT"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, USA, React, JavaScript ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "React", Tag "JavaScript" ]
               }
             , { name = "BrazilJS"
               , link = "https://braziljs.org/conf"
@@ -2647,7 +2647,7 @@ model =
               , location = "Porto Alegre, Brazil"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Apr, 30 )
-              , tags = [ English, Spanish, Portuguese, Developers, Brazil, JavaScript ]
+              , tags = [ Tag "English", Tag "Spanish", Tag "Portuguese", Tag "Developers", Tag "Brazil", Tag "JavaScript" ]
               }
             , { name = "AlterConf South Africa"
               , link = "http://www.alterconf.com/sessions/cape-town-south-africa"
@@ -2656,7 +2656,7 @@ model =
               , location = "Cape Town, South Africa"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Jun, 16 )
-              , tags = [ English, Designers, Developers, SouthAfrica, Diversity, SoftSkills ]
+              , tags = [ Tag "English", Tag "Designers", Tag "Developers", Tag "SouthAfrica", Tag "Diversity", Tag "SoftSkills" ]
               }
             , { name = "An Event Apart Chicago"
               , link = "http://aneventapart.com/event/chicago-2016"
@@ -2665,7 +2665,7 @@ model =
               , location = "Chicago, IL"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Designers, Developers, USA, UX ]
+              , tags = [ Tag "English", Tag "Designers", Tag "Developers", Tag "USA", Tag "UX" ]
               }
             , { name = "Agile on the Beach"
               , link = "http://agileonthebeach.com/2016-2/"
@@ -2674,7 +2674,7 @@ model =
               , location = "Falmouth, England"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Feb, 29 )
-              , tags = [ English, Developers, England, Agile ]
+              , tags = [ Tag "English", Tag "Developers", Tag "England", Tag "Agile" ]
               }
             , { name = "ColdFront"
               , link = "https://2016.coldfrontconf.com/"
@@ -2683,7 +2683,7 @@ model =
               , location = "Copenhagen, Denmark"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Designers, Denmark, JavaScript, CSS, Mobile ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Designers", Tag "Denmark", Tag "JavaScript", Tag "CSS", Tag "Mobile" ]
               }
             , { name = "Frontend Conference Zurich"
               , link = "https://frontendconf.ch/"
@@ -2692,7 +2692,7 @@ model =
               , location = "Zürich, Switzerland"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, May, 31 )
-              , tags = [ English, Designers, Switzerland, UX ]
+              , tags = [ Tag "English", Tag "Designers", Tag "Switzerland", Tag "UX" ]
               }
             , { name = "Full Stack Fest"
               , link = "http://2016.fullstackfest.com/"
@@ -2701,7 +2701,7 @@ model =
               , location = "Barcelona, Spain"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Spain, Ruby, JavaScript, General ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Spain", Tag "Ruby", Tag "JavaScript", Tag "General" ]
               }
             , { name = "Generate Sydney"
               , link = "http://www.generateconf.com/"
@@ -2710,7 +2710,7 @@ model =
               , location = "Sydney, Australia"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Designers, Australia, UX ]
+              , tags = [ Tag "English", Tag "Designers", Tag "Australia", Tag "UX" ]
               }
             , { name = "iOSDevEngland"
               , link = "http://www.iosdevuk.com/"
@@ -2719,7 +2719,7 @@ model =
               , location = "Aberystwyth, England"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, England, IOS, Swift ]
+              , tags = [ Tag "English", Tag "Developers", Tag "England", Tag "IOS", Tag "Swift" ]
               }
             , { name = "RubyKaigi"
               , link = "http://rubykaigi.org/2016"
@@ -2728,7 +2728,7 @@ model =
               , location = "Kyoto, Japan"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, English, Japanese, Ruby ]
+              , tags = [ Tag "English", Tag "Developers", Tag "English", Tag "Japanese", Tag "Ruby" ]
               }
             , { name = "CocoaConf DC"
               , link = "http://cocoaconf.com/dc-2016/home"
@@ -2737,7 +2737,7 @@ model =
               , location = "Washington, DC"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, USA, Cocoa, IOS ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "Cocoa", Tag "IOS" ]
               }
             , { name = "Agile Prague"
               , link = "http://agileprague.com/"
@@ -2746,7 +2746,7 @@ model =
               , location = "Prague, Czech Republic"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Jun, 30 )
-              , tags = [ English, Developers, CzechRepublic, Agile ]
+              , tags = [ Tag "English", Tag "Developers", Tag "CzechRepublic", Tag "Agile" ]
               }
             , { name = "SwanseaCon"
               , link = "http://swanseacon.co.uk/"
@@ -2755,7 +2755,7 @@ model =
               , location = "Swansea, England"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Feb, 15 )
-              , tags = [ English, Developers, England, Agile, SoftwareCraftsmanship ]
+              , tags = [ Tag "English", Tag "Developers", Tag "England", Tag "Agile", Tag "SoftwareCraftsmanship" ]
               }
             , { name = "Angular Remote Conf"
               , link = "https://allremoteconfs.com/angular-2016"
@@ -2764,7 +2764,7 @@ model =
               , location = "Remote"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Aug, 13 )
-              , tags = [ English, Developers, Remote, JavaScript, AngularJS ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Remote", Tag "JavaScript", Tag "AngularJS" ]
               }
             , { name = "From the Front"
               , link = "http://2016.fromthefront.it/"
@@ -2773,7 +2773,7 @@ model =
               , location = "Bologna, Italy"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Mar, 15 )
-              , tags = [ English, Designers, Italy, UX ]
+              , tags = [ Tag "English", Tag "Designers", Tag "Italy", Tag "UX" ]
               }
             , { name = "Strangeloop"
               , link = "http://thestrangeloop.com/"
@@ -2782,7 +2782,7 @@ model =
               , location = "St. Louis, MO"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, May, 9 )
-              , tags = [ English, Developers, USA, General, FunctionalProgramming ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "General", Tag "FunctionalProgramming" ]
               }
             , { name = "WindyCityRails"
               , link = "https://www.windycityrails.com/"
@@ -2791,7 +2791,7 @@ model =
               , location = "Chicago, IL"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Mar, 31 )
-              , tags = [ English, Developers, USA, Ruby, Rails ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "Ruby", Tag "Rails" ]
               }
             , { name = "WindyCityThings"
               , link = "https://www.windycitythings.com/"
@@ -2800,7 +2800,7 @@ model =
               , location = "Chicago, IL"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Apr, 15 )
-              , tags = [ English, Developers, USA, InternetOfThings, RaspberryPi, Arduino ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "InternetOfThings", Tag "RaspberryPi", Tag "Arduino" ]
               }
             , { name = "CppCon"
               , link = "http://cppcon.org/"
@@ -2809,7 +2809,7 @@ model =
               , location = "Bellevue, WA"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, May, 22 )
-              , tags = [ English, Developers, USA, CPlusPlus ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "CPlusPlus" ]
               }
             , { name = "International Conference on Functional Programming"
               , link = "http://conf.researchr.org/home/icfp-2016"
@@ -2818,7 +2818,7 @@ model =
               , location = "Nara, Japan"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Mar, 16 )
-              , tags = [ English, Developers, Japan, FunctionalProgramming, Haskell ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Japan", Tag "FunctionalProgramming", Tag "Haskell" ]
               }
             , { name = "Commercial Users of Functional Programming"
               , link = "http://cufp.org/2016/"
@@ -2827,7 +2827,7 @@ model =
               , location = "Nara, Japan"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Jun, 24 )
-              , tags = [ English, Developers, Japan, FunctionalProgramming, Haskell, OCaml, PureScript, Clojure ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Japan", Tag "FunctionalProgramming", Tag "Haskell", Tag "OCaml", Tag "PureScript", Tag "Clojure" ]
               }
             , { name = "Haskell Implementors' Workshop"
               , link = "https://wiki.haskell.org/HaskellImplementorsWorkshop/2016"
@@ -2836,7 +2836,7 @@ model =
               , location = "Nara, Japan"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Japan, FunctionalProgramming, Haskell ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Japan", Tag "FunctionalProgramming", Tag "Haskell" ]
               }
             , { name = "Workshop on Functional Art, Music, Modeling and Design"
               , link = "http://functional-art.org/2016/"
@@ -2845,7 +2845,7 @@ model =
               , location = "Nara, Japan"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Jun, 24 )
-              , tags = [ English, Developers, Japan, FunctionalProgramming ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Japan", Tag "FunctionalProgramming" ]
               }
             , { name = "Haskell Symposium"
               , link = "https://www.haskell.org/haskell-symposium/2016/index.html"
@@ -2854,7 +2854,7 @@ model =
               , location = "Nara, Japan"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Jun, 6 )
-              , tags = [ English, Developers, Japan, FunctionalProgramming, Haskell ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Japan", Tag "FunctionalProgramming", Tag "Haskell" ]
               }
             , { name = "Workshop on ML"
               , link = "http://www.mlworkshop.org/ml2016"
@@ -2863,7 +2863,7 @@ model =
               , location = "Nara, Japan"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Jun, 10 )
-              , tags = [ English, Developers, Japan, FunctionalProgramming, FSharp, OCaml ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Japan", Tag "FunctionalProgramming", Tag "FSharp", Tag "OCaml" ]
               }
             , { name = "OCaml Users and Developers Workshop"
               , link = "http://www.mlworkshop.org/ml2016"
@@ -2872,7 +2872,7 @@ model =
               , location = "Nara, Japan"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Jun, 10 )
-              , tags = [ English, Developers, Japan, FunctionalProgramming, OCaml ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Japan", Tag "FunctionalProgramming", Tag "OCaml" ]
               }
             , { name = "Workshop on Functional High-Performance Computing"
               , link = "https://sites.google.com/site/fhpcworkshops/"
@@ -2881,7 +2881,7 @@ model =
               , location = "Nara, Japan"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Jun, 10 )
-              , tags = [ English, Developers, Japan, FunctionalProgramming ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Japan", Tag "FunctionalProgramming" ]
               }
             , { name = "Erlang Workshop"
               , link = "http://conf.researchr.org/track/icfp-2016/erlang-2016-papers"
@@ -2890,7 +2890,7 @@ model =
               , location = "Nara, Japan"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Jun, 3 )
-              , tags = [ English, Developers, Japan, FunctionalProgramming, Erlang ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Japan", Tag "FunctionalProgramming", Tag "Erlang" ]
               }
             , { name = "Workshop on Type-Driven Development"
               , link = "http://conf.researchr.org/track/icfp-2016/tyde-2016-papers"
@@ -2899,7 +2899,7 @@ model =
               , location = "Nara, Japan"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Jun, 10 )
-              , tags = [ English, Developers, Japan, FunctionalProgramming ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Japan", Tag "FunctionalProgramming" ]
               }
             , { name = "Higher-Order Programming Effects Workshop"
               , link = "http://conf.researchr.org/track/icfp-2016/hope-2016-papers"
@@ -2908,7 +2908,7 @@ model =
               , location = "Nara, Japan"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Jun, 10 )
-              , tags = [ English, Developers, Japan, FunctionalProgramming ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Japan", Tag "FunctionalProgramming" ]
               }
             , { name = "Scheme Workshop"
               , link = "http://scheme2016.snow-fort.org/"
@@ -2917,7 +2917,7 @@ model =
               , location = "Nara, Japan"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Jun, 24 )
-              , tags = [ English, Developers, Japan, FunctionalProgramming, Lisp, Clojure ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Japan", Tag "FunctionalProgramming", Tag "Lisp", Tag "Clojure" ]
               }
             , { name = "Programming Languages Mentoring Workshop"
               , link = "http://conf.researchr.org/track/PLMW-ICFP-2016/PLMW-ICFP-2016"
@@ -2926,7 +2926,7 @@ model =
               , location = "Nara, Japan"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Japan, FunctionalProgramming ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Japan", Tag "FunctionalProgramming" ]
               }
             , { name = "JavaOne"
               , link = "https://www.oracle.com/javaone/index.html"
@@ -2935,7 +2935,7 @@ model =
               , location = "San Francisco, CA"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, USA, Java ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "Java" ]
               }
             , { name = "Generate London"
               , link = "http://www.generateconf.com/"
@@ -2944,7 +2944,7 @@ model =
               , location = "London, England"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Designers, England, UX ]
+              , tags = [ Tag "English", Tag "Designers", Tag "England", Tag "UX" ]
               }
             , { name = "AWS Summit Rio de Janeiro"
               , link = "https://aws.amazon.com/summits/"
@@ -2953,7 +2953,7 @@ model =
               , location = "Rio de Janeiro, Brazil"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Brazil, AWS, DevOps ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Brazil", Tag "AWS", Tag "DevOps" ]
               }
             , { name = "Functional Conf"
               , link = "http://functionalconf.com/"
@@ -2962,7 +2962,7 @@ model =
               , location = "Bangalore, India"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Jun, 30 )
-              , tags = [ English, Developers, India, FunctionalProgramming ]
+              , tags = [ Tag "English", Tag "Developers", Tag "India", Tag "FunctionalProgramming" ]
               }
             , { name = "DrupalCon Dublin"
               , link = "https://events.drupal.org/dublin2016/"
@@ -2971,7 +2971,7 @@ model =
               , location = "Dublin, Ireland"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Ireland, Drupal, PHP ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Ireland", Tag "Drupal", Tag "PHP" ]
               }
             , { name = "AngularConnect"
               , link = "http://angularconnect.com/"
@@ -2980,7 +2980,7 @@ model =
               , location = "London, England"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, May, 31 )
-              , tags = [ English, Developers, England, JavaScript, AngularJS ]
+              , tags = [ Tag "English", Tag "Developers", Tag "England", Tag "JavaScript", Tag "AngularJS" ]
               }
             , { name = "AWS Summit Lima"
               , link = "https://aws.amazon.com/summits/"
@@ -2989,7 +2989,7 @@ model =
               , location = "Lima, Peru"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Peru, AWS, DevOps ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Peru", Tag "AWS", Tag "DevOps" ]
               }
             , { name = "Jazoon TechDays"
               , link = "http://jazoon.com/"
@@ -2998,7 +2998,7 @@ model =
               , location = "Zurich, Switzerland"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Switzerland, JavaScript, AngularJS, Ember ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Switzerland", Tag "JavaScript", Tag "AngularJS", Tag "Ember" ]
               }
             , { name = "An Event Apart Orlando"
               , link = "http://aneventapart.com/event/orlando-special-edition-2016"
@@ -3007,7 +3007,7 @@ model =
               , location = "Orlando, FL"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Designers, Developers, USA, UX ]
+              , tags = [ Tag "English", Tag "Designers", Tag "Developers", Tag "USA", Tag "UX" ]
               }
             , { name = "GOTO Copenhagen"
               , link = "http://gotocon.com/cph-2015/"
@@ -3016,7 +3016,7 @@ model =
               , location = "Copenhagen, Denmark"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Denmark, General ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Denmark", Tag "General" ]
               }
             , { name = "LoopConf"
               , link = "https://loopconf.com/"
@@ -3025,7 +3025,7 @@ model =
               , location = "Fort Lauderdale, FL"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Mar, 15 )
-              , tags = [ English, Developers, USA, PHP, WordPress ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "PHP", Tag "WordPress" ]
               }
             , { name = "dotGo"
               , link = "http://2016.dotgo.eu/"
@@ -3034,7 +3034,7 @@ model =
               , location = "Paris, France"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, France, Go ]
+              , tags = [ Tag "English", Tag "Developers", Tag "France", Tag "Go" ]
               }
             , { name = "GOTO London"
               , link = "http://gotocon.com/"
@@ -3043,7 +3043,7 @@ model =
               , location = "London, England"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, England, General ]
+              , tags = [ Tag "English", Tag "Developers", Tag "England", Tag "General" ]
               }
             , { name = "Rails Remote Conf"
               , link = "https://allremoteconfs.com/rails-2016"
@@ -3052,7 +3052,7 @@ model =
               , location = "Remote"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Sep, 10 )
-              , tags = [ English, Developers, Remote, Rails, Ruby ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Remote", Tag "Rails", Tag "Ruby" ]
               }
             , { name = "CocoaLove"
               , link = "http://cocoalove.org/"
@@ -3061,7 +3061,7 @@ model =
               , location = "Philadelphia, PA"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, USA, Cocoa, IOS ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "Cocoa", Tag "IOS" ]
               }
             , { name = "CSS Dev Conf"
               , link = "http://2016.cssdevconf.com/"
@@ -3070,7 +3070,7 @@ model =
               , location = "San Antonio, TX"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Designers, USA, CSS ]
+              , tags = [ Tag "English", Tag "Designers", Tag "USA", Tag "CSS" ]
               }
             , { name = "Full Stack Toronto"
               , link = "https://fsto.co/"
@@ -3079,7 +3079,7 @@ model =
               , location = "Toronto, Canada"
               , cfpStartDate = Just ( 2016, Jan, 1 )
               , cfpEndDate = Just ( 2016, Jul, 31 )
-              , tags = [ English, Designers, Developers, Canada, General ]
+              , tags = [ Tag "English", Tag "Designers", Tag "Developers", Tag "Canada", Tag "General" ]
               }
             , { name = "ConnectJS"
               , link = "http://connect-js.com/"
@@ -3088,7 +3088,7 @@ model =
               , location = "Atlanta, GA"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, USA, JavaScript ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "JavaScript" ]
               }
             , { name = "Codemotion Berlin"
               , link = "http://berlin2015.codemotionworld.com/"
@@ -3097,7 +3097,7 @@ model =
               , location = "Berlin, Germany"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Germany, General ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Germany", Tag "General" ]
               }
             , { name = "ng-europe"
               , link = "https://ngeurope.org/"
@@ -3106,7 +3106,7 @@ model =
               , location = "Paris, France"
               , cfpStartDate = Just ( 2016, Feb, 17 )
               , cfpEndDate = Just ( 2016, Mar, 31 )
-              , tags = [ English, Developers, France, JavaScript, AngularJS ]
+              , tags = [ Tag "English", Tag "Developers", Tag "France", Tag "JavaScript", Tag "AngularJS" ]
               }
             , { name = "Smashing Conf Barcelona"
               , link = "http://smashingconf.com/"
@@ -3115,7 +3115,7 @@ model =
               , location = "Barcelona, Spain"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Designers, Spain, UX ]
+              , tags = [ Tag "English", Tag "Designers", Tag "Spain", Tag "UX" ]
               }
             , { name = "Spark Summit Europe"
               , link = "https://spark-summit.org/"
@@ -3124,7 +3124,7 @@ model =
               , location = "Brussels, Belgium"
               , cfpStartDate = Just ( 2016, Jun, 1 )
               , cfpEndDate = Just ( 2016, Jul, 1 )
-              , tags = [ English, Developers, Belgium, BigData ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Belgium", Tag "BigData" ]
               }
             , { name = "An Event Apart San Francisco"
               , link = "http://aneventapart.com/event/san-francisco-2016"
@@ -3133,7 +3133,7 @@ model =
               , location = "San Francisco, CA"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Designers, Developers, USA, UX ]
+              , tags = [ Tag "English", Tag "Designers", Tag "Developers", Tag "USA", Tag "UX" ]
               }
             , { name = "CocoaConf San Jose"
               , link = "http://cocoaconf.com/sanjose-2016/home"
@@ -3142,7 +3142,7 @@ model =
               , location = "San Jose, CA"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, USA, IOS, Cocoa ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "IOS", Tag "Cocoa" ]
               }
             , { name = "Beyond Tellerrand"
               , link = "http://beyondtellerrand.com/events/berlin-2016"
@@ -3151,7 +3151,7 @@ model =
               , location = "Berlin, Germany"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Designers, Developers, Germany, UX, General ]
+              , tags = [ Tag "English", Tag "Designers", Tag "Developers", Tag "Germany", Tag "UX", Tag "General" ]
               }
             , { name = "Devops Remote Conf"
               , link = "https://allremoteconfs.com/devops-2016"
@@ -3160,7 +3160,7 @@ model =
               , location = "Remote"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Oct, 8 )
-              , tags = [ English, Developers, Remote, DevOps ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Remote", Tag "DevOps" ]
               }
             , { name = "droidconIN"
               , link = "https://droidcon.in/2016/"
@@ -3169,7 +3169,7 @@ model =
               , location = "Bangalore, India"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Aug, 10 )
-              , tags = [ English, Developers, India, Android, Mobile ]
+              , tags = [ Tag "English", Tag "Developers", Tag "India", Tag "Android", Tag "Mobile" ]
               }
             , { name = "RubyConf"
               , link = "http://rubyconf.org/"
@@ -3178,7 +3178,7 @@ model =
               , location = "Cincinnati, OH"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, USA, Ruby ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "Ruby" ]
               }
             , { name = "BuildStuff"
               , link = "http://buildstuff.lt/"
@@ -3187,7 +3187,7 @@ model =
               , location = "Vilnius, Lithuania"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Lithuania, General ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Lithuania", Tag "General" ]
               }
             , { name = "Frontier Conf"
               , link = "https://www.frontierconf.com/"
@@ -3196,7 +3196,7 @@ model =
               , location = "London, England"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Designers, England, CSS, UX ]
+              , tags = [ Tag "English", Tag "Designers", Tag "England", Tag "CSS", Tag "UX" ]
               }
             , { name = "Generate Bangalore"
               , link = "http://www.generateconf.com/"
@@ -3205,7 +3205,7 @@ model =
               , location = "Bangalore, India"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Designers, India, UX ]
+              , tags = [ Tag "English", Tag "Designers", Tag "India", Tag "UX" ]
               }
             , { name = "AWS re:Invent"
               , link = "https://reinvent.awsevents.com/"
@@ -3214,7 +3214,7 @@ model =
               , location = "Las Vegas, NV"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, USA, AWS, Cloud ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "AWS", Tag "Cloud" ]
               }
             , { name = "JS Kongress Munich"
               , link = "http://js-kongress.de/"
@@ -3223,7 +3223,7 @@ model =
               , location = "Munich, Germany"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, May, 15 )
-              , tags = [ English, Developers, Germany, JavaScript ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Germany", Tag "JavaScript" ]
               }
             , { name = "CSSConf AU"
               , link = "http://2016.cssconf.com.au/"
@@ -3232,7 +3232,7 @@ model =
               , location = "Melbourne, Australia"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Designers, Australia, CSS ]
+              , tags = [ Tag "English", Tag "Designers", Tag "Australia", Tag "CSS" ]
               }
             , { name = "JSConf AU"
               , link = "http://jsconfau.com/"
@@ -3241,7 +3241,7 @@ model =
               , location = "Melbourne, Australia"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Australia, JavaScript ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Australia", Tag "JavaScript" ]
               }
             , { name = "Clojure eXchange"
               , link = "https://skillsmatter.com/conferences/7430-clojure-exchange-2016"
@@ -3250,7 +3250,7 @@ model =
               , location = "London, England"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, England, Clojure, FunctionalProgramming ]
+              , tags = [ Tag "English", Tag "Developers", Tag "England", Tag "Clojure", Tag "FunctionalProgramming" ]
               }
             , { name = "Decompress"
               , link = "http://2016.cssconf.com.au/"
@@ -3259,7 +3259,7 @@ model =
               , location = "Melbourne, Australia"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Designers, Developers, Australia, General ]
+              , tags = [ Tag "English", Tag "Designers", Tag "Developers", Tag "Australia", Tag "General" ]
               }
             , { name = "dotCSS"
               , link = "http://www.dotcss.io/"
@@ -3268,7 +3268,7 @@ model =
               , location = "Paris, France"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Designers, France, CSS ]
+              , tags = [ Tag "English", Tag "Designers", Tag "France", Tag "CSS" ]
               }
             , { name = "dotJS"
               , link = "http://www.dotjs.io/"
@@ -3277,7 +3277,7 @@ model =
               , location = "Paris, France"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, France, JavaScript ]
+              , tags = [ Tag "English", Tag "Developers", Tag "France", Tag "JavaScript" ]
               }
             , { name = "NoSQL Remote Conf"
               , link = "https://allremoteconfs.com/nosql-2016"
@@ -3286,7 +3286,7 @@ model =
               , location = "Remote"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Nov, 5 )
-              , tags = [ English, Developers, Remote, NoSQL ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Remote", Tag "NoSQL" ]
               }
             , { name = "Midwest.io"
               , link = "http://www.midwest.io/"
@@ -3295,7 +3295,7 @@ model =
               , location = "Kansas City, MO"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Apr, 30 )
-              , tags = [ English, Developers, USA, General ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "General" ]
               }
             , { name = "ServerlessConf"
               , link = "http://serverlessconf.io/"
@@ -3304,7 +3304,7 @@ model =
               , location = "New York, NY"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Apr, 26 )
-              , tags = [ English, Developers, USA, General, AWS, Cloud, Scalability ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "General", Tag "AWS", Tag "Cloud", Tag "Scalability" ]
               }
             , { name = "AgileIndy"
               , link = "http://agileindy.org/"
@@ -3313,7 +3313,7 @@ model =
               , location = "Indianapolis, IN"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, USA, Agile ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "Agile" ]
               }
             , { name = "RSJS"
               , link = "http://rsjs.org/2016/"
@@ -3322,7 +3322,7 @@ model =
               , location = "Porto Alegre, Brazil"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Mar, 31 )
-              , tags = [ Portuguese, Developers, Brazil, JavaScript ]
+              , tags = [ Tag "Portuguese", Tag "Developers", Tag "Brazil", Tag "JavaScript" ]
               }
             , { name = "Frontinsampa"
               , link = "http://frontinsampa.com.br/"
@@ -3331,7 +3331,7 @@ model =
               , location = "Sao Paulo, Brazil"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ Portuguese, Developers, Brazil, JavaScript ]
+              , tags = [ Tag "Portuguese", Tag "Developers", Tag "Brazil", Tag "JavaScript" ]
               }
             , { name = ".NET Fringe"
               , link = "http://dotnetfringe.org/"
@@ -3340,7 +3340,7 @@ model =
               , location = "Portland, OR"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Apr, 30 )
-              , tags = [ English, Developers, USA, OpenSource, DotNet ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "OpenSource", Tag "DotNet" ]
               }
             , { name = "Úll"
               , link = "http://2016.ull.ie/"
@@ -3349,7 +3349,7 @@ model =
               , location = "Killarney, Ireland"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Ireland, IOS ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Ireland", Tag "IOS" ]
               }
             , { name = "Nantes FP Day"
               , link = "http://fpday.org/"
@@ -3358,7 +3358,7 @@ model =
               , location = "Nantes, France"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, French, Developers, France, FunctionalProgramming ]
+              , tags = [ Tag "English", Tag "French", Tag "Developers", Tag "France", Tag "FunctionalProgramming" ]
               }
             , { name = "HalfStack"
               , link = "http://halfstackconf.com/"
@@ -3367,7 +3367,7 @@ model =
               , location = "London, England"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Oct, 18 )
-              , tags = [ English, Developers, England, JavaScript ]
+              , tags = [ Tag "English", Tag "Developers", Tag "England", Tag "JavaScript" ]
               }
             , { name = "Front Conference"
               , link = "https://frontutah.com/"
@@ -3376,7 +3376,7 @@ model =
               , location = "Salt Lake City, UT"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Designers, USA, UX ]
+              , tags = [ Tag "English", Tag "Designers", Tag "USA", Tag "UX" ]
               }
             , { name = "Port80"
               , link = "http://port80events.co.uk/"
@@ -3385,7 +3385,7 @@ model =
               , location = "Newport, Wales"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Designers, Developers, Wales, UX, Web ]
+              , tags = [ Tag "English", Tag "Designers", Tag "Developers", Tag "Wales", Tag "UX", Tag "Web" ]
               }
             , { name = "Code 2016 Sydney"
               , link = "http://www.webdirections.org/code16/"
@@ -3394,7 +3394,7 @@ model =
               , location = "Sydney, Australia"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Australia, JavaScript ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Australia", Tag "JavaScript" ]
               }
             , { name = "Code 2016 Melbourne"
               , link = "http://www.webdirections.org/code16/"
@@ -3403,7 +3403,7 @@ model =
               , location = "Melbourne, Australia"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Australia, JavaScript ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Australia", Tag "JavaScript" ]
               }
             , { name = "CascadiaFest"
               , link = "http://2016.cascadiafest.org/"
@@ -3412,7 +3412,7 @@ model =
               , location = "Semiahmoo, WA"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Apr, 11 )
-              , tags = [ English, Designers, Developers, USA, CSS, JavaScript, Web, NodeJS ]
+              , tags = [ Tag "English", Tag "Designers", Tag "Developers", Tag "USA", Tag "CSS", Tag "JavaScript", Tag "Web", Tag "NodeJS" ]
               }
             , { name = "React Amsterdam"
               , link = "http://react-amsterdam.com/"
@@ -3421,7 +3421,7 @@ model =
               , location = "Amsterdam, Netherlands"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Netherlands, JavaScript, React ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Netherlands", Tag "JavaScript", Tag "React" ]
               }
             , { name = "NSSpain"
               , link = "http://nsspain.com/"
@@ -3430,7 +3430,7 @@ model =
               , location = "La Rioja, Spain"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Jun, 5 )
-              , tags = [ English, Developers, Spain, IOS ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Spain", Tag "IOS" ]
               }
             , { name = "try! Swift NYC"
               , link = "http://www.tryswiftnyc.com/"
@@ -3439,7 +3439,7 @@ model =
               , location = "New York, NY"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, USA, Swift, IOS ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "Swift", Tag "IOS" ]
               }
             , { name = "FrenchKit"
               , link = "http://frenchkit.fr/"
@@ -3448,7 +3448,7 @@ model =
               , location = "Paris, France"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, France, IOS, Cocoa ]
+              , tags = [ Tag "English", Tag "Developers", Tag "France", Tag "IOS", Tag "Cocoa" ]
               }
             , { name = "AltConf"
               , link = "http://altconf.com/"
@@ -3457,7 +3457,7 @@ model =
               , location = "San Francisco, CA"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, USA, General ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "General" ]
               }
             , { name = "WWDC"
               , link = "https://developer.apple.com/wwdc/"
@@ -3466,7 +3466,7 @@ model =
               , location = "San Francisco, CA"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Designers, USA, IOS ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Designers", Tag "USA", Tag "IOS" ]
               }
             , { name = "Thunder Plains"
               , link = "http://thunderplainsconf.com/"
@@ -3475,7 +3475,7 @@ model =
               , location = "Oklahoma City, OK"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Designers, Developers, USA, JavaScript, CSS, Mobile, Web ]
+              , tags = [ Tag "English", Tag "Designers", Tag "Developers", Tag "USA", Tag "JavaScript", Tag "CSS", Tag "Mobile", Tag "Web" ]
               }
             , { name = "Scala Up North"
               , link = "http://scalaupnorth.com/"
@@ -3484,7 +3484,7 @@ model =
               , location = "Montreal, Canada"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, May, 14 )
-              , tags = [ English, Developers, Canada, Scala ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Canada", Tag "Scala" ]
               }
             , { name = "XP 2016"
               , link = "http://conf.xp2016.org/"
@@ -3493,7 +3493,7 @@ model =
               , location = "Edinbrugh, Scotland"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Scotland, Agile ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Scotland", Tag "Agile" ]
               }
             , { name = "Valio Con"
               , link = "http://valiocon.com/"
@@ -3502,7 +3502,7 @@ model =
               , location = "San Diego, CA"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Designers, USA, UX ]
+              , tags = [ Tag "English", Tag "Designers", Tag "USA", Tag "UX" ]
               }
             , { name = "JailbreakCon"
               , link = "http://www.jailbreakcon.com/"
@@ -3511,7 +3511,7 @@ model =
               , location = "San Francisco, CA"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, USA, IOS ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "IOS" ]
               }
             , { name = "#Pragma Conference"
               , link = "http://pragmaconference.com/"
@@ -3520,7 +3520,7 @@ model =
               , location = "Verona, Italy"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Italy, IOS ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Italy", Tag "IOS" ]
               }
             , { name = "DEF CON"
               , link = "https://www.defcon.org/"
@@ -3529,7 +3529,7 @@ model =
               , location = "Las Vegas, NV"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, May, 2 )
-              , tags = [ English, Developers, USA, Security ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "Security" ]
               }
             , { name = "DerbyCon"
               , link = "https://www.derbycon.com/"
@@ -3538,7 +3538,7 @@ model =
               , location = "Louisville, KY"
               , cfpStartDate = Nothing
               , cfpEndDate = Just ( 2016, Aug, 1 )
-              , tags = [ English, Developers, USA, Security ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "Security" ]
               }
             , { name = "Black Hat"
               , link = "https://www.blackhat.com/us-16/"
@@ -3547,7 +3547,7 @@ model =
               , location = "Las Vegas, NV"
               , cfpStartDate = Just ( 2016, Feb, 9 )
               , cfpEndDate = Just ( 2016, Apr, 11 )
-              , tags = [ English, Developers, USA, Security ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "Security" ]
               }
             , { name = "RSA Conference USA"
               , link = "http://www.rsaconference.com/events/us16"
@@ -3556,7 +3556,7 @@ model =
               , location = "San Francisco, CA"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, USA, Security ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "Security" ]
               }
             , { name = "RSA Conference Asia Pacific & Japan"
               , link = "http://www.rsaconference.com/events/ap16"
@@ -3565,7 +3565,7 @@ model =
               , location = "Singapore"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Singapore, Security ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Singapore", Tag "Security" ]
               }
             , { name = "RSA Conference Abu Dhabi"
               , link = "http://www.rsaconference.com/events/ad16"
@@ -3574,7 +3574,7 @@ model =
               , location = "Abu Dhabi, UAE"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, UAE, Security ]
+              , tags = [ Tag "English", Tag "Developers", Tag "UAE", Tag "Security" ]
               }
             , { name = "CanSecWest"
               , link = "https://cansecwest.com/"
@@ -3583,7 +3583,7 @@ model =
               , location = "Vancouver, Canada"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Canada, Security ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Canada", Tag "Security" ]
               }
             , { name = "PanSec"
               , link = "https://pacsec.jp/"
@@ -3592,7 +3592,7 @@ model =
               , location = "Tokyo, Japan"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Japan, Security ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Japan", Tag "Security" ]
               }
             , { name = "EUSecWest"
               , link = "https://eusecwest.com/"
@@ -3601,7 +3601,7 @@ model =
               , location = "Amsterdam, Netherlands"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, Netherlands, Security ]
+              , tags = [ Tag "English", Tag "Developers", Tag "Netherlands", Tag "Security" ]
               }
             , { name = "CarolinaCon"
               , link = "http://www.carolinacon.org/"
@@ -3610,7 +3610,7 @@ model =
               , location = "Raleigh, North Carolina"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, USA, Security ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "Security" ]
               }
             , { name = "THOTCON"
               , link = "http://thotcon.org/"
@@ -3619,166 +3619,166 @@ model =
               , location = "Chicago, IL"
               , cfpStartDate = Nothing
               , cfpEndDate = Nothing
-              , tags = [ English, Developers, USA, Security ]
+              , tags = [ Tag "English", Tag "Developers", Tag "USA", Tag "Security" ]
               }
             ]
     , currentDate = ( 2016, Jan, 1 )
     , tags =
         [ { sectionName = "Conference Language"
           , tags =
-                [ FilteredTag.init English "English"
-                , FilteredTag.init French "French"
-                , FilteredTag.init German "German"
-                , FilteredTag.init Italian "Italian"
-                , FilteredTag.init Japanese "Japanese"
-                , FilteredTag.init Norwegian "Norwegian"
-                , FilteredTag.init Polish "Polish"
-                , FilteredTag.init Portuguese "Portuguese"
-                , FilteredTag.init Russian "Russian"
-                , FilteredTag.init Spanish "Spanish"
-                , FilteredTag.init Turkish "Turkish"
+                [ FilteredTag.init (Tag "English") "English"
+                , FilteredTag.init (Tag "French") "French"
+                , FilteredTag.init (Tag "German") "German"
+                , FilteredTag.init (Tag "Italian") "Italian"
+                , FilteredTag.init (Tag "Japanese") "Japanese"
+                , FilteredTag.init (Tag "Norwegian") "Norwegian"
+                , FilteredTag.init (Tag "Polish") "Polish"
+                , FilteredTag.init (Tag "Portuguese") "Portuguese"
+                , FilteredTag.init (Tag "Russian") "Russian"
+                , FilteredTag.init (Tag "Spanish") "Spanish"
+                , FilteredTag.init (Tag "Turkish") "Turkish"
                 ]
           }
         , { sectionName = "Audience"
           , tags =
-                [ FilteredTag.init Designers "Designers"
-                , FilteredTag.init Developers "Developers"
+                [ FilteredTag.init (Tag "Designers") "Designers"
+                , FilteredTag.init (Tag "Developers") "Developers"
                 ]
           }
         , { sectionName = "Programming Languages/Technologies"
           , tags =
-                [ FilteredTag.init Android "Android"
-                , FilteredTag.init AngularJS "AngularJS"
-                , FilteredTag.init Arduino "Arduino"
-                , FilteredTag.init AWS "AWS"
-                , FilteredTag.init CPlusPlus "C++"
-                , FilteredTag.init CSS "CSS"
-                , FilteredTag.init Chef "Chef"
-                , FilteredTag.init Clojure "Clojure"
-                , FilteredTag.init Cocoa "Cocoa"
-                , FilteredTag.init CycleJS "CycleJS"
-                , FilteredTag.init Docker "Docker"
-                , FilteredTag.init Drupal "Drupal"
-                , FilteredTag.init DotNet ".NET"
-                , FilteredTag.init Elasticsearch "Elasticsearch"
-                , FilteredTag.init Elixir "Elixir"
-                , FilteredTag.init Ember "Ember"
-                , FilteredTag.init Erlang "Erlang"
-                , FilteredTag.init FSharp "F#"
-                , FilteredTag.init Git "Git"
-                , FilteredTag.init Go "Go"
-                , FilteredTag.init Gradle "Gradle"
-                , FilteredTag.init Grails "Grails"
-                , FilteredTag.init Groovy "Groovy"
-                , FilteredTag.init Hadoop "Hadoop"
-                , FilteredTag.init Haskell "Haskell"
-                , FilteredTag.init IOS "iOS"
-                , FilteredTag.init Java "Java"
-                , FilteredTag.init JavaScript "JavaScript"
-                , FilteredTag.init Logstash "Logstash"
-                , FilteredTag.init Lisp "Lisp"
-                , FilteredTag.init MongoDB "MongoDB"
-                , FilteredTag.init NodeJS "NodeJS"
-                , FilteredTag.init OCaml "OCaml"
-                , FilteredTag.init PhoneGap "PhoneGap"
-                , FilteredTag.init PHP "PHP"
-                , FilteredTag.init PostgreSQL "PostgreSQL"
-                , FilteredTag.init PureScript "PureScript"
-                , FilteredTag.init Python "Python"
-                , FilteredTag.init Rails "Rails"
-                , FilteredTag.init RaspberryPi "RaspberryPi"
-                , FilteredTag.init React "React"
-                , FilteredTag.init Ruby "Ruby"
-                , FilteredTag.init SML "SML"
-                , FilteredTag.init Scala "Scala"
-                , FilteredTag.init SVG "SVG"
-                , FilteredTag.init Swift "Swift"
-                , FilteredTag.init WordPress "WordPress"
+                [ FilteredTag.init (Tag "Android") "Android"
+                , FilteredTag.init (Tag "AngularJS") "AngularJS"
+                , FilteredTag.init (Tag "Arduino") "Arduino"
+                , FilteredTag.init (Tag "AWS") "AWS"
+                , FilteredTag.init (Tag "CPlusPlus") "C++"
+                , FilteredTag.init (Tag "CSS") "CSS"
+                , FilteredTag.init (Tag "Chef") "Chef"
+                , FilteredTag.init (Tag "Clojure") "Clojure"
+                , FilteredTag.init (Tag "Cocoa") "Cocoa"
+                , FilteredTag.init (Tag "CycleJS") "CycleJS"
+                , FilteredTag.init (Tag "Docker") "Docker"
+                , FilteredTag.init (Tag "Drupal") "Drupal"
+                , FilteredTag.init (Tag "DotNet") ".NET"
+                , FilteredTag.init (Tag "Elasticsearch") "Elasticsearch"
+                , FilteredTag.init (Tag "Elixir") "Elixir"
+                , FilteredTag.init (Tag "Ember") "Ember"
+                , FilteredTag.init (Tag "Erlang") "Erlang"
+                , FilteredTag.init (Tag "FSharp") "F#"
+                , FilteredTag.init (Tag "Git") "Git"
+                , FilteredTag.init (Tag "Go") "Go"
+                , FilteredTag.init (Tag "Gradle") "Gradle"
+                , FilteredTag.init (Tag "Grails") "Grails"
+                , FilteredTag.init (Tag "Groovy") "Groovy"
+                , FilteredTag.init (Tag "Hadoop") "Hadoop"
+                , FilteredTag.init (Tag "Haskell") "Haskell"
+                , FilteredTag.init (Tag "IOS") "iOS"
+                , FilteredTag.init (Tag "Java") "Java"
+                , FilteredTag.init (Tag "JavaScript") "JavaScript"
+                , FilteredTag.init (Tag "Logstash") "Logstash"
+                , FilteredTag.init (Tag "Lisp") "Lisp"
+                , FilteredTag.init (Tag "MongoDB") "MongoDB"
+                , FilteredTag.init (Tag "NodeJS") "NodeJS"
+                , FilteredTag.init (Tag "OCaml") "OCaml"
+                , FilteredTag.init (Tag "PhoneGap") "PhoneGap"
+                , FilteredTag.init (Tag "PHP") "PHP"
+                , FilteredTag.init (Tag "PostgreSQL") "PostgreSQL"
+                , FilteredTag.init (Tag "PureScript") "PureScript"
+                , FilteredTag.init (Tag "Python") "Python"
+                , FilteredTag.init (Tag "Rails") "Rails"
+                , FilteredTag.init (Tag "RaspberryPi") "RaspberryPi"
+                , FilteredTag.init (Tag "React") "React"
+                , FilteredTag.init (Tag "Ruby") "Ruby"
+                , FilteredTag.init (Tag "SML") "SML"
+                , FilteredTag.init (Tag "Scala") "Scala"
+                , FilteredTag.init (Tag "SVG") "SVG"
+                , FilteredTag.init (Tag "Swift") "Swift"
+                , FilteredTag.init (Tag "WordPress") "WordPress"
                 ]
           }
         , { sectionName = "Topics"
           , tags =
-                [ FilteredTag.init Agile "Agile"
-                , FilteredTag.init BigData "Big Data"
-                , FilteredTag.init Cloud "Cloud"
-                , FilteredTag.init Communications "Communications"
-                , FilteredTag.init DataVisualization "DataVisualization"
-                , FilteredTag.init DevOps "DevOps"
-                , FilteredTag.init Diversity "Diversity"
-                , FilteredTag.init FunctionalProgramming "Functional Programming"
-                , FilteredTag.init General "General"
-                , FilteredTag.init InternetOfThings "Internet of Things"
-                , FilteredTag.init Microservices "Microservices"
-                , FilteredTag.init Mobile "Mobile"
-                , FilteredTag.init NoSQL "NoSQL"
-                , FilteredTag.init OpenSource "Open Source"
-                , FilteredTag.init ProgressiveEnhancement "Progressive Enhancement"
-                , FilteredTag.init Robotics "Robotics"
-                , FilteredTag.init Scalability "Scalability"
-                , FilteredTag.init Security "Security"
-                , FilteredTag.init SoftSkills "Soft Skills"
-                , FilteredTag.init SoftwareCraftsmanship "Software Craftsmanship"
-                , FilteredTag.init Testing "Testing"
-                , FilteredTag.init UX "UX"
-                , FilteredTag.init Web "Web"
+                [ FilteredTag.init (Tag "Agile") "Agile"
+                , FilteredTag.init (Tag "BigData") "Big Data"
+                , FilteredTag.init (Tag "Cloud") "Cloud"
+                , FilteredTag.init (Tag "Communications") "Communications"
+                , FilteredTag.init (Tag "DataVisualization") "DataVisualization"
+                , FilteredTag.init (Tag "DevOps") "DevOps"
+                , FilteredTag.init (Tag "Diversity") "Diversity"
+                , FilteredTag.init (Tag "FunctionalProgramming") "Functional Programming"
+                , FilteredTag.init (Tag "General") "General"
+                , FilteredTag.init (Tag "InternetOfThings") "Internet of Things"
+                , FilteredTag.init (Tag "Microservices") "Microservices"
+                , FilteredTag.init (Tag "Mobile") "Mobile"
+                , FilteredTag.init (Tag "NoSQL") "NoSQL"
+                , FilteredTag.init (Tag "OpenSource") "Open Source"
+                , FilteredTag.init (Tag "ProgressiveEnhancement") "Progressive Enhancement"
+                , FilteredTag.init (Tag "Robotics") "Robotics"
+                , FilteredTag.init (Tag "Scalability") "Scalability"
+                , FilteredTag.init (Tag "Security") "Security"
+                , FilteredTag.init (Tag "SoftSkills") "Soft Skills"
+                , FilteredTag.init (Tag "SoftwareCraftsmanship") "Software Craftsmanship"
+                , FilteredTag.init (Tag "Testing") "Testing"
+                , FilteredTag.init (Tag "UX") "UX"
+                , FilteredTag.init (Tag "Web") "Web"
                 ]
           }
         , { sectionName = "Locations"
           , tags =
-                [ FilteredTag.init Argentina "Argentina"
-                , FilteredTag.init Australia "Australia"
-                , FilteredTag.init Belarus "Belarus"
-                , FilteredTag.init Belgium "Belgium"
-                , FilteredTag.init Brazil "Brazil"
-                , FilteredTag.init Bulgaria "Bulgaria"
-                , FilteredTag.init Canada "Canada"
-                , FilteredTag.init Chile "Chile"
-                , FilteredTag.init China "China"
-                , FilteredTag.init Colombia "Colombia"
-                , FilteredTag.init Croatia "Croatia"
-                , FilteredTag.init CzechRepublic "Czech Republic"
-                , FilteredTag.init Denmark "Denmark"
-                , FilteredTag.init England "England"
-                , FilteredTag.init Finland "Finland"
-                , FilteredTag.init France "France"
-                , FilteredTag.init Germany "Germany"
-                , FilteredTag.init Hungary "Hungary"
-                , FilteredTag.init Iceland "Iceland"
-                , FilteredTag.init India "India"
-                , FilteredTag.init Ireland "Ireland"
-                , FilteredTag.init Israel "Israel"
-                , FilteredTag.init Italy "Italy"
-                , FilteredTag.init Japan "Japan"
-                , FilteredTag.init Latvia "Latvia"
-                , FilteredTag.init Lebanon "Lebanon"
-                , FilteredTag.init Lithuania "Lithuania"
-                , FilteredTag.init Malaysia "Malaysia"
-                , FilteredTag.init Mexico "Mexico"
-                , FilteredTag.init Netherlands "Netherlands"
-                , FilteredTag.init NewZealand "New Zealand"
-                , FilteredTag.init Norway "Norway"
-                , FilteredTag.init Peru "Peru"
-                , FilteredTag.init Philippines "Philippines"
-                , FilteredTag.init Poland "Poland"
-                , FilteredTag.init Portugal "Portugal"
-                , FilteredTag.init Remote "Remote"
-                , FilteredTag.init Romania "Romania"
-                , FilteredTag.init Russia "Russia"
-                , FilteredTag.init Scotland "Scotland"
-                , FilteredTag.init Singapore "Singapore"
-                , FilteredTag.init SouthAfrica "South Africa"
-                , FilteredTag.init SouthKorea "South Korea"
-                , FilteredTag.init Spain "Spain"
-                , FilteredTag.init Sweden "Sweden"
-                , FilteredTag.init Switzerland "Switzerland"
-                , FilteredTag.init Taiwan "Taiwan"
-                , FilteredTag.init Tunisia "Tunisia"
-                , FilteredTag.init Turkey "Turkey"
-                , FilteredTag.init UAE "UAE"
-                , FilteredTag.init USA "USA"
-                , FilteredTag.init Ukraine "Ukraine"
-                , FilteredTag.init Uruguay "Uruguay"
-                , FilteredTag.init Wales "Wales"
+                [ FilteredTag.init (Tag "Argentina") "Argentina"
+                , FilteredTag.init (Tag "Australia") "Australia"
+                , FilteredTag.init (Tag "Belarus") "Belarus"
+                , FilteredTag.init (Tag "Belgium") "Belgium"
+                , FilteredTag.init (Tag "Brazil") "Brazil"
+                , FilteredTag.init (Tag "Bulgaria") "Bulgaria"
+                , FilteredTag.init (Tag "Canada") "Canada"
+                , FilteredTag.init (Tag "Chile") "Chile"
+                , FilteredTag.init (Tag "China") "China"
+                , FilteredTag.init (Tag "Colombia") "Colombia"
+                , FilteredTag.init (Tag "Croatia") "Croatia"
+                , FilteredTag.init (Tag "CzechRepublic") "Czech Republic"
+                , FilteredTag.init (Tag "Denmark") "Denmark"
+                , FilteredTag.init (Tag "England") "England"
+                , FilteredTag.init (Tag "Finland") "Finland"
+                , FilteredTag.init (Tag "France") "France"
+                , FilteredTag.init (Tag "Germany") "Germany"
+                , FilteredTag.init (Tag "Hungary") "Hungary"
+                , FilteredTag.init (Tag "Iceland") "Iceland"
+                , FilteredTag.init (Tag "India") "India"
+                , FilteredTag.init (Tag "Ireland") "Ireland"
+                , FilteredTag.init (Tag "Israel") "Israel"
+                , FilteredTag.init (Tag "Italy") "Italy"
+                , FilteredTag.init (Tag "Japan") "Japan"
+                , FilteredTag.init (Tag "Latvia") "Latvia"
+                , FilteredTag.init (Tag "Lebanon") "Lebanon"
+                , FilteredTag.init (Tag "Lithuania") "Lithuania"
+                , FilteredTag.init (Tag "Malaysia") "Malaysia"
+                , FilteredTag.init (Tag "Mexico") "Mexico"
+                , FilteredTag.init (Tag "Netherlands") "Netherlands"
+                , FilteredTag.init (Tag "NewZealand") "New Zealand"
+                , FilteredTag.init (Tag "Norway") "Norway"
+                , FilteredTag.init (Tag "Peru") "Peru"
+                , FilteredTag.init (Tag "Philippines") "Philippines"
+                , FilteredTag.init (Tag "Poland") "Poland"
+                , FilteredTag.init (Tag "Portugal") "Portugal"
+                , FilteredTag.init (Tag "Remote") "Remote"
+                , FilteredTag.init (Tag "Romania") "Romania"
+                , FilteredTag.init (Tag "Russia") "Russia"
+                , FilteredTag.init (Tag "Scotland") "Scotland"
+                , FilteredTag.init (Tag "Singapore") "Singapore"
+                , FilteredTag.init (Tag "SouthAfrica") "South Africa"
+                , FilteredTag.init (Tag "SouthKorea") "South Korea"
+                , FilteredTag.init (Tag "Spain") "Spain"
+                , FilteredTag.init (Tag "Sweden") "Sweden"
+                , FilteredTag.init (Tag "Switzerland") "Switzerland"
+                , FilteredTag.init (Tag "Taiwan") "Taiwan"
+                , FilteredTag.init (Tag "Tunisia") "Tunisia"
+                , FilteredTag.init (Tag "Turkey") "Turkey"
+                , FilteredTag.init (Tag "UAE") "UAE"
+                , FilteredTag.init (Tag "USA") "USA"
+                , FilteredTag.init (Tag "Ukraine") "Ukraine"
+                , FilteredTag.init (Tag "Uruguay") "Uruguay"
+                , FilteredTag.init (Tag "Wales") "Wales"
                 ]
           }
         ]
