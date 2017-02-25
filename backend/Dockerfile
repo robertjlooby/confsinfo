@@ -1,4 +1,4 @@
-FROM haskell:8.0.1
+FROM haskell:8.0.2
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends libpq-dev
@@ -6,6 +6,6 @@ RUN apt-get update && \
 COPY . /var/confsinfo
 
 WORKDIR /var/confsinfo
-RUN stack --no-terminal --install-ghc build --copy-bins
+RUN stack --no-terminal build --copy-bins
 
 CMD /root/.local/bin/confsinfo-backend-exe
