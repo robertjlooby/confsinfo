@@ -4,7 +4,7 @@ import FilteredTag exposing (Msg(..), State(..))
 import FilteredTagSection exposing (..)
 import Fuzz exposing (Fuzzer)
 import FilteredTagTest
-import Tag exposing (Tag(..))
+import Tag exposing (..)
 import Expect
 import Test exposing (Test, describe, fuzz, test)
 
@@ -69,25 +69,25 @@ tests =
                     |> Expect.equal { model | tags = List.map (\t -> { t | state = Excluded }) model.tags }
         , let
             includedTags =
-                List.map toString [ Ruby, JavaScript ]
+                [ "Ruby", "JavaScript" ]
 
             model =
                 { sectionName = "section"
                 , tags =
-                    [ FilteredTag.init Ruby ""
-                    , FilteredTag.init England ""
-                    , FilteredTag.init JavaScript ""
-                    , FilteredTag.init USA ""
+                    [ FilteredTag.init (Tag "Ruby") ""
+                    , FilteredTag.init (Tag "England") ""
+                    , FilteredTag.init (Tag "JavaScript") ""
+                    , FilteredTag.init (Tag "USA") ""
                     ]
                 }
 
             expectedModel =
                 { sectionName = "section"
                 , tags =
-                    [ FilteredTag.init Ruby "" |> FilteredTag.update Include
-                    , FilteredTag.init England ""
-                    , FilteredTag.init JavaScript "" |> FilteredTag.update Include
-                    , FilteredTag.init USA ""
+                    [ FilteredTag.init (Tag "Ruby") "" |> FilteredTag.update Include
+                    , FilteredTag.init (Tag "England") ""
+                    , FilteredTag.init (Tag "JavaScript") "" |> FilteredTag.update Include
+                    , FilteredTag.init (Tag "USA") ""
                     ]
                 }
           in

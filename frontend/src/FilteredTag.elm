@@ -54,10 +54,12 @@ update msg model =
 
 initializeIncludedTag : List String -> Model -> Model
 initializeIncludedTag includedTags model =
-    if List.member (toString model.tag) includedTags then
-        update Include model
-    else
-        model
+    case model.tag of
+        Tag.Tag tag ->
+            if List.member tag includedTags then
+                update Include model
+            else
+                model
 
 
 exclude : Model -> Model

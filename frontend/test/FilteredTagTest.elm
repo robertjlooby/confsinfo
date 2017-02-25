@@ -5,7 +5,7 @@ import FilteredTag exposing (..)
 import Fuzz exposing (Fuzzer)
 import Lazy.List exposing ((:::), empty)
 import Shrink
-import Tag exposing (Tag(FunctionalProgramming))
+import Tag exposing (..)
 import Test exposing (describe, fuzz, fuzz2)
 import TestHelpers exposing (..)
 
@@ -44,13 +44,17 @@ tests =
                     |> Expect.equal Excluded
         , fuzz2 modelFuzzer (Fuzz.list Fuzz.string) "initializeIncludedTag includes a model if its tag is in the list" <|
             \model strings ->
-                initializeIncludedTag (toString model.tag :: strings) model
-                    |> .state
-                    |> Expect.equal Included
+                case model.tag of
+                    Tag tag ->
+                        initializeIncludedTag (tag :: strings) model
+                            |> .state
+                            |> Expect.equal Included
         , fuzz2 modelFuzzer (Fuzz.list Fuzz.string) "initializeIncludedTag returns the model if its tag is not in the list" <|
             \model strings ->
-                initializeIncludedTag (List.filter ((/=) (toString model.tag)) strings) model
-                    |> Expect.equal model
+                case model.tag of
+                    Tag tag ->
+                        initializeIncludedTag (List.filter ((/=) tag) strings) model
+                            |> Expect.equal model
         , fuzz modelFuzzer "exclude excludes a model" <|
             \model ->
                 exclude model
