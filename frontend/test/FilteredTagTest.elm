@@ -20,18 +20,17 @@ stateFuzzer =
 
 modelFuzzer : Fuzzer Model
 modelFuzzer =
-    Fuzz.map3 (\tag state string -> { tag = tag, state = state, display = string })
+    Fuzz.map2 (\tag state -> { tag = tag, state = state })
         tagFuzzer
         stateFuzzer
-        Fuzz.string
 
 
 tests =
     describe "FilteredTag"
-        [ fuzz2 tagFuzzer Fuzz.string "init starts with the tag Excluded" <|
-            \tag string ->
-                (init tag string)
-                    |> Expect.equal { tag = tag, state = Excluded, display = string }
+        [ fuzz tagFuzzer "init starts with the tag Excluded" <|
+            \tag ->
+                (init tag)
+                    |> Expect.equal { tag = tag, state = Excluded }
         , fuzz modelFuzzer "update with Include includes a model" <|
             \model ->
                 update Include model

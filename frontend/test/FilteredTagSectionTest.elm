@@ -74,20 +74,20 @@ tests =
             model =
                 { sectionName = "section"
                 , tags =
-                    [ FilteredTag.init (Tag "Ruby") ""
-                    , FilteredTag.init (Tag "England") ""
-                    , FilteredTag.init (Tag "JavaScript") ""
-                    , FilteredTag.init (Tag "USA") ""
+                    [ FilteredTag.init (Tag "Ruby")
+                    , FilteredTag.init (Tag "England")
+                    , FilteredTag.init (Tag "JavaScript")
+                    , FilteredTag.init (Tag "USA")
                     ]
                 }
 
             expectedModel =
                 { sectionName = "section"
                 , tags =
-                    [ FilteredTag.init (Tag "Ruby") "" |> FilteredTag.update Include
-                    , FilteredTag.init (Tag "England") ""
-                    , FilteredTag.init (Tag "JavaScript") "" |> FilteredTag.update Include
-                    , FilteredTag.init (Tag "USA") ""
+                    [ FilteredTag.init (Tag "Ruby") |> FilteredTag.update Include
+                    , FilteredTag.init (Tag "England")
+                    , FilteredTag.init (Tag "JavaScript") |> FilteredTag.update Include
+                    , FilteredTag.init (Tag "USA")
                     ]
                 }
           in
