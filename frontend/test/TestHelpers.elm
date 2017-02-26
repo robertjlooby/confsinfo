@@ -9,7 +9,7 @@ import Tag exposing (..)
 
 tagFuzzer : Fuzzer Tag
 tagFuzzer =
-    Fuzz.map2 (\c s -> Tag (String.cons c s)) Fuzz.char Fuzz.string
+    Fuzz.map Tag Fuzz.string
 
 
 minYear : Int

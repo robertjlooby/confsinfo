@@ -3,7 +3,7 @@ module FilteredTag exposing (init, Model, Msg(..), State(..), update, view, init
 import Html exposing (text)
 import Html.Attributes exposing (class)
 import Html.Events
-import Tag exposing (Tag)
+import Tag exposing (..)
 
 
 -- Model
@@ -17,15 +17,13 @@ type State
 type alias Model =
     { tag : Tag
     , state : State
-    , display : String
     }
 
 
-init : Tag -> String -> Model
-init tag display =
+init : Tag -> Model
+init tag =
     { tag = tag
     , state = Excluded
-    , display = display
     }
 
 
@@ -85,12 +83,12 @@ view : Model -> Html.Html Msg
 view model =
     let
         ( tagString, tagClass, clickAction ) =
-            case model.state of
-                Included ->
-                    ( "- " ++ model.display, "included", Exclude )
+            case ( model.state, model.tag ) of
+                ( Included, Tag tag ) ->
+                    ( "- " ++ tag, "included", Exclude )
 
-                Excluded ->
-                    ( "+ " ++ model.display, "excluded", Include )
+                ( Excluded, Tag tag ) ->
+                    ( "+ " ++ tag, "excluded", Include )
     in
         Html.button
             [ class tagClass
