@@ -1,8 +1,8 @@
 module Model exposing (Model, Msg(..), conferencesToShow, init, update, urlUpdate, initializeIncludedTags, includedTags, setCurrentDate, view)
 
 import Conference
-import Date
-import DaTuple exposing (DaTuple, compareDaTuples)
+import Date as CoreDate
+import DateFormatter exposing (monthToInt)
 import FilteredTagSection
 import Html exposing (text)
 import Html.Attributes exposing (class, href)
@@ -12,6 +12,7 @@ import QueryString exposing (QueryString, add, all, empty, one, render, string, 
 import Tag exposing (Tag)
 import Task exposing (Task)
 import Time exposing (Time)
+import Time.Date as Date exposing (Date)
 
 
 -- Model
@@ -19,7 +20,7 @@ import Time exposing (Time)
 
 type alias Model =
     { conferences : List Conference.Model
-    , currentDate : DaTuple
+    , currentDate : Date
     , includePastEvents : Bool
     , tags : List FilteredTagSection.Model
     }
@@ -79,12 +80,12 @@ update msg model =
         SetCurrentDate (Just time) ->
             let
                 date =
-                    Date.fromTime time
+                    CoreDate.fromTime time
 
-                daTuple =
-                    ( Date.year date, Date.month date, Date.day date )
+                currentDate =
+                    Date.date (CoreDate.year date) (monthToInt <| CoreDate.month date) (CoreDate.day date)
             in
-                ( { model | currentDate = daTuple }, Cmd.none )
+                ( { model | currentDate = currentDate }, Cmd.none )
 
         SetCurrentDate Nothing ->
             ( model, Cmd.none )
@@ -188,7 +189,7 @@ conferencesToShow : Model -> List Conference.Model
 conferencesToShow model =
     let
         isInFuture conference =
-            compareDaTuples model.currentDate conference.startDate /= GT
+            Date.compare model.currentDate conference.startDate /= GT
 
         confsToFilterOnTags =
             if model.includePastEvents then

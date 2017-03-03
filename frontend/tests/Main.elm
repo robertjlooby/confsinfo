@@ -1,7 +1,7 @@
 port module Main exposing (..)
 
 import ConferenceTest
-import DaTupleTest
+import DateFormatterTest
 import FilteredTagTest
 import FilteredTagSectionTest
 import ModelTest
@@ -14,7 +14,7 @@ tests : Test
 tests =
     describe "All tests"
         [ ConferenceTest.tests
-        , DaTupleTest.tests
+        , DateFormatterTest.tests
         , FilteredTagTest.tests
         , FilteredTagSectionTest.tests
         , ModelTest.tests

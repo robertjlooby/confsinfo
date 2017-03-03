@@ -1,9 +1,10 @@
 module Conference exposing (Model, CFPStatus(..), cfpStatus, shouldShow, view)
 
-import DaTuple exposing (DaTuple)
+import DateFormatter
 import Html exposing (text)
 import Html.Attributes exposing (class, href)
 import Tag exposing (Tag)
+import Time.Date as Date exposing (Date)
 
 
 -- Model
@@ -12,11 +13,11 @@ import Tag exposing (Tag)
 type alias Model =
     { name : String
     , link : String
-    , startDate : DaTuple
-    , endDate : DaTuple
+    , startDate : Date
+    , endDate : Date
     , location : String
-    , cfpStartDate : Maybe DaTuple
-    , cfpEndDate : Maybe DaTuple
+    , cfpStartDate : Maybe Date
+    , cfpEndDate : Maybe Date
     , tags : List Tag
     }
 
@@ -40,9 +41,9 @@ type CFPStatus
     | Open
 
 
-cfpStatus : DaTuple -> Model -> ( CFPStatus, Maybe DaTuple )
+cfpStatus : Date -> Model -> ( CFPStatus, Maybe Date )
 cfpStatus currentDate conference =
-    case Maybe.map (DaTuple.compareDaTuples currentDate) conference.cfpEndDate of
+    case Maybe.map (Date.compare currentDate) conference.cfpEndDate of
         Nothing ->
             ( Closed, Nothing )
 
@@ -50,7 +51,7 @@ cfpStatus currentDate conference =
             ( Closed, Nothing )
 
         Just _ ->
-            case Maybe.map (DaTuple.compareDaTuples currentDate) conference.cfpStartDate of
+            case Maybe.map (Date.compare currentDate) conference.cfpStartDate of
                 Just LT ->
                     ( NotYetOpen, conference.cfpStartDate )
 
@@ -58,18 +59,18 @@ cfpStatus currentDate conference =
                     ( Open, conference.cfpEndDate )
 
 
-view : DaTuple -> Model -> Html.Html msg
+view : Date -> Model -> Html.Html msg
 view currentDate conference =
     Html.div [ class "row" ]
         [ conferenceNameHtml conference currentDate
         , Html.div [ class "three columns" ]
-            [ text <| DaTuple.formatRange conference.startDate conference.endDate ]
+            [ text <| DateFormatter.formatRange conference.startDate conference.endDate ]
         , Html.div [ class "four columns" ]
             [ text conference.location ]
         ]
 
 
-conferenceNameHtml : Model -> DaTuple -> Html.Html msg
+conferenceNameHtml : Model -> Date -> Html.Html msg
 conferenceNameHtml conference currentDate =
     let
         nameLink =
@@ -81,7 +82,7 @@ conferenceNameHtml conference currentDate =
                     [ nameLink
                     , Html.small
                         [ class "cfp cfp-open"
-                        , Html.Attributes.title <| "Closes " ++ DaTuple.formatDate endDate
+                        , Html.Attributes.title <| "Closes " ++ DateFormatter.formatDate endDate
                         ]
                         [ text "CFP open" ]
                     ]
@@ -89,7 +90,7 @@ conferenceNameHtml conference currentDate =
                 ( NotYetOpen, Just startDate ) ->
                     [ nameLink
                     , Html.small [ class "cfp" ]
-                        [ text <| "CFP opens " ++ DaTuple.formatDate startDate ]
+                        [ text <| "CFP opens " ++ DateFormatter.formatDate startDate ]
                     ]
 
                 _ ->

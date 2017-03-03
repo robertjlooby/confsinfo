@@ -1,10 +1,8 @@
 module TestHelpers exposing (..)
 
-import Date exposing (Month)
-import DaTuple exposing (DaTuple)
-import Date.Extra.Core exposing (intToMonth)
 import Fuzz exposing (Fuzzer)
 import Tag exposing (..)
+import Time.Date exposing (Date, date)
 
 
 tagFuzzer : Fuzzer Tag
@@ -22,10 +20,9 @@ yearFuzzer =
     Fuzz.intRange minYear 2100
 
 
-monthFuzzer : Fuzzer Month
+monthFuzzer : Fuzzer Int
 monthFuzzer =
     Fuzz.intRange 1 12
-        |> Fuzz.map intToMonth
 
 
 dayFuzzer : Fuzzer Int
@@ -33,6 +30,6 @@ dayFuzzer =
     Fuzz.intRange 1 31
 
 
-daTupleFuzzer : Fuzzer DaTuple
-daTupleFuzzer =
-    Fuzz.map3 (,,) yearFuzzer monthFuzzer dayFuzzer
+dateFuzzer : Fuzzer Date
+dateFuzzer =
+    Fuzz.map3 date yearFuzzer monthFuzzer dayFuzzer

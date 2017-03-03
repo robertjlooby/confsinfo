@@ -7,12 +7,13 @@ import Date exposing (Month(..))
 import FilteredTagSection
 import Tag exposing (Tag(..))
 import Test exposing (describe, test)
+import Time.Date exposing (date)
 
 
 withTags : List FilteredTagSection.Model -> Model
 withTags tags =
     { conferences = []
-    , currentDate = ( 2016, Jan, 1 )
+    , currentDate = date 2016 1 1
     , includePastEvents = True
     , tags = tags
     }
@@ -31,8 +32,8 @@ tests =
                     blankConference =
                         { name = ""
                         , link = ""
-                        , startDate = ( 1, Date.Jan, 1 )
-                        , endDate = ( 1, Date.Jan, 1 )
+                        , startDate = date 1 1 1
+                        , endDate = date 1 1 1
                         , location = ""
                         , cfpStartDate = Nothing
                         , cfpEndDate = Nothing
@@ -40,16 +41,16 @@ tests =
                         }
 
                     conference1 =
-                        { blankConference | startDate = ( 2015, Date.Dec, 30 ), name = "a" }
+                        { blankConference | startDate = date 2015 12 30, name = "a" }
 
                     conference2 =
-                        { blankConference | startDate = ( 2016, Date.Jan, 2 ), name = "b" }
+                        { blankConference | startDate = date 2016 1 2, name = "b" }
 
                     model =
                         { blankModel
                             | conferences = [ conference1, conference2 ]
                             , includePastEvents = False
-                            , currentDate = ( 2016, Jan, 1 )
+                            , currentDate = date 2016 1 1
                         }
                 in
                     conferencesToShow model
@@ -60,8 +61,8 @@ tests =
                     blankConference =
                         { name = ""
                         , link = ""
-                        , startDate = ( 1, Date.Jan, 1 )
-                        , endDate = ( 1, Date.Jan, 1 )
+                        , startDate = date 1 1 1
+                        , endDate = date 1 1 1
                         , location = ""
                         , cfpStartDate = Nothing
                         , cfpEndDate = Nothing
@@ -69,16 +70,16 @@ tests =
                         }
 
                     conference1 =
-                        { blankConference | startDate = ( 2015, Date.Dec, 30 ), name = "a" }
+                        { blankConference | startDate = date 2015 12 30, name = "a" }
 
                     conference2 =
-                        { blankConference | startDate = ( 2016, Date.Jan, 2 ), name = "b" }
+                        { blankConference | startDate = date 2016 1 2, name = "b" }
 
                     model =
                         { blankModel
                             | conferences = [ conference1, conference2 ]
                             , includePastEvents = True
-                            , currentDate = ( 2016, Jan, 1 )
+                            , currentDate = date 2016 1 1
                         }
                 in
                     conferencesToShow model
