@@ -36,15 +36,15 @@ dependencies:
     - chmod +x $(npm config get prefix)/bin/elm-make
     - elm make --yes src/Main.elm --output ../backend/dist/elm.min.js:
         pwd: frontend
-    - elm make --yes AllTests.elm --output /dev/null:
-        pwd: frontend/test
+    - elm make --yes Main.elm --output /dev/null:
+        pwd: frontend/tests
     - docker build --rm=false -t registry.heroku.com/confs-info/web .:
         pwd: backend
 
 test:
   override:
-    - elm-test AllTests.elm:
-        pwd: frontend/test
+    - elm-test:
+        pwd: frontend
     - docker-compose -f docker-compose.ci.yml run test:
         pwd: backend
 

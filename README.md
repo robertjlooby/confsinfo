@@ -21,10 +21,10 @@
 
 ## Tests
 
-- `cd frontend/test`
-- `elm package install`
+- `cd frontend/tests`
 - `npm install`
-- `node_modules/elm-test/bin/elm-test AllTests.elm`
+- `cd ..`
+- `tests/node_modules/elm-test/bin/elm-test`
 
 and
 
