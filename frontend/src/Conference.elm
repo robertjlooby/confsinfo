@@ -1,4 +1,4 @@
-module Conference exposing (Model, CFPStatus(..), cfpStatus, shouldShow, compareConferences, view)
+module Conference exposing (Model, CFPStatus(..), cfpStatus, shouldShow, view)
 
 import DaTuple exposing (DaTuple)
 import Html exposing (text)
@@ -28,18 +28,6 @@ type alias Model =
 shouldShow : List Tag -> Model -> Bool
 shouldShow includedTags conference =
     List.all (\tag -> List.member tag conference.tags) includedTags
-
-
-compareConferences : Model -> Model -> Order
-compareConferences conf conf2 =
-    let
-        dateCompare =
-            DaTuple.compareDaTuples conf.startDate conf2.startDate
-    in
-        if dateCompare == EQ then
-            compare conf.name conf2.name
-        else
-            dateCompare
 
 
 

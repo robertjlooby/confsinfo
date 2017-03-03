@@ -1,6 +1,5 @@
 module ModelTest exposing (..)
 
-import GenericSet as GSet
 import Conference
 import Expect
 import Model exposing (..)
@@ -10,14 +9,9 @@ import Tag exposing (Tag(..))
 import Test exposing (describe, test)
 
 
-confSet : List Conference.Model -> GSet.GenericSet Conference.Model
-confSet conferences =
-    GSet.fromList (\c1 c2 -> compare c1.name c2.name) conferences
-
-
 withTags : List FilteredTagSection.Model -> Model
 withTags tags =
-    { conferences = confSet []
+    { conferences = []
     , currentDate = ( 2016, Jan, 1 )
     , includePastEvents = True
     , tags = tags
@@ -53,7 +47,7 @@ tests =
 
                     model =
                         { blankModel
-                            | conferences = confSet [ conference1, conference2 ]
+                            | conferences = [ conference1, conference2 ]
                             , includePastEvents = False
                             , currentDate = ( 2016, Jan, 1 )
                         }
@@ -82,7 +76,7 @@ tests =
 
                     model =
                         { blankModel
-                            | conferences = confSet [ conference1, conference2 ]
+                            | conferences = [ conference1, conference2 ]
                             , includePastEvents = True
                             , currentDate = ( 2016, Jan, 1 )
                         }

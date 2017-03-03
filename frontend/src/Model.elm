@@ -3,7 +3,6 @@ module Model exposing (Model, Msg(..), conferencesToShow, init, update, urlUpdat
 import Conference
 import Date
 import DaTuple exposing (DaTuple, compareDaTuples)
-import GenericSet as GSet
 import FilteredTagSection
 import Html exposing (text)
 import Html.Attributes exposing (class, href)
@@ -19,7 +18,7 @@ import Time exposing (Time)
 
 
 type alias Model =
-    { conferences : GSet.GenericSet Conference.Model
+    { conferences : List Conference.Model
     , currentDate : DaTuple
     , includePastEvents : Bool
     , tags : List FilteredTagSection.Model
@@ -193,9 +192,9 @@ conferencesToShow model =
 
         confsToFilterOnTags =
             if model.includePastEvents then
-                GSet.toList model.conferences
+                model.conferences
             else
-                List.filter isInFuture <| GSet.toList model.conferences
+                List.filter isInFuture model.conferences
     in
         List.filter (Conference.shouldShow <| includedTags model) confsToFilterOnTags
 

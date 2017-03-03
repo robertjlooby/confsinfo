@@ -37,12 +37,4 @@ tests =
             \date ->
                 cfpStatus date { blankConf | cfpEndDate = Just date }
                     |> Expect.equal ( Open, Just date )
-        , fuzz2 daTupleFuzzer daTupleFuzzer "compareConferences sorts first by start date" <|
-            \d1 d2 ->
-                compareConferences { blankConf | startDate = d1 } { blankConf | startDate = d2 }
-                    |> Expect.equal (DT.compareDaTuples d1 d2)
-        , fuzz3 daTupleFuzzer Fuzz.string Fuzz.string "compareConferences sorts by name if the start date is the same" <|
-            \d n1 n2 ->
-                compareConferences { blankConf | name = n1, startDate = d } { blankConf | name = n2, startDate = d }
-                    |> Expect.equal (compare n1 n2)
         ]
