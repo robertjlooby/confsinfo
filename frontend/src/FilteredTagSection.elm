@@ -1,4 +1,4 @@
-module FilteredTagSection exposing (Model, initializeIncludedTags, includedTags, Msg(..), update, view, resetButtonView)
+module FilteredTagSection exposing (FilteredTagSection, initializeIncludedTags, includedTags, Msg(..), update, view, resetButtonView)
 
 import FilteredTag
 import Html exposing (text)
@@ -10,13 +10,13 @@ import Tag exposing (Tag)
 -- Model
 
 
-type alias Model =
+type alias FilteredTagSection =
     { sectionName : String
     , tags : List FilteredTag.Model
     }
 
 
-includedTags : Model -> List Tag
+includedTags : FilteredTagSection -> List Tag
 includedTags model =
     List.filter FilteredTag.isIncluded model.tags
         |> List.map .tag
@@ -31,7 +31,7 @@ type Msg
     | Reset
 
 
-update : Msg -> Model -> Model
+update : Msg -> FilteredTagSection -> FilteredTagSection
 update msg model =
     case msg of
         UpdateTag tag tagAction ->
@@ -48,7 +48,7 @@ update msg model =
             { model | tags = List.map FilteredTag.exclude model.tags }
 
 
-initializeIncludedTags : List String -> Model -> Model
+initializeIncludedTags : List String -> FilteredTagSection -> FilteredTagSection
 initializeIncludedTags includedTags model =
     { model | tags = List.map (FilteredTag.initializeIncludedTag includedTags) model.tags }
 
@@ -57,7 +57,7 @@ initializeIncludedTags includedTags model =
 -- View
 
 
-view : Model -> List (Html.Html Msg)
+view : FilteredTagSection -> List (Html.Html Msg)
 view { sectionName, tags } =
     [ Html.div [ class "row" ]
         [ Html.h5 [] [ text sectionName ] ]

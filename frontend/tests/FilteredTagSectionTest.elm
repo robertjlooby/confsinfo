@@ -9,11 +9,11 @@ import Expect
 import Test exposing (Test, describe, fuzz, test)
 
 
-modelFuzzer : Fuzzer Model
+modelFuzzer : Fuzzer FilteredTagSection
 modelFuzzer =
-    Fuzz.map2 (\tags string -> { tags = tags, sectionName = string })
-        (Fuzz.list FilteredTagTest.modelFuzzer)
+    Fuzz.map2 FilteredTagSection
         Fuzz.string
+        (Fuzz.list FilteredTagTest.modelFuzzer)
 
 
 modelPartsForUpdateFuzzer : Fuzzer ( String, List FilteredTag.Model, FilteredTag.Model, List FilteredTag.Model )
@@ -33,7 +33,7 @@ modelPartsForUpdateFuzzer =
             )
 
 
-modelFromParts : ( String, List FilteredTag.Model, FilteredTag.Model, List FilteredTag.Model ) -> Model
+modelFromParts : ( String, List FilteredTag.Model, FilteredTag.Model, List FilteredTag.Model ) -> FilteredTagSection
 modelFromParts ( string, tags1, tag, tags2 ) =
     { sectionName = string, tags = List.concat [ tags1, [ tag ], tags2 ] }
 

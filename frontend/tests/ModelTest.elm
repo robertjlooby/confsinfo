@@ -4,13 +4,13 @@ import Conference
 import Expect
 import Model exposing (..)
 import Date exposing (Month(..))
-import FilteredTagSection
+import FilteredTagSection exposing (FilteredTagSection)
 import Tag exposing (Tag(..))
 import Test exposing (describe, test)
 import Time.Date exposing (date)
 
 
-withTags : List FilteredTagSection.Model -> Model
+withTags : List FilteredTagSection -> Model
 withTags tags =
     { conferences = []
     , currentDate = date 2016 1 1

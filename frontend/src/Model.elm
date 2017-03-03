@@ -3,7 +3,7 @@ module Model exposing (Model, Msg(..), conferencesToShow, init, update, urlUpdat
 import Conference
 import Date as CoreDate
 import DateFormatter exposing (monthToInt)
-import FilteredTagSection
+import FilteredTagSection exposing (FilteredTagSection)
 import Html exposing (text)
 import Html.Attributes exposing (class, href)
 import Html.Events
@@ -22,7 +22,7 @@ type alias Model =
     { conferences : List Conference.Model
     , currentDate : Date
     , includePastEvents : Bool
-    , tags : List FilteredTagSection.Model
+    , tags : List FilteredTagSection
     }
 
 
@@ -205,7 +205,7 @@ conferencesView model =
     List.map (Conference.view model.currentDate) (conferencesToShow model)
 
 
-allTagsView : List FilteredTagSection.Model -> List (Html.Html Msg)
+allTagsView : List FilteredTagSection -> List (Html.Html Msg)
 allTagsView filteredTagSections =
     List.map FilteredTagSection.view filteredTagSections
         |> List.concat
