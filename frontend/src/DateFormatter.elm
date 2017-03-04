@@ -1,4 +1,4 @@
-module DateFormatter exposing (formatRange)
+module DateFormatter exposing (formatDay, formatRange)
 
 import Date exposing (Month(..))
 import Formatting exposing ((<>), any, int, print, s)
@@ -15,7 +15,7 @@ formatRange start end =
             toTuple end
     in
         if start == end then
-            formatDay startTuple
+            formatDay start
         else if startYear /= endYear then
             formatDaysAcrossYears startTuple endTuple
         else if startMonth /= endMonth then
@@ -24,11 +24,14 @@ formatRange start end =
             formatDaysInMonth startTuple endDay
 
 
-formatDay : ( Int, Int, Int ) -> String
-formatDay ( year, month, day ) =
+formatDay : Date -> String
+formatDay date =
     let
         format =
             any <> s " " <> int <> s ", " <> int
+
+        ( year, month, day ) =
+            toTuple date
     in
         print format (intToMonth month) day year
 

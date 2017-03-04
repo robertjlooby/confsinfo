@@ -1,6 +1,6 @@
-module Conference exposing (Conference, CFPStatus(..), cfpStatus, view)
+module Conference exposing (Conference, view)
 
-import DateFormatter
+import DateFormatter exposing (formatDay)
 import Html exposing (text)
 import Html.Attributes exposing (class, href)
 import Tag exposing (Tag)
@@ -16,25 +16,19 @@ type alias Conference =
     , startDate : Date
     , endDate : Date
     , location : String
-    , cfpStartDate : Maybe Date
-    , cfpEndDate : Maybe Date
+    , cfpStatus : CFPStatus
     , tags : List Tag
     }
 
 
-
--- View
-
-
 type CFPStatus
     = Closed
-    | NotYetOpen
-    | Open
+    | NotYetOpen Date
+    | Open Date
 
 
-cfpStatus : Conference -> CFPStatus
-cfpStatus conference =
-    Closed
+
+-- View
 
 
 view : Conference -> Html.Html msg
@@ -55,20 +49,20 @@ conferenceNameHtml conference =
             Html.a [ href conference.link ] [ text conference.name ]
 
         inner =
-            case cfpStatus conference of
-                Open ->
+            case conference.cfpStatus of
+                Open closeDate ->
                     [ nameLink
                     , Html.small
                         [ class "cfp cfp-open"
-                        , Html.Attributes.title "Closes some time"
+                        , Html.Attributes.title <| "Closes " ++ formatDay closeDate
                         ]
                         [ text "CFP open" ]
                     ]
 
-                NotYetOpen ->
+                NotYetOpen openDate ->
                     [ nameLink
                     , Html.small [ class "cfp" ]
-                        [ text "CFP opens some time" ]
+                        [ text <| "CFP opens " ++ formatDay openDate ]
                     ]
 
                 _ ->
