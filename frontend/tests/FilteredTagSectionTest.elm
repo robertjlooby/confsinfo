@@ -1,6 +1,6 @@
 module FilteredTagSectionTest exposing (..)
 
-import FilteredTag exposing (Msg(..), State(..))
+import FilteredTag exposing (FilteredTag, Msg(..), State(..))
 import FilteredTagSection exposing (..)
 import Fuzz exposing (Fuzzer)
 import FilteredTagTest
@@ -16,7 +16,7 @@ modelFuzzer =
         (Fuzz.list FilteredTagTest.modelFuzzer)
 
 
-modelPartsForUpdateFuzzer : Fuzzer ( String, List FilteredTag.Model, FilteredTag.Model, List FilteredTag.Model )
+modelPartsForUpdateFuzzer : Fuzzer ( String, List FilteredTag, FilteredTag, List FilteredTag )
 modelPartsForUpdateFuzzer =
     Fuzz.map4 (,,,)
         Fuzz.string
@@ -33,7 +33,7 @@ modelPartsForUpdateFuzzer =
             )
 
 
-modelFromParts : ( String, List FilteredTag.Model, FilteredTag.Model, List FilteredTag.Model ) -> FilteredTagSection
+modelFromParts : ( String, List FilteredTag, FilteredTag, List FilteredTag ) -> FilteredTagSection
 modelFromParts ( string, tags1, tag, tags2 ) =
     { sectionName = string, tags = List.concat [ tags1, [ tag ], tags2 ] }
 

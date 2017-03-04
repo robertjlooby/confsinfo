@@ -1,6 +1,6 @@
 module FilteredTagSection exposing (FilteredTagSection, initializeIncludedTags, includedTags, Msg(..), update, view, resetButtonView)
 
-import FilteredTag
+import FilteredTag exposing (FilteredTag)
 import Html exposing (text)
 import Html.Attributes exposing (class)
 import Html.Events
@@ -12,7 +12,7 @@ import Tag exposing (Tag)
 
 type alias FilteredTagSection =
     { sectionName : String
-    , tags : List FilteredTag.Model
+    , tags : List FilteredTag
     }
 
 

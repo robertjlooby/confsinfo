@@ -1,4 +1,4 @@
-module FilteredTag exposing (init, Model, Msg(..), State(..), update, view, initializeIncludedTag, isIncluded, exclude)
+module FilteredTag exposing (init, FilteredTag, Msg(..), State(..), update, view, initializeIncludedTag, isIncluded, exclude)
 
 import Html exposing (text)
 import Html.Attributes exposing (class)
@@ -14,13 +14,13 @@ type State
     | Excluded
 
 
-type alias Model =
+type alias FilteredTag =
     { tag : Tag
     , state : State
     }
 
 
-init : Tag -> Model
+init : Tag -> FilteredTag
 init tag =
     { tag = tag
     , state = Excluded
@@ -36,7 +36,7 @@ type Msg
     | Exclude
 
 
-update : Msg -> Model -> Model
+update : Msg -> FilteredTag -> FilteredTag
 update msg model =
     case msg of
         Include ->
@@ -50,7 +50,7 @@ update msg model =
 -- Public functions
 
 
-initializeIncludedTag : List String -> Model -> Model
+initializeIncludedTag : List String -> FilteredTag -> FilteredTag
 initializeIncludedTag includedTags model =
     case model.tag of
         Tag.Tag tag ->
@@ -60,12 +60,12 @@ initializeIncludedTag includedTags model =
                 model
 
 
-exclude : Model -> Model
+exclude : FilteredTag -> FilteredTag
 exclude model =
     update Exclude model
 
 
-isIncluded : Model -> Bool
+isIncluded : FilteredTag -> Bool
 isIncluded model =
     case model.state of
         Included ->
@@ -79,7 +79,7 @@ isIncluded model =
 -- View
 
 
-view : Model -> Html.Html Msg
+view : FilteredTag -> Html.Html Msg
 view model =
     let
         ( tagString, tagClass, clickAction ) =

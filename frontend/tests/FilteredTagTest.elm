@@ -18,9 +18,9 @@ stateFuzzer =
         ]
 
 
-modelFuzzer : Fuzzer Model
+modelFuzzer : Fuzzer FilteredTag
 modelFuzzer =
-    Fuzz.map2 (\tag state -> { tag = tag, state = state })
+    Fuzz.map2 FilteredTag
         tagFuzzer
         stateFuzzer
 
