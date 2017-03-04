@@ -1,49 +1,63 @@
-module DateFormatter exposing (formatDate, formatRange, intToMonth)
+module DateFormatter exposing (formatRange)
 
 import Date exposing (Month(..))
+import Formatting exposing ((<>), any, int, print, s)
 import Time.Date exposing (Date, toTuple)
-
-
-formatDate : Date -> String
-formatDate date =
-    formatRange date date
 
 
 formatRange : Date -> Date -> String
 formatRange start end =
     let
-        ( startYear, startMonth, startDay ) =
+        (( startYear, startMonth, startDay ) as startTuple) =
             toTuple start
 
-        ( endYear, endMonth, endDay ) =
+        (( endYear, endMonth, endDay ) as endTuple) =
             toTuple end
-
-        startYearString =
-            toString startYear
-
-        startMonthString =
-            toString <| intToMonth startMonth
-
-        startDayString =
-            toString startDay
-
-        endYearString =
-            toString endYear
-
-        endMonthString =
-            toString <| intToMonth endMonth
-
-        endDayString =
-            toString endDay
     in
-        if startYearString /= endYearString then
-            startMonthString ++ " " ++ startDayString ++ ", " ++ startYearString ++ "-" ++ endMonthString ++ " " ++ endDayString ++ ", " ++ endYearString
-        else if startMonthString == endMonthString && startDayString == endDayString then
-            startMonthString ++ " " ++ startDayString ++ ", " ++ startYearString
-        else if startMonthString == endMonthString then
-            startMonthString ++ " " ++ startDayString ++ "-" ++ endDayString ++ ", " ++ startYearString
+        if start == end then
+            formatDay startTuple
+        else if startYear /= endYear then
+            formatDaysAcrossYears startTuple endTuple
+        else if startMonth /= endMonth then
+            formatDaysAcrossMonths startTuple endMonth endDay
         else
-            startMonthString ++ " " ++ startDayString ++ "-" ++ endMonthString ++ " " ++ endDayString ++ ", " ++ startYearString
+            formatDaysInMonth startTuple endDay
+
+
+formatDay : ( Int, Int, Int ) -> String
+formatDay ( year, month, day ) =
+    let
+        format =
+            any <> s " " <> int <> s ", " <> int
+    in
+        print format (intToMonth month) day year
+
+
+formatDaysInMonth : ( Int, Int, Int ) -> Int -> String
+formatDaysInMonth ( year, month, startDay ) endDay =
+    let
+        format =
+            any <> s " " <> int <> s "-" <> int <> s ", " <> int
+    in
+        print format (intToMonth month) startDay endDay year
+
+
+formatDaysAcrossMonths : ( Int, Int, Int ) -> Int -> Int -> String
+formatDaysAcrossMonths ( year, startMonth, startDay ) endMonth endDay =
+    let
+        format =
+            any <> s " " <> int <> s " - " <> any <> s " " <> int <> s ", " <> int
+    in
+        print format (intToMonth startMonth) startDay (intToMonth endMonth) endDay year
+
+
+formatDaysAcrossYears : ( Int, Int, Int ) -> ( Int, Int, Int ) -> String
+formatDaysAcrossYears ( startYear, startMonth, startDay ) ( endYear, endMonth, endDay ) =
+    let
+        format =
+            any <> s " " <> int <> s ", " <> int <> s " - " <> any <> s " " <> int <> s ", " <> int
+    in
+        print format (intToMonth startMonth) startDay startYear (intToMonth endMonth) endDay endYear
 
 
 {-| Return integer as month. Jan <= 1 Feb == 2 up to Dec > 11.
