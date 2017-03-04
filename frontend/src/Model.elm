@@ -1,6 +1,6 @@
 module Model exposing (Model, Msg(..), init, update, urlUpdate, initializeIncludedTags, includedTags, view)
 
-import Conference
+import Conference exposing (Conference)
 import FilteredTagSection exposing (FilteredTagSection)
 import Html exposing (text)
 import Html.Attributes exposing (class, href)
@@ -14,7 +14,7 @@ import Tag exposing (Tag)
 
 
 type alias Model =
-    { conferences : List Conference.Model
+    { conferences : List Conference
     , includePastEvents : Bool
     , tags : List FilteredTagSection
     }

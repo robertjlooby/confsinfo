@@ -1,4 +1,4 @@
-module Conference exposing (Model, CFPStatus(..), cfpStatus, view)
+module Conference exposing (Conference, CFPStatus(..), cfpStatus, view)
 
 import DateFormatter
 import Html exposing (text)
@@ -10,7 +10,7 @@ import Time.Date as Date exposing (Date)
 -- Model
 
 
-type alias Model =
+type alias Conference =
     { name : String
     , link : String
     , startDate : Date
@@ -32,12 +32,12 @@ type CFPStatus
     | Open
 
 
-cfpStatus : Model -> CFPStatus
+cfpStatus : Conference -> CFPStatus
 cfpStatus conference =
     Closed
 
 
-view : Model -> Html.Html msg
+view : Conference -> Html.Html msg
 view conference =
     Html.div [ class "row" ]
         [ conferenceNameHtml conference
@@ -48,7 +48,7 @@ view conference =
         ]
 
 
-conferenceNameHtml : Model -> Html.Html msg
+conferenceNameHtml : Conference -> Html.Html msg
 conferenceNameHtml conference =
     let
         nameLink =
