@@ -1,7 +1,6 @@
-module DateFormatter exposing (formatDate, formatRange, intToMonth, monthToInt)
+module DateFormatter exposing (formatDate, formatRange, intToMonth)
 
 import Date exposing (Month(..))
-import Date.Extra.Core exposing (monthToInt)
 import Time.Date exposing (Date, toTuple)
 
 
@@ -75,45 +74,3 @@ intToMonth month =
         Nov
     else
         Dec
-
-
-{-| Return month as integer. Jan = 1 to Dec = 12.
--}
-monthToInt : Month -> Int
-monthToInt month =
-    case month of
-        Jan ->
-            1
-
-        Feb ->
-            2
-
-        Mar ->
-            3
-
-        Apr ->
-            4
-
-        May ->
-            5
-
-        Jun ->
-            6
-
-        Jul ->
-            7
-
-        Aug ->
-            8
-
-        Sep ->
-            9
-
-        Oct ->
-            10
-
-        Nov ->
-            11
-
-        Dec ->
-            12

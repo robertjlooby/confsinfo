@@ -1,4 +1,4 @@
-module Conference exposing (Model, CFPStatus(..), cfpStatus, shouldShow, view)
+module Conference exposing (Model, CFPStatus(..), cfpStatus, view)
 
 import DateFormatter
 import Html exposing (text)
@@ -23,15 +23,6 @@ type alias Model =
 
 
 
--- Public functions
-
-
-shouldShow : List Tag -> Model -> Bool
-shouldShow includedTags conference =
-    List.all (\tag -> List.member tag conference.tags) includedTags
-
-
-
 -- View
 
 
@@ -41,28 +32,15 @@ type CFPStatus
     | Open
 
 
-cfpStatus : Date -> Model -> ( CFPStatus, Maybe Date )
-cfpStatus currentDate conference =
-    case Maybe.map (Date.compare currentDate) conference.cfpEndDate of
-        Nothing ->
-            ( Closed, Nothing )
-
-        Just GT ->
-            ( Closed, Nothing )
-
-        Just _ ->
-            case Maybe.map (Date.compare currentDate) conference.cfpStartDate of
-                Just LT ->
-                    ( NotYetOpen, conference.cfpStartDate )
-
-                _ ->
-                    ( Open, conference.cfpEndDate )
+cfpStatus : Model -> CFPStatus
+cfpStatus conference =
+    Closed
 
 
-view : Date -> Model -> Html.Html msg
-view currentDate conference =
+view : Model -> Html.Html msg
+view conference =
     Html.div [ class "row" ]
-        [ conferenceNameHtml conference currentDate
+        [ conferenceNameHtml conference
         , Html.div [ class "three columns" ]
             [ text <| DateFormatter.formatRange conference.startDate conference.endDate ]
         , Html.div [ class "four columns" ]
@@ -70,27 +48,27 @@ view currentDate conference =
         ]
 
 
-conferenceNameHtml : Model -> Date -> Html.Html msg
-conferenceNameHtml conference currentDate =
+conferenceNameHtml : Model -> Html.Html msg
+conferenceNameHtml conference =
     let
         nameLink =
             Html.a [ href conference.link ] [ text conference.name ]
 
         inner =
-            case cfpStatus currentDate conference of
-                ( Open, Just endDate ) ->
+            case cfpStatus conference of
+                Open ->
                     [ nameLink
                     , Html.small
                         [ class "cfp cfp-open"
-                        , Html.Attributes.title <| "Closes " ++ DateFormatter.formatDate endDate
+                        , Html.Attributes.title "Closes some time"
                         ]
                         [ text "CFP open" ]
                     ]
 
-                ( NotYetOpen, Just startDate ) ->
+                NotYetOpen ->
                     [ nameLink
                     , Html.small [ class "cfp" ]
-                        [ text <| "CFP opens " ++ DateFormatter.formatDate startDate ]
+                        [ text "CFP opens some time" ]
                     ]
 
                 _ ->

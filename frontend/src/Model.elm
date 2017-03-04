@@ -1,8 +1,6 @@
-module Model exposing (Model, Msg(..), conferencesToShow, init, update, urlUpdate, initializeIncludedTags, includedTags, setCurrentDate, view)
+module Model exposing (Model, Msg(..), init, update, urlUpdate, initializeIncludedTags, includedTags, view)
 
 import Conference
-import Date as CoreDate
-import DateFormatter exposing (monthToInt)
 import FilteredTagSection exposing (FilteredTagSection)
 import Html exposing (text)
 import Html.Attributes exposing (class, href)
@@ -10,9 +8,6 @@ import Html.Events
 import Navigation exposing (modifyUrl)
 import QueryString exposing (QueryString, add, all, empty, one, render, string, parse)
 import Tag exposing (Tag)
-import Task exposing (Task)
-import Time exposing (Time)
-import Time.Date as Date exposing (Date)
 
 
 -- Model
@@ -20,7 +15,6 @@ import Time.Date as Date exposing (Date)
 
 type alias Model =
     { conferences : List Conference.Model
-    , currentDate : Date
     , includePastEvents : Bool
     , tags : List FilteredTagSection
     }
@@ -43,7 +37,7 @@ init initialModel { search } =
                 |> update (IncludePastEvents includePastEvents)
                 |> Tuple.first
     in
-        ( model, initializeDate )
+        ( model, Cmd.none )
 
 
 
@@ -54,7 +48,6 @@ type Msg
     = NoOp
     | UpdateTag FilteredTagSection.Msg
     | IncludePastEvents Bool
-    | SetCurrentDate (Maybe Time)
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
@@ -77,19 +70,6 @@ update msg model =
             in
                 ( newModel, updateQueryString newModel )
 
-        SetCurrentDate (Just time) ->
-            let
-                date =
-                    CoreDate.fromTime time
-
-                currentDate =
-                    Date.date (CoreDate.year date) (monthToInt <| CoreDate.month date) (CoreDate.day date)
-            in
-                ( { model | currentDate = currentDate }, Cmd.none )
-
-        SetCurrentDate Nothing ->
-            ( model, Cmd.none )
-
 
 urlUpdate : QueryString -> Model -> ( Model, Cmd Msg )
 urlUpdate =
@@ -111,18 +91,6 @@ updateQueryString model =
 initializeIncludedTags : List String -> Model -> Model
 initializeIncludedTags includedTags model =
     { model | tags = List.map (FilteredTagSection.initializeIncludedTags includedTags) model.tags }
-
-
-initializeDate : Cmd Msg
-initializeDate =
-    Task.perform
-        (\time -> setCurrentDate <| Just time)
-        Time.now
-
-
-setCurrentDate : Maybe Time -> Msg
-setCurrentDate time =
-    SetCurrentDate time
 
 
 
@@ -185,24 +153,9 @@ sourceCodeLink =
         ]
 
 
-conferencesToShow : Model -> List Conference.Model
-conferencesToShow model =
-    let
-        isInFuture conference =
-            Date.compare model.currentDate conference.startDate /= GT
-
-        confsToFilterOnTags =
-            if model.includePastEvents then
-                model.conferences
-            else
-                List.filter isInFuture model.conferences
-    in
-        List.filter (Conference.shouldShow <| includedTags model) confsToFilterOnTags
-
-
 conferencesView : Model -> List (Html.Html Msg)
 conferencesView model =
-    List.map (Conference.view model.currentDate) (conferencesToShow model)
+    List.map Conference.view model.conferences
 
 
 allTagsView : List FilteredTagSection -> List (Html.Html Msg)

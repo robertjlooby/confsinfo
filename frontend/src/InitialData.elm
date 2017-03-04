@@ -1,8 +1,6 @@
 module InitialData exposing (model)
 
 import Conference
-import Date exposing (Month(..))
-import Time.Date exposing (date)
 import FilteredTag
 import Model
 import Tag exposing (Tag(..))
@@ -11,7 +9,6 @@ import Tag exposing (Tag(..))
 model : Model.Model
 model =
     { conferences = []
-    , currentDate = date 2016 1 1
     , tags =
         [ { sectionName = "Conference Language"
           , tags =
