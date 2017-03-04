@@ -18,7 +18,7 @@ stateFuzzer =
         ]
 
 
-modelFuzzer : Fuzzer FilteredTag
+modelFuzzer : Fuzzer (FilteredTag Tag)
 modelFuzzer =
     Fuzz.map2 FilteredTag
         tagFuzzer
@@ -41,19 +41,15 @@ tests =
                 update Exclude model
                     |> .state
                     |> Expect.equal Excluded
-        , fuzz2 modelFuzzer (Fuzz.list Fuzz.string) "initializeIncludedTag includes a model if its tag is in the list" <|
-            \model strings ->
-                case model.tag of
-                    Tag tag ->
-                        initializeIncludedTag (tag :: strings) model
-                            |> .state
-                            |> Expect.equal Included
-        , fuzz2 modelFuzzer (Fuzz.list Fuzz.string) "initializeIncludedTag returns the model if its tag is not in the list" <|
-            \model strings ->
-                case model.tag of
-                    Tag tag ->
-                        initializeIncludedTag (List.filter ((/=) tag) strings) model
-                            |> Expect.equal model
+        , fuzz2 modelFuzzer (Fuzz.list tagFuzzer) "initializeIncludedTag includes a model if its tag is in the list" <|
+            \model tags ->
+                initializeIncludedTag (model.tag :: tags) model
+                    |> .state
+                    |> Expect.equal Included
+        , fuzz2 modelFuzzer (Fuzz.list tagFuzzer) "initializeIncludedTag returns the model if its tag is not in the list" <|
+            \model tags ->
+                initializeIncludedTag (List.filter ((/=) model.tag) tags) model
+                    |> Expect.equal model
         , fuzz modelFuzzer "exclude excludes a model" <|
             \model ->
                 exclude model

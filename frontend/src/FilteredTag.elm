@@ -14,13 +14,13 @@ type State
     | Excluded
 
 
-type alias FilteredTag =
-    { tag : Tag
+type alias FilteredTag tag =
+    { tag : tag
     , state : State
     }
 
 
-init : Tag -> FilteredTag
+init : tag -> FilteredTag tag
 init tag =
     { tag = tag
     , state = Excluded
@@ -36,7 +36,7 @@ type Msg
     | Exclude
 
 
-update : Msg -> FilteredTag -> FilteredTag
+update : Msg -> FilteredTag tag -> FilteredTag tag
 update msg model =
     case msg of
         Include ->
@@ -50,22 +50,20 @@ update msg model =
 -- Public functions
 
 
-initializeIncludedTag : List String -> FilteredTag -> FilteredTag
-initializeIncludedTag includedTags model =
-    case model.tag of
-        Tag.Tag tag ->
-            if List.member tag includedTags then
-                update Include model
-            else
-                model
+initializeIncludedTag : List tag -> FilteredTag tag -> FilteredTag tag
+initializeIncludedTag includedTags filteredTag =
+    if List.member filteredTag.tag includedTags then
+        update Include filteredTag
+    else
+        filteredTag
 
 
-exclude : FilteredTag -> FilteredTag
+exclude : FilteredTag tag -> FilteredTag tag
 exclude model =
     update Exclude model
 
 
-isIncluded : FilteredTag -> Bool
+isIncluded : FilteredTag tag -> Bool
 isIncluded model =
     case model.state of
         Included ->
@@ -79,16 +77,16 @@ isIncluded model =
 -- View
 
 
-view : FilteredTag -> Html.Html Msg
-view model =
+view : (tag -> String) -> FilteredTag tag -> Html.Html Msg
+view getTagName filteredTag =
     let
         ( tagString, tagClass, clickAction ) =
-            case ( model.state, model.tag ) of
-                ( Included, Tag tag ) ->
-                    ( "- " ++ tag, "included", Exclude )
+            case ( filteredTag.state, filteredTag.tag ) of
+                ( Included, tag ) ->
+                    ( "- " ++ getTagName tag, "included", Exclude )
 
-                ( Excluded, Tag tag ) ->
-                    ( "+ " ++ tag, "excluded", Include )
+                ( Excluded, tag ) ->
+                    ( "+ " ++ getTagName tag, "excluded", Include )
     in
         Html.button
             [ class tagClass

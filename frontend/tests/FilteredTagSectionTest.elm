@@ -9,14 +9,14 @@ import Expect
 import Test exposing (Test, describe, fuzz, test)
 
 
-modelFuzzer : Fuzzer FilteredTagSection
+modelFuzzer : Fuzzer (FilteredTagSection Tag)
 modelFuzzer =
     Fuzz.map2 FilteredTagSection
         Fuzz.string
         (Fuzz.list FilteredTagTest.modelFuzzer)
 
 
-modelPartsForUpdateFuzzer : Fuzzer ( String, List FilteredTag, FilteredTag, List FilteredTag )
+modelPartsForUpdateFuzzer : Fuzzer ( String, List (FilteredTag Tag), FilteredTag Tag, List (FilteredTag Tag) )
 modelPartsForUpdateFuzzer =
     Fuzz.map4 (,,,)
         Fuzz.string
@@ -33,7 +33,7 @@ modelPartsForUpdateFuzzer =
             )
 
 
-modelFromParts : ( String, List FilteredTag, FilteredTag, List FilteredTag ) -> FilteredTagSection
+modelFromParts : ( String, List (FilteredTag Tag), FilteredTag Tag, List (FilteredTag Tag) ) -> FilteredTagSection Tag
 modelFromParts ( string, tags1, tag, tags2 ) =
     { sectionName = string, tags = List.concat [ tags1, [ tag ], tags2 ] }
 
@@ -69,7 +69,7 @@ tests =
                     |> Expect.equal { model | tags = List.map (\t -> { t | state = Excluded }) model.tags }
         , let
             includedTags =
-                [ "Ruby", "JavaScript" ]
+                [ Tag "Ruby", Tag "JavaScript" ]
 
             model =
                 { sectionName = "section"

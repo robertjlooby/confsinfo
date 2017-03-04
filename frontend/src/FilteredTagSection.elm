@@ -10,13 +10,13 @@ import Tag exposing (Tag)
 -- Model
 
 
-type alias FilteredTagSection =
+type alias FilteredTagSection tag =
     { sectionName : String
-    , tags : List FilteredTag
+    , tags : List (FilteredTag tag)
     }
 
 
-includedTags : FilteredTagSection -> List Tag
+includedTags : FilteredTagSection tag -> List tag
 includedTags model =
     List.filter FilteredTag.isIncluded model.tags
         |> List.map .tag
@@ -26,12 +26,12 @@ includedTags model =
 -- Update
 
 
-type Msg
-    = UpdateTag Tag FilteredTag.Msg
+type Msg tag
+    = UpdateTag tag FilteredTag.Msg
     | Reset
 
 
-update : Msg -> FilteredTagSection -> FilteredTagSection
+update : Msg tag -> FilteredTagSection tag -> FilteredTagSection tag
 update msg model =
     case msg of
         UpdateTag tag tagAction ->
@@ -48,7 +48,7 @@ update msg model =
             { model | tags = List.map FilteredTag.exclude model.tags }
 
 
-initializeIncludedTags : List String -> FilteredTagSection -> FilteredTagSection
+initializeIncludedTags : List tag -> FilteredTagSection tag -> FilteredTagSection tag
 initializeIncludedTags includedTags model =
     { model | tags = List.map (FilteredTag.initializeIncludedTag includedTags) model.tags }
 
@@ -57,16 +57,16 @@ initializeIncludedTags includedTags model =
 -- View
 
 
-view : FilteredTagSection -> List (Html.Html Msg)
-view { sectionName, tags } =
+view : (tag -> String) -> FilteredTagSection tag -> List (Html.Html (Msg tag))
+view getTagName { sectionName, tags } =
     [ Html.div [ class "row" ]
         [ Html.h5 [] [ text sectionName ] ]
     , Html.div [ class "row" ] <|
-        List.map (\tag -> Html.map (UpdateTag tag.tag) (FilteredTag.view tag)) tags
+        List.map (\tag -> Html.map (UpdateTag tag.tag) (FilteredTag.view getTagName tag)) tags
     ]
 
 
-resetButtonView : Html.Html Msg
+resetButtonView : Html.Html (Msg tag)
 resetButtonView =
     Html.div [ class "row" ]
         [ Html.button

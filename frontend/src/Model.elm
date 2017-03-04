@@ -7,7 +7,7 @@ import Html.Attributes exposing (class, href)
 import Html.Events
 import Navigation exposing (modifyUrl)
 import QueryString exposing (QueryString, add, all, empty, one, render, string, parse)
-import Tag exposing (Tag)
+import Tag exposing (Tag(..))
 
 
 -- Model
@@ -16,7 +16,7 @@ import Tag exposing (Tag)
 type alias Model =
     { conferences : List Conference
     , includePastEvents : Bool
-    , tags : List FilteredTagSection
+    , tags : List (FilteredTagSection Tag)
     }
 
 
@@ -28,6 +28,7 @@ init initialModel { search } =
 
         tags =
             all "tag" queryString
+                |> List.map Tag
 
         includePastEvents =
             one string "includePastEvents" queryString == Just "True"
@@ -46,7 +47,7 @@ init initialModel { search } =
 
 type Msg
     = NoOp
-    | UpdateTag FilteredTagSection.Msg
+    | UpdateTag (FilteredTagSection.Msg Tag)
     | IncludePastEvents Bool
 
 
@@ -88,7 +89,7 @@ updateQueryString model =
         |> modifyUrl
 
 
-initializeIncludedTags : List String -> Model -> Model
+initializeIncludedTags : List Tag -> Model -> Model
 initializeIncludedTags includedTags model =
     { model | tags = List.map (FilteredTagSection.initializeIncludedTags includedTags) model.tags }
 
@@ -158,8 +159,12 @@ conferencesView model =
     List.map Conference.view model.conferences
 
 
-allTagsView : List FilteredTagSection -> List (Html.Html Msg)
+allTagsView : List (FilteredTagSection Tag) -> List (Html.Html Msg)
 allTagsView filteredTagSections =
-    List.map FilteredTagSection.view filteredTagSections
-        |> List.concat
-        |> List.map (Html.map UpdateTag)
+    let
+        getTagName (Tag tag) =
+            tag
+    in
+        List.map (FilteredTagSection.view getTagName) filteredTagSections
+            |> List.concat
+            |> List.map (Html.map UpdateTag)
