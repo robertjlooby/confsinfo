@@ -3,7 +3,6 @@ module Conference exposing (Conference, view)
 import DateFormatter exposing (formatDay)
 import Html exposing (text)
 import Html.Attributes exposing (class, href)
-import Tag exposing (Tag)
 import Time.Date as Date exposing (Date)
 
 
@@ -17,7 +16,6 @@ type alias Conference =
     , endDate : Date
     , location : String
     , cfpStatus : CFPStatus
-    , tags : List Tag
     }
 
 
