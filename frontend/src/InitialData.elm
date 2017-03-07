@@ -3,29 +3,30 @@ module InitialData exposing (model)
 import Conference
 import FilteredTag
 import Model
-import Tag exposing (Tag(..))
+import Tag exposing (..)
 
 
 model : Model.Model
 model =
     { conferences = []
+    , languages =
+        { sectionName = "Conference Language"
+        , tags =
+            [ FilteredTag.init (Language "English")
+            , FilteredTag.init (Language "French")
+            , FilteredTag.init (Language "German")
+            , FilteredTag.init (Language "Italian")
+            , FilteredTag.init (Language "Japanese")
+            , FilteredTag.init (Language "Norwegian")
+            , FilteredTag.init (Language "Polish")
+            , FilteredTag.init (Language "Portuguese")
+            , FilteredTag.init (Language "Russian")
+            , FilteredTag.init (Language "Spanish")
+            , FilteredTag.init (Language "Turkish")
+            ]
+        }
     , tags =
-        [ { sectionName = "Conference Language"
-          , tags =
-                [ FilteredTag.init (Tag "English")
-                , FilteredTag.init (Tag "French")
-                , FilteredTag.init (Tag "German")
-                , FilteredTag.init (Tag "Italian")
-                , FilteredTag.init (Tag "Japanese")
-                , FilteredTag.init (Tag "Norwegian")
-                , FilteredTag.init (Tag "Polish")
-                , FilteredTag.init (Tag "Portuguese")
-                , FilteredTag.init (Tag "Russian")
-                , FilteredTag.init (Tag "Spanish")
-                , FilteredTag.init (Tag "Turkish")
-                ]
-          }
-        , { sectionName = "Audience"
+        [ { sectionName = "Audience"
           , tags =
                 [ FilteredTag.init (Tag "Designers")
                 , FilteredTag.init (Tag "Developers")

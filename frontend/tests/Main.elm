@@ -4,6 +4,7 @@ import DateFormatterTest
 import FilteredTagTest
 import FilteredTagSectionTest
 import Json.Encode exposing (Value)
+import ModelTest
 import Test exposing (Test, describe)
 import Test.Runner.Node exposing (TestProgram, run)
 
@@ -14,6 +15,7 @@ tests =
         [ DateFormatterTest.tests
         , FilteredTagTest.tests
         , FilteredTagSectionTest.tests
+        , ModelTest.tests
         ]
 
 

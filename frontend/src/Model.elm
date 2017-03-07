@@ -1,4 +1,4 @@
-module Model exposing (Model, Msg(..), init, update, urlUpdate, initializeIncludedTags, includedTags, view)
+module Model exposing (Model, Msg(..), generateQueryString, init, update, urlUpdate, initializeIncludedTags, includedTags, includedLanguages, view)
 
 import Conference exposing (Conference)
 import FilteredTagSection exposing (FilteredTagSection)
@@ -7,7 +7,7 @@ import Html.Attributes exposing (class, href)
 import Html.Events
 import Navigation exposing (modifyUrl)
 import QueryString exposing (QueryString, add, all, empty, one, render, string, parse)
-import Tag exposing (Tag(..))
+import Tag exposing (..)
 
 
 -- Model
@@ -16,15 +16,20 @@ import Tag exposing (Tag(..))
 type alias Model =
     { conferences : List Conference
     , includePastEvents : Bool
+    , languages : FilteredTagSection Language
     , tags : List (FilteredTagSection Tag)
     }
 
 
-init : Model -> Navigation.Location -> ( Model, Cmd Msg )
+init : Model -> { navLocation | search : String } -> ( Model, Cmd Msg )
 init initialModel { search } =
     let
         queryString =
             parse search
+
+        languages =
+            all "language" queryString
+                |> List.map Language
 
         tags =
             all "tag" queryString
@@ -35,6 +40,7 @@ init initialModel { search } =
 
         model =
             initializeIncludedTags tags initialModel
+                |> initializeIncludedLanguages languages
                 |> update (IncludePastEvents includePastEvents)
                 |> Tuple.first
     in
@@ -47,6 +53,7 @@ init initialModel { search } =
 
 type Msg
     = NoOp
+    | UpdateLanguage (FilteredTagSection.Msg Language)
     | UpdateTag (FilteredTagSection.Msg Tag)
     | IncludePastEvents Bool
 
@@ -56,6 +63,13 @@ update msg model =
     case msg of
         NoOp ->
             model ! []
+
+        UpdateLanguage action ->
+            let
+                newModel =
+                    { model | languages = FilteredTagSection.update action model.languages }
+            in
+                ( newModel, updateQueryString newModel )
 
         UpdateTag action ->
             let
@@ -79,14 +93,25 @@ urlUpdate =
 
 updateQueryString : Model -> Cmd Msg
 updateQueryString model =
-    List.foldr (toString >> add "tag") empty (includedTags model)
+    generateQueryString model
+        |> modifyUrl
+
+
+generateQueryString : Model -> String
+generateQueryString model =
+    List.foldr (getLanguageName >> add "language") empty (includedLanguages model)
+        |> (\queryString -> List.foldr (getTagName >> add "tag") queryString (includedTags model))
         |> (if model.includePastEvents then
                 add "includePastEvents" (toString model.includePastEvents)
             else
                 identity
            )
         |> render
-        |> modifyUrl
+
+
+initializeIncludedLanguages : List Language -> Model -> Model
+initializeIncludedLanguages includedLanguages model =
+    { model | languages = FilteredTagSection.initializeIncludedTags includedLanguages model.languages }
 
 
 initializeIncludedTags : List Tag -> Model -> Model
@@ -96,6 +121,11 @@ initializeIncludedTags includedTags model =
 
 
 -- Public functions
+
+
+includedLanguages : Model -> List Language
+includedLanguages model =
+    FilteredTagSection.includedTags model.languages
 
 
 includedTags : Model -> List Tag
@@ -112,7 +142,8 @@ view : Model -> Html.Html Msg
 view model =
     Html.div [ class "container" ] <|
         List.concat
-            [ allTagsView model.tags
+            [ languagesView model.languages
+            , allTagsView model.tags
             , [ includePastEventsButtonView model.includePastEvents ]
             , [ Html.map UpdateTag FilteredTagSection.resetButtonView ]
             , conferencesView model
@@ -159,12 +190,14 @@ conferencesView model =
     List.map Conference.view model.conferences
 
 
+languagesView : FilteredTagSection Language -> List (Html.Html Msg)
+languagesView languages =
+    FilteredTagSection.view getLanguageName languages
+        |> List.map (Html.map UpdateLanguage)
+
+
 allTagsView : List (FilteredTagSection Tag) -> List (Html.Html Msg)
 allTagsView filteredTagSections =
-    let
-        getTagName (Tag tag) =
-            tag
-    in
-        List.map (FilteredTagSection.view getTagName) filteredTagSections
-            |> List.concat
-            |> List.map (Html.map UpdateTag)
+    List.map (FilteredTagSection.view getTagName) filteredTagSections
+        |> List.concat
+        |> List.map (Html.map UpdateTag)
