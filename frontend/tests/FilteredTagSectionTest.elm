@@ -9,14 +9,14 @@ import Expect
 import Test exposing (Test, describe, fuzz, test)
 
 
-modelFuzzer : Fuzzer (FilteredTagSection Tag)
+modelFuzzer : Fuzzer (FilteredTagSection Topic)
 modelFuzzer =
     Fuzz.map2 FilteredTagSection
         Fuzz.string
         (Fuzz.list FilteredTagTest.modelFuzzer)
 
 
-modelPartsForUpdateFuzzer : Fuzzer ( String, List (FilteredTag Tag), FilteredTag Tag, List (FilteredTag Tag) )
+modelPartsForUpdateFuzzer : Fuzzer ( String, List (FilteredTag Topic), FilteredTag Topic, List (FilteredTag Topic) )
 modelPartsForUpdateFuzzer =
     Fuzz.map4 (,,,)
         Fuzz.string
@@ -33,7 +33,7 @@ modelPartsForUpdateFuzzer =
             )
 
 
-modelFromParts : ( String, List (FilteredTag Tag), FilteredTag Tag, List (FilteredTag Tag) ) -> FilteredTagSection Tag
+modelFromParts : ( String, List (FilteredTag Topic), FilteredTag Topic, List (FilteredTag Topic) ) -> FilteredTagSection Topic
 modelFromParts ( string, tags1, tag, tags2 ) =
     { sectionName = string, tags = List.concat [ tags1, [ tag ], tags2 ] }
 
@@ -69,25 +69,25 @@ tests =
                     |> Expect.equal { model | tags = List.map (\t -> { t | state = Excluded }) model.tags }
         , let
             includedTags =
-                [ Tag "Ruby", Tag "JavaScript" ]
+                [ Topic "Ruby", Topic "JavaScript" ]
 
             model =
                 { sectionName = "section"
                 , tags =
-                    [ FilteredTag.init (Tag "Ruby")
-                    , FilteredTag.init (Tag "England")
-                    , FilteredTag.init (Tag "JavaScript")
-                    , FilteredTag.init (Tag "USA")
+                    [ FilteredTag.init (Topic "Ruby")
+                    , FilteredTag.init (Topic "England")
+                    , FilteredTag.init (Topic "JavaScript")
+                    , FilteredTag.init (Topic "USA")
                     ]
                 }
 
             expectedModel =
                 { sectionName = "section"
                 , tags =
-                    [ FilteredTag.init (Tag "Ruby") |> FilteredTag.update Include
-                    , FilteredTag.init (Tag "England")
-                    , FilteredTag.init (Tag "JavaScript") |> FilteredTag.update Include
-                    , FilteredTag.init (Tag "USA")
+                    [ FilteredTag.init (Topic "Ruby") |> FilteredTag.update Include
+                    , FilteredTag.init (Topic "England")
+                    , FilteredTag.init (Topic "JavaScript") |> FilteredTag.update Include
+                    , FilteredTag.init (Topic "USA")
                     ]
                 }
           in

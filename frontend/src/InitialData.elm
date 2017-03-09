@@ -4,11 +4,34 @@ import Conference
 import FilteredTag
 import Model
 import Tag exposing (..)
+import Time.Date as Date
 
 
 model : Model.Model
 model =
-    { conferences = []
+    { conferences =
+        [ { name = "@Swift"
+          , link = "http://atswift.io/index-en.html"
+          , startDate = Date.date 2016 1 10
+          , endDate = Date.date 2016 1 10
+          , location = "Beijing, China"
+          , cfpStatus = Conference.Closed
+          }
+        , { name = "NDC London Workshops"
+          , link = "http://ndc-london.com/"
+          , startDate = Date.date 2016 1 11
+          , endDate = Date.date 2016 1 12
+          , location = "London, England"
+          , cfpStatus = Conference.Closed
+          }
+        ]
+    , audiences =
+        { sectionName = "Audience"
+        , tags =
+            [ FilteredTag.init (Audience "Designers")
+            , FilteredTag.init (Audience "Developers")
+            ]
+        }
     , languages =
         { sectionName = "Conference Language"
         , tags =
@@ -25,149 +48,139 @@ model =
             , FilteredTag.init (Language "Turkish")
             ]
         }
-    , tags =
-        [ { sectionName = "Audience"
-          , tags =
-                [ FilteredTag.init (Tag "Designers")
-                , FilteredTag.init (Tag "Developers")
-                ]
-          }
-        , { sectionName = "Programming Languages/Technologies"
-          , tags =
-                [ FilteredTag.init (Tag "Android")
-                , FilteredTag.init (Tag "AngularJS")
-                , FilteredTag.init (Tag "Arduino")
-                , FilteredTag.init (Tag "AWS")
-                , FilteredTag.init (Tag "C++")
-                , FilteredTag.init (Tag "CSS")
-                , FilteredTag.init (Tag "Chef")
-                , FilteredTag.init (Tag "Clojure")
-                , FilteredTag.init (Tag "Cocoa")
-                , FilteredTag.init (Tag "CycleJS")
-                , FilteredTag.init (Tag "Docker")
-                , FilteredTag.init (Tag "Drupal")
-                , FilteredTag.init (Tag ".Net")
-                , FilteredTag.init (Tag "Elasticsearch")
-                , FilteredTag.init (Tag "Elixir")
-                , FilteredTag.init (Tag "Ember")
-                , FilteredTag.init (Tag "Erlang")
-                , FilteredTag.init (Tag "F#")
-                , FilteredTag.init (Tag "Git")
-                , FilteredTag.init (Tag "Go")
-                , FilteredTag.init (Tag "Gradle")
-                , FilteredTag.init (Tag "Grails")
-                , FilteredTag.init (Tag "Groovy")
-                , FilteredTag.init (Tag "Hadoop")
-                , FilteredTag.init (Tag "Haskell")
-                , FilteredTag.init (Tag "IOS")
-                , FilteredTag.init (Tag "Java")
-                , FilteredTag.init (Tag "JavaScript")
-                , FilteredTag.init (Tag "Logstash")
-                , FilteredTag.init (Tag "Lisp")
-                , FilteredTag.init (Tag "MongoDB")
-                , FilteredTag.init (Tag "NodeJS")
-                , FilteredTag.init (Tag "OCaml")
-                , FilteredTag.init (Tag "PhoneGap")
-                , FilteredTag.init (Tag "PHP")
-                , FilteredTag.init (Tag "PostgreSQL")
-                , FilteredTag.init (Tag "PureScript")
-                , FilteredTag.init (Tag "Python")
-                , FilteredTag.init (Tag "Rails")
-                , FilteredTag.init (Tag "RaspberryPi")
-                , FilteredTag.init (Tag "React")
-                , FilteredTag.init (Tag "Ruby")
-                , FilteredTag.init (Tag "SML")
-                , FilteredTag.init (Tag "Scala")
-                , FilteredTag.init (Tag "SVG")
-                , FilteredTag.init (Tag "Swift")
-                , FilteredTag.init (Tag "WordPress")
-                ]
-          }
-        , { sectionName = "Topics"
-          , tags =
-                [ FilteredTag.init (Tag "Agile")
-                , FilteredTag.init (Tag "Big Data")
-                , FilteredTag.init (Tag "Cloud")
-                , FilteredTag.init (Tag "Communications")
-                , FilteredTag.init (Tag "DataVisualization")
-                , FilteredTag.init (Tag "DevOps")
-                , FilteredTag.init (Tag "Diversity")
-                , FilteredTag.init (Tag "Functional Programming")
-                , FilteredTag.init (Tag "General")
-                , FilteredTag.init (Tag "Internet Of Things")
-                , FilteredTag.init (Tag "Microservices")
-                , FilteredTag.init (Tag "Mobile")
-                , FilteredTag.init (Tag "NoSQL")
-                , FilteredTag.init (Tag "Open Source")
-                , FilteredTag.init (Tag "Progressive Enhancement")
-                , FilteredTag.init (Tag "Robotics")
-                , FilteredTag.init (Tag "Scalability")
-                , FilteredTag.init (Tag "Security")
-                , FilteredTag.init (Tag "Soft Skills")
-                , FilteredTag.init (Tag "Software Craftsmanship")
-                , FilteredTag.init (Tag "Testing")
-                , FilteredTag.init (Tag "UX")
-                , FilteredTag.init (Tag "Web")
-                ]
-          }
-        , { sectionName = "Locations"
-          , tags =
-                [ FilteredTag.init (Tag "Argentina")
-                , FilteredTag.init (Tag "Australia")
-                , FilteredTag.init (Tag "Belarus")
-                , FilteredTag.init (Tag "Belgium")
-                , FilteredTag.init (Tag "Brazil")
-                , FilteredTag.init (Tag "Bulgaria")
-                , FilteredTag.init (Tag "Canada")
-                , FilteredTag.init (Tag "Chile")
-                , FilteredTag.init (Tag "China")
-                , FilteredTag.init (Tag "Colombia")
-                , FilteredTag.init (Tag "Croatia")
-                , FilteredTag.init (Tag "Czech Republic")
-                , FilteredTag.init (Tag "Denmark")
-                , FilteredTag.init (Tag "England")
-                , FilteredTag.init (Tag "Finland")
-                , FilteredTag.init (Tag "France")
-                , FilteredTag.init (Tag "Germany")
-                , FilteredTag.init (Tag "Hungary")
-                , FilteredTag.init (Tag "Iceland")
-                , FilteredTag.init (Tag "India")
-                , FilteredTag.init (Tag "Ireland")
-                , FilteredTag.init (Tag "Israel")
-                , FilteredTag.init (Tag "Italy")
-                , FilteredTag.init (Tag "Japan")
-                , FilteredTag.init (Tag "Latvia")
-                , FilteredTag.init (Tag "Lebanon")
-                , FilteredTag.init (Tag "Lithuania")
-                , FilteredTag.init (Tag "Malaysia")
-                , FilteredTag.init (Tag "Mexico")
-                , FilteredTag.init (Tag "Netherlands")
-                , FilteredTag.init (Tag "New Zealand")
-                , FilteredTag.init (Tag "Norway")
-                , FilteredTag.init (Tag "Peru")
-                , FilteredTag.init (Tag "Philippines")
-                , FilteredTag.init (Tag "Poland")
-                , FilteredTag.init (Tag "Portugal")
-                , FilteredTag.init (Tag "Remote")
-                , FilteredTag.init (Tag "Romania")
-                , FilteredTag.init (Tag "Russia")
-                , FilteredTag.init (Tag "Scotland")
-                , FilteredTag.init (Tag "Singapore")
-                , FilteredTag.init (Tag "South Africa")
-                , FilteredTag.init (Tag "South Korea")
-                , FilteredTag.init (Tag "Spain")
-                , FilteredTag.init (Tag "Sweden")
-                , FilteredTag.init (Tag "Switzerland")
-                , FilteredTag.init (Tag "Taiwan")
-                , FilteredTag.init (Tag "Tunisia")
-                , FilteredTag.init (Tag "Turkey")
-                , FilteredTag.init (Tag "UAE")
-                , FilteredTag.init (Tag "USA")
-                , FilteredTag.init (Tag "Ukraine")
-                , FilteredTag.init (Tag "Uruguay")
-                , FilteredTag.init (Tag "Wales")
-                ]
-          }
-        ]
+    , locations =
+        { sectionName = "Locations"
+        , tags =
+            [ FilteredTag.init (Location "Argentina")
+            , FilteredTag.init (Location "Australia")
+            , FilteredTag.init (Location "Belarus")
+            , FilteredTag.init (Location "Belgium")
+            , FilteredTag.init (Location "Brazil")
+            , FilteredTag.init (Location "Bulgaria")
+            , FilteredTag.init (Location "Canada")
+            , FilteredTag.init (Location "Chile")
+            , FilteredTag.init (Location "China")
+            , FilteredTag.init (Location "Colombia")
+            , FilteredTag.init (Location "Croatia")
+            , FilteredTag.init (Location "Czech Republic")
+            , FilteredTag.init (Location "Denmark")
+            , FilteredTag.init (Location "England")
+            , FilteredTag.init (Location "Finland")
+            , FilteredTag.init (Location "France")
+            , FilteredTag.init (Location "Germany")
+            , FilteredTag.init (Location "Hungary")
+            , FilteredTag.init (Location "Iceland")
+            , FilteredTag.init (Location "India")
+            , FilteredTag.init (Location "Ireland")
+            , FilteredTag.init (Location "Israel")
+            , FilteredTag.init (Location "Italy")
+            , FilteredTag.init (Location "Japan")
+            , FilteredTag.init (Location "Latvia")
+            , FilteredTag.init (Location "Lebanon")
+            , FilteredTag.init (Location "Lithuania")
+            , FilteredTag.init (Location "Malaysia")
+            , FilteredTag.init (Location "Mexico")
+            , FilteredTag.init (Location "Netherlands")
+            , FilteredTag.init (Location "New Zealand")
+            , FilteredTag.init (Location "Norway")
+            , FilteredTag.init (Location "Peru")
+            , FilteredTag.init (Location "Philippines")
+            , FilteredTag.init (Location "Poland")
+            , FilteredTag.init (Location "Portugal")
+            , FilteredTag.init (Location "Remote")
+            , FilteredTag.init (Location "Romania")
+            , FilteredTag.init (Location "Russia")
+            , FilteredTag.init (Location "Scotland")
+            , FilteredTag.init (Location "Singapore")
+            , FilteredTag.init (Location "South Africa")
+            , FilteredTag.init (Location "South Korea")
+            , FilteredTag.init (Location "Spain")
+            , FilteredTag.init (Location "Sweden")
+            , FilteredTag.init (Location "Switzerland")
+            , FilteredTag.init (Location "Taiwan")
+            , FilteredTag.init (Location "Tunisia")
+            , FilteredTag.init (Location "Turkey")
+            , FilteredTag.init (Location "UAE")
+            , FilteredTag.init (Location "USA")
+            , FilteredTag.init (Location "Ukraine")
+            , FilteredTag.init (Location "Uruguay")
+            , FilteredTag.init (Location "Wales")
+            ]
+        }
+    , topics =
+        { sectionName = "Topics"
+        , tags =
+            [ FilteredTag.init (Topic ".Net")
+            , FilteredTag.init (Topic "AWS")
+            , FilteredTag.init (Topic "Agile")
+            , FilteredTag.init (Topic "Android")
+            , FilteredTag.init (Topic "AngularJS")
+            , FilteredTag.init (Topic "Arduino")
+            , FilteredTag.init (Topic "Big Data")
+            , FilteredTag.init (Topic "C++")
+            , FilteredTag.init (Topic "CSS")
+            , FilteredTag.init (Topic "Chef")
+            , FilteredTag.init (Topic "Clojure")
+            , FilteredTag.init (Topic "Cloud")
+            , FilteredTag.init (Topic "Cocoa")
+            , FilteredTag.init (Topic "Communications")
+            , FilteredTag.init (Topic "CycleJS")
+            , FilteredTag.init (Topic "DataVisualization")
+            , FilteredTag.init (Topic "DevOps")
+            , FilteredTag.init (Topic "Diversity")
+            , FilteredTag.init (Topic "Docker")
+            , FilteredTag.init (Topic "Drupal")
+            , FilteredTag.init (Topic "Elasticsearch")
+            , FilteredTag.init (Topic "Elixir")
+            , FilteredTag.init (Topic "Ember")
+            , FilteredTag.init (Topic "Erlang")
+            , FilteredTag.init (Topic "F#")
+            , FilteredTag.init (Topic "Functional Programming")
+            , FilteredTag.init (Topic "General")
+            , FilteredTag.init (Topic "Git")
+            , FilteredTag.init (Topic "Go")
+            , FilteredTag.init (Topic "Gradle")
+            , FilteredTag.init (Topic "Grails")
+            , FilteredTag.init (Topic "Groovy")
+            , FilteredTag.init (Topic "Hadoop")
+            , FilteredTag.init (Topic "Haskell")
+            , FilteredTag.init (Topic "IOS")
+            , FilteredTag.init (Topic "Internet Of Things")
+            , FilteredTag.init (Topic "Java")
+            , FilteredTag.init (Topic "JavaScript")
+            , FilteredTag.init (Topic "Lisp")
+            , FilteredTag.init (Topic "Logstash")
+            , FilteredTag.init (Topic "Microservices")
+            , FilteredTag.init (Topic "Mobile")
+            , FilteredTag.init (Topic "MongoDB")
+            , FilteredTag.init (Topic "NoSQL")
+            , FilteredTag.init (Topic "NodeJS")
+            , FilteredTag.init (Topic "OCaml")
+            , FilteredTag.init (Topic "Open Source")
+            , FilteredTag.init (Topic "PHP")
+            , FilteredTag.init (Topic "PhoneGap")
+            , FilteredTag.init (Topic "PostgreSQL")
+            , FilteredTag.init (Topic "Progressive Enhancement")
+            , FilteredTag.init (Topic "PureScript")
+            , FilteredTag.init (Topic "Python")
+            , FilteredTag.init (Topic "Rails")
+            , FilteredTag.init (Topic "RaspberryPi")
+            , FilteredTag.init (Topic "React")
+            , FilteredTag.init (Topic "Robotics")
+            , FilteredTag.init (Topic "Ruby")
+            , FilteredTag.init (Topic "SML")
+            , FilteredTag.init (Topic "SVG")
+            , FilteredTag.init (Topic "Scala")
+            , FilteredTag.init (Topic "Scalability")
+            , FilteredTag.init (Topic "Security")
+            , FilteredTag.init (Topic "Soft Skills")
+            , FilteredTag.init (Topic "Software Craftsmanship")
+            , FilteredTag.init (Topic "Swift")
+            , FilteredTag.init (Topic "Testing")
+            , FilteredTag.init (Topic "UX")
+            , FilteredTag.init (Topic "Web")
+            , FilteredTag.init (Topic "WordPress")
+            ]
+        }
     , includePastEvents = False
     }

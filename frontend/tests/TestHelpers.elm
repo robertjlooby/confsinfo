@@ -5,9 +5,9 @@ import Tag exposing (..)
 import Time.Date exposing (Date, date)
 
 
-tagFuzzer : Fuzzer Tag
+tagFuzzer : Fuzzer Topic
 tagFuzzer =
-    Fuzz.map Tag Fuzz.string
+    Fuzz.map Topic Fuzz.string
 
 
 minYear : Int

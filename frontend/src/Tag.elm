@@ -1,6 +1,15 @@
 module Tag exposing (..)
 
 
+type Audience
+    = Audience String
+
+
+getAudienceName : Audience -> String
+getAudienceName (Audience name) =
+    name
+
+
 type Language
     = Language String
 
@@ -10,10 +19,19 @@ getLanguageName (Language name) =
     name
 
 
-type Tag
-    = Tag String
+type Location
+    = Location String
 
 
-getTagName : Tag -> String
-getTagName (Tag tag) =
-    tag
+getLocationName : Location -> String
+getLocationName (Location location) =
+    location
+
+
+type Topic
+    = Topic String
+
+
+getTopicName : Topic -> String
+getTopicName (Topic topic) =
+    topic

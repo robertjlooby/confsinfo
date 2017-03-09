@@ -4,7 +4,6 @@ import FilteredTag exposing (FilteredTag)
 import Html exposing (text)
 import Html.Attributes exposing (class)
 import Html.Events
-import Tag exposing (Tag)
 
 
 -- Model

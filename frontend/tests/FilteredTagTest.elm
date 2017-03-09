@@ -18,7 +18,7 @@ stateFuzzer =
         ]
 
 
-modelFuzzer : Fuzzer (FilteredTag Tag)
+modelFuzzer : Fuzzer (FilteredTag Topic)
 modelFuzzer =
     Fuzz.map2 FilteredTag
         tagFuzzer

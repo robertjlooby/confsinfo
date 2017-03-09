@@ -7,29 +7,45 @@ import Tag exposing (..)
 import Test exposing (describe, test)
 
 
-model : Bool -> List (FilteredTag Language) -> List (FilteredTag Tag) -> Model
-model includePast langs tags =
+model : Bool -> List (FilteredTag Audience) -> List (FilteredTag Language) -> List (FilteredTag Location) -> List (FilteredTag Topic) -> Model
+model includePast audiences langs locations topics =
     { conferences = []
     , includePastEvents = includePast
+    , audiences = { sectionName = "audiences", tags = audiences }
     , languages = { sectionName = "langs", tags = langs }
-    , tags = [ { sectionName = "tags", tags = tags } ]
+    , locations = { sectionName = "locations", tags = locations }
+    , topics = { sectionName = "topics", tags = topics }
     }
 
 
 emptyModel =
-    model False [] []
+    model False [] [] [] []
 
 
 tests =
     describe "Model"
         [ describe "generateQueryString"
-            [ test "with no languages or tags" <|
+            [ test "with an empty model" <|
                 \() ->
                     generateQueryString emptyModel
                         |> Expect.equal "?"
+            , test "with an audience" <|
+                \() ->
+                    model False [ FilteredTag (Audience "Developers") Included ] [] [] []
+                        |> generateQueryString
+                        |> Expect.equal "?audience=Developers"
+            , test "with multiple audiences" <|
+                \() ->
+                    [ FilteredTag (Audience "Developers") Included
+                    , FilteredTag (Audience "Designers") Included
+                    , FilteredTag (Audience "Suits") Excluded
+                    ]
+                        |> (\audience -> model False audience [] [] [])
+                        |> generateQueryString
+                        |> Expect.equal "?audience=Developers&audience=Designers"
             , test "with a language" <|
                 \() ->
-                    model False [ FilteredTag (Language "English") Included ] []
+                    model False [] [ FilteredTag (Language "English") Included ] [] []
                         |> generateQueryString
                         |> Expect.equal "?language=English"
             , test "with multiple languages" <|
@@ -38,41 +54,63 @@ tests =
                     , FilteredTag (Language "Spanish") Included
                     , FilteredTag (Language "Shyriiwook") Excluded
                     ]
-                        |> (\langs -> model False langs [])
+                        |> (\langs -> model False [] langs [] [])
                         |> generateQueryString
                         |> Expect.equal "?language=English&language=Spanish"
-            , test "with a tag" <|
+            , test "with a location" <|
                 \() ->
-                    model False [] [ FilteredTag (Tag "Elm") Included ]
+                    model False [] [] [ FilteredTag (Location "USA") Included ] []
                         |> generateQueryString
-                        |> Expect.equal "?tag=Elm"
-            , test "with multiple tags" <|
+                        |> Expect.equal "?location=USA"
+            , test "with multiple locations" <|
                 \() ->
-                    [ FilteredTag (Tag "Elm") Included
-                    , FilteredTag (Tag "Haskell") Included
-                    , FilteredTag (Tag "JavaScript") Excluded
+                    [ FilteredTag (Location "USA") Included
+                    , FilteredTag (Location "Mexico") Included
+                    , FilteredTag (Location "Alderaan") Excluded
                     ]
-                        |> model False []
+                        |> (\locations -> model False [] [] locations [])
                         |> generateQueryString
-                        |> Expect.equal "?tag=Elm&tag=Haskell"
+                        |> Expect.equal "?location=USA&location=Mexico"
+            , test "with a topic" <|
+                \() ->
+                    model False [] [] [] [ FilteredTag (Topic "Elm") Included ]
+                        |> generateQueryString
+                        |> Expect.equal "?topic=Elm"
+            , test "with multiple topics" <|
+                \() ->
+                    [ FilteredTag (Topic "Elm") Included
+                    , FilteredTag (Topic "Haskell") Included
+                    , FilteredTag (Topic "JavaScript") Excluded
+                    ]
+                        |> model False [] [] []
+                        |> generateQueryString
+                        |> Expect.equal "?topic=Elm&topic=Haskell"
             , test "with include past events" <|
                 \() ->
-                    model True [] []
+                    model True [] [] [] []
                         |> generateQueryString
                         |> Expect.equal "?includePastEvents=True"
             , test "with all" <|
                 \() ->
-                    [ FilteredTag (Tag "Elm") Included
-                    , FilteredTag (Tag "Haskell") Included
-                    , FilteredTag (Tag "JavaScript") Excluded
-                    ]
-                        |> model True
-                            [ FilteredTag (Language "English") Included
-                            , FilteredTag (Language "Spanish") Included
-                            , FilteredTag (Language "Shyriiwook") Excluded
-                            ]
+                    model
+                        True
+                        [ FilteredTag (Audience "Developers") Excluded
+                        , FilteredTag (Audience "Designers") Included
+                        ]
+                        [ FilteredTag (Language "English") Included
+                        , FilteredTag (Language "Spanish") Included
+                        , FilteredTag (Language "Shyriiwook") Excluded
+                        ]
+                        [ FilteredTag (Location "USA") Included
+                        , FilteredTag (Location "Mexico") Included
+                        , FilteredTag (Location "Alderaan") Excluded
+                        ]
+                        [ FilteredTag (Topic "Elm") Included
+                        , FilteredTag (Topic "Haskell") Included
+                        , FilteredTag (Topic "JavaScript") Excluded
+                        ]
                         |> generateQueryString
-                        |> Expect.equal "?includePastEvents=True&language=English&language=Spanish&tag=Elm&tag=Haskell"
+                        |> Expect.equal "?audience=Designers&includePastEvents=True&language=English&language=Spanish&location=USA&location=Mexico&topic=Elm&topic=Haskell"
             ]
         , describe "init"
             [ test "does not include past events by default" <|
@@ -87,6 +125,18 @@ tests =
                         |> Tuple.first
                         |> .includePastEvents
                         |> Expect.equal True
+            , test "does not include any audience by default" <|
+                \() ->
+                    init emptyModel { search = "" }
+                        |> Tuple.first
+                        |> includedAudiences
+                        |> Expect.equal []
+            , test "sets included audience" <|
+                \() ->
+                    init (model False [ FilteredTag (Audience "developers") Excluded ] [] [] []) { search = "?audience=developers" }
+                        |> Tuple.first
+                        |> includedAudiences
+                        |> Expect.equal [ Audience "developers" ]
             , test "does not include any languages by default" <|
                 \() ->
                     init emptyModel { search = "" }
@@ -95,21 +145,33 @@ tests =
                         |> Expect.equal []
             , test "sets included languages" <|
                 \() ->
-                    init (model False [ FilteredTag (Language "english") Excluded ] []) { search = "?language=english" }
+                    init (model False [] [ FilteredTag (Language "english") Excluded ] [] []) { search = "?language=english" }
                         |> Tuple.first
                         |> includedLanguages
                         |> Expect.equal [ Language "english" ]
-            , test "does not include any tags by default" <|
+            , test "does not include any locations by default" <|
                 \() ->
                     init emptyModel { search = "" }
                         |> Tuple.first
-                        |> includedTags
+                        |> includedLocations
                         |> Expect.equal []
-            , test "sets included tags" <|
+            , test "sets included locations" <|
                 \() ->
-                    init (model False [] [ FilteredTag (Tag "elm") Excluded ]) { search = "?tag=elm" }
+                    init (model False [] [] [ FilteredTag (Location "USA") Excluded ] []) { search = "?location=USA" }
                         |> Tuple.first
-                        |> includedTags
-                        |> Expect.equal [ Tag "elm" ]
+                        |> includedLocations
+                        |> Expect.equal [ Location "USA" ]
+            , test "does not include any topics by default" <|
+                \() ->
+                    init emptyModel { search = "" }
+                        |> Tuple.first
+                        |> includedTopics
+                        |> Expect.equal []
+            , test "sets included topics" <|
+                \() ->
+                    init (model False [] [] [] [ FilteredTag (Topic "elm") Excluded ]) { search = "?topic=elm" }
+                        |> Tuple.first
+                        |> includedTopics
+                        |> Expect.equal [ Topic "elm" ]
             ]
         ]

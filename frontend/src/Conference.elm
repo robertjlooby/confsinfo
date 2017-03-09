@@ -1,4 +1,4 @@
-module Conference exposing (Conference, view)
+module Conference exposing (Conference, view, CFPStatus(..))
 
 import DateFormatter exposing (formatDay)
 import Html exposing (text)

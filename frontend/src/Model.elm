@@ -1,4 +1,4 @@
-module Model exposing (Model, Msg(..), generateQueryString, init, update, urlUpdate, initializeIncludedTags, includedTags, includedLanguages, view)
+module Model exposing (Model, Msg(..), generateQueryString, init, update, urlUpdate, includedTopics, includedLanguages, includedLocations, includedAudiences, view)
 
 import Conference exposing (Conference)
 import FilteredTagSection exposing (FilteredTagSection)
@@ -16,8 +16,10 @@ import Tag exposing (..)
 type alias Model =
     { conferences : List Conference
     , includePastEvents : Bool
+    , audiences : FilteredTagSection Audience
     , languages : FilteredTagSection Language
-    , tags : List (FilteredTagSection Tag)
+    , locations : FilteredTagSection Location
+    , topics : FilteredTagSection Topic
     }
 
 
@@ -27,20 +29,31 @@ init initialModel { search } =
         queryString =
             parse search
 
+        audiences =
+            all "audience" queryString
+                |> List.map Audience
+
         languages =
             all "language" queryString
                 |> List.map Language
 
-        tags =
-            all "tag" queryString
-                |> List.map Tag
+        locations =
+            all "location" queryString
+                |> List.map Location
+
+        topics =
+            all "topic" queryString
+                |> List.map Topic
 
         includePastEvents =
             one string "includePastEvents" queryString == Just "True"
 
         model =
-            initializeIncludedTags tags initialModel
+            initialModel
+                |> initializeIncludedAudiences audiences
                 |> initializeIncludedLanguages languages
+                |> initializeIncludedLocations locations
+                |> initializeIncludedTopics topics
                 |> update (IncludePastEvents includePastEvents)
                 |> Tuple.first
     in
@@ -53,8 +66,10 @@ init initialModel { search } =
 
 type Msg
     = NoOp
+    | UpdateAudience (FilteredTagSection.Msg Audience)
     | UpdateLanguage (FilteredTagSection.Msg Language)
-    | UpdateTag (FilteredTagSection.Msg Tag)
+    | UpdateLocation (FilteredTagSection.Msg Location)
+    | UpdateTopic (FilteredTagSection.Msg Topic)
     | IncludePastEvents Bool
 
 
@@ -64,6 +79,13 @@ update msg model =
         NoOp ->
             model ! []
 
+        UpdateAudience action ->
+            let
+                newModel =
+                    { model | audiences = FilteredTagSection.update action model.audiences }
+            in
+                ( newModel, updateQueryString newModel )
+
         UpdateLanguage action ->
             let
                 newModel =
@@ -71,10 +93,17 @@ update msg model =
             in
                 ( newModel, updateQueryString newModel )
 
-        UpdateTag action ->
+        UpdateLocation action ->
             let
                 newModel =
-                    { model | tags = List.map (FilteredTagSection.update action) model.tags }
+                    { model | locations = FilteredTagSection.update action model.locations }
+            in
+                ( newModel, updateQueryString newModel )
+
+        UpdateTopic action ->
+            let
+                newModel =
+                    { model | topics = FilteredTagSection.update action model.topics }
             in
                 ( newModel, updateQueryString newModel )
 
@@ -99,8 +128,10 @@ updateQueryString model =
 
 generateQueryString : Model -> String
 generateQueryString model =
-    List.foldr (getLanguageName >> add "language") empty (includedLanguages model)
-        |> (\queryString -> List.foldr (getTagName >> add "tag") queryString (includedTags model))
+    List.foldr (getAudienceName >> add "audience") empty (includedAudiences model)
+        |> (\queryString -> List.foldr (getLanguageName >> add "language") queryString (includedLanguages model))
+        |> (\queryString -> List.foldr (getLocationName >> add "location") queryString (includedLocations model))
+        |> (\queryString -> List.foldr (getTopicName >> add "topic") queryString (includedTopics model))
         |> (if model.includePastEvents then
                 add "includePastEvents" (toString model.includePastEvents)
             else
@@ -109,18 +140,33 @@ generateQueryString model =
         |> render
 
 
+initializeIncludedAudiences : List Audience -> Model -> Model
+initializeIncludedAudiences includedAudiences model =
+    { model | audiences = FilteredTagSection.initializeIncludedTags includedAudiences model.audiences }
+
+
 initializeIncludedLanguages : List Language -> Model -> Model
 initializeIncludedLanguages includedLanguages model =
     { model | languages = FilteredTagSection.initializeIncludedTags includedLanguages model.languages }
 
 
-initializeIncludedTags : List Tag -> Model -> Model
-initializeIncludedTags includedTags model =
-    { model | tags = List.map (FilteredTagSection.initializeIncludedTags includedTags) model.tags }
+initializeIncludedLocations : List Location -> Model -> Model
+initializeIncludedLocations includedLocations model =
+    { model | locations = FilteredTagSection.initializeIncludedTags includedLocations model.locations }
+
+
+initializeIncludedTopics : List Topic -> Model -> Model
+initializeIncludedTopics includedTopics model =
+    { model | topics = FilteredTagSection.initializeIncludedTags includedTopics model.topics }
 
 
 
 -- Public functions
+
+
+includedAudiences : Model -> List Audience
+includedAudiences model =
+    FilteredTagSection.includedTags model.audiences
 
 
 includedLanguages : Model -> List Language
@@ -128,10 +174,14 @@ includedLanguages model =
     FilteredTagSection.includedTags model.languages
 
 
-includedTags : Model -> List Tag
-includedTags model =
-    List.map FilteredTagSection.includedTags model.tags
-        |> List.concat
+includedLocations : Model -> List Location
+includedLocations model =
+    FilteredTagSection.includedTags model.locations
+
+
+includedTopics : Model -> List Topic
+includedTopics model =
+    FilteredTagSection.includedTags model.topics
 
 
 
@@ -143,9 +193,12 @@ view model =
     Html.div [ class "container" ] <|
         List.concat
             [ languagesView model.languages
-            , allTagsView model.tags
+            , audiencesView model.audiences
+            , topicsView model.topics
+            , locationsView model.locations
             , [ includePastEventsButtonView model.includePastEvents ]
-            , [ Html.map UpdateTag FilteredTagSection.resetButtonView ]
+              --fix this
+            , [ Html.map UpdateTopic FilteredTagSection.resetButtonView ]
             , conferencesView model
             , [ sourceCodeLink ]
             ]
@@ -190,14 +243,25 @@ conferencesView model =
     List.map Conference.view model.conferences
 
 
+audiencesView : FilteredTagSection Audience -> List (Html.Html Msg)
+audiencesView audiences =
+    FilteredTagSection.view getAudienceName audiences
+        |> List.map (Html.map UpdateAudience)
+
+
 languagesView : FilteredTagSection Language -> List (Html.Html Msg)
 languagesView languages =
     FilteredTagSection.view getLanguageName languages
         |> List.map (Html.map UpdateLanguage)
 
 
-allTagsView : List (FilteredTagSection Tag) -> List (Html.Html Msg)
-allTagsView filteredTagSections =
-    List.map (FilteredTagSection.view getTagName) filteredTagSections
-        |> List.concat
-        |> List.map (Html.map UpdateTag)
+locationsView : FilteredTagSection Location -> List (Html.Html Msg)
+locationsView locations =
+    FilteredTagSection.view getLocationName locations
+        |> List.map (Html.map UpdateLocation)
+
+
+topicsView : FilteredTagSection Topic -> List (Html.Html Msg)
+topicsView topics =
+    FilteredTagSection.view getTopicName topics
+        |> List.map (Html.map UpdateTopic)
