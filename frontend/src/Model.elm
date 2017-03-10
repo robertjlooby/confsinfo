@@ -1,4 +1,4 @@
-module Model exposing (Model, Msg(..), generateQueryString, init, update, urlUpdate, includedTopics, includedLanguages, includedLocations, includedAudiences, view)
+module Model exposing (Model, Msg(..), generateQueryString, init, update, includedTopics, includedLanguages, includedLocations, includedAudiences, view)
 
 import Conference exposing (Conference)
 import FilteredTagSection exposing (FilteredTagSection)
@@ -32,30 +32,34 @@ init initialModel { search } =
         audiences =
             all "audience" queryString
                 |> List.map Audience
+                |> FilteredTagSection.initializeIncludedTags initialModel.audiences
 
         languages =
             all "language" queryString
                 |> List.map Language
+                |> FilteredTagSection.initializeIncludedTags initialModel.languages
 
         locations =
             all "location" queryString
                 |> List.map Location
+                |> FilteredTagSection.initializeIncludedTags initialModel.locations
 
         topics =
             all "topic" queryString
                 |> List.map Topic
+                |> FilteredTagSection.initializeIncludedTags initialModel.topics
 
         includePastEvents =
             one string "includePastEvents" queryString == Just "True"
 
         model =
-            initialModel
-                |> initializeIncludedAudiences audiences
-                |> initializeIncludedLanguages languages
-                |> initializeIncludedLocations locations
-                |> initializeIncludedTopics topics
-                |> update (IncludePastEvents includePastEvents)
-                |> Tuple.first
+            Model
+                initialModel.conferences
+                includePastEvents
+                audiences
+                languages
+                locations
+                topics
     in
         ( model, Cmd.none )
 
@@ -70,6 +74,7 @@ type Msg
     | UpdateLanguage (FilteredTagSection.Msg Language)
     | UpdateLocation (FilteredTagSection.Msg Location)
     | UpdateTopic (FilteredTagSection.Msg Topic)
+    | Reset
     | IncludePastEvents Bool
 
 
@@ -114,10 +119,17 @@ update msg model =
             in
                 ( newModel, updateQueryString newModel )
 
-
-urlUpdate : QueryString -> Model -> ( Model, Cmd Msg )
-urlUpdate =
-    (\_ model -> ( model, Cmd.none ))
+        Reset ->
+            let
+                newModel =
+                    { model
+                        | audiences = FilteredTagSection.excludeAll model.audiences
+                        , languages = FilteredTagSection.excludeAll model.languages
+                        , locations = FilteredTagSection.excludeAll model.locations
+                        , topics = FilteredTagSection.excludeAll model.topics
+                    }
+            in
+                ( newModel, updateQueryString newModel )
 
 
 updateQueryString : Model -> Cmd Msg
@@ -138,26 +150,6 @@ generateQueryString model =
                 identity
            )
         |> render
-
-
-initializeIncludedAudiences : List Audience -> Model -> Model
-initializeIncludedAudiences includedAudiences model =
-    { model | audiences = FilteredTagSection.initializeIncludedTags includedAudiences model.audiences }
-
-
-initializeIncludedLanguages : List Language -> Model -> Model
-initializeIncludedLanguages includedLanguages model =
-    { model | languages = FilteredTagSection.initializeIncludedTags includedLanguages model.languages }
-
-
-initializeIncludedLocations : List Location -> Model -> Model
-initializeIncludedLocations includedLocations model =
-    { model | locations = FilteredTagSection.initializeIncludedTags includedLocations model.locations }
-
-
-initializeIncludedTopics : List Topic -> Model -> Model
-initializeIncludedTopics includedTopics model =
-    { model | topics = FilteredTagSection.initializeIncludedTags includedTopics model.topics }
 
 
 
@@ -192,13 +184,12 @@ view : Model -> Html.Html Msg
 view model =
     Html.div [ class "container" ] <|
         List.concat
-            [ languagesView model.languages
-            , audiencesView model.audiences
-            , topicsView model.topics
-            , locationsView model.locations
+            [ tagView UpdateLanguage getLanguageName model.languages
+            , tagView UpdateAudience getAudienceName model.audiences
+            , tagView UpdateTopic getTopicName model.topics
+            , tagView UpdateLocation getLocationName model.locations
             , [ includePastEventsButtonView model.includePastEvents ]
-              --fix this
-            , [ Html.map UpdateTopic FilteredTagSection.resetButtonView ]
+            , [ resetButtonView ]
             , conferencesView model
             , [ sourceCodeLink ]
             ]
@@ -243,25 +234,18 @@ conferencesView model =
     List.map Conference.view model.conferences
 
 
-audiencesView : FilteredTagSection Audience -> List (Html.Html Msg)
-audiencesView audiences =
-    FilteredTagSection.view getAudienceName audiences
-        |> List.map (Html.map UpdateAudience)
+tagView : (FilteredTagSection.Msg tag -> Msg) -> (tag -> String) -> FilteredTagSection tag -> List (Html.Html Msg)
+tagView msg show tags =
+    FilteredTagSection.view show tags
+        |> List.map (Html.map msg)
 
 
-languagesView : FilteredTagSection Language -> List (Html.Html Msg)
-languagesView languages =
-    FilteredTagSection.view getLanguageName languages
-        |> List.map (Html.map UpdateLanguage)
-
-
-locationsView : FilteredTagSection Location -> List (Html.Html Msg)
-locationsView locations =
-    FilteredTagSection.view getLocationName locations
-        |> List.map (Html.map UpdateLocation)
-
-
-topicsView : FilteredTagSection Topic -> List (Html.Html Msg)
-topicsView topics =
-    FilteredTagSection.view getTopicName topics
-        |> List.map (Html.map UpdateTopic)
+resetButtonView : Html.Html Msg
+resetButtonView =
+    Html.div [ class "row" ]
+        [ Html.button
+            [ class "two columns offset-by-five"
+            , Html.Events.onClick Reset
+            ]
+            [ text "Reset" ]
+        ]

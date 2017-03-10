@@ -1,4 +1,4 @@
-module FilteredTagSection exposing (FilteredTagSection, initializeIncludedTags, includedTags, Msg(..), update, view, resetButtonView)
+module FilteredTagSection exposing (FilteredTagSection, initializeIncludedTags, includedTags, excludeAll, Msg(..), update, view)
 
 import FilteredTag exposing (FilteredTag)
 import Html exposing (text)
@@ -27,7 +27,6 @@ includedTags model =
 
 type Msg tag
     = UpdateTag tag FilteredTag.Msg
-    | Reset
 
 
 update : Msg tag -> FilteredTagSection tag -> FilteredTagSection tag
@@ -43,13 +42,17 @@ update msg model =
             in
                 { model | tags = List.map updateTag model.tags }
 
-        Reset ->
-            { model | tags = List.map FilteredTag.exclude model.tags }
+
+initializeIncludedTags : FilteredTagSection tag -> List tag -> FilteredTagSection tag
+initializeIncludedTags filteredTagSection includedTags =
+    { filteredTagSection
+        | tags = List.map (FilteredTag.initializeIncludedTag includedTags) filteredTagSection.tags
+    }
 
 
-initializeIncludedTags : List tag -> FilteredTagSection tag -> FilteredTagSection tag
-initializeIncludedTags includedTags model =
-    { model | tags = List.map (FilteredTag.initializeIncludedTag includedTags) model.tags }
+excludeAll : FilteredTagSection tag -> FilteredTagSection tag
+excludeAll model =
+    { model | tags = List.map FilteredTag.exclude model.tags }
 
 
 
@@ -63,14 +66,3 @@ view getTagName { sectionName, tags } =
     , Html.div [ class "row" ] <|
         List.map (\tag -> Html.map (UpdateTag tag.tag) (FilteredTag.view getTagName tag)) tags
     ]
-
-
-resetButtonView : Html.Html (Msg tag)
-resetButtonView =
-    Html.div [ class "row" ]
-        [ Html.button
-            [ class "two columns offset-by-five"
-            , Html.Events.onClick Reset
-            ]
-            [ text "Reset" ]
-        ]

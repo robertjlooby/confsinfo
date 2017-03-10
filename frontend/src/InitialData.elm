@@ -4,27 +4,12 @@ import Conference
 import FilteredTag
 import Model
 import Tag exposing (..)
-import Time.Date as Date
 
 
 model : Model.Model
 model =
     { conferences =
-        [ { name = "@Swift"
-          , link = "http://atswift.io/index-en.html"
-          , startDate = Date.date 2016 1 10
-          , endDate = Date.date 2016 1 10
-          , location = "Beijing, China"
-          , cfpStatus = Conference.Closed
-          }
-        , { name = "NDC London Workshops"
-          , link = "http://ndc-london.com/"
-          , startDate = Date.date 2016 1 11
-          , endDate = Date.date 2016 1 12
-          , location = "London, England"
-          , cfpStatus = Conference.Closed
-          }
-        ]
+        []
     , audiences =
         { sectionName = "Audience"
         , tags =

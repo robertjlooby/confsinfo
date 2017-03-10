@@ -63,10 +63,6 @@ tests =
                 modelFromParts ( s, t1, t, t2 )
                     |> update (UpdateTag t.tag Exclude)
                     |> Expect.equal (modelFromParts ( s, t1, { t | state = Excluded }, t2 ))
-        , fuzz modelFuzzer "update with Reset excludes all the tags" <|
-            \model ->
-                update Reset model
-                    |> Expect.equal { model | tags = List.map (\t -> { t | state = Excluded }) model.tags }
         , let
             includedTags =
                 [ Topic "Ruby", Topic "JavaScript" ]
@@ -93,6 +89,6 @@ tests =
           in
             test "initializeIncludedTags includes tags in the list" <|
                 \() ->
-                    (initializeIncludedTags includedTags model)
+                    (initializeIncludedTags model includedTags)
                         |> Expect.equal expectedModel
         ]
