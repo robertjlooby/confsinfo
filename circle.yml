@@ -6,6 +6,7 @@ dependencies:
   cache_directories:
     - frontend/elm-stuff/build-artifacts
     - frontend/test/elm-stuff/build-artifacts
+    - ~/docker
     - ~/sysconfcpus
     - ~/closure-compiler
   pre:
@@ -29,6 +30,7 @@ dependencies:
         make && make install;
         cd ..;
       fi
+    - if [[ -e ~/docker/image.tar ]]; then docker load -i ~/docker/image.tar; fi
     - npm install -g elm@0.18.0
     - npm install -g elm-test@0.18.2
     - mv $(npm config get prefix)/bin/elm-make $(npm config get prefix)/bin/elm-make-old
@@ -42,6 +44,7 @@ dependencies:
         pwd: backend
     - docker build --rm=false -t registry.heroku.com/confs-info/web .:
         pwd: backend
+    - mkdir -p ~/docker; docker save registry.heroku.com/confs-info/web > ~/docker/image.tar
 
 test:
   override:
