@@ -6,6 +6,7 @@ dependencies:
   cache_directories:
     - frontend/elm-stuff/build-artifacts
     - frontend/test/elm-stuff/build-artifacts
+    - ~/docker
     - ~/sysconfcpus
     - ~/closure-compiler
   pre:
@@ -29,22 +30,26 @@ dependencies:
         make && make install;
         cd ..;
       fi
+    - if [[ -e ~/docker/image.tar ]]; then docker load -i ~/docker/image.tar; fi
     - npm install -g elm@0.18.0
     - npm install -g elm-test@0.18.2
     - mv $(npm config get prefix)/bin/elm-make $(npm config get prefix)/bin/elm-make-old
     - printf '%s\n\n' '#\!/bin/bash' 'echo "Running elm-make with sysconfcpus -n 2"' '$HOME/sysconfcpus/bin/sysconfcpus -n 2 elm-make-old "$@"' > $(npm config get prefix)/bin/elm-make
     - chmod +x $(npm config get prefix)/bin/elm-make
-    - elm make --yes src/Main.elm --output ../backend/dist/elm.min.js:
+    - elm make --yes src/Main.elm --output ../backend/dist/elm.js:
         pwd: frontend
-    - elm make --yes AllTests.elm --output /dev/null:
-        pwd: frontend/test
+    - elm make --yes Main.elm --output /dev/null:
+        pwd: frontend/tests
+    - java -jar ~/closure-compiler/compiler.jar --js dist/elm.js --js_output_file dist/elm.min.js:
+        pwd: backend
     - docker build --rm=false -t registry.heroku.com/confs-info/web .:
         pwd: backend
+    - mkdir -p ~/docker; docker save registry.heroku.com/confs-info/web > ~/docker/image.tar
 
 test:
   override:
-    - elm-test AllTests.elm:
-        pwd: frontend/test
+    - elm-test:
+        pwd: frontend
     - docker-compose -f docker-compose.ci.yml run test:
         pwd: backend
 

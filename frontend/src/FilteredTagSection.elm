@@ -1,24 +1,30 @@
-module FilteredTagSection exposing (Model, initializeIncludedTags, includedTags, Msg(..), update, view, resetButtonView)
+module FilteredTagSection exposing (FilteredTagSection, decoder, initializeIncludedTags, includedTags, excludeAll, Msg(..), update, view)
 
-import FilteredTag
+import FilteredTag exposing (FilteredTag)
 import Html exposing (text)
 import Html.Attributes exposing (class)
 import Html.Events
-import Tag exposing (Tag)
+import Json.Decode as Decode exposing (Decoder, list)
+import Json.Decode.Pipeline exposing (decode, hardcoded, required)
 
 
 -- Model
 
 
-type alias Model =
+type alias FilteredTagSection tag =
     { sectionName : String
-    , tags : List FilteredTag.Model
+    , tags : List (FilteredTag tag)
     }
 
 
-includedTags : Model -> List Tag
+decoder : String -> (String -> tag) -> Decoder (FilteredTagSection tag)
+decoder sectionName makeTag =
+    Decode.map (FilteredTagSection sectionName) (list (FilteredTag.decoder makeTag))
+
+
+includedTags : FilteredTagSection tag -> List tag
 includedTags model =
-    List.filter FilteredTag.isIncluded model.tags
+    List.filter .included model.tags
         |> List.map .tag
 
 
@@ -26,12 +32,11 @@ includedTags model =
 -- Update
 
 
-type Msg
-    = UpdateTag Tag FilteredTag.Msg
-    | Reset
+type Msg tag
+    = UpdateTag tag FilteredTag.Msg
 
 
-update : Msg -> Model -> Model
+update : Msg tag -> FilteredTagSection tag -> FilteredTagSection tag
 update msg model =
     case msg of
         UpdateTag tag tagAction ->
@@ -44,34 +49,27 @@ update msg model =
             in
                 { model | tags = List.map updateTag model.tags }
 
-        Reset ->
-            { model | tags = List.map FilteredTag.exclude model.tags }
+
+initializeIncludedTags : FilteredTagSection tag -> List tag -> FilteredTagSection tag
+initializeIncludedTags filteredTagSection includedTags =
+    { filteredTagSection
+        | tags = List.map (FilteredTag.initializeIncludedTag includedTags) filteredTagSection.tags
+    }
 
 
-initializeIncludedTags : List String -> Model -> Model
-initializeIncludedTags includedTags model =
-    { model | tags = List.map (FilteredTag.initializeIncludedTag includedTags) model.tags }
+excludeAll : FilteredTagSection tag -> FilteredTagSection tag
+excludeAll model =
+    { model | tags = List.map FilteredTag.exclude model.tags }
 
 
 
 -- View
 
 
-view : Model -> List (Html.Html Msg)
-view { sectionName, tags } =
+view : (tag -> String) -> FilteredTagSection tag -> List (Html.Html (Msg tag))
+view getTagName { sectionName, tags } =
     [ Html.div [ class "row" ]
         [ Html.h5 [] [ text sectionName ] ]
     , Html.div [ class "row" ] <|
-        List.map (\tag -> Html.map (UpdateTag tag.tag) (FilteredTag.view tag)) tags
+        List.map (\tag -> Html.map (UpdateTag tag.tag) (FilteredTag.view getTagName tag)) tags
     ]
-
-
-resetButtonView : Html.Html Msg
-resetButtonView =
-    Html.div [ class "row" ]
-        [ Html.button
-            [ class "two columns offset-by-five"
-            , Html.Events.onClick Reset
-            ]
-            [ text "Reset" ]
-        ]

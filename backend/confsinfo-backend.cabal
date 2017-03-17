@@ -16,8 +16,13 @@ executable confsinfo-backend-exe
                      , app/models
                      , db
   main-is:             Main.hs
-  other-modules:       Conference
+  other-modules:       Audience
+                     , Conference
+                     , InitialModel
+                     , Language
+                     , Location
                      , RunMigrations
+                     , Topic
                      , Util
   ghc-options:         -threaded -rtsopts -with-rtsopts=-N
   build-depends:       base
@@ -40,10 +45,20 @@ test-suite confsinfo-backend-test
                      , app/models
                      , db
   main-is:             Spec.hs
-  other-modules:       Conference
+  other-modules:       Audience
+                     , AudienceSpec
+                     , Conference
                      , ConferenceSpec
+                     , InitialModel
+                     , InitialModelSpec
+                     , Language
+                     , LanguageSpec
+                     , Location
+                     , LocationSpec
                      , RunMigrations
-                     ,  Util
+                     , Topic
+                     , TopicSpec
+                     , Util
   build-depends:       base
                      , aeson
                      , bytestring

@@ -1,107 +1,115 @@
-module Conference exposing (Model, CFPStatus(..), cfpStatus, shouldShow, compareConferences, view)
+module Conference exposing (Conference, decoder, view, CFPStatus(..))
 
-import DaTuple exposing (DaTuple)
+import DateFormatter exposing (formatDay)
 import Html exposing (text)
 import Html.Attributes exposing (class, href)
-import Tag exposing (Tag)
+import Json.Decode as Decode exposing (Decoder, fail, field, string, succeed)
+import Json.Decode.Pipeline exposing (decode, required)
+import Time.Date as Date exposing (Date, fromISO8601)
 
 
 -- Model
 
 
-type alias Model =
+type alias Conference =
     { name : String
     , link : String
-    , startDate : DaTuple
-    , endDate : DaTuple
+    , startDate : Date
+    , endDate : Date
     , location : String
-    , cfpStartDate : Maybe DaTuple
-    , cfpEndDate : Maybe DaTuple
-    , tags : List Tag
+    , cfpStatus : CFPStatus
     }
 
 
-
--- Public functions
-
-
-shouldShow : List Tag -> Model -> Bool
-shouldShow includedTags conference =
-    List.all (\tag -> List.member tag conference.tags) includedTags
+type CFPStatus
+    = Closed
+    | NotYetOpen Date
+    | Open Date
 
 
-compareConferences : Model -> Model -> Order
-compareConferences conf conf2 =
-    let
-        dateCompare =
-            DaTuple.compareDaTuples conf.startDate conf2.startDate
-    in
-        if dateCompare == EQ then
-            compare conf.name conf2.name
-        else
-            dateCompare
+decoder : Decoder Conference
+decoder =
+    decode Conference
+        |> required "name" string
+        |> required "link" string
+        |> required "startDate" dateDecoder
+        |> required "endDate" dateDecoder
+        |> required "location" string
+        |> required "cfpStatus" cfpDecoder
+
+
+dateDecoder : Decoder Date
+dateDecoder =
+    Decode.map fromISO8601 string
+        |> Decode.andThen
+            (\result ->
+                case result of
+                    Ok date ->
+                        succeed date
+
+                    Err msg ->
+                        fail msg
+            )
+
+
+cfpDecoder : Decoder CFPStatus
+cfpDecoder =
+    field "status" string
+        |> Decode.andThen
+            (\status ->
+                case status of
+                    "Open" ->
+                        field "date" dateDecoder
+                            |> Decode.map Open
+
+                    "NotYetOpen" ->
+                        field "date" dateDecoder
+                            |> Decode.map NotYetOpen
+
+                    "Closed" ->
+                        succeed Closed
+
+                    _ ->
+                        fail <| "Invalid status: " ++ status
+            )
 
 
 
 -- View
 
 
-type CFPStatus
-    = Closed
-    | NotYetOpen
-    | Open
-
-
-cfpStatus : DaTuple -> Model -> ( CFPStatus, Maybe DaTuple )
-cfpStatus currentDate conference =
-    case Maybe.map (DaTuple.compareDaTuples currentDate) conference.cfpEndDate of
-        Nothing ->
-            ( Closed, Nothing )
-
-        Just GT ->
-            ( Closed, Nothing )
-
-        Just _ ->
-            case Maybe.map (DaTuple.compareDaTuples currentDate) conference.cfpStartDate of
-                Just LT ->
-                    ( NotYetOpen, conference.cfpStartDate )
-
-                _ ->
-                    ( Open, conference.cfpEndDate )
-
-
-view : DaTuple -> Model -> Html.Html msg
-view currentDate conference =
+view : Conference -> Html.Html msg
+view conference =
     Html.div [ class "row" ]
-        [ conferenceNameHtml conference currentDate
+        [ conferenceNameHtml conference
         , Html.div [ class "three columns" ]
-            [ text <| DaTuple.formatRange conference.startDate conference.endDate ]
+            [ text <| DateFormatter.formatRange conference.startDate conference.endDate ]
         , Html.div [ class "four columns" ]
             [ text conference.location ]
         ]
 
 
-conferenceNameHtml : Model -> DaTuple -> Html.Html msg
-conferenceNameHtml conference currentDate =
+conferenceNameHtml : Conference -> Html.Html msg
+conferenceNameHtml conference =
     let
         nameLink =
             Html.a [ href conference.link ] [ text conference.name ]
 
         inner =
-            case cfpStatus currentDate conference of
-                ( Open, Just endDate ) ->
+            case conference.cfpStatus of
+                Open closeDate ->
                     [ nameLink
                     , Html.small
                         [ class "cfp cfp-open"
-                        , Html.Attributes.title <| "Closes " ++ DaTuple.formatDate endDate
+                        , Html.Attributes.title <| "Closes " ++ formatDay closeDate
                         ]
                         [ text "CFP open" ]
                     ]
 
-                ( NotYetOpen, Just startDate ) ->
+                NotYetOpen openDate ->
                     [ nameLink
                     , Html.small [ class "cfp" ]
-                        [ text <| "CFP opens " ++ DaTuple.formatDate startDate ]
+                        [ text <| "CFP opens " ++ formatDay openDate ]
                     ]
 
                 _ ->

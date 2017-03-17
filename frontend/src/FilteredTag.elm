@@ -1,34 +1,32 @@
-module FilteredTag exposing (init, Model, Msg(..), State(..), update, view, initializeIncludedTag, isIncluded, exclude)
+module FilteredTag exposing (init, FilteredTag, Msg(..), decoder, update, view, initializeIncludedTag, exclude)
 
 import Html exposing (text)
 import Html.Attributes exposing (class)
 import Html.Events
+import Json.Decode as Decode exposing (Decoder, string)
+import Json.Decode.Pipeline exposing (decode, hardcoded, required)
 import Tag exposing (..)
 
 
 -- Model
 
 
-type State
-    = Included
-    | Excluded
-
-
-type alias Model =
-    { tag : Tag
-    , state : State
+type alias FilteredTag tag =
+    { tag : tag
+    , included : Bool
     }
 
 
-init : Tag -> Model
+init : tag -> FilteredTag tag
 init tag =
     { tag = tag
-    , state = Excluded
+    , included = False
     }
 
 
-
--- Update
+decoder : (String -> tag) -> Decoder (FilteredTag tag)
+decoder makeTag =
+    Decode.map (\name -> FilteredTag (makeTag name) False) string
 
 
 type Msg
@@ -36,59 +34,47 @@ type Msg
     | Exclude
 
 
-update : Msg -> Model -> Model
+update : Msg -> FilteredTag tag -> FilteredTag tag
 update msg model =
     case msg of
         Include ->
-            { model | state = Included }
+            { model | included = True }
 
         Exclude ->
-            { model | state = Excluded }
+            { model | included = False }
 
 
 
 -- Public functions
 
 
-initializeIncludedTag : List String -> Model -> Model
-initializeIncludedTag includedTags model =
-    case model.tag of
-        Tag.Tag tag ->
-            if List.member tag includedTags then
-                update Include model
-            else
-                model
+initializeIncludedTag : List tag -> FilteredTag tag -> FilteredTag tag
+initializeIncludedTag includedTags filteredTag =
+    if List.member filteredTag.tag includedTags then
+        update Include filteredTag
+    else
+        filteredTag
 
 
-exclude : Model -> Model
+exclude : FilteredTag tag -> FilteredTag tag
 exclude model =
     update Exclude model
-
-
-isIncluded : Model -> Bool
-isIncluded model =
-    case model.state of
-        Included ->
-            True
-
-        Excluded ->
-            False
 
 
 
 -- View
 
 
-view : Model -> Html.Html Msg
-view model =
+view : (tag -> String) -> FilteredTag tag -> Html.Html Msg
+view getTagName filteredTag =
     let
         ( tagString, tagClass, clickAction ) =
-            case ( model.state, model.tag ) of
-                ( Included, Tag tag ) ->
-                    ( "- " ++ tag, "included", Exclude )
+            case ( filteredTag.included, filteredTag.tag ) of
+                ( True, tag ) ->
+                    ( "- " ++ getTagName tag, "included", Exclude )
 
-                ( Excluded, Tag tag ) ->
-                    ( "+ " ++ tag, "excluded", Include )
+                ( False, tag ) ->
+                    ( "+ " ++ getTagName tag, "excluded", Include )
     in
         Html.button
             [ class tagClass

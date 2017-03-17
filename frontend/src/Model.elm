@@ -1,49 +1,40 @@
-module Model exposing (Model, Msg(..), conferencesToShow, init, update, urlUpdate, initializeIncludedTags, includedTags, setCurrentDate, view)
+module Model exposing (Model, Msg(..), decoder, generateQueryString, update, includedTopics, includedLanguages, includedLocations, includedAudiences, view)
 
-import Conference
-import Date
-import DaTuple exposing (DaTuple, compareDaTuples)
-import GenericSet as GSet
-import FilteredTagSection
+import Conference exposing (Conference)
+import FilteredTagSection exposing (FilteredTagSection)
 import Html exposing (text)
 import Html.Attributes exposing (class, href)
 import Html.Events
+import Http
+import Json.Decode as Decode exposing (Decoder, bool, list)
+import Json.Decode.Pipeline exposing (decode, required)
 import Navigation exposing (modifyUrl)
 import QueryString exposing (QueryString, add, all, empty, one, render, string, parse)
-import Tag exposing (Tag)
-import Task exposing (Task)
-import Time exposing (Time)
+import Tag exposing (..)
 
 
 -- Model
 
 
 type alias Model =
-    { conferences : GSet.GenericSet Conference.Model
-    , currentDate : DaTuple
+    { conferences : List Conference
     , includePastEvents : Bool
-    , tags : List FilteredTagSection.Model
+    , audiences : FilteredTagSection Audience
+    , languages : FilteredTagSection Language
+    , locations : FilteredTagSection Location
+    , topics : FilteredTagSection Topic
     }
 
 
-init : Model -> Navigation.Location -> ( Model, Cmd Msg )
-init initialModel { search } =
-    let
-        queryString =
-            parse search
-
-        tags =
-            all "tag" queryString
-
-        includePastEvents =
-            one string "includePastEvents" queryString == Just "True"
-
-        model =
-            initializeIncludedTags tags initialModel
-                |> update (IncludePastEvents includePastEvents)
-                |> Tuple.first
-    in
-        ( model, initializeDate )
+decoder : Decoder Model
+decoder =
+    decode Model
+        |> required "conferences" (list Conference.decoder)
+        |> required "includePastEvents" bool
+        |> required "audiences" (FilteredTagSection.decoder "Audiences" Audience)
+        |> required "languages" (FilteredTagSection.decoder "Languages" Language)
+        |> required "locations" (FilteredTagSection.decoder "Locations" Location)
+        |> required "topics" (FilteredTagSection.decoder "Topics" Topic)
 
 
 
@@ -51,22 +42,43 @@ init initialModel { search } =
 
 
 type Msg
-    = NoOp
-    | UpdateTag FilteredTagSection.Msg
+    = UpdateAudience (FilteredTagSection.Msg Audience)
+    | UpdateLanguage (FilteredTagSection.Msg Language)
+    | UpdateLocation (FilteredTagSection.Msg Location)
+    | UpdateTopic (FilteredTagSection.Msg Topic)
+    | Reset
     | IncludePastEvents Bool
-    | SetCurrentDate (Maybe Time)
+    | SearchResult (Result Http.Error (List Conference))
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
-        NoOp ->
-            model ! []
-
-        UpdateTag action ->
+        UpdateAudience action ->
             let
                 newModel =
-                    { model | tags = List.map (FilteredTagSection.update action) model.tags }
+                    { model | audiences = FilteredTagSection.update action model.audiences }
+            in
+                ( newModel, updateQueryString newModel )
+
+        UpdateLanguage action ->
+            let
+                newModel =
+                    { model | languages = FilteredTagSection.update action model.languages }
+            in
+                ( newModel, updateQueryString newModel )
+
+        UpdateLocation action ->
+            let
+                newModel =
+                    { model | locations = FilteredTagSection.update action model.locations }
+            in
+                ( newModel, updateQueryString newModel )
+
+        UpdateTopic action ->
+            let
+                newModel =
+                    { model | topics = FilteredTagSection.update action model.topics }
             in
                 ( newModel, updateQueryString newModel )
 
@@ -77,62 +89,83 @@ update msg model =
             in
                 ( newModel, updateQueryString newModel )
 
-        SetCurrentDate (Just time) ->
+        Reset ->
             let
-                date =
-                    Date.fromTime time
-
-                daTuple =
-                    ( Date.year date, Date.month date, Date.day date )
+                newModel =
+                    { model
+                        | audiences = FilteredTagSection.excludeAll model.audiences
+                        , languages = FilteredTagSection.excludeAll model.languages
+                        , locations = FilteredTagSection.excludeAll model.locations
+                        , topics = FilteredTagSection.excludeAll model.topics
+                    }
             in
-                ( { model | currentDate = daTuple }, Cmd.none )
+                ( newModel, updateQueryString newModel )
 
-        SetCurrentDate Nothing ->
-            ( model, Cmd.none )
+        SearchResult (Ok conferences) ->
+            { model | conferences = conferences } ! []
+
+        SearchResult (Err message) ->
+            let
+                _ =
+                    Debug.log "Search error:" message
+            in
+                model ! []
 
 
-urlUpdate : QueryString -> Model -> ( Model, Cmd Msg )
-urlUpdate =
-    (\_ model -> ( model, Cmd.none ))
+search : Model -> List (Cmd Msg)
+search model =
+    let
+        query =
+            generateQueryString model
+    in
+        [ modifyUrl query
+        , Http.get ("/search" ++ query) (list Conference.decoder)
+            |> Http.send SearchResult
+        ]
 
 
 updateQueryString : Model -> Cmd Msg
 updateQueryString model =
-    List.foldr (toString >> add "tag") empty (includedTags model)
+    generateQueryString model
+        |> modifyUrl
+
+
+generateQueryString : Model -> String
+generateQueryString model =
+    List.foldr (getAudienceName >> add "audience") empty (includedAudiences model)
+        |> (\queryString -> List.foldr (getLanguageName >> add "language") queryString (includedLanguages model))
+        |> (\queryString -> List.foldr (getLocationName >> add "location") queryString (includedLocations model))
+        |> (\queryString -> List.foldr (getTopicName >> add "topic") queryString (includedTopics model))
         |> (if model.includePastEvents then
                 add "includePastEvents" (toString model.includePastEvents)
             else
                 identity
            )
         |> render
-        |> modifyUrl
-
-
-initializeIncludedTags : List String -> Model -> Model
-initializeIncludedTags includedTags model =
-    { model | tags = List.map (FilteredTagSection.initializeIncludedTags includedTags) model.tags }
-
-
-initializeDate : Cmd Msg
-initializeDate =
-    Task.perform
-        (\time -> setCurrentDate <| Just time)
-        Time.now
-
-
-setCurrentDate : Maybe Time -> Msg
-setCurrentDate time =
-    SetCurrentDate time
 
 
 
 -- Public functions
 
 
-includedTags : Model -> List Tag
-includedTags model =
-    List.map FilteredTagSection.includedTags model.tags
-        |> List.concat
+includedAudiences : Model -> List Audience
+includedAudiences model =
+    FilteredTagSection.includedTags model.audiences
+
+
+includedLanguages : Model -> List Language
+includedLanguages model =
+    FilteredTagSection.includedTags model.languages
+
+
+includedLocations : Model -> List Location
+includedLocations model =
+    FilteredTagSection.includedTags model.locations
+
+
+includedTopics : Model -> List Topic
+includedTopics model =
+    FilteredTagSection.includedTags model.topics
 
 
 
@@ -143,9 +176,12 @@ view : Model -> Html.Html Msg
 view model =
     Html.div [ class "container" ] <|
         List.concat
-            [ allTagsView model.tags
+            [ tagView UpdateLanguage getLanguageName model.languages
+            , tagView UpdateAudience getAudienceName model.audiences
+            , tagView UpdateTopic getTopicName model.topics
+            , tagView UpdateLocation getLocationName model.locations
             , [ includePastEventsButtonView model.includePastEvents ]
-            , [ Html.map UpdateTag FilteredTagSection.resetButtonView ]
+            , [ resetButtonView ]
             , conferencesView model
             , [ sourceCodeLink ]
             ]
@@ -185,28 +221,23 @@ sourceCodeLink =
         ]
 
 
-conferencesToShow : Model -> List Conference.Model
-conferencesToShow model =
-    let
-        isInFuture conference =
-            compareDaTuples model.currentDate conference.startDate /= GT
-
-        confsToFilterOnTags =
-            if model.includePastEvents then
-                GSet.toList model.conferences
-            else
-                List.filter isInFuture <| GSet.toList model.conferences
-    in
-        List.filter (Conference.shouldShow <| includedTags model) confsToFilterOnTags
-
-
 conferencesView : Model -> List (Html.Html Msg)
 conferencesView model =
-    List.map (Conference.view model.currentDate) (conferencesToShow model)
+    List.map Conference.view model.conferences
 
 
-allTagsView : List FilteredTagSection.Model -> List (Html.Html Msg)
-allTagsView filteredTagSections =
-    List.map FilteredTagSection.view filteredTagSections
-        |> List.concat
-        |> List.map (Html.map UpdateTag)
+tagView : (FilteredTagSection.Msg tag -> Msg) -> (tag -> String) -> FilteredTagSection tag -> List (Html.Html Msg)
+tagView msg show tags =
+    FilteredTagSection.view show tags
+        |> List.map (Html.map msg)
+
+
+resetButtonView : Html.Html Msg
+resetButtonView =
+    Html.div [ class "row" ]
+        [ Html.button
+            [ class "two columns offset-by-five"
+            , Html.Events.onClick Reset
+            ]
+            [ text "Reset" ]
+        ]
