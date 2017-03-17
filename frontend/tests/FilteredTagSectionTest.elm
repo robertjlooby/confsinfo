@@ -1,9 +1,10 @@
 module FilteredTagSectionTest exposing (..)
 
-import FilteredTag exposing (FilteredTag, Msg(..), State(..))
+import FilteredTag exposing (FilteredTag, Msg(..))
 import FilteredTagSection exposing (..)
 import Fuzz exposing (Fuzzer)
 import FilteredTagTest
+import Json.Decode exposing (decodeString)
 import Tag exposing (..)
 import Expect
 import Test exposing (Test, describe, fuzz, test)
@@ -46,7 +47,7 @@ tests =
                     |> Expect.equal
                         (List.filterMap
                             (\ft ->
-                                if ft.state == Included then
+                                if ft.included then
                                     Just ft.tag
                                 else
                                     Nothing
@@ -57,12 +58,12 @@ tests =
             \( s, t1, t, t2 ) ->
                 modelFromParts ( s, t1, t, t2 )
                     |> update (UpdateTag t.tag Include)
-                    |> Expect.equal (modelFromParts ( s, t1, { t | state = Included }, t2 ))
+                    |> Expect.equal (modelFromParts ( s, t1, { t | included = True }, t2 ))
         , fuzz modelPartsForUpdateFuzzer "update with UpdateTag Exclude updates the tags with the given tag" <|
             \( s, t1, t, t2 ) ->
                 modelFromParts ( s, t1, t, t2 )
                     |> update (UpdateTag t.tag Exclude)
-                    |> Expect.equal (modelFromParts ( s, t1, { t | state = Excluded }, t2 ))
+                    |> Expect.equal (modelFromParts ( s, t1, { t | included = False }, t2 ))
         , let
             includedTags =
                 [ Topic "Ruby", Topic "JavaScript" ]
@@ -91,4 +92,16 @@ tests =
                 \() ->
                     (initializeIncludedTags model includedTags)
                         |> Expect.equal expectedModel
+        , test "decodes from JSON" <|
+            \() ->
+                decodeString (decoder "section" Topic) "[\"Elm\", \"Ruby\"]"
+                    |> Expect.equal
+                        (Ok
+                            { sectionName = "section"
+                            , tags =
+                                [ FilteredTag (Topic "Elm") False
+                                , FilteredTag (Topic "Ruby") False
+                                ]
+                            }
+                        )
         ]

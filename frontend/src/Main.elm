@@ -1,15 +1,14 @@
 module Main exposing (main)
 
-import Model
-import InitialData
+import WebModel exposing (Msg, WebModel)
 import Navigation
 
 
-main : Program Never Model.Model Model.Msg
+main : Program Never WebModel Msg
 main =
-    Navigation.program (\_ -> Model.NoOp)
-        { init = Model.init InitialData.model
-        , view = Model.view
-        , update = Model.update
+    Navigation.program (\_ -> WebModel.NoOp)
+        { init = WebModel.init
+        , view = WebModel.view
+        , update = WebModel.update
         , subscriptions = (\_ -> Sub.none)
         }

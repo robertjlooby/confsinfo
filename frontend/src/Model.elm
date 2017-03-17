@@ -1,10 +1,13 @@
-module Model exposing (Model, Msg(..), generateQueryString, init, update, includedTopics, includedLanguages, includedLocations, includedAudiences, view)
+module Model exposing (Model, Msg(..), decoder, generateQueryString, update, includedTopics, includedLanguages, includedLocations, includedAudiences, view)
 
 import Conference exposing (Conference)
 import FilteredTagSection exposing (FilteredTagSection)
 import Html exposing (text)
 import Html.Attributes exposing (class, href)
 import Html.Events
+import Http
+import Json.Decode as Decode exposing (Decoder, bool, list)
+import Json.Decode.Pipeline exposing (decode, required)
 import Navigation exposing (modifyUrl)
 import QueryString exposing (QueryString, add, all, empty, one, render, string, parse)
 import Tag exposing (..)
@@ -23,45 +26,15 @@ type alias Model =
     }
 
 
-init : Model -> { navLocation | search : String } -> ( Model, Cmd Msg )
-init initialModel { search } =
-    let
-        queryString =
-            parse search
-
-        audiences =
-            all "audience" queryString
-                |> List.map Audience
-                |> FilteredTagSection.initializeIncludedTags initialModel.audiences
-
-        languages =
-            all "language" queryString
-                |> List.map Language
-                |> FilteredTagSection.initializeIncludedTags initialModel.languages
-
-        locations =
-            all "location" queryString
-                |> List.map Location
-                |> FilteredTagSection.initializeIncludedTags initialModel.locations
-
-        topics =
-            all "topic" queryString
-                |> List.map Topic
-                |> FilteredTagSection.initializeIncludedTags initialModel.topics
-
-        includePastEvents =
-            one string "includePastEvents" queryString == Just "True"
-
-        model =
-            Model
-                initialModel.conferences
-                includePastEvents
-                audiences
-                languages
-                locations
-                topics
-    in
-        ( model, Cmd.none )
+decoder : Decoder Model
+decoder =
+    decode Model
+        |> required "conferences" (list Conference.decoder)
+        |> required "includePastEvents" bool
+        |> required "audiences" (FilteredTagSection.decoder "Audiences" Audience)
+        |> required "languages" (FilteredTagSection.decoder "Languages" Language)
+        |> required "locations" (FilteredTagSection.decoder "Locations" Location)
+        |> required "topics" (FilteredTagSection.decoder "Topics" Topic)
 
 
 
@@ -69,21 +42,18 @@ init initialModel { search } =
 
 
 type Msg
-    = NoOp
-    | UpdateAudience (FilteredTagSection.Msg Audience)
+    = UpdateAudience (FilteredTagSection.Msg Audience)
     | UpdateLanguage (FilteredTagSection.Msg Language)
     | UpdateLocation (FilteredTagSection.Msg Location)
     | UpdateTopic (FilteredTagSection.Msg Topic)
     | Reset
     | IncludePastEvents Bool
+    | SearchResult (Result Http.Error (List Conference))
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
-        NoOp ->
-            model ! []
-
         UpdateAudience action ->
             let
                 newModel =
@@ -130,6 +100,28 @@ update msg model =
                     }
             in
                 ( newModel, updateQueryString newModel )
+
+        SearchResult (Ok conferences) ->
+            { model | conferences = conferences } ! []
+
+        SearchResult (Err message) ->
+            let
+                _ =
+                    Debug.log "Search error:" message
+            in
+                model ! []
+
+
+search : Model -> List (Cmd Msg)
+search model =
+    let
+        query =
+            generateQueryString model
+    in
+        [ modifyUrl query
+        , Http.get ("/search" ++ query) (list Conference.decoder)
+            |> Http.send SearchResult
+        ]
 
 
 updateQueryString : Model -> Cmd Msg

@@ -1,9 +1,11 @@
-module FilteredTagSection exposing (FilteredTagSection, initializeIncludedTags, includedTags, excludeAll, Msg(..), update, view)
+module FilteredTagSection exposing (FilteredTagSection, decoder, initializeIncludedTags, includedTags, excludeAll, Msg(..), update, view)
 
 import FilteredTag exposing (FilteredTag)
 import Html exposing (text)
 import Html.Attributes exposing (class)
 import Html.Events
+import Json.Decode as Decode exposing (Decoder, list)
+import Json.Decode.Pipeline exposing (decode, hardcoded, required)
 
 
 -- Model
@@ -15,9 +17,14 @@ type alias FilteredTagSection tag =
     }
 
 
+decoder : String -> (String -> tag) -> Decoder (FilteredTagSection tag)
+decoder sectionName makeTag =
+    Decode.map (FilteredTagSection sectionName) (list (FilteredTag.decoder makeTag))
+
+
 includedTags : FilteredTagSection tag -> List tag
 includedTags model =
-    List.filter FilteredTag.isIncluded model.tags
+    List.filter .included model.tags
         |> List.map .tag
 
 

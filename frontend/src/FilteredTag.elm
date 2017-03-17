@@ -1,34 +1,32 @@
-module FilteredTag exposing (init, FilteredTag, Msg(..), State(..), update, view, initializeIncludedTag, isIncluded, exclude)
+module FilteredTag exposing (init, FilteredTag, Msg(..), decoder, update, view, initializeIncludedTag, exclude)
 
 import Html exposing (text)
 import Html.Attributes exposing (class)
 import Html.Events
+import Json.Decode as Decode exposing (Decoder, string)
+import Json.Decode.Pipeline exposing (decode, hardcoded, required)
 import Tag exposing (..)
 
 
 -- Model
 
 
-type State
-    = Included
-    | Excluded
-
-
 type alias FilteredTag tag =
     { tag : tag
-    , state : State
+    , included : Bool
     }
 
 
 init : tag -> FilteredTag tag
 init tag =
     { tag = tag
-    , state = Excluded
+    , included = False
     }
 
 
-
--- Update
+decoder : (String -> tag) -> Decoder (FilteredTag tag)
+decoder makeTag =
+    Decode.map (\name -> FilteredTag (makeTag name) False) string
 
 
 type Msg
@@ -40,10 +38,10 @@ update : Msg -> FilteredTag tag -> FilteredTag tag
 update msg model =
     case msg of
         Include ->
-            { model | state = Included }
+            { model | included = True }
 
         Exclude ->
-            { model | state = Excluded }
+            { model | included = False }
 
 
 
@@ -63,16 +61,6 @@ exclude model =
     update Exclude model
 
 
-isIncluded : FilteredTag tag -> Bool
-isIncluded model =
-    case model.state of
-        Included ->
-            True
-
-        Excluded ->
-            False
-
-
 
 -- View
 
@@ -81,11 +69,11 @@ view : (tag -> String) -> FilteredTag tag -> Html.Html Msg
 view getTagName filteredTag =
     let
         ( tagString, tagClass, clickAction ) =
-            case ( filteredTag.state, filteredTag.tag ) of
-                ( Included, tag ) ->
+            case ( filteredTag.included, filteredTag.tag ) of
+                ( True, tag ) ->
                     ( "- " ++ getTagName tag, "included", Exclude )
 
-                ( Excluded, tag ) ->
+                ( False, tag ) ->
                     ( "+ " ++ getTagName tag, "excluded", Include )
     in
         Html.button

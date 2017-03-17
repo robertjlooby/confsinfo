@@ -3,7 +3,9 @@
 module Main where
 
 import Configuration.Dotenv (loadFile)
-import Conference (create, findAll)
+import qualified Conference as Conf
+import qualified InitialModel
+import qualified Topic
 import Data.Default (def)
 import Network.Wai.Middleware.RequestLogger (autoFlush, outputFormat, mkRequestLogger, OutputFormat( Apache ), IPAddrSource( FromHeader ))
 import Network.Wai.Middleware.Static (addBase, staticPolicy)
@@ -26,13 +28,17 @@ main = do
             setHeader "Content-Type" "text/html"
             file "dist/index.html"
 
+        get "/init" $ do
+            initialModel <- liftAndCatchIO $ InitialModel.find conn
+            json initialModel
+
         get "/conferences" $ do
-            conferences <- liftAndCatchIO $ findAll conn
+            conferences <- liftAndCatchIO $ Conf.findAll conn
             json conferences
 
         post "/conferences" $ do
             conference <- jsonData
-            conference' <- liftAndCatchIO $ create conn conference
+            conference' <- liftAndCatchIO $ Conf.create conn conference
             json conference'
 
         get "/.well-known/acme-challenge/amx9BslVaZ7LPlb9E7xP4rhptIUf0bsVPY5csgdPqcc" $

@@ -1,5 +1,6 @@
 port module Main exposing (..)
 
+import ConferenceTest
 import DateFormatterTest
 import FilteredTagTest
 import FilteredTagSectionTest
@@ -12,7 +13,8 @@ import Test.Runner.Node exposing (TestProgram, run)
 tests : Test
 tests =
     describe "All tests"
-        [ DateFormatterTest.tests
+        [ ConferenceTest.tests
+        , DateFormatterTest.tests
         , FilteredTagTest.tests
         , FilteredTagSectionTest.tests
         , ModelTest.tests
