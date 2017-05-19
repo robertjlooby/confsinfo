@@ -29,6 +29,7 @@ executable confsinfo-backend-exe
                      , postgresql-simple-migration
                      , scotty
                      , time
+                     , wai
                      , wai-extra
                      , wai-middleware-static
   default-language:    Haskell2010
