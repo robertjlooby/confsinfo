@@ -4,7 +4,10 @@ module Main where
 
 import Configuration.Dotenv (loadFile)
 import Conference (create, findAll)
+import Data.ByteString.Char8 (isPrefixOf)
 import Data.Default (def)
+import Network.Wai (ifRequest, requestHeaderHost)
+import Network.Wai.Middleware.ForceSSL
 import Network.Wai.Middleware.RequestLogger (autoFlush, outputFormat, mkRequestLogger, OutputFormat( Apache ), IPAddrSource( FromHeader ))
 import Network.Wai.Middleware.Static (addBase, staticPolicy)
 import RunMigrations (runAllMigrations)
@@ -20,6 +23,7 @@ main = do
     requestLogger <- mkRequestLogger def { autoFlush = True }
     scotty port $ do
         middleware requestLogger
+        middleware $ ifRequest isNotLocal forceSSL
         middleware $ staticPolicy (addBase "dist")
 
         get "/" $ do
@@ -34,3 +38,8 @@ main = do
             conference <- jsonData
             conference' <- liftAndCatchIO $ create conn conference
             json conference'
+    where
+        isNotLocal req =
+            case requestHeaderHost req of
+                Just host -> not $ "localhost" `isPrefixOf` host
+                _         -> True
