@@ -34,6 +34,3 @@ main = do
             conference <- jsonData
             conference' <- liftAndCatchIO $ create conn conference
             json conference'
-
-        get "/.well-known/acme-challenge/amx9BslVaZ7LPlb9E7xP4rhptIUf0bsVPY5csgdPqcc" $
-            text "amx9BslVaZ7LPlb9E7xP4rhptIUf0bsVPY5csgdPqcc.qJyOa5Z0-NzM8PdXclBdszGOX1_pxakBPsuLc4_efbI"
