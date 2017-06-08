@@ -8,7 +8,7 @@ import Data.ByteString.Char8 (isPrefixOf)
 import Data.Default (def)
 import Network.Wai (ifRequest, requestHeaderHost)
 import Network.Wai.Middleware.ForceSSL
-import Network.Wai.Middleware.RequestLogger (autoFlush, outputFormat, mkRequestLogger, OutputFormat( Apache ), IPAddrSource( FromHeader ))
+import Network.Wai.Middleware.RequestLogger (logStdout)
 import Network.Wai.Middleware.Static (addBase, staticPolicy)
 import RunMigrations (runAllMigrations)
 import Util (getConn, getPort)
@@ -20,9 +20,8 @@ main = do
     conn <- getConn
     runAllMigrations conn
     port <- getPort
-    requestLogger <- mkRequestLogger def { autoFlush = True }
     scotty port $ do
-        middleware requestLogger
+        middleware logStdout
         middleware $ ifRequest isNotLocal forceSSL
         middleware $ staticPolicy (addBase "dist")
 
