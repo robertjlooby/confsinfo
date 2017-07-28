@@ -6,7 +6,7 @@ services:
       POSTGRES_USER: 'confsinfo'
   web: &WEB
     build: .
-    command: sh -c 'stack build --system-ghc && stack exec confsinfo-backend-exe'
+    command: sh -c 'stack build --install-ghc && stack exec confsinfo-backend-exe'
     volumes:
       - .:/var/confsinfo
     ports:
@@ -15,4 +15,4 @@ services:
       - db
   test:
     <<: *WEB
-    command: stack --system-ghc test
+    command: stack --install-ghc test
